@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Members - Australian Living Guideline for Inflammatory Arthritis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-teal: #0d9488;
+            --primary-teal-light: #14b8a6;
+            --primary-teal-dark: #0f766e;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefdfb;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --white: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        
+        header { background: var(--white); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary-blue); padding: 8px 0; }
+        .header-top-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: flex-end; gap: 24px; }
+        .header-top a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-top a:hover { color: var(--white); }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-image { height: 50px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); }
+        .logo-subtitle { font-size: 13px; color: var(--text-light); }
+        
+        .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 16px 24px; font-size: 14px; color: var(--text-light); }
+        .breadcrumb a { color: var(--primary-teal); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        
+        .page-header { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); color: var(--white); padding: 60px 24px; text-align: center; }
+        .page-header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: 36px; font-weight: 600; margin-bottom: 12px; }
+        .page-header p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        
+        .filters-section { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        .filters-label { font-size: 14px; font-weight: 600; color: var(--text-medium); margin-bottom: 12px; }
+        .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+        .profession-filter { padding: 8px 16px; border: 1px solid var(--border-light); background: var(--white); border-radius: 100px; font-size: 14px; font-weight: 500; color: var(--text-medium); cursor: pointer; transition: all 0.2s; }
+        .profession-filter:hover { border-color: var(--primary-teal); color: var(--primary-teal); }
+        .profession-filter.active { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+        
+        .panellists-section { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+        .panellists-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
+        .panellist-card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 24px; display: flex; gap: 16px; transition: all 0.2s; }
+        .panellist-card:hover { box-shadow: var(--shadow-md); }
+        .panellist-card.hidden { display: none; }
+        .panellist-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: var(--white); flex-shrink: 0; }
+        .panellist-avatar.chair { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); }
+        .panellist-info { flex: 1; }
+        .panellist-name { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .role-badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .role-badge.chair { background: var(--primary-blue); color: var(--white); }
+        .role-badge.facilitator { background: var(--primary-teal); color: var(--white); }
+        .panellist-profession { font-size: 14px; font-weight: 600; color: var(--primary-teal); margin-bottom: 2px; }
+        .panellist-institution { font-size: 14px; color: var(--text-medium); margin-bottom: 8px; }
+        .panellist-bio { font-size: 14px; color: var(--text-light); margin-bottom: 12px; line-height: 1.5; }
+        .panellist-recs { font-size: 13px; color: var(--text-light); }
+        .panellist-recs strong { color: var(--text-medium); }
+        
+                .panellist-declaration { margin-top: 8px; }
+        .panellist-declaration a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--primary-teal); text-decoration: none; font-weight: 500; }
+        .panellist-declaration a:hover { text-decoration: underline; }
+        .panellist-declaration svg { width: 14px; height: 14px; }
+        
+        footer { background: var(--primary-blue); color: var(--white); padding: 40px 24px; margin-top: 40px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .footer-content p { opacity: 0.8; font-size: 14px; }
+        .footer-content a { color: var(--white); }
+    </style>
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQKQVSHVS5');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <a href="index.html">← Back to Recommendations</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-title">Australian Living Guideline</div>
+                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                </div>
+            </a>
+        </div>
+    </header>
+    
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo; Panel Members
+    </div>
+    
+    <div class="page-header">
+        <h1>Panel Members</h1>
+        <p>Meet the experts who contribute to developing and reviewing our clinical recommendations</p>
+    </div>
+    
+    <section class="filters-section">
+        <div class="filters-label">Filter by profession:</div>
+        <div class="filters">
+            <button class="profession-filter active" data-profession="all">All</button>
+                    <button class="profession-filter" data-profession="consumer">Consumer Representative</button>
+                    <button class="profession-filter" data-profession="evidence-team">Evidence Team</button>
+                    <button class="profession-filter" data-profession="gp">General Practitioner</button>
+                    <button class="profession-filter" data-profession="immunologist">Immunologist</button>
+                    <button class="profession-filter" data-profession="methodologist">Methodologist</button>
+                    <button class="profession-filter" data-profession="orthopaedic-surgeon">Orthopaedic Surgeon</button>
+                    <button class="profession-filter" data-profession="pharmacist">Pharmacist</button>
+                    <button class="profession-filter" data-profession="podiatrist">Podiatrist</button>
+                    <button class="profession-filter" data-profession="rheumatologist">Rheumatologist</button>
+        </div>
+    </section>
+    
+    <section class="panellists-section">
+        <div class="panellists-grid">
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar chair">SW</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Samuel Whittle<span class="role-badge facilitator">Facilitator</span></h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Whittle is the lead developer for the Australian Living Guidelines for Adult Inflammatory Arthritis and Juvenile Idiopathic Arthritis. He is an ANZMUSC Practitioner Fellow. He works as a consultant rheumatologist at the Queen Elizabeth Hospital in Adelaide.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> All recommendations</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1Ekp3PAIUKkPd0Ud21HWznQdO24gMOuHM96wE_UvBvEM/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar chair">RB</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Rachelle Buchbinder<span class="role-badge chair">Chair</span></h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Professor Buchbinder is a rheumatologist and epidemiologist. She chairs the Australian Living Guideline panel, and is Chair of the Executive Committee, NHMRC Centre of Research Excellence for the Australia and New Zealand Musculoskeletal (ANZMUSC) Clinical Trials Network. She is Coordinating Editor of Cochrane Musculoskeletal. She has been the Director of the Monash Department of Clinical Epidemiology since its inception in 2001 and a Professor in the Monash University Department of Epidemiology and Preventive Medicine since 2007. She is a rheumatologist and clinical epidemiologist who combines clinical practice with research in a wide range of multidisciplinary projects relating to arthritis and musculoskeletal conditions.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> All recommendations</p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="pharmacist">
+                <div class="panellist-avatar">SB</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Simon Bell</h3>
+                    <p class="panellist-profession">Pharmacist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Professor Simon Bell is Professor and Director, Centre for Medicine Use and Safety, Monash University. He is also Adjunct Professor of Geriatric Pharmacotherapy, Faculty of Health Sciences, University of Eastern Finland. Professor Bell&#x27;s research interests primarily relate to medicines use among older people, particularly psychotropic and analgesic medicines. He has published more than 340 articles in scientific journals and been an investigator on over $45 million of research grants.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop GCs, RA opioids, axSpA opioids, PsA opioids</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1nS2BXG8FbndnjrqMOZTnK-Vt3T1tvnm3Vb7KWns5RII/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">CF</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Chris Fong</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Eastern Health</p>
+                    <p class="panellist-bio">Dr. Christopher Fong is a Geriatrician and Rheumatologist. He has a special interest in musculoskeletal rehabilitation, psoriatic and rheumatoid arthritis and ankylosong spondylitis. </p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, TNFi-IR, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop DMARDs, Lab monitoring, Periop GCs, RA opioids, GC flare, Long-term GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1_ktG3nPoJtqSVhNEY0gv8inf5HtTv_cc1VZNYvnaw5I/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="immunologist">
+                <div class="panellist-avatar">PH</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Pravin Hissaria</h3>
+                    <p class="panellist-profession">Immunologist</p>
+                    <p class="panellist-institution">SA Pathology</p>
+                    <p class="panellist-bio">Prof Pravin Hissaria is a Senior Clinical Immunologist at the Royal Adelaide Hospital, Immunopathologist at SA Pathology and Clinical Associate Professor in the Adelaide University Department of Medicine. Dr Hissaria has a strong interest in all aspects of Clinical and Lab Immunology and is currently a member of the Royal College of Pathologists Australia Immunopathology Advisory committee and QAP committee. His main clinical interests are in setting up registries of rare autoimmune and auto-inflammatory diseases.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, b/ts vs cs tapering, Lab monitoring, Periop GCs, RA opioids, axSpA opioids, PsA opioids, Long-term GC, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1z2T57Wng7zxU64aE6T-gmcHisr-fcJ96p8qsS5v1uYg/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="consumer">
+                <div class="panellist-avatar">BH</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Mr Ben Horgan</h3>
+                    <p class="panellist-profession">Consumer Representative</p>
+                    <p class="panellist-institution">Royal Perth Bentley Group</p>
+                    <p class="panellist-bio">After being diagnosed with Juvenile Idiopathic Arthritis at the age of 2, Ben has spent his life within the health system. After a 10-year career as a radio announcer working across Australia, Ben began a career as a consumer advocate working in Sydney, Canberra and Perth.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, RA b/tsDMARD tapering, b/ts vs cs tapering, axSpA opioids, PsA opioids, GC flare, Long-term GC, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/14Pb9mBInr0KD5IuNJ-FluAyYMQL__0sMDao6uAkZ9ZY/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">LM</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Lyn March</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">University of Sydney</p>
+                    <p class="panellist-bio">Professor Lyn March is the Head of Rheumatology at Sydney’s Royal North Shore Hospital and Liggins Professor of Rheumatology and Musculoskeletal Epidemiology at Sydney University.She has been an active clinician and researcher for more than 25 years. She was made a Member of the Order of Australia for her significant services in the areas of rheumatology and clinical epidemiology as an academic, researcher and clinician. She led the international expert group that generated the latest global burden of musculoskeletal disease data. Lyn is an executive member of OMERACT the international group standardising patient reported outcome measures in rheumatology, on the Executive Committee for the Global Alliance for MSK Health, Co-lead of their Surveillance Task Force and member of their WHO working party.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, PsA csDMARD tapering, Lab monitoring, Periop GCs, Long-term GC, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1vQUUllh1Rmqd7vipxR100bz2h9Ca0WRQljrmZ2KpJy0/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="consumer">
+                <div class="panellist-avatar">SM</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Ms Suzie Edward May</h3>
+                    <p class="panellist-profession">Consumer Representative</p>
+                    <p class="panellist-institution">Giving Voice</p>
+                    <p class="panellist-bio">Ms Suzie Edward May has over 20 years’ experience as a consumer advocate in musculoskeletal disease, health governance and systemic health reform. She has been a Guest Lecturer in chronic and musculoskeletal disease at Western Australian medical schools annually since 2006. As a lawyer and legal consultant, Suzie works in government law; justice and prison reform; and public health law.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop DMARDs, Lab monitoring, RA opioids</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/11cva07AFi4hFRwEOEHq6FfQJWdYGmcLJr-PJ2rdKzG8/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">AO</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Sean O&#x27;Neill</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">University of Sydney</p>
+                    <p class="panellist-bio">A/Prof Sean O&#x27;Neill is a senior consultant rheumatologist at Royal North Shore Hospital and an Associate Professor at the University of Sydney.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, b/ts vs cs tapering, Periop DMARDs, Lab monitoring, Periop GCs, RA opioids, axSpA opioids, PsA opioids, Long-term GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1J0EKIoLnz4hlvlViWZ8shouBk1Bx9zXYuZ9EgO60TcM/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">HP</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Huai Leng (Jessica) Pisaniello</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Huai Leng (Jessica) Pisaniello is a Post-doctoral Research Fellow in the Musculoskeletal Health and Wiser Health Care Units within the School of Public Health and Preventive Medicine at Monash University (since 2024). She recently completed her PhD (2018-24) at the University of Adelaide. Jessica is also a consultant rheumatologist in private practice in Victoria (and previously in South Australia). She is an Honorary Clinical Research Fellow at the University of Manchester (2019-25).</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, b/ts vs cs tapering, Periop DMARDs, Periop GCs, RA opioids, axSpA opioids, PsA opioids, GC flare, Long-term GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1eyE0-6dOrjvy0q1acxf23olTzrBaAJLd-9LTeeCPtqY/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="gp">
+                <div class="panellist-avatar">LT</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Lyndal Trevena</h3>
+                    <p class="panellist-profession">General Practitioner</p>
+                    <p class="panellist-institution">University of Sydney</p>
+                    <p class="panellist-bio">Professor Lyndal Trevena is a General Practitioner, Specialist Consultant in Health and Professor Emerita at the University of Sydney. She commenced her academic career in 1999, after 13 years in clinical practice and has published over 200 peer-reviewed papers. In 2022 she was listed in the top 100,000 scientists worldwide and in the top 2% of researchers in her field.Her impact factor (H-index) is 46 with almost 9,000 citations since 2018. Since retiring from the University of Sydney in March 2021, she has been working as a Specialist Consultant in Health and was awarded a lifetime Emeritus Professorial appointment at the University of Sydney. She also provides pro bono general practice care to refugees at the Asylum Seeker’s Centre in Sydney.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, Lab monitoring, Periop GCs, RA opioids, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/17q3ySZ5rO5lC0n3rF61DDKHpIZZdWNKWLCgWnqAq65w/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="podiatrist">
+                <div class="panellist-avatar">GW</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Glen Whittaker</h3>
+                    <p class="panellist-profession">Podiatrist</p>
+                    <p class="panellist-institution">La Trobe University</p>
+                    <p class="panellist-bio">Dr Glen Whittaker is a Senior Lecturer and early career researcher with a clinical and academic background in podiatry. Glen is primarily interested in musculoskeletal conditions of the foot, particularly the heel. Clinically, Glen is an experienced podiatrist who is endorsed to prescribe scheduled medicines. In addition, Glen is the Professional Development coordinator for the Rheumatology Health Professionals Special Interest Group.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, RA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, b/ts vs cs tapering, Periop DMARDs, Lab monitoring, Periop GCs, RA opioids, axSpA opioids, PsA opioids, GC flare, Long-term GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1F0U-f7pRHZ3AGufR_nkx7trTytBN0hRL1UD8IVkVJT8/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">AW</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Anita Wluka</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Professor Anita Wluka is a senior staff specialist at the Alfred Hospital and a Professor at Monash University, in the School of Public Health and Preventive Medicine. Professor Wluka is a Chief Investigator on a number of ongoing clinical trials funded by the National Health and Medical Research Council (NHMRC). She is one of the most published authors internationally in her area of interest, osteoarthritis, and has over 200 publications in internationally peer reviewed journals. Her other areas of interest include gout and other musculoskeletal conditions. </p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Initial DMARD, MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, RA b/tsDMARD tapering, axSpA bDMARD tapering, PsA b/tsDMARD tapering, b/ts vs cs tapering, Periop DMARDs, Periop GCs, RA opioids, axSpA opioids, PsA opioids, GC flare, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1V6a69x3xDRL0WFRh1gjMdSuE83LOhvWaZewiwsq51RE/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="pharmacist">
+                <div class="panellist-avatar">MS</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Mouna Sawan</h3>
+                    <p class="panellist-profession">Pharmacist</p>
+                    <p class="panellist-institution">University of Sydney</p>
+                    <p class="panellist-bio">Dr Mouna Sawan is a pharmacist, early to mid-career pharmacist researcher and Dementia Fellow (PhD 2017) with expertise in medication safety and dementia, based in the School of Pharmacy, Faculty of Medicine and Health, University of Sydney. She specialises in medication safety in people with dementia post-diagnosis, health services research, person-centred medication management, and implementation science.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> GC flare</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1jLOteUVVVIYGEcufYjHeS_RQYczfUWHTAZZwjYUe3zc/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="orthopaedic-surgeon">
+                <div class="panellist-avatar">AS</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Peter Smitham</h3>
+                    <p class="panellist-profession">Orthopaedic Surgeon</p>
+                    <p class="panellist-institution">University of Adelaide</p>
+                    <p class="panellist-bio">A/Prof Peter Smitham is an orthopaedic surgeon with extensive experience in orthopaedic trauma, hip, knee and lower limb care. He currently serves as an Associate Professor at the University of Adelaide and as a Consultant at the Royal Adelaide Hospital, combining clinical practice with cutting edge research and medical education.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Periop DMARDs</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1CD-iu5TLQRfb_edJ_QsH41pbqVBB0rqPf3yqBDFgW-U/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="evidence-team">
+                <div class="panellist-avatar">RJ</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Renea Johnston</h3>
+                    <p class="panellist-profession">Evidence Team</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Renea Johnston currently works at the Musculoskeletal Health and Wiser Health Care Unit at the School of Public Health and Preventive Medicine, Monash University (Australia). Renea is a Managing Editor of Cochrane Musculoskeletal and the Evidence Synthesis Lead for an Australian Guideline in adult and paediatric rheumatology. She conducts systematic reviews in musculoskeletal disorders, Public Health, Rheumatology, and teaches Systematic Reviews to undergraduates and postgraduates.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> All recommendations</p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="evidence-team">
+                <div class="panellist-avatar">VG</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Vanessa Glennon</h3>
+                    <p class="panellist-profession">Evidence Team</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Vanessa Glennon is the indispensable Project Manager for the Australian Living Guidelines for pharmacologic management of inflammatory arthritis and juvenile idiopathic arthritis</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> All recommendations</p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="consumer">
+                <div class="panellist-avatar">DB</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Danielle Berkovic</h3>
+                    <p class="panellist-profession">Consumer Representative</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr. Danielle Berkovic has lived with psoriatic arthritis for the past 10 years. Due to living with the condition for some time Danielle became passionate about arthritis and musculoskeletal research. She undertook a consumer-led PhD from 2018 – 2021 examining arthritis-related issues specific to working-age adults, such as the work and financial impacts.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> MTX route, TNFi-IR, RA csDMARD tapering, PsA csDMARD tapering, b/ts vs cs tapering</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1bFQmuU9LNppYRfeKQbHP-GtXUZ2RWFx_WVdDkNe9PIY/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">AB</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Rachel Black</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Royal Adelaide Hospital</p>
+                    <p class="panellist-bio">A/Prof Rachel Black is a rheumatologist and clinician researcher who completed her PhD in 2019 looking at the epidemiology and patient perspectives of glucocorticoid use and adverse effects in rheumatoid arthritis and other inflammatory diseases. Her interests include pharmacoepidemiology and the use of big data to answer research questions directly relevant to her clinical practice in rheumatology.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> MTX route, RA csDMARD tapering, PsA csDMARD tapering, Bridging GC</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1XKaxooRM4LwBz-Y--6sdS5AAzMLfnhwiEoM1AD34Jf4/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="pharmacist">
+                <div class="panellist-avatar">AC</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Amanda Cross</h3>
+                    <p class="panellist-profession">Pharmacist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Amanda Cross is an NHMRC Emerging Leader research fellow at the Centre for Medicine Use and Safety, Monash University. Prior to taking up her present appointment, Dr Cross worked as a research fellow in dementia at Monash University and a research fellow with the Australian and New Zealand Musculoskeletal Clinical Trials Network (ANZMUSC), Cabrini Institute. Dr Cross completed her PhD with Monash University in 2019 focussing on optimising medication use and medication management in older people with cognitive impairment.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> RA csDMARD tapering, PsA csDMARD tapering, Periop GCs</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1zk7fUq8kO2lp8OjPt9Hp5VK3nq61_bEkVJuh-q74qY4/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">AK</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Helen Keen</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">University of Western Australia</p>
+                    <p class="panellist-bio">Dr Helen Keen is an experienced general rheumatologist. She completed medical school at UWA, before undertaking further training in Sydney, Perth and Adelaide. She completed a PhD in Leeds, in the United Kingdom focusing on ultrasonography, before returning to Perth. She has extensive experience in research, most recently working on gout, rheumatoid arthritis and GCA. She is the Vice President of the Australian Rheumatology Association.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> MTX route, TNFi-IR, PsA csDMARD tapering, Periop GCs</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1i__KCjms3UBRrh-4f38ZwpPZ9sFN-z00JeappgIRDpc/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="consumer">
+                <div class="panellist-avatar">AM</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Ms Annie McPherson</h3>
+                    <p class="panellist-profession">Consumer Representative</p>
+                    <p class="panellist-institution">ANZMUSC Consumer Advisory Group</p>
+                    <p class="panellist-bio">Annie McPherson has been living with Ankylosing Spondylitis (AS) for over 50 years. This inflammatory arthritis condition affects her mobility and flexibility including her back, neck, and peripheral joints. After complications from her AS, related osteoarthritis and osteoporosis, Annie was forced to retire aged 47 years. In 2005, Annie co-founded the Ankylosing Spondylitis Victoria Inc. peer support group and remains President. Annie has been a consumer representative with the ANZMUSC network since its conception. </p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Periop GCs</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1a3eMjIlvMD-nQCVufc73B1hbW-FNc5-o3gv6-hfxJ54/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">CH</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Prof Catherine Hill</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">University of Adelaide</p>
+                    <p class="panellist-bio">Professor Catherine Hill is a clinical rheumatologist and epidemiologist with international expertise in evidence-based healthcare, population epidemiology, and clinical trials. She leads the Rheumatology Research Group at the Basil Hetzel Institute, is the South Australian hub lead for the Australian Arthritis and Autoimmune Biobank, and was awarded the 2022 Parr Prize for Rheumatology Research Excellence.
+She has held major national and international leadership roles, including President of the Australian Rheumatology Association (2020–22), Chair of the APLAR Education Committee, and senior appointments in health technology assessment (PBAC, TGA, SAMEP), alongside extensive research leadership in osteoarthritis, vasculitis (including founding the SA Giant Cell Arteritis Registry), and OMERACT outcome measure development.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Lab monitoring</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/16aXhv-FpFzqHuzYs2FWRxVmy_NHyNPwYUDWA565GAEs/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="gp">
+                <div class="panellist-avatar">NN</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Navid Nazarian</h3>
+                    <p class="panellist-profession">General Practitioner</p>
+                    <p class="panellist-institution">General Practice</p>
+                    <p class="panellist-bio">Dr Navid Nazarian is a general practitioner specialising in musculoskeletal and sports injuries. He serves as the Chair of the RACGP Musculoskeletal, Sports, and Exercise Medicine Special Interest Group.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> Lab monitoring</p>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1ES4BqAsLma_MxPaWK-HTkitLtsCin75hGtcmrLjfNgM/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="rheumatologist">
+                <div class="panellist-avatar">AR</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Philip Robinson</h3>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Metro North Hospital and Health Service</p>
+                    <p class="panellist-bio">The late Phil Robinson was an outstanding and much-loved clinician researcher and valued member of the Australian rheumatology community. </p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> RA opioids</p>
+                </div>
+            </div>
+            <div class="panellist-card" data-profession="methodologist">
+                <div class="panellist-avatar chair">SB</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Sue Brennan<span class="role-badge facilitator">Facilitator</span></h3>
+                    <p class="panellist-profession">Methodologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Sue Brennan leads the Melbourne GRADE centre, is an elected member of the GRADE Guidance Group, and co-lead on research to inform the development of GRADE guidance for overviews. In her role at Cochrane Australia, she leads systematic reviews and methodological review of guidelines commissioned by government, methodological research, and provides consultancy and training on the use of GRADE.</p>
+                    <p class="panellist-recs"><strong>Recommendations:</strong> TNFi-IR, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop DMARDs, RA opioids, axSpA opioids, PsA opioids</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ANZMUSC. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.profession-filter').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.profession-filter').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const profession = this.dataset.profession;
+                
+                document.querySelectorAll('.panellist-card').forEach(card => {
+                    if (profession === 'all' || card.dataset.profession === profession) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
