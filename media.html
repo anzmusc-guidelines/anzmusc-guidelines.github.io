@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Australian Living Guideline for Inflammatory Arthritis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-teal: #0d9488;
+            --primary-teal-light: #14b8a6;
+            --primary-teal-dark: #0f766e;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefdfb;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --border-medium: #d1d5db;
+            --white: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        header { background: var(--white); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary-blue); padding: 8px 0; }
+        .header-top-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: flex-end; gap: 24px; }
+        .header-top a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-top a:hover { color: var(--white); }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-image { height: 50px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); }
+        .logo-subtitle { font-size: 13px; color: var(--text-light); }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; }
+        .nav-item { position: relative; }
+        .nav-link { display: flex; align-items: center; gap: 6px; padding: 10px 16px; color: var(--text-medium); text-decoration: none; font-size: 15px; font-weight: 500; border-radius: var(--radius-sm); transition: all 0.2s; }
+        .nav-link:hover { color: var(--primary-teal); background: var(--bg-light); }
+        .nav-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-item:hover .nav-link svg { transform: rotate(180deg); }
+        .dropdown { position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s; padding: 8px; z-index: 100; }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
+        .dropdown a:hover { background: var(--bg-light); color: var(--primary-teal); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 60px 24px; }
+        .page-header-content { max-width: 900px; margin: 0 auto; }
+        .page-header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--white); margin-bottom: 16px; }
+        .page-header p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.7; }
+
+        /* Main Content */
+        .main-content { padding: 60px 24px; }
+        .content-container { max-width: 900px; margin: 0 auto; }
+
+        /* Back link */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
+        .back-link:hover { text-decoration: underline; }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* Media Items */
+        .media-list { display: flex; flex-direction: column; gap: 24px; }
+        
+        .media-item { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; }
+        .media-item:hover { border-color: var(--primary-teal); box-shadow: var(--shadow-lg); }
+        
+        .media-item-content { padding: 28px; }
+        
+        .media-source { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-teal); margin-bottom: 12px; }
+        .media-source svg { width: 16px; height: 16px; }
+        
+        .media-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--text-dark); line-height: 1.4; margin-bottom: 12px; }
+        .media-title a { color: inherit; text-decoration: none; }
+        .media-title a:hover { color: var(--primary-teal); }
+        
+        .media-excerpt { font-size: 15px; color: var(--text-medium); line-height: 1.7; margin-bottom: 16px; }
+        
+        .media-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        
+        .media-date { font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
+        .media-date svg { width: 14px; height: 14px; }
+        
+        .media-link { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; }
+        .media-link:hover { text-decoration: underline; }
+        .media-link svg { width: 14px; height: 14px; }
+
+        /* Section Headers */
+        .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
+
+        /* Empty State */
+        .empty-state { text-align: center; padding: 60px 40px; background: var(--bg-light); border-radius: var(--radius-lg); border: 2px dashed var(--border-medium); }
+        .empty-state h3 { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+        .empty-state p { font-size: 14px; color: var(--text-light); }
+
+        /* Footer */
+        footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .footer-column h4 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 0; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
+        .footer-links a:hover { color: var(--white); }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .media-item-content { padding: 20px; }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQKQVSHVS5');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <a href="https://anzmusc.org" target="_blank">ANZMUSC</a>
+                <a href="https://rheumatology.org.au" target="_blank">Australian Rheumatology Association</a>
+                <a href="https://musculoskeletal.cochrane.org" target="_blank">Cochrane Musculoskeletal</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-title">Australian Living Guideline</div>
+                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                </div>
+            </a>
+            <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="#">How to Use This Guideline</a>
+                        <a href="#">Who We Are</a>
+                        <a href="panellists.html">Panel Members</a>
+                        <a href="#">Methodology</a>
+                        <a href="#">Funding & Support</a>
+                        <a href="#">Conflicts of Interest</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="abbreviations.html">Abbreviations</a>
+                        <a href="media.html">Media</a>
+                        <a href="#">External Links</a>
+                        <a href="#">Consumer Information</a>
+                    </div>
+                </div>
+                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Media Coverage</h1>
+            <p>News articles and media coverage about our living guideline for inflammatory arthritis.</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="content-container">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+                Back to Recommendations
+            </a>
+
+            <h2 class="section-title">News Coverage</h2>
+
+            <div class="media-list">
+                <!-- Media Item 1 -->
+                <article class="media-item">
+                    <div class="media-item-content">
+                        <div class="media-source">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v11.75A2.75 2.75 0 0016.75 18h-12A2.75 2.75 0 012 15.25V3.5zm3.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zm0 3a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 5.75A.75.75 0 015.75 5h4.5a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75h-4.5A.75.75 0 015 8.25v-2.5z" clip-rule="evenodd"/><path d="M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z"/></svg>
+                            The Hospital Research Foundation Group
+                        </div>
+                        <h3 class="media-title">
+                            <a href="https://hospitalresearch.org.au/news/latest-news/world-first-care-guidelines-for-arthritis/" target="_blank">World-first care guidelines for arthritis</a>
+                        </h3>
+                        <p class="media-excerpt">
+                            Coverage of the Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis, highlighting its innovative "living" methodology that enables recommendations to be updated as new evidence emerges.
+                        </p>
+                        <div class="media-meta">
+                            <span class="media-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                                2021
+                            </span>
+                            <a href="https://hospitalresearch.org.au/news/latest-news/world-first-care-guidelines-for-arthritis/" target="_blank" class="media-link">
+                                Read article
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+<!-- Media Item 2 -->
+                <article class="media-item">
+                    <div class="media-item-content">
+                        <div class="media-source">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v11.75A2.75 2.75 0 0016.75 18h-12A2.75 2.75 0 012 15.25V3.5zm3.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zm0 3a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 5.75A.75.75 0 015.75 5h4.5a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75h-4.5A.75.75 0 015 8.25v-2.5z" clip-rule="evenodd"/><path d="M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z"/></svg>
+                            Central Adelaide Local Health Network
+                        </div>
+                        <h3 class="media-title">
+                            <a href="https://www.calhn.sa.gov.au/news/how-living-guidelines-improve-healthcare-for-you-and-your-grandma" target="_blank">How 'living guidelines' improve healthcare for you – and your grandma</a>
+                        </h3>
+                        <p class="media-excerpt">
+                            "Living guidelines are clinical practice guidelines in which each recommendation is updated in near real-time as new evidence is produced," says Dr Sam Whittle, Senior Consultant Rheumatologist at CALHN. This article explores how living guidelines offer a fresh and faster approach to feeding new evidence into healthcare practice.
+                        </p>
+                        <div class="media-meta">
+                            <span class="media-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                                5 November 2024
+                            </span>
+                            <a href="https://www.calhn.sa.gov.au/news/how-living-guidelines-improve-healthcare-for-you-and-your-grandma" target="_blank" class="media-link">
+                                Read article
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Media Item 3 -->
+                <article class="media-item">
+                    <div class="media-item-content">
+                        <div class="media-source">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M7 4a3 3 0 016 0v6a3 3 0 11-6 0V4z"/><path d="M5.5 9.643a.75.75 0 00-1.5 0V10c0 3.06 2.29 5.585 5.25 5.954V17.5h-1.5a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-1.5v-1.546A6.001 6.001 0 0016 10v-.357a.75.75 0 00-1.5 0V10a4.5 4.5 0 01-9 0v-.357z"/></svg>
+                            Rheumatology Republic (Podcast)
+                        </div>
+                        <h3 class="media-title">
+                            <a href="https://rheuma.com.au/australian-living-guidelines-tapering-dmards/19077" target="_blank">Australian living guidelines: tapering DMARDs</a>
+                        </h3>
+                        <p class="media-excerpt">
+                            Dr Sam Whittle joins the Rheumatology Republic podcast to discuss his work on living guidelines for rheumatoid arthritis, psoriatic arthritis and axial spondyloarthritis. "Over the last 20 years, we've seen a huge expansion in the number of pharmacological options available... that means it's really the perfect theatre for a living guideline."
+                        </p>
+                        <div class="media-meta">
+                            <span class="media-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                                21 April 2021
+                            </span>
+                            <a href="https://rheuma.com.au/australian-living-guidelines-tapering-dmards/19077" target="_blank" class="media-link">
+                                Listen/Read
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Add more media items here as needed -->
+                <!-- Template for additional items:
+                <article class="media-item">
+                    <div class="media-item-content">
+                        <div class="media-source">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v11.75A2.75 2.75 0 0016.75 18h-12A2.75 2.75 0 012 15.25V3.5zm3.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zm0 3a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 5.75A.75.75 0 015.75 5h4.5a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75h-4.5A.75.75 0 015 8.25v-2.5z" clip-rule="evenodd"/><path d="M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z"/></svg>
+                            Source Name
+                        </div>
+                        <h3 class="media-title">
+                            <a href="URL" target="_blank">Article Title</a>
+                        </h3>
+                        <p class="media-excerpt">
+                            Brief description of the article.
+                        </p>
+                        <div class="media-meta">
+                            <span class="media-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                                Date
+                            </span>
+                            <a href="URL" target="_blank" class="media-link">
+                                Read article
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                -->
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Australian Living Guideline</h3>
+                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#recommendations">Recommendations</a>
+                    <a href="panellists.html">Panel Members</a>
+                    <a href="abbreviations.html">Abbreviations</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Methodology</a>
+                    <a href="media.html">Media</a>
+                    <a href="#">External Links</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="mailto:livingguidelines@anzmusc.org">livingguidelines@anzmusc.org</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
