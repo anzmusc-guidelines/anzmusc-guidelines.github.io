@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Australian Living Guideline for Inflammatory Arthritis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-teal: #0d9488;
+            --primary-teal-light: #14b8a6;
+            --primary-teal-dark: #0f766e;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefdfb;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --border-medium: #d1d5db;
+            --white: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        header { background: var(--white); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary-blue); padding: 8px 0; }
+        .header-top-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: flex-end; gap: 24px; }
+        .header-top a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-top a:hover { color: var(--white); }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-image { height: 50px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); }
+        .logo-subtitle { font-size: 13px; color: var(--text-light); }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; }
+        .nav-item { position: relative; }
+        .nav-link { display: flex; align-items: center; gap: 6px; padding: 10px 16px; color: var(--text-medium); text-decoration: none; font-size: 15px; font-weight: 500; border-radius: var(--radius-sm); transition: all 0.2s; }
+        .nav-link:hover { color: var(--primary-teal); background: var(--bg-light); }
+        .nav-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-item:hover .nav-link svg { transform: rotate(180deg); }
+        .dropdown { position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s; padding: 8px; z-index: 100; }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
+        .dropdown a:hover { background: var(--bg-light); color: var(--primary-teal); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 60px 24px; }
+        .page-header-content { max-width: 900px; margin: 0 auto; }
+        .page-header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--white); margin-bottom: 16px; }
+        .page-header p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.7; }
+
+        /* Main Content */
+        .main-content { padding: 60px 24px; }
+        .content-container { max-width: 700px; margin: 0 auto; }
+
+        /* Back link */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
+        .back-link:hover { text-decoration: underline; }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* Contact Card */
+        .contact-card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; border: 1px solid var(--border-light); }
+        .contact-card-header { background: var(--bg-light); padding: 24px 32px; border-bottom: 1px solid var(--border-light); }
+        .contact-card-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; }
+        .contact-card-header p { font-size: 15px; color: var(--text-medium); }
+        .contact-card-body { padding: 32px; }
+        
+        .contact-person { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; }
+        .contact-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 600; color: var(--white); flex-shrink: 0; }
+        .contact-details h3 { font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+        .contact-details .role { font-size: 15px; color: var(--text-medium); margin-bottom: 2px; }
+        .contact-details .institution { font-size: 14px; color: var(--text-light); }
+        
+        .contact-method { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--bg-light); border-radius: var(--radius-md); }
+        .contact-icon { width: 48px; height: 48px; background: var(--primary-teal); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .contact-icon svg { width: 24px; height: 24px; color: var(--white); }
+        .contact-info { flex: 1; }
+        .contact-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); margin-bottom: 4px; }
+        .contact-value { font-size: 16px; color: var(--text-dark); }
+        .contact-value a { color: var(--primary-teal); text-decoration: none; font-weight: 500; }
+        .contact-value a:hover { text-decoration: underline; }
+
+        /* Feedback Section */
+        .feedback-section { margin-top: 40px; padding: 28px; background: var(--bg-light); border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .feedback-section h3 { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .feedback-section h3 svg { width: 20px; height: 20px; color: var(--primary-teal); }
+        .feedback-section p { font-size: 15px; color: var(--text-medium); line-height: 1.7; margin-bottom: 16px; }
+        .feedback-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--primary-teal); color: var(--white); text-decoration: none; font-size: 14px; font-weight: 600; border-radius: var(--radius-md); transition: all 0.2s; }
+        .feedback-link:hover { background: var(--primary-teal-light); }
+        .feedback-link svg { width: 16px; height: 16px; }
+
+        /* Footer */
+        footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .footer-column h4 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 0; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copyright { font-size: 14px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .contact-person { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <a href="https://www.anzmusc.org" target="_blank">ANZMUSC</a>
+                <a href="https://rheumatology.org.au" target="_blank">Australian Rheumatology Association</a>
+                <a href="https://musculoskeletal.cochrane.org" target="_blank">Cochrane Musculoskeletal</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-title">Australian Living Guideline</div>
+                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                </div>
+            </a>
+            <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="how-to-use.html">How to Use This Guideline</a>
+                        <a href="who-we-are.html">Who We Are</a>
+                        <a href="panellists.html">Panel Members</a>
+                        <a href="methodology.html">Methodology</a>
+                        <a href="funding.html">Funding & Support</a>
+                        <a href="coi.html">Conflicts of Interest</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="abbreviations.html">Abbreviations</a>
+                        <a href="media.html">Media</a>
+                    </div>
+                </div>
+                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with the guideline project team for enquiries, feedback, or collaboration opportunities.</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="content-container">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+                Back to Recommendations
+            </a>
+
+            <div class="contact-card">
+                <div class="contact-card-header">
+                    <h2>Project Manager</h2>
+                    <p>For all enquiries related to the Australian Living Guideline for Inflammatory Arthritis</p>
+                </div>
+                <div class="contact-card-body">
+                    <div class="contact-person">
+                        <div class="contact-avatar">VG</div>
+                        <div class="contact-details">
+                            <h3>Dr Vanessa Glennon</h3>
+                            <div class="role">Project Manager</div>
+                            <div class="institution">ANZMUSC Clinical Trials Network</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value"><a href="mailto:vanessa.glennon@monash.edu">vanessa.glennon@monash.edu</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-section">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902.848.137 1.705.248 2.57.331v3.443a.75.75 0 001.28.53l3.58-3.579a.78.78 0 01.527-.224 41.202 41.202 0 005.183-.5c1.437-.232 2.43-1.49 2.43-2.903V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zm0 7a1 1 0 100-2 1 1 0 000 2zM8 8a1 1 0 11-2 0 1 1 0 012 0zm5 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    Recommendation Feedback
+                </h3>
+                <p>Have feedback on a specific recommendation? You can submit your comments directly through our feedback form. We welcome suggestions for improving the guideline content, identifying errors, or highlighting new evidence.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank" class="feedback-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
+                    Submit Feedback
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Australian Living Guideline</h3>
+                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>The Guideline</h4>
+                    <a href="index.html#recommendations">Recommendations</a>
+                    <a href="how-to-use.html">How to Use</a>
+                    <a href="methodology.html">Methodology</a>
+                </div>
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <a href="who-we-are.html">Who We Are</a>
+                    <a href="panellists.html">Panel Members</a>
+                    <a href="funding.html">Funding</a>
+                    <a href="coi.html">Conflicts of Interest</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="abbreviations.html">Abbreviations</a>
+                    <a href="media.html">Media</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
