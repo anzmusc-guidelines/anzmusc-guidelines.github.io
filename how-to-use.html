@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use This Guideline - Australian Living Guideline for Inflammatory Arthritis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-teal: #0d9488;
+            --primary-teal-light: #14b8a6;
+            --primary-teal-dark: #0f766e;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefdfb;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --border-medium: #d1d5db;
+            --white: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --strong-for: #166534;
+            --strong-for-bg: #dcfce7;
+            --strong-against: #dc2626;
+            --strong-against-bg: #fee2e2;
+            --conditional-for: #a16207;
+            --conditional-for-bg: #fef3c7;
+            --conditional-against: #c2410c;
+            --conditional-against-bg: #ffedd5;
+            --consensus: #6d28d9;
+            --consensus-bg: #ede9fe;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        header { background: var(--white); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary-blue); padding: 8px 0; }
+        .header-top-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: flex-end; gap: 24px; }
+        .header-top a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-top a:hover { color: var(--white); }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-image { height: 50px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); }
+        .logo-subtitle { font-size: 13px; color: var(--text-light); }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; }
+        .nav-item { position: relative; }
+        .nav-link { display: flex; align-items: center; gap: 6px; padding: 10px 16px; color: var(--text-medium); text-decoration: none; font-size: 15px; font-weight: 500; border-radius: var(--radius-sm); transition: all 0.2s; }
+        .nav-link:hover { color: var(--primary-teal); background: var(--bg-light); }
+        .nav-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-item:hover .nav-link svg { transform: rotate(180deg); }
+        .dropdown { position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s; padding: 8px; z-index: 100; }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
+        .dropdown a:hover { background: var(--bg-light); color: var(--primary-teal); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 60px 24px; }
+        .page-header-content { max-width: 900px; margin: 0 auto; }
+        .page-header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--white); margin-bottom: 16px; }
+        .page-header p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.7; }
+
+        /* Main Content */
+        .main-content { padding: 60px 24px; }
+        .content-container { max-width: 900px; margin: 0 auto; }
+
+        /* Back link */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
+        .back-link:hover { text-decoration: underline; }
+        .back-link svg { width: 16px; height: 16px; }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 48px; }
+        .content-section:last-child { margin-bottom: 0; }
+        .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
+        .subsection-title { font-size: 18px; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px 0; }
+        .content-section p { font-size: 16px; color: var(--text-medium); line-height: 1.8; margin-bottom: 16px; }
+        .content-section p:last-child { margin-bottom: 0; }
+        .content-section a { color: var(--primary-teal); text-decoration: none; }
+        .content-section a:hover { text-decoration: underline; }
+
+        /* DMARD Cards */
+        .dmard-cards { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+        .dmard-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px 24px; border-left: 4px solid var(--primary-teal); }
+        .dmard-card h4 { font-size: 16px; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; }
+        .dmard-card .abbrev { color: var(--primary-teal); font-weight: 600; }
+        .dmard-card p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
+        .dmard-card .examples { font-style: italic; color: var(--text-light); margin-top: 6px; }
+
+        /* Strength Cards */
+        .strength-cards { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+        .strength-card { display: flex; gap: 16px; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .strength-card.strong-for { background: var(--strong-for-bg); border-color: var(--strong-for); }
+        .strength-card.strong-against { background: var(--strong-against-bg); border-color: var(--strong-against); }
+        .strength-card.conditional-for { background: var(--conditional-for-bg); border-color: var(--conditional-for); }
+        .strength-card.conditional-against { background: var(--conditional-against-bg); border-color: var(--conditional-against); }
+        .strength-card.consensus { background: var(--consensus-bg); border-color: var(--consensus); }
+        .strength-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .strength-card.strong-for .strength-icon { background: var(--strong-for); color: white; }
+        .strength-card.strong-against .strength-icon { background: var(--strong-against); color: white; }
+        .strength-card.conditional-for .strength-icon { background: var(--conditional-for); color: white; }
+        .strength-card.conditional-against .strength-icon { background: var(--conditional-against); color: white; }
+        .strength-card.consensus .strength-icon { background: var(--consensus); color: white; }
+        .strength-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+        .strength-card.strong-for .strength-content h3 { color: var(--strong-for); }
+        .strength-card.strong-against .strength-content h3 { color: var(--strong-against); }
+        .strength-card.conditional-for .strength-content h3 { color: var(--conditional-for); }
+        .strength-card.conditional-against .strength-content h3 { color: var(--conditional-against); }
+        .strength-card.consensus .strength-content h3 { color: var(--consensus); }
+        .strength-content p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
+
+        /* Info Items */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+        .info-item { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; }
+        .info-item h4 { font-size: 15px; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; }
+        .info-item p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
+
+        /* Certainty Levels */
+        .certainty-list { margin: 16px 0; }
+        .certainty-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-light); }
+        .certainty-item:last-child { border-bottom: none; }
+        .certainty-badge { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+        .certainty-badge.high { background: #dcfce7; color: #166534; }
+        .certainty-badge.moderate { background: #fef3c7; color: #a16207; }
+        .certainty-badge.low { background: #ffedd5; color: #c2410c; }
+        .certainty-badge.very-low { background: #fee2e2; color: #dc2626; }
+        .certainty-text { font-size: 14px; color: var(--text-medium); line-height: 1.6; }
+
+        /* Tab Descriptions */
+        .tab-descriptions { margin: 24px 0; }
+        .tab-item { padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+        .tab-item:last-child { border-bottom: none; }
+        .tab-name { font-weight: 600; color: var(--primary-teal); margin-bottom: 4px; }
+        .tab-desc { font-size: 14px; color: var(--text-medium); line-height: 1.6; }
+
+        /* Highlight Box */
+        .highlight-box { background: var(--bg-light); border-left: 4px solid var(--primary-teal); padding: 20px 24px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 24px 0; }
+        .highlight-box p { margin: 0; font-size: 15px; color: var(--text-medium); }
+        .highlight-box a { color: var(--primary-teal); font-weight: 600; }
+
+        /* Footer */
+        footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .footer-column h4 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 0; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
+        .footer-links a:hover { color: var(--white); }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .strength-card { flex-direction: column; gap: 12px; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQKQVSHVS5');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <a href="https://anzmusc.org" target="_blank">ANZMUSC</a>
+                <a href="https://rheumatology.org.au" target="_blank">Australian Rheumatology Association</a>
+                <a href="https://musculoskeletal.cochrane.org" target="_blank">Cochrane Musculoskeletal</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-title">Australian Living Guideline</div>
+                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                </div>
+            </a>
+            <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="how-to-use.html">How to Use This Guideline</a>
+                        <a href="#">Who We Are</a>
+                        <a href="panellists.html">Panel Members</a>
+                        <a href="methodology.html">Methodology</a>
+                        <a href="#">Funding & Support</a>
+                        <a href="coi.html">Conflicts of Interest</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="abbreviations.html">Abbreviations</a>
+                        <a href="media.html">Media</a>
+                        <a href="#">External Links</a>
+                        <a href="#">Consumer Information</a>
+                    </div>
+                </div>
+                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>How to Use This Guideline</h1>
+            <p>Understanding recommendation strength, certainty of evidence, and supporting information.</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="content-container">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+                Back to Recommendations
+            </a>
+
+            <div class="content-section">
+                <h2 class="section-title">Background</h2>
+                <p>Inflammatory arthritis (IA) is characterised by abnormal inflammation in the joints, ligaments and tendons, resulting in pain, stiffness, swelling and loss of function. Uncontrolled inflammation may result in irreversible joint damage.</p>
+                <p>There are many types of IA including rheumatoid arthritis (RA), spondyloarthritis (SpA), psoriatic arthritis (PsA), crystal arthritis (including gout and pseudogout) and autoimmune connective tissue diseases such as systemic lupus erythematosus (SLE). In most cases, there is no cure for IA, so treatments aim to relieve pain and stiffness, improve ability to move, and prevent damage to the joints.</p>
+                
+                <h3 class="subsection-title">Disease-Modifying Anti-Rheumatic Drugs (DMARDs)</h3>
+                <p>DMARDs are the cornerstone of pharmacologic treatment for IA. They control inflammation and thus reduce symptoms and prevent joint damage. DMARDs are categorised according to their structure and mechanisms of action:</p>
+                
+                <div class="dmard-cards">
+                    <div class="dmard-card">
+                        <h4>Conventional Synthetic DMARDs <span class="abbrev">(csDMARDs)</span></h4>
+                        <p>Do not target a specific molecular structure.</p>
+                        <p class="examples">Examples: methotrexate, sulfasalazine, hydroxychloroquine</p>
+                    </div>
+                    <div class="dmard-card">
+                        <h4>Targeted Synthetic DMARDs <span class="abbrev">(tsDMARDs)</span></h4>
+                        <p>A newer class of medications designed to target a specific molecular structure.</p>
+                        <p class="examples">Examples: tofacitinib, baricitinib</p>
+                    </div>
+                    <div class="dmard-card">
+                        <h4>Biologic DMARDs <span class="abbrev">(bDMARDs)</span></h4>
+                        <p>Derived biologically and designed to target specific cells or proteins involved in the inflammatory response. As the complex structure of biologically derived proteins cannot be reproduced exactly, bDMARDs are further classified into bio-originator and biosimilar DMARDs.</p>
+                        <p class="examples">Examples: adalimumab, etanercept, rituximab</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">About Living Guidelines</h2>
+                <p>The treatment of inflammatory arthritis (IA) has evolved rapidly over the last two decades. New approaches to management (including 'treat-to-target') and a rapid expansion in available disease-modifying antirheumatic drugs (DMARDs) have improved outcomes for many people living with IA.</p>
+                <p>The increasing rate of production of new evidence regarding treatment means that recommendations based on current evidence are likely to become outdated quickly as new studies are published. The living evidence approach facilitates rapid updating of recommendations. By frequently incorporating the most up-to-date evidence, these methods ensure that the currency of each recommendation remains high.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Understanding Recommendations</h2>
+                <p>Each recommendation in this guideline is graded according to its strength, which reflects the panel's confidence in the balance between benefits and harms. The guideline consists of two layers: the recommendation itself and the supporting information.</p>
+                
+                <h3 class="subsection-title">Recommendation Strength</h3>
+                <div class="strength-cards">
+                    <div class="strength-card strong-for">
+                        <div class="strength-icon">⊕⊕</div>
+                        <div class="strength-content">
+                            <h3>Strong Recommendation For</h3>
+                            <p>Given when there is high-certainty evidence showing that the overall benefits of the intervention are clearly greater than the disadvantages. This means that all, or nearly all, patients will want the recommended intervention.</p>
+                        </div>
+                    </div>
+                    <div class="strength-card strong-against">
+                        <div class="strength-icon">⊖⊖</div>
+                        <div class="strength-content">
+                            <h3>Strong Recommendation Against</h3>
+                            <p>Given when there is high-certainty evidence showing that the overall disadvantages of the intervention are clearly greater than the benefits. Also used when the examination of the evidence shows that an intervention is not safe.</p>
+                        </div>
+                    </div>
+                    <div class="strength-card conditional-for">
+                        <div class="strength-icon">⊕</div>
+                        <div class="strength-content">
+                            <h3>Conditional Recommendation For</h3>
+                            <p>Given when the benefits of the intervention are considered greater than the disadvantages, or the available evidence cannot rule out a significant benefit while assessing that adverse effects are few or absent. Also used when patient preferences vary.</p>
+                        </div>
+                    </div>
+                    <div class="strength-card conditional-against">
+                        <div class="strength-icon">⊖</div>
+                        <div class="strength-content">
+                            <h3>Conditional Recommendation Against</h3>
+                            <p>Given when the disadvantages of the intervention are judged greater than the benefits, but where this is not substantiated by strong evidence. Also used where there is strong evidence of both beneficial and harmful effects, but where the balance between them is difficult to determine.</p>
+                        </div>
+                    </div>
+                    <div class="strength-card consensus">
+                        <div class="strength-icon">≈</div>
+                        <div class="strength-content">
+                            <h3>Consensus Recommendation</h3>
+                            <p>Can be given for or against an intervention. Used when there is not enough evidence to give an evidence-based recommendation, but the panel still regards it as important to provide guidance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Supporting Information</h2>
+                <p>Click on any recommendation card to access detailed supporting information. Each recommendation includes multiple tabs with additional context:</p>
+                
+                <div class="tab-descriptions">
+                    <div class="tab-item">
+                        <div class="tab-name">Recommendation</div>
+                        <div class="tab-desc">The recommendation text, any remarks or qualifications, and the rationale explaining how the panel weighed the evidence to arrive at the recommendation.</div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-name">Evidence to Decision</div>
+                        <div class="tab-desc">The panel's assessment across seven domains: benefits and harms, certainty of evidence, patient values and preferences, resource use, equity, acceptability, and feasibility.</div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-name">Practical Info</div>
+                        <div class="tab-desc">Implementation guidance, special patient considerations, and links to relevant resources such as patient information sheets and PBS criteria.</div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-name">Data</div>
+                        <div class="tab-desc">The clinical question (PICO) and links to evidence summaries including systematic search results and updates.</div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-name">More Info</div>
+                        <div class="tab-desc">Panel members who contributed to the recommendation, meeting dates, and update history.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Certainty of Evidence</h2>
+                <p>The certainty (or quality) of the evidence reflects how confident we are that the estimated effects are close to the true effects. This is assessed using the GRADE approach:</p>
+                
+                <div class="certainty-list">
+                    <div class="certainty-item">
+                        <span class="certainty-badge high">High</span>
+                        <span class="certainty-text">We are very confident that the true effect is close to the estimated effect.</span>
+                    </div>
+                    <div class="certainty-item">
+                        <span class="certainty-badge moderate">Moderate</span>
+                        <span class="certainty-text">We are moderately confident in the estimated effect. The true effect is probably close to this, but there is a possibility that it is significantly different.</span>
+                    </div>
+                    <div class="certainty-item">
+                        <span class="certainty-badge low">Low</span>
+                        <span class="certainty-text">We have limited confidence in the estimated effect. The true effect may be significantly different from the estimated effect.</span>
+                    </div>
+                    <div class="certainty-item">
+                        <span class="certainty-badge very-low">Very Low</span>
+                        <span class="certainty-text">We have very little confidence in the estimated effect. The true effect is likely to be significantly different from the estimated effect.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Providing Feedback</h2>
+                <p>We welcome feedback on the guideline recommendations. Each recommendation includes a "Suggest feedback" link that allows you to submit comments or suggestions directly to the guideline team.</p>
+                
+                <div class="highlight-box">
+                    <p>The grading of evidence quality and recommendation strength is based on the Grading of Recommendations Assessment, Development and Evaluation (GRADE). For more information, visit the <a href="http://www.gradeworkinggroup.org" target="_blank">GRADE Working Group website</a> or read the article <a href="https://pubmed.ncbi.nlm.nih.gov/23557528/" target="_blank">'Understanding GRADE: an introduction'</a> by Goldet & Howick (J Evid Based Med 2013;6(1):50-4).</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Australian Living Guideline</h3>
+                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html#recommendations">Recommendations</a>
+                    <a href="panellists.html">Panel Members</a>
+                    <a href="abbreviations.html">Abbreviations</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="media.html">Media</a>
+                    <a href="coi.html">Conflicts of Interest</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="/cdn-cgi/l/email-protection#f69a9f809f989191839f92939a9f989385b697988c9b838595d8998491"><span class="__cf_email__" data-cfemail="422e2b342b2c2525372b26272e2b2c273102232c382f3731216c2d3025">[email&#160;protected]</span></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Pr
