@@ -3,7 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australian Living Guideline for Inflammatory Arthritis</title>
+    <title>Australian Living Guideline for Inflammatory Arthritis | Evidence-Based DMARD Recommendations</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Evidence-based clinical recommendations for the pharmacological management of rheumatoid arthritis, axial spondyloarthritis, and psoriatic arthritis. Developed by ANZMUSC, Australian Rheumatology Association, and Cochrane Musculoskeletal.">
+    <meta name="keywords" content="inflammatory arthritis guidelines, rheumatoid arthritis treatment, DMARD guidelines Australia, biologic therapy, axial spondyloarthritis, psoriatic arthritis, clinical recommendations, evidence-based medicine, rheumatology guidelines">
+    <meta name="author" content="ANZMUSC Clinical Trials Network">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://livingguidelines.org/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://livingguidelines.org/">
+    <meta property="og:title" content="Australian Living Guideline for Inflammatory Arthritis">
+    <meta property="og:description" content="Evidence-based clinical recommendations for the pharmacological management of rheumatoid arthritis, axial spondyloarthritis, and psoriatic arthritis.">
+    <meta property="og:site_name" content="Australian Living Guideline for Inflammatory Arthritis">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://livingguidelines.org/">
+    <meta name="twitter:title" content="Australian Living Guideline for Inflammatory Arthritis">
+    <meta name="twitter:description" content="Evidence-based clinical recommendations for the pharmacological management of rheumatoid arthritis, axial spondyloarthritis, and psoriatic arthritis.">
+    
+    <!-- Medical/Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalGuideline",
+        "name": "Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis",
+        "description": "Evidence-based clinical recommendations for the pharmacological management of rheumatoid arthritis, axial spondyloarthritis, and psoriatic arthritis.",
+        "url": "https://livingguidelines.org/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ANZMUSC Clinical Trials Network",
+            "url": "https://anzmusc.org/"
+        },
+        "guideline_date": "2025",
+        "evidence_level": "GRADE methodology",
+        "target_population": "Adults with inflammatory arthritis",
+        "intended_audience": {
+            "@type": "MedicalAudience",
+            "audienceType": "Clinician"
+        },
+        "about": [
+            {
+                "@type": "MedicalCondition",
+                "name": "Rheumatoid Arthritis"
+            },
+            {
+                "@type": "MedicalCondition", 
+                "name": "Axial Spondyloarthritis"
+            },
+            {
+                "@type": "MedicalCondition",
+                "name": "Psoriatic Arthritis"
+            }
+        ]
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -154,7 +212,10 @@
         .modal-close { width: 40px; height: 40px; border: none; background: var(--bg-light); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .modal-close:hover { background: var(--border-light); }
         .modal-close svg { width: 20px; height: 20px; color: var(--text-medium); }
-        .modal-tabs { display: flex; flex-wrap: wrap; padding: 0 32px; border-bottom: 1px solid var(--border-light); background: var(--bg-light); overflow-x: auto; min-height: 50px; }
+        .modal-tabs { display: flex; flex-wrap: nowrap; padding: 0 32px; border-bottom: 1px solid var(--border-light); background: var(--bg-light); overflow-x: auto; min-height: 50px; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; position: relative; }
+        .modal-tabs::-webkit-scrollbar { display: none; }
+        .modal-tabs-container { position: relative; }
+        .modal-tabs-container::after { content: ''; position: absolute; top: 0; right: 0; bottom: 1px; width: 40px; background: linear-gradient(to right, transparent, var(--bg-light)); pointer-events: none; opacity: 1; transition: opacity 0.2s; z-index: 1; }
         .modal-tab { padding: 16px 20px; font-size: 14px; font-weight: 600; color: var(--text-light); cursor: pointer; border: none; border-bottom: 3px solid transparent; margin-bottom: -1px; white-space: nowrap; background: none; }
         .modal-tab:hover { color: var(--text-medium); background: rgba(0,0,0,0.02); }
         .modal-tab.active { color: var(--primary-teal); border-bottom-color: var(--primary-teal); background: var(--white); }
@@ -272,7 +333,7 @@
         .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
         .footer-links a:hover { color: var(--white); }
         @media (max-width: 1024px) { .about-container { grid-template-columns: 1fr; gap: 40px; } .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) { .recommendations-grid { grid-template-columns: 1fr; } .about-features { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } .modal-content { max-height: 100vh; border-radius: 0; } .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; } }
+        @media (max-width: 768px) { .recommendations-grid { grid-template-columns: 1fr; } .about-features { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } .modal-content { max-height: 100vh; border-radius: 0; } .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; } .modal-tabs { padding: 0 16px; gap: 0; } .modal-tab { padding: 14px 16px; font-size: 13px; flex-shrink: 0; } .modal-tabs-container::after { width: 30px; } }
     
         /* Reference superscript styling */
         sup a {
@@ -879,13 +940,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 <div><div class="modal-category">Initial DMARD Therapy</div><h2 class="modal-title">Initial DMARD therapy for people with rheumatoid arthritis</h2></div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-0', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-0', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-0', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-0', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-0', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-0-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1018,13 +1079,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-1', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-1', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-1', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-1', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-1', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-1-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1158,13 +1219,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-2', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-2', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-2', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-2', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-2', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-2-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1314,13 +1375,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-3', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-3', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-3', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-3', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-3', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-3-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1459,13 +1520,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-4', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-4', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-4', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-4', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-4', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-4-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1607,13 +1668,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-5', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-5', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-5', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-5', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-5', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-5-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1744,13 +1805,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-6', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-6', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-6', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-6', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-6', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-6-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -1878,13 +1939,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-7', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-7', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-7', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-7', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-7', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-7-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -2010,13 +2071,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-8', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-8', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-8', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-8', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-8', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-8-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -2164,13 +2225,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-9', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-9', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-9', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-9', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-9', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-9-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -2343,13 +2404,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-10', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-10', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-10', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-10', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-10', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-10-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -2502,13 +2563,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-11', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-11', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-11', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-11', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-11', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-11-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -2632,13 +2693,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-12', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-12', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-12', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-12', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-12', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-12-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -2778,13 +2839,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-13', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-13', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-13', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-13', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-13', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-13-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -2933,13 +2994,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-14', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-14', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-14', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-14', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-14', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-14-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -3074,13 +3135,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-15', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-15', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-15', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-15', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-15', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-15-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
@@ -3197,13 +3258,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-16', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-16', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-16', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-16', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-16', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-16-recommendation">
                     <span class="strength-badge conditional-against">⊖ Conditional Recommendation Against</span>
@@ -3328,13 +3389,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                 </div>
                 <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
-            <div class="modal-tabs">
+            <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-17', 'recommendation')">Recommendation</button>
                 <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-17', 'etd')">Evidence to Decision</button>
                 <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-17', 'practical')">Practical Info</button>
                 <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-17', 'data')">Data</button>
                 <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-17', 'moreinfo')">More Info</button>
-            </div>
+            </div></div>
             <div class="modal-body">
                 <div class="tab-content active" id="rec-17-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
