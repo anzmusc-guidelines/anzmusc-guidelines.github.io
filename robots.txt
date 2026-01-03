@@ -1,0 +1,8 @@
+# Robots.txt for Australian Living Guideline for Inflammatory Arthritis
+# https://livingguidelines.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://livingguidelines.org/sitemap.xml
