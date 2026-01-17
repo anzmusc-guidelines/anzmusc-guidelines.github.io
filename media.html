@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media - Australian Living Guideline for Inflammatory Arthritis</title>
+    <title>Media - Australian Living Guidelines</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -95,11 +95,6 @@
         /* Section Headers */
         .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
 
-        /* Empty State */
-        .empty-state { text-align: center; padding: 60px 40px; background: var(--bg-light); border-radius: var(--radius-lg); border: 2px dashed var(--border-medium); }
-        .empty-state h3 { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-        .empty-state p { font-size: 14px; color: var(--text-light); }
-
         /* Footer */
         footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
         .footer-container { max-width: 1200px; margin: 0 auto; }
@@ -110,14 +105,13 @@
         .footer-column a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 0; }
         .footer-column a:hover { color: var(--white); }
         .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
-        .footer-links a:hover { color: var(--white); }
+        .footer-copyright { font-size: 14px; color: rgba(255,255,255,0.5); }
 
-        @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-            .media-item-content { padding: 20px; }
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -142,19 +136,26 @@
             <a href="index.html" class="logo">
                 <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
                 <div class="logo-text">
-                    <div class="logo-title">Australian Living Guideline</div>
-                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                    <div class="logo-title">Australian Living Guidelines</div>
+                    <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
                 </div>
             </a>
             <nav>
                 <div class="nav-item">
+                    <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="adult/">Adult Inflammatory Arthritis</a>
+                        <a href="jia/">Juvenile Idiopathic Arthritis</a>
+                    </div>
+                </div>
+                <div class="nav-item">
                     <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
-                        <a href="how-to-use.html">How to Use This Guideline</a>
+                        <a href="how-to-use.html">How to Use These Guidelines</a>
                         <a href="who-we-are.html">Who We Are</a>
                         <a href="panellists.html">Panel Members</a>
                         <a href="methodology.html">Methodology</a>
-                        <a href="funding.html">Funding & Support</a>
+                        <a href="funding.html">Funding &amp; Support</a>
                         <a href="coi.html">Conflicts of Interest</a>
                     </div>
                 </div>
@@ -162,11 +163,11 @@
                     <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
                         <a href="abbreviations.html">Abbreviations</a>
+                        <a href="publications.html">Publications</a>
                         <a href="media.html">Media</a>
                     </div>
                 </div>
-                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -174,7 +175,7 @@
     <div class="page-header">
         <div class="page-header-content">
             <h1>Media Coverage</h1>
-            <p>News articles and media coverage about our living guideline for inflammatory arthritis.</p>
+            <p>News articles and media coverage about our living guidelines for inflammatory arthritis.</p>
         </div>
     </div>
 
@@ -182,7 +183,7 @@
         <div class="content-container">
             <a href="index.html" class="back-link">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
-                Back to Recommendations
+                Back to Home
             </a>
 
             <h2 class="section-title">News Coverage</h2>
@@ -214,7 +215,7 @@
                     </div>
                 </article>
 
-<!-- Media Item 2 -->
+                <!-- Media Item 2 -->
                 <article class="media-item">
                     <div class="media-item-content">
                         <div class="media-source">
@@ -265,35 +266,6 @@
                         </div>
                     </div>
                 </article>
-
-                <!-- Add more media items here as needed -->
-                <!-- Template for additional items:
-                <article class="media-item">
-                    <div class="media-item-content">
-                        <div class="media-source">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h9A1.5 1.5 0 0114 3.5v11.75A2.75 2.75 0 0016.75 18h-12A2.75 2.75 0 012 15.25V3.5zm3.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zm0 3a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 5.75A.75.75 0 015.75 5h4.5a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75h-4.5A.75.75 0 015 8.25v-2.5z" clip-rule="evenodd"/><path d="M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z"/></svg>
-                            Source Name
-                        </div>
-                        <h3 class="media-title">
-                            <a href="URL" target="_blank">Article Title</a>
-                        </h3>
-                        <p class="media-excerpt">
-                            Brief description of the article.
-                        </p>
-                        <div class="media-meta">
-                            <span class="media-date">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
-                                Date
-                            </span>
-                            <a href="URL" target="_blank" class="media-link">
-                                Read article
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                -->
-
             </div>
         </div>
     </main>
@@ -302,27 +274,25 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Australian Living Guideline</h3>
-                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                    <h3>Australian Living Guidelines</h3>
+                    <p>Evidence-based clinical recommendations for the management of inflammatory arthritis, developed through collaboration between leading Australian rheumatology organisations.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>The Guideline</h4>
-                    <a href="index.html#recommendations">Recommendations</a>
-                    <a href="how-to-use.html">How to Use</a>
-                    <a href="methodology.html">Methodology</a>
+                    <h4>Guidelines</h4>
+                    <a href="adult/">Adult Inflammatory Arthritis</a>
+                    <a href="jia/">Juvenile Idiopathic Arthritis</a>
                 </div>
                 <div class="footer-column">
-                    <h4>About Us</h4>
+                    <h4>About</h4>
                     <a href="who-we-are.html">Who We Are</a>
-                    <a href="panellists.html">Panel Members</a>
-                    <a href="funding.html">Funding</a>
-                    <a href="coi.html">Conflicts of Interest</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="funding.html">Funding &amp; Support</a>
+                    <a href="publications.html">Publications</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <a href="abbreviations.html">Abbreviations</a>
-                    <a href="media.html">Media</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
