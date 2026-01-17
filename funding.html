@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funding & Support - Australian Living Guideline for Inflammatory Arthritis</title>
+    <title>Funding & Support - Australian Living Guidelines</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
             --primary-teal: #0d9488;
             --primary-teal-light: #14b8a6;
             --primary-teal-dark: #0f766e;
+            --jia-purple: #7c3aed;
             --text-dark: #1f2937;
             --text-medium: #4b5563;
             --text-light: #6b7280;
@@ -61,36 +62,41 @@
         .main-content { padding: 60px 24px; }
         .content-container { max-width: 900px; margin: 0 auto; }
 
-        /* Back link */
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
-        .back-link:hover { text-decoration: underline; }
-        .back-link svg { width: 16px; height: 16px; }
-
         /* Content Sections */
         .content-section { margin-bottom: 48px; }
         .content-section:last-child { margin-bottom: 0; }
         .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
-        .subsection-title { font-size: 18px; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px 0; }
+        .subsection-title { font-size: 18px; font-weight: 600; color: var(--text-dark); margin: 32px 0 16px 0; display: flex; align-items: center; gap: 12px; }
+        .subsection-title:first-of-type { margin-top: 24px; }
         .content-section p { font-size: 16px; color: var(--text-medium); line-height: 1.8; margin-bottom: 16px; }
         .content-section p:last-child { margin-bottom: 0; }
         .content-section a { color: var(--primary-teal); text-decoration: none; }
         .content-section a:hover { text-decoration: underline; }
 
+        /* Guideline Badge */
+        .guideline-badge { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 4px; }
+        .guideline-badge.adult { background: #e0f2f1; color: #0d9488; }
+        .guideline-badge.jia { background: #ede9fe; color: #7c3aed; }
+
         /* Funding List */
-        .funding-list { margin: 24px 0; }
+        .funding-list { margin: 16px 0 32px 0; }
         .funding-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
         .funding-item:last-child { border-bottom: none; }
         .funding-years { font-size: 13px; font-weight: 600; color: var(--primary-teal); background: rgba(13, 148, 136, 0.1); padding: 4px 10px; border-radius: 100px; flex-shrink: 0; height: fit-content; }
+        .funding-years.jia { color: var(--jia-purple); background: rgba(124, 58, 237, 0.1); }
         .funding-details h4 { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
         .funding-details p { font-size: 14px; color: var(--text-medium); margin: 0; }
 
         /* Approval Timeline */
-        .timeline { margin: 24px 0; position: relative; padding-left: 24px; }
+        .timeline { margin: 16px 0 32px 0; position: relative; padding-left: 24px; }
         .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--border-light); }
+        .timeline.jia::before { background: rgba(124, 58, 237, 0.3); }
         .timeline-item { position: relative; padding: 0 0 24px 24px; }
         .timeline-item:last-child { padding-bottom: 0; }
         .timeline-item::before { content: ''; position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-teal); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--primary-teal); }
+        .timeline.jia .timeline-item::before { background: var(--jia-purple); box-shadow: 0 0 0 2px var(--jia-purple); }
         .timeline-date { font-size: 13px; font-weight: 600; color: var(--primary-teal); margin-bottom: 4px; }
+        .timeline.jia .timeline-date { color: var(--jia-purple); }
         .timeline-content { font-size: 15px; color: var(--text-medium); }
         .timeline-content strong { color: var(--text-dark); }
 
@@ -100,8 +106,12 @@
         .nhmrc-box p:last-child { margin-bottom: 0; }
 
         /* Citation Box */
-        .citation-box { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; margin: 16px 0; }
+        .citation-section { margin-bottom: 32px; }
+        .citation-section:last-child { margin-bottom: 0; }
+        .citation-section-title { font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .citation-box { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; margin: 12px 0; }
         .citation-label { font-size: 12px; font-weight: 600; color: var(--primary-teal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .citation-box.jia .citation-label { color: var(--jia-purple); }
         .citation-text { font-size: 14px; color: var(--text-medium); font-family: 'Courier New', monospace; background: var(--bg-light); padding: 12px; border-radius: var(--radius-sm); line-height: 1.6; }
 
         /* Highlight Box */
@@ -119,9 +129,6 @@
         .footer-column a:hover { color: var(--white); }
         .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
         .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
-        .footer-links a:hover { color: var(--white); }
 
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -150,11 +157,18 @@
             <a href="index.html" class="logo">
                 <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
                 <div class="logo-text">
-                    <div class="logo-title">Australian Living Guideline</div>
-                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                    <div class="logo-title">Australian Living Guidelines</div>
+                    <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
                 </div>
             </a>
             <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="adult/">Adult Inflammatory Arthritis</a>
+                        <a href="jia/">Juvenile Idiopathic Arthritis</a>
+                    </div>
+                </div>
                 <div class="nav-item">
                     <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
@@ -170,11 +184,11 @@
                     <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
                         <a href="abbreviations.html">Abbreviations</a>
+                        <a href="publications.html">Publications</a>
                         <a href="media.html">Media</a>
                     </div>
                 </div>
-                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -182,20 +196,20 @@
     <div class="page-header">
         <div class="page-header-content">
             <h1>Funding & Support</h1>
-            <p>Information about funding sources, NHMRC approval, and how to cite this guideline.</p>
+            <p>Information about funding sources, NHMRC approval, and how to cite these guidelines.</p>
         </div>
     </div>
 
     <main class="main-content">
         <div class="content-container">
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
-                Back to Recommendations
-            </a>
-
             <div class="content-section">
                 <h2 class="section-title">Funding Sources</h2>
-                <p>Since inception in 2019, funding to support the development of this living guideline has been provided by:</p>
+                
+                <h3 class="subsection-title">
+                    <span class="guideline-badge adult">Adult IA</span>
+                    Adult Inflammatory Arthritis Guideline
+                </h3>
+                <p>Since inception in 2019, funding to support the development of the Adult Inflammatory Arthritis living guideline has been provided by:</p>
                 
                 <div class="funding-list">
                     <div class="funding-item">
@@ -241,11 +255,53 @@
                         </div>
                     </div>
                 </div>
+
+                <h3 class="subsection-title">
+                    <span class="guideline-badge jia">JIA</span>
+                    Juvenile Idiopathic Arthritis Guideline
+                </h3>
+                <p>Since inception in 2020, funding to support the development of the JIA living guideline has been provided by:</p>
+                
+                <div class="funding-list">
+                    <div class="funding-item">
+                        <span class="funding-years jia">2020–2023</span>
+                        <div class="funding-details">
+                            <h4>Arthritis Australia Health Professional Education and Training Grant</h4>
+                            <p>GO ID: GO2794</p>
+                        </div>
+                    </div>
+                    <div class="funding-item">
+                        <span class="funding-years jia">2022–2026</span>
+                        <div class="funding-details">
+                            <h4>Medical Research Future Fund (MRFF)</h4>
+                            <p>Chronic Musculoskeletal Conditions in Children and Adolescents Grant</p>
+                        </div>
+                    </div>
+                    <div class="funding-item">
+                        <span class="funding-years jia">2018–2022</span>
+                        <div class="funding-details">
+                            <h4>NHMRC ANZMUSC Centre of Research Excellence</h4>
+                            <p>Initial CRE funding supporting guideline establishment</p>
+                        </div>
+                    </div>
+                    <div class="funding-item">
+                        <span class="funding-years jia">2023–2027</span>
+                        <div class="funding-details">
+                            <h4>NHMRC ANZMUSC Centre of Research Excellence</h4>
+                            <p>Continued funding through the second ANZMUSC CRE grant</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="content-section">
                 <h2 class="section-title">NHMRC Approval</h2>
-                <p>This guideline has been approved by the National Health and Medical Research Council (NHMRC) under Section 14A of the National Health and Medical Research Council Act 1992.</p>
+                <p>Both guidelines have been approved by the National Health and Medical Research Council (NHMRC) under Section 14A of the National Health and Medical Research Council Act 1992.</p>
+                
+                <h3 class="subsection-title">
+                    <span class="guideline-badge adult">Adult IA</span>
+                    Adult Inflammatory Arthritis Guideline
+                </h3>
                 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -269,25 +325,65 @@
                         <div class="timeline-content"><strong>Version 1.0</strong> approved by the Acting Chief Executive Officer of the NHMRC. Comprises the first six recommendations.</div>
                     </div>
                 </div>
+
+                <h3 class="subsection-title">
+                    <span class="guideline-badge jia">JIA</span>
+                    Juvenile Idiopathic Arthritis Guideline
+                </h3>
+                
+                <div class="timeline jia">
+                    <div class="timeline-item">
+                        <div class="timeline-date">3 September 2025</div>
+                        <div class="timeline-content"><strong>Version 3.0</strong> approved by NHMRC Chief Executive Officer, Professor Steve Wesselingh. Comprises a further two recommendations (now 9 total).</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">8 December 2023</div>
+                        <div class="timeline-content"><strong>Version 2.0</strong> approved by Chief Executive Officer of NHMRC, Professor Steve Wesselingh. Comprises a further four recommendations.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">6 December 2022</div>
+                        <div class="timeline-content"><strong>Version 1.0</strong> approved by the Acting Chief Executive Officer of the NHMRC. Comprises the first three recommendations.</div>
+                    </div>
+                </div>
                 
                 <div class="nhmrc-box">
-                    <p>In approving the guideline recommendations, NHMRC considers that they meet the NHMRC standard for clinical practice guidelines. Each approval is valid for a period of 5 years.</p>
+                    <p>In approving the guideline recommendations, NHMRC considers that they meet the <a href="https://www.nhmrc.gov.au/guidelinesforguidelines/standards" target="_blank">NHMRC standard for clinical practice guidelines</a>. Each approval is valid for a period of five years.</p>
                     <p>NHMRC is satisfied that the guideline recommendations are systematically derived, based on the identification and synthesis of the best available scientific evidence, and developed for health professionals practising in an Australian health care setting.</p>
                     <p><em>This publication reflects the views of the authors and not necessarily the views of the Australian Government.</em></p>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2 class="section-title">How to Cite This Guideline</h2>
+                <h2 class="section-title">How to Cite These Guidelines</h2>
                 
-                <div class="citation-box">
-                    <div class="citation-label">APA Style</div>
-                    <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis. https://livingguidelines.org. Accessed [insert date].</div>
+                <div class="citation-section">
+                    <div class="citation-section-title">
+                        <span class="guideline-badge adult">Adult IA</span>
+                        Adult Inflammatory Arthritis Guideline
+                    </div>
+                    <div class="citation-box">
+                        <div class="citation-label">APA Style</div>
+                        <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis. https://livingguidelines.org/adult/. Accessed [insert date].</div>
+                    </div>
+                    <div class="citation-box">
+                        <div class="citation-label">Vancouver Style</div>
+                        <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis. Available from: https://livingguidelines.org/adult/. Accessed [insert date].</div>
+                    </div>
                 </div>
-                
-                <div class="citation-box">
-                    <div class="citation-label">Vancouver Style</div>
-                    <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Pharmacological Management of Inflammatory Arthritis. Available from: https://livingguidelines.org. Accessed [insert date].</div>
+
+                <div class="citation-section">
+                    <div class="citation-section-title">
+                        <span class="guideline-badge jia">JIA</span>
+                        Juvenile Idiopathic Arthritis Guideline
+                    </div>
+                    <div class="citation-box jia">
+                        <div class="citation-label">APA Style</div>
+                        <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Management of Juvenile Idiopathic Arthritis. https://livingguidelines.org/jia/. Accessed [insert date].</div>
+                    </div>
+                    <div class="citation-box jia">
+                        <div class="citation-label">Vancouver Style</div>
+                        <div class="citation-text">Australia and New Zealand Musculoskeletal Clinical Trials Network. An Australian Living Guideline for the Management of Juvenile Idiopathic Arthritis. Available from: https://livingguidelines.org/jia/. Accessed [insert date].</div>
+                    </div>
                 </div>
             </div>
 
@@ -295,7 +391,7 @@
                 <h2 class="section-title">Copyright</h2>
                 <p>This work is copyright. You may download, display, print and reproduce the whole or part of this work in unaltered form for your own personal use or, if you are part of an organisation, for internal use within your organisation, but only if you or your organisation do not use the reproduction for any commercial purpose and retain this copyright notice and all disclaimer notices as part of that reproduction.</p>
                 <p>Apart from rights to use as permitted by the Copyright Act 1968 or allowed by this copyright notice, all other rights are reserved and you are not allowed to reproduce the whole or any part of this work in any way (electronic or otherwise) without first being given the specific written permission from ANZMUSC.</p>
-                <p>Requests and inquiries concerning reproduction and rights should be sent to <a href="/cdn-cgi/l/email-protection#f781969992848496d9909b9299999899b79a989996849fd9929382"><span class="__cf_email__" data-cfemail="d2a4b3bcb7a1a1b3fcb5beb7bcbcbdbc92bfbdbcb3a1bafcb7b6a7">[email&#160;protected]</span></a>.</p>
+                <p>Requests and inquiries concerning reproduction and rights should be sent to <a href="mailto:vanessa.glennon@monash.edu">vanessa.glennon@monash.edu</a>.</p>
             </div>
 
             <div class="content-section">
@@ -311,31 +407,29 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Australian Living Guideline</h3>
-                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                    <h3>Australian Living Guidelines</h3>
+                    <p>Evidence-based clinical recommendations for the management of inflammatory arthritis, developed through collaboration between leading Australian rheumatology organisations.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>The Guideline</h4>
-                    <a href="index.html#recommendations">Recommendations</a>
-                    <a href="how-to-use.html">How to Use</a>
-                    <a href="methodology.html">Methodology</a>
+                    <h4>Guidelines</h4>
+                    <a href="adult/">Adult Inflammatory Arthritis</a>
+                    <a href="jia/">Juvenile Idiopathic Arthritis</a>
                 </div>
                 <div class="footer-column">
-                    <h4>About Us</h4>
+                    <h4>About</h4>
                     <a href="who-we-are.html">Who We Are</a>
-                    <a href="panellists.html">Panel Members</a>
-                    <a href="funding.html">Funding</a>
-                    <a href="coi.html">Conflicts of Interest</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="funding.html">Funding & Support</a>
+                    <a href="publications.html">Publications</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <a href="abbreviations.html">Abbreviations</a>
-                    <a href="media.html">Media</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <div class="footer-copyright">© 2025 ANZMUSC Clinical Trials Network. All rights reserved.</div>
             </div>
         </div>
     </footer>

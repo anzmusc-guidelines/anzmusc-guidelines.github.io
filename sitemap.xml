@@ -1,75 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Gateway/Home -->
     <url>
         <loc>https://livingguidelines.org/</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+    
+    <!-- Adult Inflammatory Arthritis -->
     <url>
-        <loc>https://livingguidelines.org/index.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <loc>https://livingguidelines.org/adult/</loc>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
     </url>
+    
+    <!-- Juvenile Idiopathic Arthritis -->
     <url>
-        <loc>https://livingguidelines.org/publications.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <loc>https://livingguidelines.org/jia/</loc>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
+    
+    <!-- Supporting Pages -->
     <url>
-        <loc>https://livingguidelines.org/contact.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <loc>https://livingguidelines.org/how-to-use.html</loc>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://livingguidelines.org/methodology.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://livingguidelines.org/who-we-are.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://livingguidelines.org/panellists.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://livingguidelines.org/how-to-use.html</loc>
-        <lastmod>2025-01-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://livingguidelines.org/abbreviations.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <loc>https://livingguidelines.org/funding.html</loc>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://livingguidelines.org/coi.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://livingguidelines.org/funding.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <loc>https://livingguidelines.org/publications.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://livingguidelines.org/abbreviations.html</loc>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://livingguidelines.org/media.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://livingguidelines.org/contact.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 </urlset>

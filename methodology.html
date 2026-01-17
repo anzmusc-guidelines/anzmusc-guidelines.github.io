@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methodology - Australian Living Guideline for Inflammatory Arthritis</title>
+    <title>Methodology - Australian Living Guidelines</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
             --primary-teal: #0d9488;
             --primary-teal-light: #14b8a6;
             --primary-teal-dark: #0f766e;
+            --jia-purple: #7c3aed;
             --text-dark: #1f2937;
             --text-medium: #4b5563;
             --text-light: #6b7280;
@@ -61,43 +62,43 @@
         .main-content { padding: 60px 24px; }
         .content-container { max-width: 900px; margin: 0 auto; }
 
-        /* Back link */
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
-        .back-link:hover { text-decoration: underline; }
-        .back-link svg { width: 16px; height: 16px; }
-
         /* Content Sections */
         .content-section { margin-bottom: 48px; }
         .content-section:last-child { margin-bottom: 0; }
         .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
         .content-section p { font-size: 16px; color: var(--text-medium); line-height: 1.8; margin-bottom: 16px; }
         .content-section p:last-child { margin-bottom: 0; }
-        .content-section ul { padding-left: 24px; margin-bottom: 16px; }
+        .content-section ul { margin: 16px 0; padding-left: 24px; }
         .content-section li { font-size: 16px; color: var(--text-medium); line-height: 1.8; margin-bottom: 8px; }
         .content-section a { color: var(--primary-teal); text-decoration: none; }
         .content-section a:hover { text-decoration: underline; }
 
         /* Method Cards */
-        .method-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
+        .method-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 32px 0; }
         .method-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; }
         .method-card-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
         .method-card-icon svg { width: 24px; height: 24px; color: var(--white); }
-        .method-card h3 { font-size: 17px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-        .method-card p { font-size: 14px; color: var(--text-medium); line-height: 1.7; margin: 0; }
-
-        /* Report Links */
-        .report-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
-        .report-link-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.3s; text-decoration: none; }
-        .report-link-card:hover { border-color: var(--primary-teal); box-shadow: var(--shadow-md); transform: translateY(-2px); }
-        .report-link-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .report-link-icon svg { width: 24px; height: 24px; color: var(--white); }
-        .report-link-content h3 { font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
-        .report-link-content p { font-size: 14px; color: var(--text-light); margin: 0; }
+        .method-card h3 { font-size: 17px; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; }
+        .method-card p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
 
         /* Highlight Box */
         .highlight-box { background: var(--bg-light); border-left: 4px solid var(--primary-teal); padding: 20px 24px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 24px 0; }
-        .highlight-box p { margin: 0; font-size: 15px; color: var(--text-medium); }
-        .highlight-box a { color: var(--primary-teal); font-weight: 600; }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        /* Report Links */
+        .report-section { margin-bottom: 32px; }
+        .report-section:last-child { margin-bottom: 0; }
+        .report-section-title { font-size: 18px; font-weight: 600; color: var(--primary-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .guideline-badge { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 4px; }
+        .guideline-badge.adult { background: #e0f2f1; color: #0d9488; }
+        .guideline-badge.jia { background: #ede9fe; color: #7c3aed; }
+        .report-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .report-link-card { display: flex; gap: 16px; padding: 20px; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); text-decoration: none; transition: all 0.2s; }
+        .report-link-card:hover { border-color: var(--primary-teal); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        .report-link-icon { width: 48px; height: 48px; background: var(--bg-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .report-link-icon svg { width: 24px; height: 24px; color: var(--primary-teal); }
+        .report-link-content h3 { font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+        .report-link-content p { font-size: 13px; color: var(--text-light); margin: 0; }
 
         /* Footer */
         footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
@@ -110,14 +111,10 @@
         .footer-column a:hover { color: var(--white); }
         .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
         .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
-        .footer-links a:hover { color: var(--white); }
 
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .method-cards { grid-template-columns: 1fr; }
-            .report-links { grid-template-columns: 1fr; }
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -142,11 +139,18 @@
             <a href="index.html" class="logo">
                 <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
                 <div class="logo-text">
-                    <div class="logo-title">Australian Living Guideline</div>
-                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                    <div class="logo-title">Australian Living Guidelines</div>
+                    <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
                 </div>
             </a>
             <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="adult/">Adult Inflammatory Arthritis</a>
+                        <a href="jia/">Juvenile Idiopathic Arthritis</a>
+                    </div>
+                </div>
                 <div class="nav-item">
                     <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
@@ -162,11 +166,11 @@
                     <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
                         <a href="abbreviations.html">Abbreviations</a>
+                        <a href="publications.html">Publications</a>
                         <a href="media.html">Media</a>
                     </div>
                 </div>
-                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -180,15 +184,10 @@
 
     <main class="main-content">
         <div class="content-container">
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
-                Back to Recommendations
-            </a>
-
             <div class="content-section">
                 <h2 class="section-title">Overview</h2>
-                <p>Guideline development has been undertaken in accordance with the standards prescribed by the National Health and Medical Research Council (NHMRC) under the direction of an interdisciplinary expert advisory panel. All recommendations have been approved by the NHMRC.</p>
-                <p>As a "living guideline", recommendations are updated in near real-time as new evidence emerges, ensuring that clinicians always have access to the most current evidence-based guidance.</p>
+                <p>Guideline development has been undertaken in accordance with the standards prescribed by the National Health and Medical Research Council (NHMRC) under the direction of interdisciplinary expert advisory panels. All recommendations have been approved by the NHMRC.</p>
+                <p>As "living guidelines", recommendations are updated in near real-time as new evidence emerges, ensuring that clinicians always have access to the most current evidence-based guidance.</p>
             </div>
 
             <div class="content-section">
@@ -246,7 +245,7 @@
                     <li><strong>Strong recommendation:</strong> Confident that the desirable effects of an intervention outweigh its undesirable effects (or vice versa for "against" recommendations)</li>
                     <li><strong>Conditional recommendation:</strong> Desirable effects probably outweigh the undesirable effects, but appreciable uncertainty exists</li>
                 </ul>
-                <p>All current recommendations in this guideline are conditional, reflecting the complexity of treatment decisions in inflammatory arthritis and the importance of shared decision-making with patients.</p>
+                <p>All current recommendations in these guidelines are conditional, reflecting the complexity of treatment decisions in inflammatory arthritis and the importance of shared decision-making with patients.</p>
             </div>
 
             <div class="content-section">
@@ -263,26 +262,60 @@
                 <h2 class="section-title">Reports & Documentation</h2>
                 <p>Full details of our methods, evidence summaries, and search strategies are available in our technical documentation:</p>
                 
-                <div class="report-links">
-                    <a href="https://drive.google.com/file/d/1Bk-zFWdNAzCpNxkwlntZGHA9K7XsEQWX/view?usp=sharing" target="_blank" class="report-link-card">
-                        <div class="report-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd"/></svg>
-                        </div>
-                        <div class="report-link-content">
-                            <h3>Technical Report</h3>
-                            <p>Full methodology, evidence summaries, search strategies, and PRISMA diagrams</p>
-                        </div>
-                    </a>
-                    
-                    <a href="https://drive.google.com/file/d/1lUV9ihxG0l-lJTm2jd3RMyWuX4Nx1Lt9/view?usp=sharing" target="_blank" class="report-link-card">
-                        <div class="report-link-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                        </div>
-                        <div class="report-link-content">
-                            <h3>Administrative Report</h3>
-                            <p>Project governance, timelines, and administrative documentation</p>
-                        </div>
-                    </a>
+                <div class="report-section">
+                    <div class="report-section-title">
+                        Adult Inflammatory Arthritis
+                        <span class="guideline-badge adult">Adult IA</span>
+                    </div>
+                    <div class="report-links">
+                        <a href="https://drive.google.com/file/d/1Bk-zFWdNAzCpNxkwlntZGHA9K7XsEQWX/view?usp=sharing" target="_blank" class="report-link-card">
+                            <div class="report-link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div class="report-link-content">
+                                <h3>Technical Report</h3>
+                                <p>Full methodology, evidence summaries, search strategies, and PRISMA diagrams</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://drive.google.com/file/d/1lUV9ihxG0l-lJTm2jd3RMyWuX4Nx1Lt9/view?usp=sharing" target="_blank" class="report-link-card">
+                            <div class="report-link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div class="report-link-content">
+                                <h3>Administrative Report</h3>
+                                <p>Project governance, timelines, and administrative documentation</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <div class="report-section-title">
+                        Juvenile Idiopathic Arthritis
+                        <span class="guideline-badge jia">JIA</span>
+                    </div>
+                    <div class="report-links">
+                        <a href="https://drive.google.com/file/d/1IB6r3xaqFPaBjJF_QJduOaWYYvbERA3U/view?usp=sharing" target="_blank" class="report-link-card">
+                            <div class="report-link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div class="report-link-content">
+                                <h3>Technical Report</h3>
+                                <p>Full methodology, evidence summaries, search strategies, and PRISMA diagrams</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://drive.google.com/file/d/1uilNizA1Uov-B2wqUXHZdl8c297iCfto/view?usp=sharing" target="_blank" class="report-link-card">
+                            <div class="report-link-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 3.5A1.5 1.5 0 014.5 2h6.879a1.5 1.5 0 011.06.44l4.122 4.12A1.5 1.5 0 0117 7.622V16.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 013 16.5v-13zm10.857 5.691a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 00-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+                            </div>
+                            <div class="report-link-content">
+                                <h3>Administrative Report</h3>
+                                <p>Project governance, timelines, and administrative documentation</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,31 +325,29 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Australian Living Guideline</h3>
-                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                    <h3>Australian Living Guidelines</h3>
+                    <p>Evidence-based clinical recommendations for the management of inflammatory arthritis, developed through collaboration between leading Australian rheumatology organisations.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>The Guideline</h4>
-                    <a href="index.html#recommendations">Recommendations</a>
-                    <a href="how-to-use.html">How to Use</a>
-                    <a href="methodology.html">Methodology</a>
+                    <h4>Guidelines</h4>
+                    <a href="adult/">Adult Inflammatory Arthritis</a>
+                    <a href="jia/">Juvenile Idiopathic Arthritis</a>
                 </div>
                 <div class="footer-column">
-                    <h4>About Us</h4>
+                    <h4>About</h4>
                     <a href="who-we-are.html">Who We Are</a>
-                    <a href="panellists.html">Panel Members</a>
-                    <a href="funding.html">Funding</a>
-                    <a href="coi.html">Conflicts of Interest</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="funding.html">Funding & Support</a>
+                    <a href="publications.html">Publications</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <a href="abbreviations.html">Abbreviations</a>
-                    <a href="media.html">Media</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <div class="footer-copyright">© 2025 ANZMUSC Clinical Trials Network. All rights reserved.</div>
             </div>
         </div>
     </footer>
