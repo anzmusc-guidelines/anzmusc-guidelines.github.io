@@ -80,15 +80,16 @@
         .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
         .dropdown a:hover { background: var(--bg-light); color: var(--jia-purple); }
         
-        .page-header { background: var(--bg-light); border-bottom: 1px solid var(--border-light); padding: 20px 24px; }
-        .page-header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-        .guideline-title { display: flex; align-items: center; gap: 12px; }
-        .guideline-indicator { width: 4px; height: 32px; background: var(--jia-purple); border-radius: 2px; }
-        .guideline-title h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); }
-        .guideline-title .subtitle { font-size: 14px; color: var(--text-light); font-weight: 400; }
-        .page-header-badges { display: flex; gap: 12px; flex-wrap: wrap; }
-        .header-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--white); border: 1px solid var(--border-light); border-radius: 100px; font-size: 13px; font-weight: 500; color: var(--text-medium); }
-        .header-badge svg { width: 14px; height: 14px; color: var(--jia-purple); }
+        .hero { background: linear-gradient(135deg, #1e3a5f 0%, #3d3266 100%); padding: 80px 24px; }
+        .hero-content { max-width: 1200px; margin: 0 auto; }
+        .hero h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 5vw, 44px); font-weight: 600; color: var(--white); margin-bottom: 20px; max-width: 700px; line-height: 1.2; }
+        .hero-description { font-size: 19px; color: rgba(255,255,255,0.9); max-width: 600px; line-height: 1.7; margin-bottom: 32px; }
+        .hero-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.15); border-radius: 100px; color: var(--white); font-size: 14px; font-weight: 500; }
+        .hero-badge svg { width: 16px; height: 16px; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--white); color: var(--jia-purple); text-decoration: none; font-size: 16px; font-weight: 600; border-radius: var(--radius-md); transition: all 0.2s; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+        .hero-cta:hover { background: var(--bg-light); transform: translateY(-2px); }
+        .hero-cta svg { width: 18px; height: 18px; }
         
         .main-content { padding: 40px 24px 60px; }
         .content-container { max-width: 1200px; margin: 0 auto; }
@@ -323,33 +324,20 @@
         </div>
     </header>
 
-    <div class="page-header">
-        <div class="page-header-content">
-            <div class="guideline-title">
-                <div class="guideline-indicator"></div>
-                <div>
-                    <h1>Juvenile Idiopathic Arthritis</h1>
-                    <span class="subtitle">Management of JIA in children and young people</span>
-                </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Evidence-based living recommendations for the management of juvenile idiopathic arthritis</h1>
+            <p class="hero-description">Helping Australian clinicians and families make informed decisions about the pharmacological management of JIA in children and young people.</p>
+            <div class="hero-badges">
+                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg> NHMRC Approved</span>
+                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg> Living Guideline</span>
+                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> 10 Recommendations</span>
             </div>
-            <div class="page-header-badges">
-                <span class="header-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-                    NHMRC Approved
-                </span>
-                <span class="header-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg>
-                    10 Recommendations
-                </span>
-                <span class="header-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
-                    Updated Oct 2025
-                </span>
-            </div>
+            <a href="#recommendations" class="hero-cta">Browse Recommendations <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg></a>
         </div>
-    </div>
+    </section>
 
-    <main class="main-content">
+    <main class="main-content" id="recommendations">
         <div class="content-container">
             <div class="filter-section">
                 <div class="search-container">
@@ -1277,7 +1265,7 @@
                         <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg></div>
                         <div class="info-content">
                             <div class="info-label">Panel Meeting Date</div>
-                            <div class="info-value">12 December 2024</div>
+                            <div class="info-value">1 October 2025</div>
                         </div>
                     </div>
                 </div>
