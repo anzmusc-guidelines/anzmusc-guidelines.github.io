@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abbreviations - Australian Living Guideline for Inflammatory Arthritis</title>
+    <title>Abbreviations - Australian Living Guidelines</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -70,11 +70,6 @@
         .abbreviation-term { font-weight: 600; color: var(--primary-teal); font-size: 15px; }
         .abbreviation-definition { color: var(--text-medium); font-size: 15px; }
 
-        /* Back link */
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 32px; }
-        .back-link:hover { text-decoration: underline; }
-        .back-link svg { width: 16px; height: 16px; }
-
         /* Footer */
         footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
         .footer-container { max-width: 1200px; margin: 0 auto; }
@@ -117,11 +112,18 @@
             <a href="index.html" class="logo">
                 <img src="anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
                 <div class="logo-text">
-                    <div class="logo-title">Australian Living Guideline</div>
-                    <div class="logo-subtitle">Pharmacological Management of Inflammatory Arthritis</div>
+                    <div class="logo-title">Australian Living Guidelines</div>
+                    <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
                 </div>
             </a>
             <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="adult/">Adult Inflammatory Arthritis</a>
+                        <a href="jia/">Juvenile Idiopathic Arthritis</a>
+                    </div>
+                </div>
                 <div class="nav-item">
                     <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
@@ -137,11 +139,11 @@
                     <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">
                         <a href="abbreviations.html">Abbreviations</a>
+                        <a href="publications.html">Publications</a>
                         <a href="media.html">Media</a>
                     </div>
                 </div>
-                <a href="index.html#recommendations" class="nav-link">Recommendations</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -149,17 +151,12 @@
     <div class="page-header">
         <div class="page-header-content">
             <h1>Abbreviations</h1>
-            <p>Common abbreviations and acronyms used throughout this guideline.</p>
+            <p>Common abbreviations and acronyms used throughout these guidelines.</p>
         </div>
     </div>
 
     <main class="main-content">
         <div class="content-container">
-            <a href="index.html" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
-                Back to Recommendations
-            </a>
-
             <table class="abbreviations-table">
                 <thead>
                     <tr>
@@ -169,16 +166,32 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td class="abbreviation-term">AC</td>
+                        <td class="abbreviation-definition">Anterior Chamber</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">ANZMUSC</td>
+                        <td class="abbreviation-definition">Australian and New Zealand Musculoskeletal Clinical Trials Network</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">b/tsDMARDs</td>
+                        <td class="abbreviation-definition">Either biologic DMARDs or targeted synthetic DMARDs</td>
+                    </tr>
+                    <tr>
                         <td class="abbreviation-term">bDMARD</td>
-                        <td class="abbreviation-definition">Biologic DMARD</td>
+                        <td class="abbreviation-definition">Biologic disease-modifying antirheumatic drug</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">CHAQ</td>
+                        <td class="abbreviation-definition">Childhood Health Assessment Questionnaire</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">CI</td>
-                        <td class="abbreviation-definition">Confidence Interval</td>
+                        <td class="abbreviation-definition">Confidence interval</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">csDMARD</td>
-                        <td class="abbreviation-definition">Conventional synthetic DMARD</td>
+                        <td class="abbreviation-definition">Conventional synthetic disease-modifying antirheumatic drug</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">DAS28</td>
@@ -186,7 +199,19 @@
                     </tr>
                     <tr>
                         <td class="abbreviation-term">DMARD</td>
-                        <td class="abbreviation-definition">Disease-modifying anti-rheumatic drug</td>
+                        <td class="abbreviation-definition">Disease-modifying antirheumatic drug</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">GRADE</td>
+                        <td class="abbreviation-definition">Grading of Recommendations Assessment, Development and Evaluation</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">IV</td>
+                        <td class="abbreviation-definition">Intravenous</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">JIA</td>
+                        <td class="abbreviation-definition">Juvenile idiopathic arthritis</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">MD</td>
@@ -195,6 +220,10 @@
                     <tr>
                         <td class="abbreviation-term">mSvdH</td>
                         <td class="abbreviation-definition">Modified Sharp van der Heijde</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">NHMRC</td>
+                        <td class="abbreviation-definition">National Health and Medical Research Council</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">NNTB</td>
@@ -209,6 +238,14 @@
                         <td class="abbreviation-definition">Non-steroidal anti-inflammatory drug</td>
                     </tr>
                     <tr>
+                        <td class="abbreviation-term">PBS</td>
+                        <td class="abbreviation-definition">Pharmaceutical Benefits Scheme</td>
+                    </tr>
+                    <tr>
+                        <td class="abbreviation-term">PICO</td>
+                        <td class="abbreviation-definition">Participant Intervention Comparison Outcomes</td>
+                    </tr>
+                    <tr>
                         <td class="abbreviation-term">RCT</td>
                         <td class="abbreviation-definition">Randomised controlled trial</td>
                     </tr>
@@ -217,12 +254,16 @@
                         <td class="abbreviation-definition">Risk ratio</td>
                     </tr>
                     <tr>
+                        <td class="abbreviation-term">TGA</td>
+                        <td class="abbreviation-definition">Therapeutic Goods Administration</td>
+                    </tr>
+                    <tr>
                         <td class="abbreviation-term">TNF</td>
                         <td class="abbreviation-definition">Tumour necrosis factor</td>
                     </tr>
                     <tr>
                         <td class="abbreviation-term">tsDMARD</td>
-                        <td class="abbreviation-definition">Targeted synthetic DMARD</td>
+                        <td class="abbreviation-definition">Targeted synthetic disease-modifying antirheumatic drug</td>
                     </tr>
                 </tbody>
             </table>
@@ -233,31 +274,29 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Australian Living Guideline</h3>
-                    <p>Evidence-based recommendations for the pharmacological management of inflammatory arthritis, developed by ANZMUSC in collaboration with the Australian Rheumatology Association and Cochrane Musculoskeletal.</p>
+                    <h3>Australian Living Guidelines</h3>
+                    <p>Evidence-based clinical recommendations for the management of inflammatory arthritis, developed through collaboration between leading Australian rheumatology organisations.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>The Guideline</h4>
-                    <a href="index.html#recommendations">Recommendations</a>
-                    <a href="how-to-use.html">How to Use</a>
-                    <a href="methodology.html">Methodology</a>
+                    <h4>Guidelines</h4>
+                    <a href="adult/">Adult Inflammatory Arthritis</a>
+                    <a href="jia/">Juvenile Idiopathic Arthritis</a>
                 </div>
                 <div class="footer-column">
-                    <h4>About Us</h4>
+                    <h4>About</h4>
                     <a href="who-we-are.html">Who We Are</a>
-                    <a href="panellists.html">Panel Members</a>
-                    <a href="funding.html">Funding</a>
-                    <a href="coi.html">Conflicts of Interest</a>
+                    <a href="methodology.html">Methodology</a>
+                    <a href="funding.html">Funding & Support</a>
+                    <a href="publications.html">Publications</a>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <a href="abbreviations.html">Abbreviations</a>
-                    <a href="media.html">Media</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <div class="footer-copyright">© 2025 ANZMUSC Clinical Trials Network. All rights reserved.</div>
             </div>
         </div>
     </footer>
