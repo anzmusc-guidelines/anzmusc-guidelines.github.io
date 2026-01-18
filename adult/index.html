@@ -168,7 +168,7 @@
         .tag-filter:hover { border-color: var(--primary-teal); color: var(--primary-teal); }
         .tag-filter.active { background: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
         .recommendations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
-        .recommendation-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; cursor: pointer; }
+        .recommendation-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; cursor: pointer; display: flex; flex-direction: column; }
         .recommendation-card:hover { border-color: var(--primary-teal); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
         .recommendation-card.hidden { display: none; }
         .card-header { padding: 20px 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
@@ -180,11 +180,11 @@
         .strength-indicator.conditional-against { background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%); }
         .strength-indicator svg { width: 24px; height: 24px; color: var(--white); }
         .strength-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-light); text-align: center; }
-        .card-body { padding: 20px 24px; }
-        .card-recommendation { font-size: 15px; color: var(--text-medium); line-height: 1.6; margin-bottom: 16px; }
-        .card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .card-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; }
+        .card-recommendation { font-size: 15px; color: var(--text-medium); line-height: 1.6; margin-bottom: 16px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; overflow: hidden; }
+        .card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
         .card-tag { padding: 4px 10px; background: var(--bg-light); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-light); }
-        .card-footer { padding: 16px 24px; background: var(--bg-light); display: flex; justify-content: space-between; align-items: center; }
+        .card-footer { padding: 16px 24px; background: var(--bg-light); display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
         .card-link { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-teal); text-decoration: none; font-size: 14px; font-weight: 600; }
         .card-link:hover { gap: 10px; }
         .card-link svg { width: 16px; height: 16px; }
@@ -545,7 +545,7 @@ In people who have had an inadequate response or who have been int...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with RA who have had an inadequate response to one TNFi, consider switching therapy to an alternative b/tsDMARD. Consider either a different TNFi or a b/tsDMARD with a different mechanism of...</p>
+                        <p class="card-recommendation">In people with RA who have had an inadequate response to one TNFi, consider switching therapy to an alternative b/tsDMARD. Consider either a different TNFi or a b/tsDMARD with a different mechanism of action.</p>
                         <div class="card-tags"><span class="card-tag">DMARD-IR</span><span class="card-tag">TNFi</span><span class="card-tag">bDMARDs</span><span class="card-tag">tsDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -566,9 +566,7 @@ In people who have had an inadequate response or who have been int...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with RA who have been in sustained low disease activity or remission for at least 6 months, consider a trial of reduction in the dose of csDMARD. 
-
-Abrupt discontinuation of csDMARDs is not ...</p>
+                        <p class="card-recommendation">In people with RA who have been in sustained low disease activity or remission for at least 6 months, consider a trial of reduction in the dose of csDMARD. Abrupt discontinuation of csDMARDs is not recommended.</p>
                         <div class="card-tags"><span class="card-tag">Tapering</span><span class="card-tag">Remission</span><span class="card-tag">Low Disease Activity</span><span class="card-tag">csDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -589,7 +587,7 @@ Abrupt discontinuation of csDMARDs is not ...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with psoriatic arthritis who have been in sustained low disease activity or remission for at least 6 months (including adequate control of skin disease), consider a trial of reduction in the...</p>
+                        <p class="card-recommendation">In people with psoriatic arthritis who have been in sustained low disease activity or remission for at least 6 months (including adequate control of skin disease), consider a trial of reduction in the dose of csDMARD.</p>
                         <div class="card-tags"><span class="card-tag">Tapering</span><span class="card-tag">Remission</span><span class="card-tag">Low Disease Activity</span><span class="card-tag">csDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -610,7 +608,7 @@ Abrupt discontinuation of csDMARDs is not ...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with RA who have been in sustained low disease activity or remission for at least 6 months, consider stepwise reduction in the dose of b/tsDMARD. Continue dose reduction until cessation is a...</p>
+                        <p class="card-recommendation">In people with RA who have been in sustained low disease activity or remission for at least 6 months, consider stepwise reduction in the dose of b/tsDMARD. Continue dose reduction until cessation is achieved or the lowest effective b/tsDMARD dose is identified, as long as the treatment target is maintained. Abrupt cessation of b/tsDMARDs without prior dose reduction is not recommended.</p>
                         <div class="card-tags"><span class="card-tag">Tapering</span><span class="card-tag">Remission</span><span class="card-tag">Low Disease Activity</span><span class="card-tag">bDMARDs</span><span class="card-tag">tsDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -631,7 +629,7 @@ Abrupt discontinuation of csDMARDs is not ...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with axial spondyloarthritis who have been in sustained low disease activity or remission for at least 6 months, consider reduction in the dose of bDMARD. Continue at the lower dose as long ...</p>
+                        <p class="card-recommendation">In people with axial spondyloarthritis who have been in sustained low disease activity or remission for at least 6 months, consider reduction in the dose of bDMARD. Continue at the lower dose as long as the treatment target is maintained. Abrupt cessation of bDMARDs is not recommended.</p>
                         <div class="card-tags"><span class="card-tag">Tapering</span><span class="card-tag">Remission</span><span class="card-tag">Low Disease Activity</span><span class="card-tag">bDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -673,7 +671,7 @@ Abrupt discontinuation of csDMARDs is not ...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In people with rheumatoid arthritis who have achieved sustained low disease activity or remission with a combination of csDMARDs and b/tsDMARDs and who wish to reduce their medication burden, consider...</p>
+                        <p class="card-recommendation">In people with rheumatoid arthritis who have achieved sustained low disease activity or remission with a combination of csDMARDs and b/tsDMARDs and who wish to reduce their medication burden, consider a trial of reduction of the dose of the csDMARD.</p>
                         <div class="card-tags"><span class="card-tag">Tapering</span><span class="card-tag">Remission</span><span class="card-tag">Low Disease Activity</span><span class="card-tag">bDMARDs</span><span class="card-tag">csDMARDs</span></div>
                     </div>
                     <div class="card-footer">
@@ -740,7 +738,7 @@ Pe...</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">Do not routinely use additional ‘stress dose’ glucocorticoids in people taking regular glucocorticoids for inflammatory arthritis who are undergoing elective surgery. Continue the usual oral glucocort...</p>
+                        <p class="card-recommendation">Do not routinely use additional 'stress dose' glucocorticoids in people taking regular glucocorticoids for inflammatory arthritis who are undergoing elective surgery. Continue the usual oral glucocorticoid dose during the perioperative period, including on the day of surgery.</p>
                         <div class="card-tags"><span class="card-tag">Perioperative</span><span class="card-tag">Glucocorticoids</span></div>
                     </div>
                     <div class="card-footer">
@@ -825,7 +823,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">Consider using short-term glucocorticoids for the treatment of rheumatoid arthritis flare in people with previously well-controlled disease, via either a systemic (oral, intramuscular or intravenous) ...</p>
+                        <p class="card-recommendation">Consider using short-term glucocorticoids for the treatment of rheumatoid arthritis flare in people with previously well-controlled disease, via either a systemic (oral, intramuscular or intravenous) or intra-articular route, in the lowest possible dose for the shortest possible time. Any flare should prompt consideration of the need for adjustment of the DMARD regimen.</p>
                         <div class="card-tags"><span class="card-tag">Glucocorticoids</span><span class="card-tag">Flare</span></div>
                     </div>
                     <div class="card-footer">
@@ -867,7 +865,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">Consider using a short course of glucocorticoids in people with active rheumatoid arthritis who are initiating, switching or adding DMARD therapy, using the lowest effective dose until DMARDs take eff...</p>
+                        <p class="card-recommendation">Consider using a short course of glucocorticoids in people with active rheumatoid arthritis who are initiating, switching or adding DMARD therapy, using the lowest effective dose until DMARDs take effect. Inability to achieve the treatment target should imply the need for escalation of DMARD therapy rather than the use of additional glucocorticoids.</p>
                         <div class="card-tags"><span class="card-tag">Glucocorticoids</span><span class="card-tag">csDMARDs</span></div>
                     </div>
                     <div class="card-footer">
