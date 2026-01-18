@@ -114,7 +114,7 @@
         .no-results h3 { font-size: 18px; color: var(--text-medium); margin-bottom: 8px; }
         
         .recommendations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
-        .recommendation-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; cursor: pointer; }
+        .recommendation-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; cursor: pointer; display: flex; flex-direction: column; }
         .recommendation-card:hover { border-color: var(--jia-purple); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
         .recommendation-card.hidden { display: none; }
         .card-header { padding: 20px 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
@@ -128,11 +128,11 @@
         .strength-indicator.conditional-against { background: linear-gradient(135deg, var(--accent-orange) 0%, #ea580c 100%); }
         .strength-indicator.strong-against { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
         .strength-label { font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--text-light); text-align: center; line-height: 1.3; }
-        .card-body { padding: 20px 24px; }
-        .card-recommendation { font-size: 15px; color: var(--text-medium); line-height: 1.6; margin-bottom: 16px; }
+        .card-body { padding: 20px 24px; flex: 1; }
+        .card-recommendation { font-size: 15px; color: var(--text-medium); line-height: 1.6; margin-bottom: 16px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 8; overflow: hidden; }
         .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
         .card-tag { padding: 4px 10px; background: var(--bg-light); border-radius: 100px; font-size: 12px; font-weight: 500; color: var(--text-light); }
-        .card-footer { padding: 16px 24px; background: var(--bg-light); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); }
+        .card-footer { padding: 16px 24px; background: var(--bg-light); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); margin-top: auto; }
         .card-link { font-size: 13px; font-weight: 600; color: var(--jia-purple); display: flex; align-items: center; gap: 6px; }
         .card-link svg { width: 16px; height: 16px; }
         .card-updated { font-size: 12px; color: var(--text-light); }
@@ -379,7 +379,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis requiring a systemic disease modifying anti-rheumatic drug, consider using methotrexate as initial therapy at a dose of 15mg/m2 once a w...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis requiring a systemic disease modifying anti-rheumatic drug, consider using methotrexate as initial therapy at a dose of 15mg/m2 once a week (maximum dose of 25mg per week).</p>
                         <div class="card-tags"><span class="card-tag">csDMARDs</span><span class="card-tag">Methotrexate</span><span class="card-tag">Leflunomide</span></div>
                     </div>
                     <div class="card-footer">
@@ -400,7 +400,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis, initial treatment with oral methotrexate is often appropriate. However, we conditionally recommend consideration of subcutaneous admini...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis, initial treatment with oral methotrexate is often appropriate. However, we conditionally recommend consideration of subcutaneous administration over oral administration in some circumstances.</p>
                         <div class="card-tags"><span class="card-tag">csDMARDs</span><span class="card-tag">Methotrexate</span></div>
                     </div>
                     <div class="card-footer">
@@ -421,7 +421,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with JIA-associated uveitis who have not responded to methotrexate, b/tsDMARDs should be considered. Adalimumab is recommended over other b/tsDMARDs. Etanercept is not rec...</p>
+                        <p class="card-recommendation">In children and young people with JIA-associated uveitis who have not responded to methotrexate, b/tsDMARDs should be considered. Adalimumab is recommended over other b/tsDMARDs. Etanercept is not recommended.</p>
                         <div class="card-tags"><span class="card-tag">bdDMARDs</span><span class="card-tag">tsDMARDs</span><span class="card-tag">Uveitis</span></div>
                     </div>
                     <div class="card-footer">
@@ -442,7 +442,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis who have experienced a sustained period of low or absent disease activity, and in whom the current or potential adverse effects of treat...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis who have experienced a sustained period of low or absent disease activity, and in whom the current or potential adverse effects of treatment outweigh the potential risk and impact of disease flare, consider a trial of dose reduction or discontinuation of csDMARDs.</p>
                         <div class="card-tags"><span class="card-tag">csDMARDs</span><span class="card-tag">Tapering</span></div>
                     </div>
                     <div class="card-footer">
@@ -463,7 +463,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis who have experienced a sustained period of inactive disease, and in whom the current or potential adverse effects of treatment outweigh ...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis who have experienced a sustained period of inactive disease, and in whom the current or potential adverse effects of treatment outweigh the potential risk and impact of disease flare, consider a trial of dose reduction or discontinuation of b/tsDMARDs.</p>
                         <div class="card-tags"><span class="card-tag">bdDMARDs</span><span class="card-tag">tsDMARDs</span><span class="card-tag">Tapering</span></div>
                     </div>
                     <div class="card-footer">
@@ -484,7 +484,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people starting a disease modifying anti-rheumatic drug for non-systemic juvenile idiopathic arthritis, we conditionally recommend the short-term use of glucocorticoids for those...</p>
+                        <p class="card-recommendation">In children and young people starting a disease modifying anti-rheumatic drug for non-systemic juvenile idiopathic arthritis, we conditionally recommend the short-term use of glucocorticoids for those who are likely to benefit most, including those with prominent pain or extensive inflammatory disease. A clear plan for tapering and discontinuation should be established when using glucocorticoids.</p>
                         <div class="card-tags"><span class="card-tag">Glucocorticoids</span></div>
                     </div>
                     <div class="card-footer">
@@ -505,7 +505,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis receiving intra-articular glucocorticoid injection, we conditionally recommend use of triamcinolone hexacetonide in preference to other ...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis receiving intra-articular glucocorticoid injection, we conditionally recommend use of triamcinolone hexacetonide in preference to other intra-articular glucocorticoid preparations.</p>
                         <div class="card-tags"><span class="card-tag">Glucocorticoids</span><span class="card-tag">Injection</span></div>
                     </div>
                     <div class="card-footer">
@@ -526,7 +526,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis receiving intra-articular joint injection, consider use of topical and/or injectable anaesthesia based on a shared decision between pati...</p>
+                        <p class="card-recommendation">In children and young people with juvenile idiopathic arthritis receiving intra-articular joint injection, consider use of topical and/or injectable anaesthesia based on a shared decision between patient, carer and clinician.</p>
                         <div class="card-tags"><span class="card-tag">Glucocorticoids</span><span class="card-tag">Injection</span><span class="card-tag">Anaesthesia</span></div>
                     </div>
                     <div class="card-footer">
