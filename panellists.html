@@ -89,8 +89,9 @@
         .panellist-card:hover { box-shadow: var(--shadow-md); }
         .panellist-card.hidden { display: none; }
         
-        .panellist-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: var(--white); flex-shrink: 0; }
-        .panellist-avatar.chair { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); }
+        .panellist-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; color: var(--white); flex-shrink: 0; overflow: hidden; }
+.panellist-avatar.chair { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); }
+.panellist-avatar img { width: 100%; height: 100%; object-fit: cover; }
         
         .panellist-info { flex: 1; min-width: 0; }
         .panellist-name { font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -227,20 +228,9 @@
     
     <section class="panellists-section">
         <div class="panellists-grid">
+            <!-- Rachelle Buchbinder - Chair (with headshot) -->
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="both">
-                <div class="panellist-avatar chair">SW</div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">Dr Samuel Whittle<span class="role-badge facilitator">Facilitator</span></h3>
-                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span><span class="guideline-badge jia">JIA</span></div>
-                    <p class="panellist-profession">Rheumatologist</p>
-                    <p class="panellist-institution">Monash University</p>
-                    <p class="panellist-bio">Dr Whittle is the lead developer for the Australian Living Guidelines for Adult Inflammatory Arthritis and Juvenile Idiopathic Arthritis. He is an ANZMUSC Practitioner Fellow. He works as a consultant rheumatologist at the Queen Elizabeth Hospital in Adelaide.</p>
-                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> All recommendations<br><span class="rec-label jia">JIA:</span> All recommendations</div>
-                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1Ekp3PAIUKkPd0Ud21HWznQdO24gMOuHM96wE_UvBvEM/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
-                </div>
-            </div>
-            <div class="panellist-card" data-profession="rheumatologist" data-guideline="both">
-                <div class="panellist-avatar chair">RB</div>
+                <div class="panellist-avatar chair"><img src="images/headshots/Rachelle-Buchbinder_headshot.jpg" alt="Prof Rachelle Buchbinder"></div>
                 <div class="panellist-info">
                     <h3 class="panellist-name">Prof Rachelle Buchbinder<span class="role-badge chair">Chair</span></h3>
                     <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span><span class="guideline-badge jia">JIA</span></div>
@@ -249,6 +239,19 @@
                     <p class="panellist-bio">Professor Buchbinder is a rheumatologist and epidemiologist. She chairs the Australian Living Guideline panel, and is Chair of the Executive Committee, NHMRC Centre of Research Excellence for the Australia and New Zealand Musculoskeletal (ANZMUSC) Clinical Trials Network. She is Coordinating Editor of Cochrane Musculoskeletal. She has been the Director of the Monash Department of Clinical Epidemiology since its inception in 2001 and a Professor in the Monash University Department of Epidemiology and Preventive Medicine since 2007. She is a rheumatologist and clinical epidemiologist who combines clinical practice with research in a wide range of multidisciplinary projects relating to arthritis and musculoskeletal conditions.</p>
                     <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> All recommendations<br><span class="rec-label jia">JIA:</span> All recommendations</div>
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/14lOSZplLFyC__zn_NOFFssOHo7uJ8Hn4/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+            <!-- Sam Whittle - Facilitator (with headshot) -->
+            <div class="panellist-card" data-profession="rheumatologist" data-guideline="both">
+                <div class="panellist-avatar chair"><img src="images/headshots/Samuel-Whittle_headshot.png" alt="Dr Samuel Whittle"></div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Samuel Whittle<span class="role-badge facilitator">Facilitator</span></h3>
+                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span><span class="guideline-badge jia">JIA</span></div>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Dr Whittle is the lead developer for the Australian Living Guidelines for Adult Inflammatory Arthritis and Juvenile Idiopathic Arthritis. He is an ANZMUSC Practitioner Fellow. He works as a consultant rheumatologist at the Queen Elizabeth Hospital in Adelaide.</p>
+                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> All recommendations<br><span class="rec-label jia">JIA:</span> All recommendations</div>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1Ekp3PAIUKkPd0Ud21HWznQdO24gMOuHM96wE_UvBvEM/edit?usp=sharing" target="_blank">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
             <div class="panellist-card" data-profession="pharmacist" data-guideline="adult">
