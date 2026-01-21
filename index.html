@@ -190,7 +190,47 @@
         .whats-new-title { font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.4; margin-bottom: 6px; }
         .whats-new-meta { font-size: 13px; color: var(--text-light); }
         
-        .about-section { padding: 80px 24px; background: var(--bg-light); border-top: 1px solid var(--border-light); }
+        /* Coming Soon Section */
+        .coming-soon-section { padding: 60px 24px; background: var(--bg-light); border-top: 1px solid var(--border-light); }
+        .coming-soon-container { max-width: 900px; margin: 0 auto; }
+        .coming-soon-header { text-align: center; margin-bottom: 32px; }
+        .coming-soon-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); display: inline-flex; align-items: center; gap: 10px; }
+        .coming-soon-header h2 svg { width: 24px; height: 24px; color: var(--text-light); }
+        
+        .coming-soon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .coming-soon-item { 
+            background: var(--white); 
+            border: 1px dashed var(--border-medium); 
+            border-radius: var(--radius-md); 
+            padding: 20px 24px; 
+            display: flex; 
+            gap: 16px;
+        }
+        .coming-soon-badge { 
+            flex-shrink: 0; 
+            width: 44px; 
+            height: 44px; 
+            border-radius: var(--radius-sm); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            opacity: 0.7;
+        }
+        .coming-soon-badge.adult { background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); }
+        .coming-soon-badge.jia { background: linear-gradient(135deg, var(--jia-purple) 0%, var(--jia-purple-dark) 100%); }
+        .coming-soon-badge svg { width: 22px; height: 22px; color: var(--white); }
+        .coming-soon-content { flex: 1; min-width: 0; }
+        .coming-soon-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .coming-soon-label.adult { color: var(--primary-teal-dark); }
+        .coming-soon-label.jia { color: var(--jia-purple-dark); }
+        .coming-soon-title { font-size: 15px; font-weight: 600; color: var(--text-medium); line-height: 1.4; margin-bottom: 6px; }
+        .coming-soon-meta { font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
+        .coming-soon-meta svg { width: 14px; height: 14px; }
+        
+        /* Empty state for coming soon (when only one guideline has upcoming) */
+        .coming-soon-grid.single-item { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        
+        .about-section { padding: 80px 24px; background: var(--white); border-top: 1px solid var(--border-light); }
         .about-container { max-width: 1000px; margin: 0 auto; }
         .about-header { text-align: center; margin-bottom: 48px; }
         .about-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; font-weight: 600; color: var(--primary-blue); margin-bottom: 12px; }
@@ -203,11 +243,11 @@
         .feature-card h3 { font-size: 17px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
         .feature-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
         
-        .partners-section { padding: 60px 24px; background: var(--white); border-top: 1px solid var(--border-light); }
+        .partners-section { padding: 60px 24px; background: var(--bg-light); border-top: 1px solid var(--border-light); }
         .partners-container { max-width: 1200px; margin: 0 auto; text-align: center; }
         .partners-label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 24px; }
         .partners-logos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
-        .partner-text { font-size: 14px; font-weight: 600; color: var(--text-light); padding: 12px 20px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); background: var(--bg-light); }
+        .partner-text { font-size: 14px; font-weight: 600; color: var(--text-light); padding: 12px 20px; border: 1px solid var(--border-light); border-radius: var(--radius-sm); background: var(--white); }
         
         footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); }
         .footer-container { max-width: 1200px; margin: 0 auto; }
@@ -223,20 +263,13 @@
         @media (max-width: 768px) { 
             .pathways-grid { grid-template-columns: 1fr; }
             .whats-new-grid { grid-template-columns: 1fr; }
+            .coming-soon-grid { grid-template-columns: 1fr; }
+            .coming-soon-grid.single-item { max-width: none; }
             .about-features { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-            .header-main { flex-direction: column; align-items: flex-start; }
-            nav { width: 100%; justify-content: flex-start; }
+            nav { display: none; }
         }
     </style>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XQKQVSHVS5');
-    </script>
 </head>
 <body>
     <header>
@@ -385,6 +418,49 @@
                         <div class="whats-new-meta">October 2025 • New recommendation</div>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="coming-soon-section">
+        <div class="coming-soon-container">
+            <div class="coming-soon-header">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                    Coming Soon
+                </h2>
+            </div>
+            <div class="coming-soon-grid single-item">
+                <!-- Adult IA Coming Soon Item -->
+                <div class="coming-soon-item">
+                    <div class="coming-soon-badge adult">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="coming-soon-content">
+                        <div class="coming-soon-label adult">Adult Inflammatory Arthritis</div>
+                        <div class="coming-soon-title">Retinopathy screening for adults taking hydroxychloroquine for inflammatory arthritis</div>
+                        <div class="coming-soon-meta">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
+                            Expected March 2026
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JIA Coming Soon Item - uncomment and modify when ready
+                <div class="coming-soon-item">
+                    <div class="coming-soon-badge jia">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="coming-soon-content">
+                        <div class="coming-soon-label jia">Juvenile Idiopathic Arthritis</div>
+                        <div class="coming-soon-title">[Topic title here]</div>
+                        <div class="coming-soon-meta">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
+                            Expected [Month Year]
+                        </div>
+                    </div>
+                </div>
+                -->
             </div>
         </div>
     </section>
