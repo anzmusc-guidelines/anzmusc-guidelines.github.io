@@ -349,6 +349,123 @@
         sup {
             line-height: 0;
         }
+
+        /* ========================================
+           LIVING GUIDELINE UPDATES SECTION
+           ======================================== */
+        .living-updates {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-medium);
+        }
+        .living-updates-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .living-updates-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--primary-teal);
+            flex-shrink: 0;
+        }
+        .living-updates-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-teal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .living-updates-content {
+            background: linear-gradient(135deg, rgba(13,148,136,0.04) 0%, rgba(13,148,136,0.02) 100%);
+            border-left: 3px solid var(--primary-teal);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px 18px;
+        }
+        .update-entry {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(13,148,136,0.1);
+        }
+        .update-entry:first-child {
+            padding-top: 0;
+        }
+        .update-entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .update-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-teal-dark);
+            white-space: nowrap;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+        .update-text {
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+        .update-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            padding: 2px 8px;
+            border-radius: 100px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .update-badge.no-change {
+            background: rgba(107, 114, 128, 0.12);
+            color: var(--text-light);
+        }
+        .update-badge.factual {
+            background: rgba(13, 148, 136, 0.12);
+            color: var(--primary-teal-dark);
+        }
+        .update-badge.text-amended {
+            background: rgba(234, 179, 8, 0.15);
+            color: #a16207;
+        }
+        .living-updates-inline {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-light);
+        }
+        .living-updates-inline .living-updates-header {
+            margin-bottom: 8px;
+        }
+        .living-updates-inline .living-updates-icon {
+            width: 14px;
+            height: 14px;
+        }
+        .living-updates-inline .living-updates-title {
+            font-size: 11px;
+        }
+        .living-updates-inline .living-updates-content {
+            padding: 10px 14px;
+        }
+        .living-updates-inline .update-date {
+            font-size: 12px;
+            min-width: 80px;
+        }
+        .living-updates-inline .update-text {
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .update-entry {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .update-date {
+                min-width: auto;
+            }
+        }
 </style>
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
@@ -966,6 +1083,22 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <p>The panel noted that triple therapy was the only csDMARD combination that was found to have superior efficacy compared with MTX monotherapy. The combination of MTX with one other DMARD (e.g., hydroxychloroquine or sulfasalazine) has not been shown to be superior to MTX monotherapy as the initial treatment for RA and therefore those who elect to commence combination csDMARD therapy should choose triple therapy.</p>
                         <p>The panel also emphasised that the recommendation is conditional and that there is likely to be a considerable difference in preferences between individuals. While many people with RA may prefer the potential benefits of initial triple therapy (at the expense of a higher medication burden than MTX monotherapy), some patients may prefer a simpler initial regimen in the knowledge that treatment outcomes and the choice of DMARD therapy are frequently reviewed in a treat-to-target paradigm. On average, there is a modest net benefit associated with combination therapy versus MTX monotherapy but the magnitude or impact of this benefit is likely to vary between patients.</p>
                         <p>While a variety of treatment strategies are likely to be effective for RA when employed within a treat-to-target approach, there may be some differences in the speed at which the target disease activity state is achieved, and this may be an important consideration for some people, depending on their individual circumstances. Many factors are likely to be considered in the initial choice of DMARD treatment, including the individual treatment goals, preferences, values, comorbidities and concurrent medications, disease activity and prognosis, functional status, work and other life roles.</p>
+
+                        <!-- Living Guideline Updates -->
+                        <div class="living-updates">
+                            <div class="living-updates-header">
+                                <svg class="living-updates-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0v2.43l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="living-updates-title">Living Guideline Updates</span>
+                            </div>
+                            <div class="living-updates-content">
+                                <div class="update-entry">
+                                    <span class="update-date">January 2026</span>
+                                    <span class="update-text">Since the original panel meeting, PBS restrictions on rituximab for RA have been removed, making the combination of methotrexate and rituximab a technically feasible option for initial therapy. However, this combination is not established practice in Australian rheumatology as initial treatment, and evidence remains limited regarding long-term safety, relative efficacy compared with other initial combinations, and potential implications for subsequent treatment choices over the disease course. The panel's original guidance remains appropriate. <span class="update-badge no-change">No change</span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="tab-content" id="rec-0-etd">
@@ -3452,7 +3585,23 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <p>Adrenal suppression can be demonstrated in at least one-third of RA patients treated with low-dose prednisolone <sup><a href="http://dx.doi.org/10.1530/EJE-17-0251" target="_blank" rel="noopener" title="Borresen et al. (2017)">68</a></sup>, although estimates of the rate of clinically-important episodes of adrenal insufficiency vary <sup><a href="http://dx.doi.org/10.1016/j.semarthrit.2016.03.001" target="_blank" rel="noopener" title="Joseph et al. (2016)">67</a></sup>.</p>
                         <p>There is little observational evidence available regarding the specific risks of short-term glucocorticoids in people with RA, however data from the general population are consistent with a small increase in the risk of serious adverse events. In a study using data from the Taiwanese National Health Insurance Research Database (n = 15,859,129 adult participants), brief courses (14 days or fewer) of oral glucocorticoids were associated with an approximate doubling of the risk of GI bleeding, sepsis or heart failure in the subsequent month <sup><a href="http://dx.doi.org/10.7326/M20-0432" target="_blank" rel="noopener" title="Yao et al. (2020)">94</a></sup>. Similarly, a study using a US insurance database found that a short course (less than 30 days) of systemic glucocorticoids was associated with an increased risk of sepsis, venous thromboembolism and fracture in the subsequent 30 days <sup><a href="http://dx.doi.org/10.1136/bmj.j1415" target="_blank" rel="noopener" title="Waljee et al. (2017)">95</a></sup>. The estimated absolute risk of any of these serious adverse events is approximately one per 1,000 short courses of glucocorticoid <sup><a href="https://www.ncbi.nlm.nih.gov/pubmed/30215965" target="_blank" rel="noopener" title="Ebell (2018)">93</a></sup>.</p>
                         <p>The panel also noted the important current concern during the COVID-19 pandemic regarding the potential harmful effects of both glucocorticoids and uncontrolled disease activity on the risk of COVID-19 (including severe outcomes) and the negative impact of glucocorticoids on the immunogenicity of COVID-19 vaccines <sup><a href="http://dx.doi.org/10.1136/annrheumdis-2020-219498" target="_blank" rel="noopener" title="Strangfeld et al. (2021)">33</a></sup><sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-220134" target="_blank" rel="noopener" title="Schäfer et al. (2021)">159</a></sup><sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-220647" target="_blank" rel="noopener" title="Furer et al. (2021)">162</a></sup>. While COVID-19 infection rates remain high, the balance of risks and harms of induction glucocorticoid regimens may be altered, particularly in people who are at increased risk of exposure to COVID-19 or of severe COVID-19 disease outcomes.</p>
-                        <p>Given the above, the panel agreed that the likely benefits of induction glucocorticoids may be offset by the risk of harms, but that this balance is likely to vary importantly between individuals.</p></div></div>
+                        <p>Given the above, the panel agreed that the likely benefits of induction glucocorticoids may be offset by the risk of harms, but that this balance is likely to vary importantly between individuals.</p>
+
+                        <!-- Inline Living Update -->
+                        <div class="living-updates-inline">
+                            <div class="living-updates-header">
+                                <svg class="living-updates-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0v2.43l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="living-updates-title">Update</span>
+                            </div>
+                            <div class="living-updates-content">
+                                <div class="update-entry">
+                                    <span class="update-date">January 2026</span>
+                                    <span class="update-text">The reference to COVID-19 pandemic context above reflects the panel's deliberation at the time of the original recommendation (June 2022). This content is retained as historically relevant to the decision-making process. <span class="update-badge no-change">No change</span></span>
+                                </div>
+                            </div>
+                        </div></div></div>
                     <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Certainty of the Evidence</span><span class="etd-rating">Low</span></div><div class="etd-domain-text"><p>1. For adults with active RA who are initiating DMARD therapy, addition of glucocorticoids versus placebo:</p>
                         <ul>
                             <li>There was HIGH certainty evidence that bridging glucocorticoid therapy improves mean function (i.e. lower HAQ score) and slightly improves mean disease activity.</li>
