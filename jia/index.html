@@ -269,6 +269,123 @@
         text-decoration: underline;
     }
 
+    /* ========================================
+       LIVING GUIDELINE UPDATES SECTION
+       ======================================== */
+    .living-updates {
+        margin-top: 28px;
+        padding-top: 20px;
+        border-top: 1px dashed var(--border-medium);
+    }
+    .living-updates-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .living-updates-icon {
+        width: 18px;
+        height: 18px;
+        color: var(--jia-purple);
+        flex-shrink: 0;
+    }
+    .living-updates-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--jia-purple);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .living-updates-content {
+        background: linear-gradient(135deg, rgba(124,58,237,0.04) 0%, rgba(124,58,237,0.02) 100%);
+        border-left: 3px solid var(--jia-purple);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        padding: 14px 18px;
+    }
+    .update-entry {
+        display: flex;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(124,58,237,0.1);
+    }
+    .update-entry:first-child {
+        padding-top: 0;
+    }
+    .update-entry:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .update-date {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--jia-purple-dark);
+        white-space: nowrap;
+        min-width: 100px;
+        flex-shrink: 0;
+    }
+    .update-text {
+        font-size: 14px;
+        color: var(--text-medium);
+        line-height: 1.6;
+    }
+    .update-badge {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        padding: 2px 8px;
+        border-radius: 100px;
+        margin-left: 6px;
+        vertical-align: middle;
+    }
+    .update-badge.no-change {
+        background: rgba(107, 114, 128, 0.12);
+        color: var(--text-light);
+    }
+    .update-badge.factual {
+        background: rgba(124, 58, 237, 0.12);
+        color: var(--jia-purple-dark);
+    }
+    .update-badge.text-amended {
+        background: rgba(234, 179, 8, 0.15);
+        color: #a16207;
+    }
+    .living-updates-inline {
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px dashed var(--border-light);
+    }
+    .living-updates-inline .living-updates-header {
+        margin-bottom: 8px;
+    }
+    .living-updates-inline .living-updates-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .living-updates-inline .living-updates-title {
+        font-size: 11px;
+    }
+    .living-updates-inline .living-updates-content {
+        padding: 10px 14px;
+    }
+    .living-updates-inline .update-date {
+        font-size: 12px;
+        min-width: 80px;
+    }
+    .living-updates-inline .update-text {
+        font-size: 13px;
+    }
+    @media (max-width: 768px) {
+        .update-entry {
+            flex-direction: column;
+            gap: 4px;
+        }
+        .update-date {
+            min-width: auto;
+        }
+    }
+
     </style>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
