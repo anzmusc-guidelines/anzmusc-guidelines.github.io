@@ -1,3 +1,6 @@
+// Australian Living Guidelines - Shared Scripts
+// Supports both numeric (#rec-0) and slug-based (#initial-dmard-ra) URLs
+
 let activeCondition = 'all';
 let activeTag = null;
 let searchQuery = '';
@@ -139,12 +142,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Deep linking - open modal from URL hash (e.g., #rec-0)
+// Deep linking - open modal from URL hash
+// Supports both numeric (#rec-0) and slug-based (#initial-dmard-ra) URLs
 function checkHashAndOpenModal() {
     const hash = window.location.hash;
-    if (hash && hash.startsWith('#rec-')) {
-        const modalId = hash.substring(1); // Remove the #
-        openModal(modalId);
+    if (!hash || hash.length <= 1) return;
+    
+    const hashValue = hash.substring(1); // Remove the #
+    
+    // Check if it's a numeric rec format
+    if (hashValue.startsWith('rec-')) {
+        openModal(hashValue);
+        return;
+    }
+    
+    // Check if it's a slug that needs mapping (using the global adultSlugMap if available)
+    if (window.adultSlugMap && window.adultSlugMap[hashValue]) {
+        openModal(window.adultSlugMap[hashValue]);
+        return;
     }
 }
 
