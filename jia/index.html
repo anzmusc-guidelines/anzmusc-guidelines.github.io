@@ -29,6 +29,35 @@
     }
     </script>
     
+    <!-- Deep linking slug support - maps human-readable slugs to jia-rec numbers -->
+    <script>
+    // Slug to recommendation number mapping for JIA
+    window.jiaSlugMap = {
+        'mtx-jia': 'jia-rec-1',
+        'sc-oral-mtx-jia': 'jia-rec-2',
+        'btsdmard-uveitis': 'jia-rec-3',
+        'csdmard-reduction-jia': 'jia-rec-4',
+        'btsdmard-reduction-jia': 'jia-rec-5',
+        'gc-induction-jia': 'jia-rec-6',
+        'iagc-preparation': 'jia-rec-7',
+        'iagc-anaesthesia': 'jia-rec-8',
+        'foot-orthoses-jia': 'jia-rec-9',
+        'exercise-jia': 'jia-rec-10'
+    };
+    
+    // Convert slug to jia-rec number if needed (runs before DOMContentLoaded)
+    (function() {
+        var hash = window.location.hash;
+        if (hash && hash.length > 1) {
+            var slug = hash.substring(1);
+            if (window.jiaSlugMap[slug]) {
+                // Replace hash with the numeric version (doesn't reload page)
+                history.replaceState(null, '', '#' + window.jiaSlugMap[slug]);
+            }
+        }
+    })();
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -2246,9 +2275,20 @@
 
         function checkHashAndOpenModal() {
             const hash = window.location.hash;
-            if (hash && hash.startsWith('#jia-rec-')) {
-                const modalId = hash.substring(1);
-                openModal(modalId);
+            if (!hash || hash.length <= 1) return;
+            
+            const hashValue = hash.substring(1); // Remove the #
+            
+            // Check if it's a numeric jia-rec format
+            if (hashValue.startsWith('jia-rec-')) {
+                openModal(hashValue);
+                return;
+            }
+            
+            // Check if it's a slug that needs mapping
+            if (window.jiaSlugMap && window.jiaSlugMap[hashValue]) {
+                openModal(window.jiaSlugMap[hashValue]);
+                return;
             }
         }
 
