@@ -62,6 +62,43 @@
     }
     </script>
     
+    <!-- Deep linking slug support - maps human-readable slugs to rec numbers -->
+    <script>
+    // Slug to recommendation number mapping for Adult IA
+    window.adultSlugMap = {
+        'initial-dmard-ra': 'rec-0',
+        'sc-oral-mtx-ra': 'rec-1',
+        'dmard-after-tnfi': 'rec-2',
+        'csdmard-reduction-ra': 'rec-3',
+        'csdmard-reduction-psa': 'rec-4',
+        'btsdmard-reduction-ra': 'rec-5',
+        'bdmard-reduction-axspa': 'rec-6',
+        'btsdmard-reduction-psa': 'rec-7',
+        'btsdmard-vs-csdmard-reduction': 'rec-8',
+        'perioperative-dmard': 'rec-9',
+        'lab-monitoring': 'rec-10',
+        'perioperative-gc': 'rec-11',
+        'opioids-ra': 'rec-12',
+        'opioids-axspa': 'rec-13',
+        'opioids-psa': 'rec-14',
+        'gc-flare-ra': 'rec-15',
+        'gc-longterm-ra': 'rec-16',
+        'gc-bridging-ra': 'rec-17'
+    };
+    
+    // Convert slug to rec number if needed (runs before DOMContentLoaded)
+    (function() {
+        var hash = window.location.hash;
+        if (hash && hash.length > 1) {
+            var slug = hash.substring(1);
+            if (window.adultSlugMap[slug]) {
+                // Replace hash with the numeric version (doesn't reload page)
+                history.replaceState(null, '', '#' + window.adultSlugMap[slug]);
+            }
+        }
+    })();
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
