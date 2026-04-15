@@ -157,7 +157,7 @@
         .pathways-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; font-weight: 600; color: var(--primary-blue); margin-bottom: 12px; }
         .pathways-header p { font-size: 17px; color: var(--text-medium); }
         
-        .pathways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .pathways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; grid-template-rows: auto; }
         
         .pathway-card { 
             background: var(--white); 
@@ -166,12 +166,13 @@
             box-shadow: var(--shadow-md);
             transition: all 0.3s;
             text-decoration: none;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 2;
         }
         .pathway-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
         
-        .pathway-header { padding: 32px 28px 24px; min-height: 200px; }
+        .pathway-header { padding: 32px 28px 24px; display: flex; flex-direction: column; }
         .pathway-header.adult { background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%); }
         .pathway-header.jia { background: linear-gradient(135deg, var(--jia-purple) 0%, var(--jia-purple-dark) 100%); }
         
@@ -390,12 +391,12 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd"/></svg>
                         </div>
                         <div class="pathway-title">Adult Inflammatory Arthritis</div>
-                        <div class="pathway-subtitle">Management of rheumatoid arthritis, psoriatic arthritis and axial spondyloarthritis</div>
+                        <div class="pathway-subtitle">Management of rheumatoid arthritis, psoriatic arthritis, axial spondyloarthritis and other autoimmune rheumatic diseases</div>
                     </div>
                     <div class="pathway-body">
                         <div class="pathway-stats">
                             <div class="pathway-stat">
-                                <div class="pathway-stat-value">18</div>
+                                <div class="pathway-stat-value">19</div>
                                 <div class="pathway-stat-label">Recommendations</div>
                             </div>
                         </div>
@@ -441,14 +442,14 @@
                 </h2>
             </div>
             <div class="whats-new-grid">
-                <a href="adult/#rec-10" class="whats-new-item">
+                <a href="adult/#rec-18" class="whats-new-item">
                     <div class="whats-new-badge adult">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/></svg>
                     </div>
                     <div class="whats-new-content">
                         <div class="whats-new-label adult">Adult Inflammatory Arthritis</div>
-                        <div class="whats-new-title">Laboratory safety monitoring in people with inflammatory arthritis</div>
-                        <div class="whats-new-meta">September 2025 • New recommendation</div>
+                        <div class="whats-new-title">Retinopathy screening for adults taking hydroxychloroquine</div>
+                        <div class="whats-new-meta">March 2026 • New recommendation</div>
                     </div>
                 </a>
                 
@@ -466,48 +467,6 @@
         </div>
     </section>
 
-    <section class="coming-soon-section">
-        <div class="coming-soon-container">
-            <div class="coming-soon-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
-                    Coming Soon
-                </h2>
-            </div>
-            <div class="coming-soon-grid single-item">
-                <!-- Adult IA Coming Soon Item -->
-                <div class="coming-soon-item">
-                    <div class="coming-soon-badge adult">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
-                    </div>
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-label adult">Adult Inflammatory Arthritis</div>
-                        <div class="coming-soon-title">Retinopathy screening for adults taking hydroxychloroquine for inflammatory arthritis</div>
-                        <div class="coming-soon-meta">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
-                            Expected March 2026
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- JIA Coming Soon Item - uncomment and modify when ready
-                <div class="coming-soon-item">
-                    <div class="coming-soon-badge jia">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg>
-                    </div>
-                    <div class="coming-soon-content">
-                        <div class="coming-soon-label jia">Juvenile Idiopathic Arthritis</div>
-                        <div class="coming-soon-title">[Topic title here]</div>
-                        <div class="coming-soon-meta">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
-                            Expected [Month Year]
-                        </div>
-                    </div>
-                </div>
-                -->
-            </div>
-        </div>
-    </section>
 
     <section class="about-section">
         <div class="about-container">
