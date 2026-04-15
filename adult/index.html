@@ -149,9 +149,10 @@
         .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
         .dropdown a:hover { background: var(--bg-light); color: var(--primary-teal); }
-        .hero { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 80px 24px; }
-        .hero-content { max-width: 1200px; margin: 0 auto; }
-        .hero h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 5vw, 44px); font-weight: 600; color: var(--white); margin-bottom: 20px; max-width: 700px; line-height: 1.2; }
+        .hero { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 56px 24px; }
+        .hero-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: flex-end; gap: 48px; }
+        .hero-text { flex: 1; min-width: 0; }
+        .hero h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 5vw, 44px); font-weight: 600; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
         .hero-description { font-size: 19px; color: rgba(255,255,255,0.9); max-width: 600px; line-height: 1.7; margin-bottom: 32px; }
         .hero-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.15); border-radius: 100px; color: var(--white); font-size: 14px; font-weight: 500; }
@@ -159,27 +160,27 @@
         .hero-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--primary-teal); color: var(--white); text-decoration: none; font-size: 16px; font-weight: 600; border-radius: var(--radius-md); transition: all 0.2s; box-shadow: 0 4px 14px rgba(13,148,136,0.4); }
         .hero-cta:hover { background: var(--primary-teal-light); transform: translateY(-2px); }
         .hero-cta svg { width: 18px; height: 18px; }
-        .whats-new-section { padding: 48px 24px; background: var(--bg-light); border-bottom: 1px solid var(--border-light); }
-        .whats-new-container { max-width: 1200px; margin: 0 auto; }
-        .whats-new-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
-        .whats-new-header h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); display: flex; align-items: center; gap: 10px; }
-        .whats-new-header h2 svg { width: 24px; height: 24px; color: var(--primary-teal); }
+        .whats-new-section { flex-shrink: 0; width: 380px; }
+        .whats-new-container { }
+        .whats-new-header { margin-bottom: 12px; }
+        .whats-new-header h2 { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px; }
+        .whats-new-header h2 svg { width: 16px; height: 16px; color: rgba(255,255,255,0.7); }
         .whats-new-link { font-size: 14px; font-weight: 600; color: var(--primary-teal); text-decoration: none; display: flex; align-items: center; gap: 6px; }
         .whats-new-link:hover { text-decoration: underline; }
         .whats-new-link svg { width: 16px; height: 16px; }
-        .whats-new-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .whats-new-item { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 20px 24px; display: flex; gap: 16px; transition: all 0.2s; cursor: pointer; }
-        .whats-new-item:hover { border-color: var(--primary-teal); box-shadow: var(--shadow-md); }
-        .whats-new-badge { flex-shrink: 0; width: 44px; height: 44px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+        .whats-new-grid { display: flex; flex-direction: column; gap: 12px; }
+        .whats-new-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); padding: 16px 18px; display: flex; gap: 14px; transition: all 0.2s; cursor: pointer; }
+        .whats-new-item:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.25); }
+        .whats-new-badge { flex-shrink: 0; width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
         .whats-new-badge.new { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
         .whats-new-badge.updated { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
-        .whats-new-badge svg { width: 22px; height: 22px; color: var(--white); }
+        .whats-new-badge svg { width: 18px; height: 18px; color: var(--white); }
         .whats-new-content { flex: 1; min-width: 0; }
         .whats-new-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-        .whats-new-label.new { color: #059669; }
-        .whats-new-label.updated { color: #2563eb; }
-        .whats-new-title { font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.4; margin-bottom: 6px; }
-        .whats-new-meta { font-size: 13px; color: var(--text-light); }
+        .whats-new-label.new { color: #34d399; }
+        .whats-new-label.updated { color: #60a5fa; }
+        .whats-new-title { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; }
+        .whats-new-meta { font-size: 12px; color: rgba(255,255,255,0.6); }
         .conditions-section { padding: 60px 24px; background: var(--white); }
         .conditions-container { max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 40px; }
@@ -370,7 +371,7 @@
         .footer-links { display: flex; gap: 24px; }
         .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; }
         .footer-links a:hover { color: var(--white); }
-        @media (max-width: 1024px) { .about-container { grid-template-columns: 1fr; gap: 40px; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 1024px) { .about-container { grid-template-columns: 1fr; gap: 40px; } .footer-grid { grid-template-columns: 1fr 1fr; } .hero-content { flex-direction: column; gap: 32px; } .whats-new-section { width: 100%; max-width: 480px; } }
         @media (max-width: 768px) { .recommendations-grid { grid-template-columns: 1fr; } .about-features { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } .modal-content { max-height: 100vh; border-radius: 0; } .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; } .modal-tabs { padding: 0 16px; gap: 0; } .modal-tab { padding: 14px 16px; font-size: 13px; flex-shrink: 0; } .modal-tabs-container::after { width: 30px; } }
     
         /* Reference superscript styling */
@@ -565,35 +566,36 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Evidence-based living recommendations for the treatment of inflammatory arthritis</h1>
-            <p class="hero-description">Helping Australian clinicians and patients make informed decisions about the pharmacological management of rheumatoid arthritis, psoriatic arthritis, and axial spondyloarthritis.</p>
-            <div class="hero-badges">
-                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg> NHMRC Approved</span>
-                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg> Living Guideline</span>
-                <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> 18 Recommendations</span>
+            <div class="hero-text">
+                <h1>Evidence-based living recommendations for the treatment of inflammatory arthritis</h1>
+                <p class="hero-description">Helping Australian clinicians and patients make informed decisions about the pharmacological management of rheumatoid arthritis, psoriatic arthritis, and axial spondyloarthritis.</p>
+                <div class="hero-badges">
+                    <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg> NHMRC Approved</span>
+                    <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg> Living Guideline</span>
+                    <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> 19 Recommendations</span>
+                </div>
+                <a href="#recommendations" class="hero-cta">Browse Recommendations <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg></a>
             </div>
-            <a href="#recommendations" class="hero-cta">Browse Recommendations <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg></a>
-        </div>
-    </section>
-
-    <section class="whats-new-section">
-        <div class="whats-new-container">
-            <div class="whats-new-header">
-                <h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
-                    What's New
-                </h2>
-            </div>
-            <div class="whats-new-grid">
-                <!-- New recommendation: Laboratory safety monitoring -->
-                <div class="whats-new-item" onclick="openModal('rec-18')">
-                    <div class="whats-new-badge new">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/></svg>
+            <div class="whats-new-section">
+                <div class="whats-new-container">
+                    <div class="whats-new-header">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg>
+                            What's New
+                        </h2>
                     </div>
-                    <div class="whats-new-content">
-                        <div class="whats-new-label new">New Recommendation</div>
-                        <div class="whats-new-title">Retinopathy screening for adults taking hydroxychloroquine</div>
-                        <div class="whats-new-meta">March 2026 • RA, SLE</div>
+                    <div class="whats-new-grid">
+                        <!-- New recommendation: HCQ retinopathy screening -->
+                        <div class="whats-new-item" onclick="openModal('rec-18')">
+                            <div class="whats-new-badge new">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/></svg>
+                            </div>
+                            <div class="whats-new-content">
+                                <div class="whats-new-label new">New Recommendation</div>
+                                <div class="whats-new-title">Retinopathy screening for adults taking hydroxychloroquine</div>
+                                <div class="whats-new-meta">March 2026 • RA, SLE</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
