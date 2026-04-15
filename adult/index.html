@@ -83,7 +83,8 @@
         'opioids-psa': 'rec-14',
         'gc-flare-ra': 'rec-15',
         'gc-longterm-ra': 'rec-16',
-        'gc-bridging-ra': 'rec-17'
+        'gc-bridging-ra': 'rec-17',
+        'hcq-retinopathy': 'rec-18'
     };
     
     // Convert slug to rec number if needed (runs before DOMContentLoaded)
@@ -591,8 +592,8 @@
                     </div>
                     <div class="whats-new-content">
                         <div class="whats-new-label new">New Recommendation</div>
-                        <div class="whats-new-title">Laboratory safety monitoring in people with inflammatory arthritis</div>
-                        <div class="whats-new-meta">September 2025 • RA, PsA, axSpA</div>
+                        <div class="whats-new-title">Retinopathy screening for adults taking hydroxychloroquine</div>
+                        <div class="whats-new-meta">March 2026 • RA, SLE</div>
                     </div>
                 </div>
             </div>
@@ -619,6 +620,7 @@
                     <button class="condition-tab" data-condition="ra">Rheumatoid Arthritis</button>
                     <button class="condition-tab" data-condition="psa">Psoriatic Arthritis</button>
                     <button class="condition-tab" data-condition="axspa">Axial Spondyloarthritis</button>
+                    <button class="condition-tab" data-condition="sle">Systemic Lupus Erythematosus</button>
                 </div>
                 <div class="filter-label" style="margin-top: 24px;">Filter by Topic</div>
                 <div class="tag-filters">
@@ -637,6 +639,9 @@
                     <button class="tag-filter" data-tag="tapering">Tapering</button>
                     <button class="tag-filter" data-tag="tnfi">TNFi</button>
                     <button class="tag-filter" data-tag="tsdmards">tsDMARDs</button>
+                    <button class="tag-filter" data-tag="hydroxychloroquine">Hydroxychloroquine</button>
+                    <button class="tag-filter" data-tag="retinopathy">Retinopathy</button>
+
                 </div>
             </div>
             <div class="recommendations-grid" id="recommendations-grid">
@@ -1026,7 +1031,37 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <span class="card-link">View details <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg></span>
                         <span class="card-updated">Updated Sep 2025</span>
                     </div>
-                </div>            </div>
+                </div>
+                <!-- Card: HCQ Retinopathy Screening -->
+                <div class="recommendation-card" data-conditions="ra sle" data-tags="monitoring csdmards retinopathy hydroxychloroquine screening" onclick="openModal('rec-18')">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-category">Monitoring</div>
+                            <div class="card-title">Retinopathy screening for adults taking hydroxychloroquine</div>
+                        </div>
+                        <div class="card-strength">
+                            <div class="strength-indicator conditional-for">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
+                                </svg>
+                            </div>
+                            <span class="strength-label">Conditional<br/>For</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-recommendation">In people with autoimmune rheumatic diseases taking hydroxychloroquine, we conditionally recommend a stratified approach to retinopathy screening and management of retinal changes.</p>
+                        <div class="card-tags">
+                            <span class="card-tag">Monitoring</span>
+                            <span class="card-tag">csDMARDs</span>
+                            <span class="card-tag">Retinopathy</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-link">View details <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg></span>
+                        <span class="card-updated">Updated Mar 2026</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1034,7 +1069,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
         <div class="about-container">
             <div class="about-content">
                 <h2>About This Living Guideline</h2>
-                <p>This guideline presents the best available, current scientific evidence for pharmacological management of the most common forms of inflammatory arthritis: rheumatoid arthritis (RA), psoriatic arthritis (PsA), and axial spondyloarthritis (axSpA).</p>
+                <p>This guideline presents the best available, current scientific evidence for pharmacological management of the most common forms of inflammatory arthritis: rheumatoid arthritis (RA), psoriatic arthritis (PsA), axial spondyloarthritis (axSpA), and other autoimmune rheumatic diseases including systemic lupus erythematosus (SLE).</p>
                 <p>As a living guideline, recommendations are updated in near real-time as new evidence emerges. Topics and questions identified as having highest clinical relevance are prioritised, including DMARD choice, switching, combination therapy, down-titration, and perioperative use.</p>
             </div>
             <div class="about-features">
@@ -3766,6 +3801,264 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             </div>
         </div>
     </div>
+
+    <div class="modal-overlay" id="modal-rec-18">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-category">Monitoring</div>
+                    <h2 class="modal-title">Retinopathy screening for adults taking hydroxychloroquine</h2>
+                </div>
+                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+            </div>
+            <div class="modal-tabs-container"><div class="modal-tabs">
+                <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-18', 'recommendation')">Recommendation</button>
+                <button type="button" class="modal-tab" data-tab="etd" onclick="switchTab('rec-18', 'etd')">Evidence to Decision</button>
+                <button type="button" class="modal-tab" data-tab="practical" onclick="switchTab('rec-18', 'practical')">Practical Info</button>
+                <button type="button" class="modal-tab" data-tab="data" onclick="switchTab('rec-18', 'data')">Data</button>
+                <button type="button" class="modal-tab" data-tab="moreinfo" onclick="switchTab('rec-18', 'moreinfo')">More Info</button>
+            </div></div>
+            <div class="modal-body">
+
+                <!-- TAB 1: RECOMMENDATION -->
+                <div class="tab-content active" id="rec-18-recommendation">
+                    <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
+                    <div class="recommendation-box">
+                        <p>In people with autoimmune rheumatic diseases taking hydroxychloroquine, we conditionally recommend a stratified approach to retinopathy screening and management of retinal changes:</p>
+                        <p><strong>Screening:</strong></p>
+                        <ul>
+                            <li>In those at higher risk* of retinopathy, commence baseline screening within the first year of treatment, followed by annual screening</li>
+                            <li>In those at lower risk, baseline screening may be considered; commence annual screening after approximately 5 years of continuous use</li>
+                        </ul>
+                        <p style="margin-top: 16px;"><strong>Response to macular abnormalities on screening:</strong></p>
+                        <ul>
+                            <li>In those with RA, discontinue hydroxychloroquine upon identification of retinal changes</li>
+                            <li>In those with SLE, discontinue hydroxychloroquine where there is evidence of structural retinal damage. Where early functional retinal changes are detected without structural damage, continuation or dose reduction with more frequent monitoring may be considered, based on shared decision-making between the patient, rheumatologist and ophthalmologist</li>
+                        </ul>
+                    </div>
+                    <div class="remark-box">
+                        <p>*Higher risk includes those taking hydroxychloroquine at a dose &gt;5 mg/kg real body weight; chronic renal impairment; concurrent tamoxifen use; pre-existing macular disease; and those at higher risk of other macular disease, including myopic (short-sighted) maculopathy which has a higher prevalence in Asian people, including young people.</p>
+                    </div>
+                    <div class="content-section">
+                        <h3>Rationale</h3>
+                        <p>While screening for retinopathy in people using hydroxychloroquine for autoimmune rheumatic diseases has long been an accepted practice, there remains variation in the method and timing of monitoring. The advent of new imaging technology in recent years has increased the sensitivity of screening, which has implications for the optimal screening strategy. While Australian ophthalmology (RANZCO) and international ophthalmology and rheumatology guidelines exist, there has hitherto been no Australian rheumatology recommendation on this topic.</p>
+                        <p>The guideline panel reviewed the existing literature on this question. There are no trials that estimate the benefits or harms of any hydroxychloroquine screening strategy. Screening is performed based on the logic that a proportion of long-term users of hydroxychloroquine are known to develop changes in the retina that, if progressive, may interfere with macular vision (important for reading and driving), and that early detection of such changes may allow discontinuation of the drug before irreversible vision change occurs.</p>
+                        <p>Observational data lend support to such an approach. The incidence of retinopathy increases with duration of use &ndash; while estimates vary, the incidence appears to be very low in the first five years of use (fewer than 3 in 1000 users at five years <sup><a href="http://dx.doi.org/10.1002/acr.20133" target="_blank" rel="noopener" title="Wolfe (2010)">321</a></sup><sup><a href="http://dx.doi.org/10.1002/acr.80033" target="_blank" rel="noopener" title="Daftarian (2026)">314</a></sup>), increasing to a cumulative incidence of up to 5.6% after 15 years <sup><a href="http://dx.doi.org/10.1002/acr.20133" target="_blank" rel="noopener" title="Wolfe (2010)">321</a></sup><sup><a href="http://dx.doi.org/10.1001/jamaophthalmol.2014.1099" target="_blank" rel="noopener" title="Marmor (2014)">325</a></sup><sup><a href="http://dx.doi.org/10.1002/acr.80033" target="_blank" rel="noopener" title="Daftarian (2026)">314</a></sup>. Discontinuation of hydroxychloroquine is associated with minimal progression of retinal changes in those with mild or moderate retinopathy, but retinal disease may progress even after discontinuation in those with severe disease <sup><a href="http://dx.doi.org/10.1001/jamaophthalmol.2014.1099" target="_blank" rel="noopener" title="Marmor (2014)">325</a></sup><sup><a href="http://dx.doi.org/10.1016/j.ajo.2025.05.030" target="_blank" rel="noopener" title="Browning (2025)">324</a></sup>.</p>
+                        <p>Hydroxychloroquine is primarily used for the treatment of two rheumatic diseases &ndash; rheumatoid arthritis (RA) and systemic lupus erythematosus (SLE) &ndash; but is also used for a variety of other autoimmune and inflammatory conditions. In people with RA, numerous effective alternative disease-modifying therapies exist for those who can no longer use hydroxychloroquine. In people with SLE, however, hydroxychloroquine is universally recommended on the basis of evidence for a reduction in mortality, organ damage, glucocorticoid exposure, pregnancy complications, and cardiovascular risk <sup><a href="http://dx.doi.org/10.1136/ard.2006.068676" target="_blank" rel="noopener" title="Alarcón (2007)">317</a></sup><sup><a href="http://dx.doi.org/10.1002/art.21039" target="_blank" rel="noopener" title="Fessler (2005)">315</a></sup><sup><a href="http://dx.doi.org/10.1016/j.ajog.2015.09.078" target="_blank" rel="noopener" title="Sciascia (2016)">318</a></sup><sup><a href="http://dx.doi.org/10.1001/jamanetworkopen.2024.32190" target="_blank" rel="noopener" title="Grimaldi (2024)">316</a></sup>, and no comparable immunomodulatory medication exists. Both dose reduction and discontinuation of hydroxychloroquine are associated with a risk of disease flare in people with SLE <sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-221295" target="_blank" rel="noopener" title="Almeida-Brasil (2022)">329</a></sup>.</p>
+                        <p>Risk factors for the development of hydroxychloroquine retinopathy have been consistently identified in several observational studies, including duration of use, dose &gt;5mg/kg real body weight, chronic renal impairment, and concurrent use of tamoxifen <sup><a href="http://dx.doi.org/10.1001/jamaophthalmol.2014.3459" target="_blank" rel="noopener" title="Melles (2014)">335</a></sup><sup><a href="http://dx.doi.org/10.1001/jamanetworkopen.2024.10677" target="_blank" rel="noopener" title="Jorge (2024)">322</a></sup>. A hydroxychloroquine dose of 5mg/kg has also been identified as a threshold for efficacy in SLE, and therefore for most people with SLE is likely to represent the dose that best balances efficacy with potential harms <sup><a href="http://dx.doi.org/10.1001/jama.2022.13591" target="_blank" rel="noopener" title="Jorge (2022)">333</a></sup>.</p>
+                        <p>The panel focused its discussion on the following topics, including some for which there remains clinical equipoise or in which current guidance is absent or conflicting:</p>
+                        <ul>
+                            <li>International guidelines differ in regard to the role of baseline screening in people who have recently commenced hydroxychloroquine. While the most common rationale for a baseline test is to detect pre-existing macular disease that may interfere with future screening for hydroxychloroquine retinopathy, the prevalence of other retinal (and particularly macular) diseases in the population most likely to be commencing hydroxychloroquine (particularly people with SLE) is extremely low. Given that the number needed to screen to detect an abnormality that would change treatment or screening strategy is likely to be extremely high, the panel considered it unlikely to be necessary to perform baseline screening in all people commencing hydroxychloroquine, particularly young adults without other risk factors for eye disease. The panel noted, however, that earlier testing for retinal changes may be valuable in those with recognised risk factors for hydroxychloroquine maculopathy (or other forms of retinopathy), and that a baseline eye check may be of value in older adults who have never had any form of eye testing.</li>
+                                                    <li>The panel recognised that regular eye testing may constitute a financial, logistical, cognitive and emotional burden for people living with chronic rheumatic diseases <sup><a href="http://dx.doi.org/10.3390/healthcare3010050" target="_blank" rel="noopener" title="Leppin (2015)">300</a></sup>. The increasing availability of advanced retinal screening technologies, particularly optical coherence tomography (OCT), in community optometry settings now permits hydroxychloroquine screening to be performed by optometrists, with appropriate referral to an ophthalmologist if abnormalities are detected. This is likely to improve access to screening, particularly for people for whom access to specialist ophthalmology care is limited by cost or geography.</li>
+                                                    <li>Given the different clinical implications of hydroxychloroquine discontinuation in people with SLE compared with RA, the panel elected to distinguish between these diseases in the section of the recommendation regarding the response to detection of retinopathy. In particular, the panel noted that the sensitivity of current screening tools for very early detection of retinal changes and the relatively slow progression of retinopathy to irreversible or sight-limiting disease allows for a measured and collaborative approach to the treatment regimen in people with SLE for whom a disease flare would have a significant clinical impact.</li>
+                                                    <li>The panel considered it important to include some guidance regarding clinical decision-making when retinal changes are detected. While immediate discontinuation is likely to be appropriate for nearly all people using hydroxychloroquine for RA, the decision may be less straightforward for people with SLE. Where structural retinal damage is identified, discontinuation is likely to be most appropriate. However, modern screening technology enables the detection of early macular toxicity before structural damage occurs &ndash; in instances where early changes are detected in people for whom hydroxychloroquine has important benefits, this permits a discussion between the patient, rheumatologist and ophthalmologist that weighs the relative benefits and risks of continuing, reducing the dose of, or discontinuing hydroxychloroquine. In some cases, continuation with more frequent monitoring may be appropriate.</li>
+                                                    <li>The role of dose reduction of hydroxychloroquine in people with early retinopathy detected on screening is unclear. While doses of hydroxychloroquine less than 5mg/kg real body weight are associated with a lower incidence of retinopathy than higher doses, there is no evidence regarding the impact of dose on progression of early retinopathy. Furthermore, reduction in the dose of hydroxychloroquine is associated with an increased risk of SLE flare, although this risk is lower than that associated with discontinuation of hydroxychloroquine (HR 1.20 (95% CI 1.04 to 1.38) for reduction versus HR 1.56 (95% CI 1.31 to 1.86) for discontinuation) <sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-221295" target="_blank" rel="noopener" title="Almeida-Brasil (2022)">329</a></sup>. This remains an important clinical challenge.</li>
+                        </ul>
+                        <p>The panel discussed the evidence gaps highlighted by this recommendation, including the impact of different screening regimens on important outcomes (including vision change and SLE flare). Given the low certainty of the existing evidence, this living recommendation will continue to be updated as soon as relevant new information becomes available.</p>
+                    </div>
+                </div>
+
+                <!-- TAB 2: EVIDENCE TO DECISION -->
+                <div class="tab-content" id="rec-18-etd">
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Benefits and Harms</span>
+                        <span class="etd-rating">Small net benefit, or little difference between alternatives</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>We did not identify any randomised controlled trials or observational studies that directly compared different approaches to hydroxychloroquine retinopathy screening.</p>
+                        <p>We included data from one longitudinal observational study <sup><a href="http://dx.doi.org/10.1002/acr.20133" target="_blank" rel="noopener" title="Wolfe (2010)">321</a></sup> that involved 3,995 patients from the US National Data Bank for Rheumatic Diseases with either rheumatoid arthritis or systemic lupus erythematosus who had used hydroxychloroquine, including 1,538 current users. Participants were screened for self-reported retinal toxicity, and positive cases followed-up with detailed interviews and specialist confirmation.</p>
+                        <p>6.5% of participants discontinued therapy because of an eye problem, including 1.8% who reported hydroxychloroquine retinal problems. However, definite or probable toxicity was documented in only 0.65% (95% confidence interval 0.31&ndash;0.93). The risk of toxicity was low in the initial 7 years of exposure, and was approximately 5 times greater after 7 years of usage (or 1,000g total exposure). Point estimates of the probability of toxicity were 0.29% at 5 years, 0.33% at 7 years, 1.0% at 10 years, 2.1% at 15 years, and 3.1% at 20 years.</p>
+                        <p>Many current guidelines (including ACR 2025 <sup><a href="http://dx.doi.org/10.1002/acr.25690" target="_blank" rel="noopener" title="Sammaritano (2025)">332</a></sup>, EULAR 2023 <sup><a href="http://dx.doi.org/10.1136/ard-2023-224762" target="_blank" rel="noopener" title="Fanouriakis (2024)">320</a></sup>, RCO 2020 <sup>319</sup> &amp; RANZCO 2025 <sup><a href="https://ranzco.edu/wp-content/uploads/2021/04/RANZCO-Guidelines-for-screening-for-HCQ-retinopathy-2025.pdf" target="_blank" rel="noopener" title="RANZCO (2025)">328</a></sup>) cite the findings of a 2014 US case-control study that identified an overall prevalence of retinopathy of 7.5% in people who had used hydroxychloroquine for at least 5 years <sup><a href="http://dx.doi.org/10.1001/jamaophthalmol.2014.3459" target="_blank" rel="noopener" title="Melles (2014)">335</a></sup>. Risk factors for retinopathy included daily dose (OR 5.67 for dose &gt;5mg/kg real body weight), duration of use (OR 3.22 for &gt;10 years&rsquo; use), chronic kidney disease (OR 2.08), and concomitant tamoxifen use (OR 4.59). Estimated annual risks of retinopathy for people taking &le;5mg/kg were 1% at 10 years and 4% at 20 years, but much higher at higher daily doses.</p>
+                        <p>Other observational studies using data from insurance databases have reported a similar or lower cumulative incidence of retinopathy. Melles 2023<sup><a href="http://dx.doi.org/10.7326/M22-2453" target="_blank" rel="noopener" title="Melles (2023)">323</a></sup> identified a cumulative incidence of 2.5% at 10 years and 8.6% at 15 years, although in people taking a dose of &le;5mg/kg the cumulative incidence at 15 years was 2.7%, and the majority of these were reported as mild disease.</p>
+                        <p>Another study involving 4677 patients also demonstrated an association between the risk of retinopathy and daily hydroxychloroquine dose, chronic kidney disease and tamoxifen use <sup><a href="http://dx.doi.org/10.1001/jamanetworkopen.2024.10677" target="_blank" rel="noopener" title="Jorge (2024)">322</a></sup>. This study also identified female sex and increased age at initiation of treatment as risk factors for the development of retinopathy.</p>
+                        <p>A recent meta-analysis of observational studies that used OCT for screening reported an estimated cumulative incidence of retinopathy of 0.1% (95%CI 0.0 to 0.5) at 5 years, 2.6% (1.6 to 4.1) at 10 years, and 5.6% (3.2 to 9.6) at 15 years. This study also identified female sex as a risk factor (HR 3.78, 95%CI 1.9 to 7.5) <sup><a href="http://dx.doi.org/10.1002/acr.80033" target="_blank" rel="noopener" title="Daftarian (2026)">314</a></sup>.</p>
+                        <p>Observational data suggest that discontinuation of hydroxychloroquine is associated with minimal progression of retinal changes in those with mild or moderate retinopathy, but retinal disease may progress even after discontinuation in those with severe disease <sup><a href="http://dx.doi.org/10.1001/jamaophthalmol.2014.1099" target="_blank" rel="noopener" title="Marmor (2014)">325</a></sup><sup><a href="http://dx.doi.org/10.1016/j.ajo.2025.05.030" target="_blank" rel="noopener" title="Browning (2025)">324</a></sup>. The effect of hydroxychloroquine dose reduction on progression of retinopathy identified on screening is unknown.</p>
+                        <p>The clinical benefits of hydroxychloroquine in SLE include reduction in mortality, organ damage, glucocorticoid exposure, pregnancy complications, and cardiovascular risk <sup><a href="http://dx.doi.org/10.1136/ard.2006.068676" target="_blank" rel="noopener" title="Alarcón (2007)">317</a></sup><sup><a href="http://dx.doi.org/10.1002/art.21039" target="_blank" rel="noopener" title="Fessler (2005)">315</a></sup><sup><a href="http://dx.doi.org/10.1016/j.ajog.2015.09.078" target="_blank" rel="noopener" title="Sciascia (2016)">318</a></sup><sup><a href="http://dx.doi.org/10.1001/jamanetworkopen.2024.32190" target="_blank" rel="noopener" title="Grimaldi (2024)">316</a></sup>. The impact of hydroxychloroquine on the risk of SLE flares appears to be dose-related &ndash; in one case-crossover study the risk of flare was twofold higher in those taking a dose of &le;5mg/kg/day compared with those taking a dose &gt;5mg/kg/day <sup><a href="http://dx.doi.org/10.1001/jama.2022.13591" target="_blank" rel="noopener" title="Jorge (2022)">333</a></sup>.</p>
+                        <p>The risk of disease flare is higher in people with SLE following dose reduction (HR 1.20, 95% CI 1.04&ndash;1.38) or discontinuation (HR 1.56, 95% CI 1.31&ndash;1.86) of hydroxychloroquine <sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-221295" target="_blank" rel="noopener" title="Almeida-Brasil (2022)">329</a></sup>.</p>
+                        <p>While an increasing number of alternative effective disease-modifying drugs are available to people with RA, in those with SLE there is a relative lack of alternative immunomodulatory medications with a similar benefit-harm profile.</p>
+                        <p>The panel discussed the observational evidence and current practices at length. While there was clear agreement that some form of screening was necessary to reduce the small but important risk of progressive retinopathy, it was noted that there remains considerable uncertainty regarding the relative benefits and risks of different approaches to screening.</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Certainty of the Evidence</span>
+                        <span class="etd-rating">Low</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>We are uncertain of the impact of screening for retinopathy in people taking hydroxychloroquine for rheumatic diseases, including the balance of potential benefits (prevention of visual loss) or harms (including loss of disease control following discontinuation or dose reduction of hydroxychloroquine).</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Values and Preferences</span>
+                        <span class="etd-rating">Substantial variability is expected or uncertain</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>We did not identify any studies that directly investigated the values and preferences of people taking hydroxychloroquine for rheumatic diseases regarding screening for retinopathy. Specifically, while it is most likely that the majority of patients would afford a high priority to a reduction in the risk of vision loss, we did not find any data regarding the relative weight that patients afford to the potential risks of vision loss versus disease flare, particularly in the setting of SLE.</p>
+                        <p>The panel noted that while all patients highly value their vision and are likely to favour a screening approach that reduces even a small risk of a change in vision, there are likely to be differences between patients in how they weigh the competing outcomes of possible progressive change in retinal function versus possible loss of control of their rheumatic disease. These differences may be influenced by a variety of factors including disease (and disease manifestations), treatment history, comorbidity (including other eye diseases), age, risk tolerance, and social circumstances.</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Resources</span>
+                        <span class="etd-rating">Important issues, or potential issues not investigated</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>Screening requires access to services equipped with appropriate tools, particularly Optical Coherence Tomography (OCT) and automated visual field testing. Further specialist testing may be required in some cases. There is currently no Medicare rebate for OCT when used for hydroxychloroquine retinopathy screening. Out-of-pocket costs for retinal screening using OCT in Australia are approximately $50&ndash;$80.</p>
+                        <p>In 2015, an estimated 28,300 Australians were using hydroxychloroquine daily <sup><a href="http://dx.doi.org/10.5694/mja2.50973" target="_blank" rel="noopener" title="Sonido (2021)">334</a></sup> and this number is likely to have increased over the last decade. There is therefore likely to be a cost burden associated with screening at both the individual and societal level.</p>
+                        <p>The importance of out-of-pocket costs may vary between individual patients. There is evidence that out-of-pocket healthcare costs may act as a barrier to accessing treatment for some people &ndash; as many as 25% of Australians living with arthritis (of any type) report skipping healthcare treatment due to cost <sup><a href="http://dx.doi.org/10.1071/PY16005" target="_blank" rel="noopener" title="Callander (2017)">243</a></sup>.</p>
+                        <p>While the total cost to the healthcare system of screening all people taking hydroxychloroquine for rheumatic diseases is likely to be substantial, data on the degree to which this is offset by prevention of major harmful outcomes (particularly permanent visual loss) are not available in an Australian setting.</p>
+                        <p>A study performed in the US healthcare system estimated the cost-utility of baseline screening followed by annual screening after 5 years to be between US$33,155 and US$344,172 per QALY <sup><a href="http://dx.doi.org/10.1097/IAE.0000000000001235" target="_blank" rel="noopener" title="McClellan (2016)">331</a></sup>. Another study performed in the Netherlands estimated that screening saves costs (210 Euros per patient) while gaining 0.79 QALY per patient over a lifetime, although a reduced screening frequency (biennial after 10 years) was more cost-effective in low risk patients (dose &lt;5mg/kg/day) <sup><a href="http://dx.doi.org/10.1007/s10198-024-01715-w" target="_blank" rel="noopener" title="Quist (2025)">330</a></sup>.</p>
+                        <p>While both studies suggested that screening is cost-effective, it is unclear to what extent the findings can be extrapolated to the Australian healthcare setting. Moreover, both studies used best-case assumptions regarding the effectiveness of screening, and worst-case assumptions regarding the impact of no screening on visual outcomes, and neither modelled the cost implications of disease flare in those who discontinued hydroxychloroquine.</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Equity</span>
+                        <span class="etd-rating">Important issues, or potential issues not investigated</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>Many factors influence individual patient’s health opportunities and outcomes. Such factors (based on the PROGRESS-Plus characteristics) might include poor health literacy; residence in rural, remote or relatively under-serviced locations; primary language other than English; low educational attainment; the presence of disability; or adverse socioeconomic or social circumstances. Some of these may affect preferences and capacity to undertake hydroxychloroquine retinopathy screening.</p>
+                        <p>Access to screening is likely to vary between individuals based on geographic and socioeconomic factors, particularly for people who live in rural, remote, or under-serviced areas. Aboriginal and Torres Strait Islander peoples already experience disproportionate burdens of visual impairment and autoimmune connective tissue disease.</p>
+                        <p>The panel noted that the lack of Medicare rebate in Australia for hydroxychloroquine retinal screening with OCT is likely to be a barrier to routine screening in some people. The panel also emphasised that screening tests (including OCT) may be performed by optometrists. This may improve accessibility to appropriate screening, particularly in settings where ophthalmology services are limited or cost prohibitive, although additional specialist ophthalmology review may be required in those with abnormal screening results, which may create a further cost, travel and access burden on disadvantaged populations.</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Acceptability</span>
+                        <span class="etd-rating">No important issues with the recommended alternative</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>Screening tests for retinopathy are generally well-tolerated and infrequent, and are likely to be broadly acceptable to patients, clinicians, and other stakeholders.</p>
+                    </div>
+                </div>
+                <div class="etd-domain">
+                    <div class="etd-domain-header">
+                        <span class="etd-domain-title">Feasibility</span>
+                        <span class="etd-rating">No important issues with the recommended alternative</span>
+                    </div>
+                    <div class="etd-domain-text">
+                        <p>Screening for retinopathy in this population is an established practice and is widely available. Broadly speaking, screening is a feasible intervention, however there may be some entrenched variation in practice (e.g. screening frequency, the use of a baseline test, choice of technology, and decision-making about treatments when retinopathy is detected) that may present a challenge to widespread implementation.</p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- TAB 3: PRACTICAL INFO -->
+                <div class="tab-content" id="rec-18-practical">
+                    <div class="content-section">
+                        <h3>Key Points for Clinical Practice</h3>
+                        <ul>
+                            <li>The potential for retinopathy should be discussed at the commencement of treatment with hydroxychloroquine, including development of a shared plan for screening</li>
+                            <li>Where a baseline screen is undertaken, tests may safely be performed <em>after</em> initiation of therapy and should not be a barrier to timely introduction of the drug</li>
+                            <li>Screening for early maculopathy in people taking hydroxychloroquine should include spectral domain-optical coherence tomography (SD-OCT) of the macula and automated visual field testing
+                                <ul>
+                                    <li>Other tests may be appropriate depending on findings and availability (eg fundus autofluorescence (FAF) and multifocal electroretinogram (mfERG))</li>
+                                    <li>Further details on screening tests may be found in the <a href="https://ranzco.edu/wp-content/uploads/2021/04/RANZCO-Guidelines-for-screening-for-HCQ-retinopathy-2025.pdf" target="_blank">2025 Royal Australian and New Zealand College of Ophthalmologists (RANZCO) Guidelines for Screening for Hydroxychloroquine Retinopathy</a></li>
+                                </ul>
+                            </li>
+                            <li>Clear communication between all members of the treating team (including the ophthalmologist, GP and rheumatologist) should be established, including the results of screening tests, the ongoing monitoring strategy, and a clear process for discussion of treatment plans with the patient.
+                                <ul>
+                                    <li>All decisions regarding the DMARD regimen in people with rheumatic diseases, including safety monitoring, should be made within a shared decision-making framework following a clear discussion of potential benefits and harms, tailored to the individual’s circumstances</li>
+                                    <li>The distinction between early functional retinal changes and structural retinal damage should be determined by the patient’s ophthalmologist and clearly communicated to the rheumatologist to inform treatment decisions</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-section">
+                        <h3>Risk Factors for Hydroxychloroquine Retinopathy</h3>
+                        <ul>
+                            <li>Risk factors for the development of hydroxychloroquine retinopathy include:
+                                <ul>
+                                    <li>Duration of use (rare before 5 years, &gt;2% after 15 years of use)</li>
+                                    <li>Dose &gt;5mg/kg real body weight</li>
+                                    <li>Chronic renal impairment</li>
+                                    <li>Concurrent use of tamoxifen (which may also cause a maculopathy)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-section">
+                        <h3>Baseline Screening Considerations</h3>
+                        <ul>
+                            <li>Baseline screening is recommended in those at higher risk of retinopathy. In those at lower risk, baseline screening may also be considered, however the potential benefits may be fewer, particularly in young adults in whom macular disease is uncommon
+                                <ul>
+                                    <li>In those at low risk, consider a discussion regarding the potential benefits and costs of baseline screening</li>
+                                    <li>A baseline eye check is likely to be of value in older adults who have not previously had any form of eye testing</li>
+                                    <li>Consider a lower threshold for baseline screening in young adults of Asian heritage, who may be at risk of myopic maculopathy <sup><a href="http://dx.doi.org/10.1177/11206721231185816" target="_blank" rel="noopener" title="Shi (2024)">313</a></sup><sup><a href="http://dx.doi.org/10.1136/bjophthalmol-2019-315298" target="_blank" rel="noopener" title="Zou (2020)">312</a></sup></li>
+                                    <li>The presence of other ocular disease may represent a risk factor for inadequate detection of early macular changes</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-section">
+                        <h3>Additional Clinical Information</h3>
+                        <ul>
+                            <li>The clinical manifestation of a progressive maculopathy is central vision loss including difficulty reading or driving. Complete loss of vision does not occur.</li>
+                            <li>Evidence regarding the natural history of hydroxychloroquine retinopathy is sparse, but progression of early disease appears to be rare after drug discontinuation.</li>
+                            <li>The relatively slow rate of progression if early retinal changes are detected with sensitive modern screening tools allows an opportunity to monitor progress in those for whom discontinuation of hydroxychloroquine may be associated with an increased risk of major flare in SLE. Any such decision should be made in discussion with the patient’s ophthalmologist and treating physician.</li>
+                            <li>While both dose reduction and discontinuation of hydroxychloroquine have been shown to increase the risk of disease flare in people with SLE, the impact of hydroxychloroquine dose reduction on the progression of hydroxychloroquine-associated maculopathy is unknown</li>
+                            <li>The <a href="https://rheumatology.org.au/For-Patients/Adult-Medication-Information/H-M/Hydroxychloroquine#1970343-what-precautions-are-necessary" target="_blank">Australian Rheumatology Association</a> provides a patient information sheet for those commencing hydroxychloroquine</li>
+                        </ul>
+                    </div></div>
+
+                <!-- TAB 4: DATA -->
+                <div class="tab-content" id="rec-18-data">
+                    <div class="data-content">
+                        <div class="pico-section">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/></svg>PICO 22: Clinical Question (PICO)</h3>
+                            <p class="pico-text">In people with rheumatic diseases treated with hydroxychloroquine, what is the best approach to reducing the risk of hydroxychloroquine retinopathy?</p>
+                        </div>
+                        <div class="evidence-section">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
+                            <ul class="evidence-list">
+                                <li><a href="https://drive.google.com/file/d/1gQF-n39wAUcKUnWBRN3waryH7Ql6Ta8j/view?usp=sharing" target="_blank">Initial Evidence Synthesis (October 2025)</a></li>
+                            </ul>
+                            <span class="card-updated" style="display:block; margin-top:12px;">Last updated: March 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: MORE INFO -->
+                <div class="tab-content" id="rec-18-moreinfo">
+                    <div class="panel-info">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> Panel Members</h3>
+                        <div class="panel-members">
+                            <span class="panel-member chair">Dr Samuel Whittle (Chair &amp; Facilitator)</span>
+                        <span class="panel-member">Dr Elisa Cornish</span>
+                        <span class="panel-member">Dr Amanda Cross</span>
+                        <span class="panel-member">Dr Christopher Fong</span>
+                        <span class="panel-member">Dr Fiona Goldblatt</span>
+                        <span class="panel-member">Mr Ben Horgan</span>
+                        <span class="panel-member">A/Prof Helen Keen</span>
+                        <span class="panel-member">Prof Lyn March</span>
+                        <span class="panel-member">A/Prof Sean O'Neill</span>
+                        <span class="panel-member">Dr Huai Leng (Jessica) Pisaniello</span>
+                        <span class="panel-member">Dr Mouna Sawan</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg></div>
+                        <div class="info-content">
+                            <div class="info-label">Panel Meeting Date</div><div class="info-value">6 March 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end modal-body -->
+
+            <div class="modal-footer">
+                <div class="modal-footer-left">
+                    <span class="card-updated">Last updated: March 2026</span>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Retinopathy%20screening%20for%20adults%20taking%20hydroxychloroquine" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                </div>
+                <div class="modal-footer-right">
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n/rec/jXv5eb" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                </div>
+            </div>
+
+        </div><!-- end modal-content -->
+    </div><!-- end modal-overlay -->
 
     <script src="../scripts.js"></script>
 </body>
