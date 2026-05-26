@@ -235,6 +235,74 @@
         .whats-new-title { font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.4; margin-bottom: 6px; }
         .whats-new-meta { font-size: 13px; color: var(--text-light); }
         
+        /* Research Banner — remove after 16 June 2026 */
+        .research-banner {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ecfeff 100%);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 28px 24px;
+        }
+        .research-banner-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .research-banner-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--primary-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .research-banner-icon svg { width: 24px; height: 24px; color: var(--white); }
+        .research-banner-text { flex: 1; min-width: 280px; }
+        .research-banner-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary-teal-dark);
+            margin-bottom: 4px;
+        }
+        .research-banner-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+        }
+        .research-banner-desc {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-bottom: 6px;
+        }
+        .research-banner-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .research-banner-cta {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--primary-teal);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: background 0.2s;
+        }
+        .research-banner-cta:hover { background: var(--primary-teal-dark); }
+        .research-banner-cta svg { width: 14px; height: 14px; }
+        /* End Research Banner */
+        
         /* Coming Soon Section */
         .coming-soon-section { padding: 60px 24px; background: var(--bg-light); border-top: 1px solid var(--border-light); }
         .coming-soon-container { max-width: 900px; margin: 0 auto; }
@@ -376,6 +444,30 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================ -->
+    <!-- RESEARCH BANNER — remove after 16 June 2026                 -->
+    <!-- MUHREC ID 52237 · CI: Prof Denise O'Connor, Monash University -->
+    <!-- Survey link includes UTM tags for click tracking             -->
+    <!-- ============================================================ -->
+    <section class="research-banner">
+        <div class="research-banner-container">
+            <div class="research-banner-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>
+            </div>
+            <div class="research-banner-text">
+                <div class="research-banner-eyebrow">Research Invitation</div>
+                <div class="research-banner-title">Help shape the future of the Living Guidelines</div>
+                <div class="research-banner-desc">Adult and paediatric rheumatologists and trainees: share how you use these guidelines in a short (~10 min) survey.</div>
+                <div class="research-banner-meta">Monash University · MUHREC Project ID 52237 · Voluntary &amp; confidential</div>
+            </div>
+            <a href="https://monashred.au1.qualtrics.com/jfe/form/SV_b29G8HelTSTZ0eW?source=livingguidelines_web&amp;utm_source=livingguidelines&amp;utm_medium=web&amp;utm_campaign=guidelines_uptake_survey" class="research-banner-cta" target="_blank" rel="noopener">
+                Take the survey
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.1l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+            </a>
+        </div>
+    </section>
+    <!-- END RESEARCH BANNER -->
 
     <section class="pathways-section">
         <div class="pathways-container">
