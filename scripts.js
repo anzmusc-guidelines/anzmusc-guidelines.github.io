@@ -108,14 +108,29 @@ document.querySelectorAll('.tag-filter').forEach(btn => {
     });
 });
 
+// Remembers which element opened the modal, so focus can return there on close.
+let lastFocusedTrigger = null;
+
 function openModal(modalId) {
     // Close any existing modals first
     document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
 
     const modal = document.getElementById('modal-' + modalId);
     if (modal) {
+        // Remember what had focus (the card/link that opened this) for later return.
+        lastFocusedTrigger = document.activeElement;
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Dialog semantics for screen readers.
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        const titleEl = modal.querySelector('.modal-title');
+        if (titleEl) {
+            if (!titleEl.id) titleEl.id = modalId + '-title';
+            modal.setAttribute('aria-labelledby', titleEl.id);
+        }
 
         // Scroll modal body to top
         const modalBody = modal.querySelector('.modal-body');
@@ -125,12 +140,26 @@ function openModal(modalId) {
 
         // Reset to Recommendation tab
         switchTab(modalId, 'recommendation');
+
+        // Move keyboard focus into the modal (the close button is a safe first stop).
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) {
+            closeBtn.focus();
+        } else {
+            modal.querySelector(FOCUSABLE_SELECTOR)?.focus();
+        }
     }
 }
 
 function closeModal() {
     document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
     document.body.style.overflow = '';
+
+    // Return focus to whatever opened the modal, so the user keeps their place.
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+        lastFocusedTrigger.focus();
+    }
+    lastFocusedTrigger = null;
 }
 
 function switchTab(modalId, tabId) {
@@ -146,7 +175,39 @@ document.querySelectorAll('.modal-overlay').forEach(modal => {
     modal.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 });
 
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+// Elements that can receive keyboard focus inside a modal.
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+
+    // Focus trap: while a modal is open, keep Tab inside it.
+    if (e.key !== 'Tab') return;
+    const openModalEl = document.querySelector('.modal-overlay.active');
+    if (!openModalEl) return;
+
+    const focusables = [...openModalEl.querySelectorAll(FOCUSABLE_SELECTOR)]
+        .filter(el => el.offsetParent !== null || el === document.activeElement);
+    if (focusables.length === 0) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey) {
+        // Shift+Tab from the first element wraps to the last.
+        if (active === first || !openModalEl.contains(active)) {
+            e.preventDefault();
+            last.focus();
+        }
+    } else {
+        // Tab from the last element wraps to the first.
+        if (active === last || !openModalEl.contains(active)) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+});
 
 // Smooth-scroll for in-page anchor links. Links that open a modal carry their
 // own onclick="...; return false;" so they never reach this handler; this only
