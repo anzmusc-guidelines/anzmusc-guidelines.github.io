@@ -111,13 +111,44 @@ document.querySelectorAll('.tag-filter').forEach(btn => {
 // Remembers which element opened the modal, so focus can return there on close.
 let lastFocusedTrigger = null;
 
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+// Return the modal's real (non-sentinel) focusable elements that are visible.
+function getModalFocusables(modal) {
+    return [...modal.querySelectorAll(FOCUSABLE_SELECTOR)]
+        .filter(el => !el.classList.contains('focus-sentinel'))
+        .filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement);
+}
+
+// Add two invisible focusable "sentinels" just inside the modal content — one at the
+// very start, one at the very end. Because they are <div tabindex="0"> (not links),
+// every browser including Safari puts them in the tab order. When the user tabs onto
+// a sentinel, we know they've reached a boundary and bounce focus to the other end.
+// This is browser-agnostic and doesn't depend on which elements Safari will focus.
+function ensureSentinels(modal) {
+    const content = modal.querySelector('.modal-content') || modal;
+    if (content.querySelector(':scope > .focus-sentinel')) return; // already added
+
+    const makeSentinel = (pos) => {
+        const s = document.createElement('div');
+        s.className = 'focus-sentinel';
+        s.tabIndex = 0;
+        s.setAttribute('aria-hidden', 'true');
+        s.dataset.sentinel = pos;
+        // Visually hidden but focusable.
+        s.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;';
+        return s;
+    };
+    content.insertBefore(makeSentinel('start'), content.firstChild);
+    content.appendChild(makeSentinel('end'));
+}
+
 function openModal(modalId) {
     // Close any existing modals first
     document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
 
     const modal = document.getElementById('modal-' + modalId);
     if (modal) {
-        // Remember what had focus (the card/link that opened this) for later return.
         lastFocusedTrigger = document.activeElement;
 
         modal.classList.add('active');
@@ -132,22 +163,16 @@ function openModal(modalId) {
             modal.setAttribute('aria-labelledby', titleEl.id);
         }
 
-        // Scroll modal body to top
-        const modalBody = modal.querySelector('.modal-body');
-        if (modalBody) {
-            modalBody.scrollTop = 0;
-        }
+        ensureSentinels(modal);
 
-        // Reset to Recommendation tab
+        const modalBody = modal.querySelector('.modal-body');
+        if (modalBody) modalBody.scrollTop = 0;
+
         switchTab(modalId, 'recommendation');
 
-        // Move keyboard focus into the modal (the close button is a safe first stop).
+        // Move focus to the close button (a safe, always-present first stop).
         const closeBtn = modal.querySelector('.modal-close');
-        if (closeBtn) {
-            closeBtn.focus();
-        } else {
-            modal.querySelector(FOCUSABLE_SELECTOR)?.focus();
-        }
+        if (closeBtn) closeBtn.focus();
     }
 }
 
@@ -155,7 +180,6 @@ function closeModal() {
     document.querySelectorAll('.modal-overlay').forEach(modal => modal.classList.remove('active'));
     document.body.style.overflow = '';
 
-    // Return focus to whatever opened the modal, so the user keeps their place.
     if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
         lastFocusedTrigger.focus();
     }
@@ -175,37 +199,26 @@ document.querySelectorAll('.modal-overlay').forEach(modal => {
     modal.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 });
 
-// Elements that can receive keyboard focus inside a modal.
-const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { closeModal(); return; }
+// Focus trap via sentinels: when focus lands on a boundary sentinel, bounce it to
+// the opposite end of the modal's real content. Works identically in all browsers.
+document.addEventListener('focusin', function(e) {
+    const target = e.target;
+    if (!target.classList || !target.classList.contains('focus-sentinel')) return;
 
-    // Focus trap: while a modal is open, keep Tab inside it.
-    if (e.key !== 'Tab') return;
-    const openModalEl = document.querySelector('.modal-overlay.active');
-    if (!openModalEl) return;
+    const modal = target.closest('.modal-overlay.active');
+    if (!modal) return;
 
-    const focusables = [...openModalEl.querySelectorAll(FOCUSABLE_SELECTOR)]
-        .filter(el => el.offsetParent !== null || el === document.activeElement);
+    const focusables = getModalFocusables(modal);
     if (focusables.length === 0) return;
 
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-    const active = document.activeElement;
-
-    if (e.shiftKey) {
-        // Shift+Tab from the first element wraps to the last.
-        if (active === first || !openModalEl.contains(active)) {
-            e.preventDefault();
-            last.focus();
-        }
+    if (target.dataset.sentinel === 'start') {
+        // Tabbed backwards past the top -> go to the last real element.
+        focusables[focusables.length - 1].focus();
     } else {
-        // Tab from the last element wraps to the first.
-        if (active === last || !openModalEl.contains(active)) {
-            e.preventDefault();
-            first.focus();
-        }
+        // Tabbed forwards past the bottom -> go to the first real element.
+        focusables[0].focus();
     }
 });
 
