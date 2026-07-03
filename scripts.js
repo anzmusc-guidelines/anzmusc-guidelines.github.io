@@ -192,3 +192,45 @@ document.addEventListener('DOMContentLoaded', checkHashAndOpenModal);
 
 // Also check if hash changes while on page
 window.addEventListener('hashchange', checkHashAndOpenModal);
+
+// ============================================================
+// Keyboard accessibility for click-to-open elements (Step 3b)
+// Cards and What's New items open a modal on mouse click via their
+// onclick attribute. This block makes them equally operable by keyboard
+// and understandable to screen readers, WITHOUT any change to the HTML —
+// so every future recommendation inherits this automatically.
+// ============================================================
+(function enableKeyboardForModalOpeners() {
+    // Elements that open a modal on click but aren't natively focusable.
+    const openers = document.querySelectorAll('.recommendation-card, .whats-new-item');
+
+    openers.forEach(el => {
+        // Skip if it doesn't actually open a modal.
+        const onclick = el.getAttribute('onclick') || '';
+        if (!onclick.includes('openModal')) return;
+
+        // 1. Make it reachable by Tab.
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+
+        // 2. Announce it as an interactive control that opens a dialog.
+        if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+        el.setAttribute('aria-haspopup', 'dialog');
+
+        // 3. Give screen readers a meaningful name, derived from the card's
+        //    own title so it can never drift out of sync with the content.
+        if (!el.hasAttribute('aria-label')) {
+            const titleEl = el.querySelector('.card-title, .whats-new-title');
+            const title = titleEl ? titleEl.textContent.trim() : 'recommendation';
+            el.setAttribute('aria-label', title + ' — open details');
+        }
+
+        // 4. Activate on Enter or Space, the standard keys for a button.
+        //    Space is prevented from also scrolling the page.
+        el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                el.click();
+            }
+        });
+    });
+})();
