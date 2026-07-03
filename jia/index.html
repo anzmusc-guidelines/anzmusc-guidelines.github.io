@@ -146,6 +146,7 @@
         .recommendations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
         .recommendation-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; cursor: pointer; display: flex; flex-direction: column; }
         .recommendation-card:hover { border-color: var(--jia-purple); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+        .recommendation-card:focus-visible { outline: 3px solid var(--jia-purple); outline-offset: 2px; border-color: var(--jia-purple); box-shadow: var(--shadow-lg); }
         .recommendation-card.hidden { display: none; }
         .card-header { padding: 20px 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
         .card-category { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--jia-purple); margin-bottom: 8px; }
