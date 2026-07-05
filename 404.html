@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Australian Living Guidelines</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="The page you requested could not be found. Return to the Australian Living Guidelines home page or browse the inflammatory arthritis guidelines.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a5f;
+            --primary-teal: #0f766e;
+            --primary-teal-light: #14b8a6;
+            --primary-teal-dark: #115e59;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --bg-cream: #fefdfb;
+            --bg-light: #f8fafc;
+            --border-light: #e5e7eb;
+            --border-medium: #d1d5db;
+            --white: #ffffff;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --strong-for: #059669;
+            --strong-for-bg: #ecfdf5;
+            --strong-against: #dc2626;
+            --strong-against-bg: #fef2f2;
+            --conditional-for: #ca8a04;
+            --conditional-for-bg: #fefce8;
+            --conditional-against: #ea580c;
+            --conditional-against-bg: #fff7ed;
+            --consensus: #6366f1;
+            --consensus-bg: #eef2ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--bg-cream); }
+        header { background: var(--white); border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary-blue); padding: 8px 0; }
+        .header-top-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: flex-end; gap: 24px; }
+        .header-top a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; }
+        .header-top a:hover { color: var(--white); }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+        .logo-image { height: 50px; width: auto; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--primary-blue); }
+        .logo-subtitle { font-size: 13px; color: var(--text-light); }
+        nav { display: flex; gap: 8px; flex-wrap: wrap; }
+        .nav-item { position: relative; }
+        .nav-link { display: flex; align-items: center; gap: 6px; padding: 10px 16px; color: var(--text-medium); text-decoration: none; font-size: 15px; font-weight: 500; border-radius: var(--radius-sm); transition: all 0.2s; }
+        .nav-link:hover { color: var(--primary-teal); background: var(--bg-light); }
+        .nav-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-item:hover .nav-link svg { transform: rotate(180deg); }
+        .dropdown { position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid var(--border-light); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s; padding: 8px; z-index: 100; }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown a { display: block; padding: 10px 14px; color: var(--text-medium); text-decoration: none; font-size: 14px; border-radius: var(--radius-sm); }
+        .dropdown a:hover { background: var(--bg-light); color: var(--primary-teal); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary-blue) 0%, #2d5a87 100%); padding: 60px 24px; }
+        .page-header-content { max-width: 900px; margin: 0 auto; }
+        .page-header h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--white); margin-bottom: 16px; }
+        .page-header p { font-size: 18px; color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.7; }
+
+        /* Main Content */
+        .main-content { padding: 60px 24px; }
+        .content-container { max-width: 900px; margin: 0 auto; }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 48px; }
+        .content-section:last-child { margin-bottom: 0; }
+        .section-title { font-family: 'Source Serif 4', Georgia, serif; font-size: 24px; font-weight: 600; color: var(--primary-blue); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border-light); }
+        .subsection-title { font-size: 18px; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px 0; }
+        .content-section p { font-size: 16px; color: var(--text-medium); line-height: 1.8; margin-bottom: 16px; }
+        .content-section p:last-child { margin-bottom: 0; }
+        .content-section a { color: var(--primary-teal); text-decoration: none; }
+        .content-section a:hover { text-decoration: underline; }
+
+        /* DMARD Cards */
+        .dmard-cards { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+        .dmard-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px 24px; border-left: 4px solid var(--primary-teal); }
+        .dmard-card h4 { font-size: 16px; font-weight: 600; color: var(--primary-blue); margin-bottom: 8px; }
+        .dmard-card .abbrev { color: var(--primary-teal); font-weight: 600; }
+        .dmard-card p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
+        .dmard-card .examples { font-style: italic; color: var(--text-light); margin-top: 6px; }
+
+        /* Strength Cards */
+        .strength-cards { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+        .strength-card { display: flex; gap: 16px; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .strength-card.strong-for { background: var(--strong-for-bg); border-color: var(--strong-for); }
+        .strength-card.strong-against { background: var(--strong-against-bg); border-color: var(--strong-against); }
+        .strength-card.conditional-for { background: var(--conditional-for-bg); border-color: var(--conditional-for); }
+        .strength-card.conditional-against { background: var(--conditional-against-bg); border-color: var(--conditional-against); }
+        .strength-card.consensus { background: var(--consensus-bg); border-color: var(--consensus); }
+        .strength-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .strength-card.strong-for .strength-icon { background: var(--strong-for); color: white; }
+        .strength-card.strong-against .strength-icon { background: var(--strong-against); color: white; }
+        .strength-card.conditional-for .strength-icon { background: var(--conditional-for); color: white; }
+        .strength-card.conditional-against .strength-icon { background: var(--conditional-against); color: white; }
+        .strength-card.consensus .strength-icon { background: var(--consensus); color: white; }
+        .strength-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+        .strength-card.strong-for .strength-content h3 { color: var(--strong-for); }
+        .strength-card.strong-against .strength-content h3 { color: var(--strong-against); }
+        .strength-card.conditional-for .strength-content h3 { color: var(--conditional-for); }
+        .strength-card.conditional-against .strength-content h3 { color: var(--conditional-against); }
+        .strength-card.consensus .strength-content h3 { color: var(--consensus); }
+        .strength-content p { font-size: 14px; color: var(--text-medium); margin: 0; line-height: 1.6; }
+
+        /* Tab Descriptions */
+        .tab-descriptions { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+        .tab-item { display: flex; gap: 16px; padding: 16px 20px; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+        .tab-name { font-weight: 600; color: var(--primary-teal); min-width: 140px; flex-shrink: 0; }
+        .tab-desc { font-size: 14px; color: var(--text-medium); line-height: 1.6; }
+
+        /* Certainty Levels */
+        .certainty-list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+        .certainty-item { display: flex; align-items: center; gap: 16px; padding: 12px 16px; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+        .certainty-badge { padding: 4px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .certainty-badge.high { background: #dcfce7; color: #166534; }
+        .certainty-badge.moderate { background: #fef9c3; color: #854d0e; }
+        .certainty-badge.low { background: #fed7aa; color: #9a3412; }
+        .certainty-badge.very-low { background: #fecaca; color: #991b1b; }
+        .certainty-text { font-size: 14px; color: var(--text-medium); }
+
+        /* Highlight Box */
+        .highlight-box { background: var(--bg-light); border-left: 4px solid var(--primary-teal); padding: 20px 24px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 24px 0; }
+        .highlight-box p { margin: 0; font-size: 15px; }
+
+        /* Footer */
+        footer { background: var(--primary-blue); padding: 60px 24px 30px; color: var(--white); margin-top: 60px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand h3 { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .footer-column h4 { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .footer-column a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 0; }
+        .footer-column a:hover { color: var(--white); }
+        .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .tab-item { flex-direction: column; gap: 8px; }
+            .tab-name { min-width: auto; }
+            .certainty-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+        }
+    
+        /* 404 page */
+        .nf-hero { text-align: center; padding: 8px 0 16px; }
+        .nf-code { font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(64px, 12vw, 104px); font-weight: 600; color: var(--primary-teal); line-height: 1; margin-bottom: 8px; }
+        .nf-lead { color: var(--text-medium); font-size: 18px; max-width: 620px; margin: 0 auto 32px; }
+        .nf-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 28px; }
+        .nf-btn { display: inline-block; padding: 12px 22px; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; border: 2px solid var(--primary-teal); transition: background .15s, color .15s; }
+        .nf-btn-primary { background: var(--primary-teal); color: var(--white); }
+        .nf-btn-primary:hover { background: var(--primary-teal-dark); border-color: var(--primary-teal-dark); }
+        .nf-btn-secondary { background: var(--white); color: var(--primary-teal); }
+        .nf-btn-secondary:hover { background: var(--bg-light); }
+        .nf-btn:focus-visible { outline: 3px solid var(--primary-teal); outline-offset: 2px; }
+        .nf-note { color: var(--text-light); font-size: 15px; }
+        .nf-note a { color: var(--primary-teal); font-weight: 600; }
+
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQKQVSHVS5');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XQKQVSHVS5');
+    </script>
+</head>
+
+<header>
+        <div class="header-top">
+            <div class="header-top-content">
+                <a href="https://anzmusc.org" target="_blank">ANZMUSC</a>
+                <a href="https://rheumatology.org.au" target="_blank">Australian Rheumatology Association</a>
+                <a href="https://musculoskeletal.cochrane.org" target="_blank">Cochrane Musculoskeletal</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <a href="/index.html" class="logo">
+                <img src="/anzmusc-logo-header.png" alt="ANZMUSC" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-title">Australian Living Guidelines</div>
+                    <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
+                </div>
+            </a>
+            <nav>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="/adult/">Adult Inflammatory Arthritis</a>
+                        <a href="/jia/">Juvenile Idiopathic Arthritis</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">About <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="/how-to-use.html">How to Use This Guideline</a>
+                        <a href="/who-we-are.html">Who We Are</a>
+                        <a href="/panellists.html">Panel Members</a>
+                        <a href="/methodology.html">Methodology</a>
+                        <a href="/funding.html">Funding & Support</a>
+                        <a href="/coi.html">Conflicts of Interest</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
+                    <div class="dropdown">
+                        <a href="/abbreviations.html">Abbreviations</a>
+                        <a href="/publications.html">Publications</a>
+                        <a href="/media.html">Media</a>
+                    </div>
+                </div>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <h1>Page not found</h1>
+            <p>Sorry — the page you were looking for doesn't exist or may have moved.</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="content-container">
+            <div class="content-section nf-hero">
+                <div class="nf-code" aria-hidden="true">404</div>
+                <p class="nf-lead">The link may be out of date, or the address may have been typed incorrectly. Here are some places to pick things up again:</p>
+                <div class="nf-links">
+                    <a href="/" class="nf-btn nf-btn-primary">Home</a>
+                    <a href="/adult/" class="nf-btn nf-btn-secondary">Adult Inflammatory Arthritis guideline</a>
+                    <a href="/jia/" class="nf-btn nf-btn-secondary">Juvenile Idiopathic Arthritis guideline</a>
+                </div>
+                <p class="nf-note">Reached this page from a link on another website? You can <a href="/contact.html">let us know</a> so we can get it fixed.</p>
+            </div>
+        </div>
+    </main>
+
+<footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Australian Living Guidelines</h3>
+                    <p>Evidence-based clinical recommendations for the management of inflammatory arthritis, developed through collaboration between leading Australian rheumatology organisations.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Guidelines</h4>
+                    <a href="/adult/">Adult Inflammatory Arthritis</a>
+                    <a href="/jia/">Juvenile Idiopathic Arthritis</a>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <a href="/who-we-are.html">Who We Are</a>
+                    <a href="/methodology.html">Methodology</a>
+                    <a href="/funding.html">Funding & Support</a>
+                    <a href="/publications.html">Publications</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="/abbreviations.html">Abbreviations</a>
+                    <a href="/contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2025 ANZMUSC Clinical Trials Network. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
