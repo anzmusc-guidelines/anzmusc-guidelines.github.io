@@ -104,6 +104,9 @@
     })();
     </script>
     
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -531,9 +534,9 @@
     <header>
         <div class="header-top">
             <div class="header-top-content">
-                <a href="https://anzmusc.org" target="_blank">ANZMUSC</a>
-                <a href="https://rheumatology.org.au" target="_blank">Australian Rheumatology Association</a>
-                <a href="https://musculoskeletal.cochrane.org" target="_blank">Cochrane Musculoskeletal</a>
+                <a href="https://anzmusc.org" target="_blank" rel="noopener">ANZMUSC</a>
+                <a href="https://rheumatology.org.au" target="_blank" rel="noopener">Australian Rheumatology Association</a>
+                <a href="https://musculoskeletal.cochrane.org" target="_blank" rel="noopener">Cochrane Musculoskeletal</a>
             </div>
         </div>
         <div class="header-main">
@@ -624,7 +627,7 @@
                 <div class="search-container">
                     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/></svg>
                     <input type="text" class="search-input" id="search-input" placeholder="Search recommendations...">
-                    <button class="search-clear" id="search-clear" onclick="clearSearch()">
+                    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg>
                     </button>
                 </div>
@@ -1131,11 +1134,11 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <a href="../abbreviations.html">Abbreviations</a>
                     <a href="../media.html">Media</a>
                     <a href="../publications.html">Publications</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank">Provide Feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform" target="_blank" rel="noopener">Provide Feedback</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 ANZMUSC. All rights reserved.</p>
+                <p class="footer-copyright">© 2026 ANZMUSC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1145,7 +1148,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
         <div class="modal-content">
             <div class="modal-header">
                 <div><div class="modal-category">Initial DMARD Therapy</div><h2 class="modal-title">Initial DMARD therapy for people with rheumatoid arthritis</h2></div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-0', 'recommendation')">Recommendation</button>
@@ -1228,13 +1231,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                                     <li>Impact of RA on work and other life roles</li>
                                 </ul>
                             </li>
-                            <li>The full text of the network meta-analysis that forms the evidence base for this recommendation may be found <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD010227.pub2/full?highlightAbstract=methotrex%7Carthritis%7Cmethotrexat%7Ccombin%7Carthriti%7Cmethotrexate%7Crheumatoid%7Ccombination" target="_blank">here</a></li>
+                            <li>The full text of the network meta-analysis that forms the evidence base for this recommendation may be found <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD010227.pub2/full?highlightAbstract=methotrex%7Carthritis%7Cmethotrexat%7Ccombin%7Carthriti%7Cmethotrexate%7Crheumatoid%7Ccombination" target="_blank" rel="noopener">here</a></li>
                             <li>The Australian Rheumatology Association provides patient information sheets for those commencing DMARDs, including the following:
                                 <ul>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Methotrexate" target="_blank">Methotrexate</a></li>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/S-Z/Sulfasalazine" target="_blank">Sulfasalazine</a></li>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Hydroxychloroquine" target="_blank">Hydroxychloroquine</a></li>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Leflunomide" target="_blank">Leflunomide</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Methotrexate" target="_blank" rel="noopener">Methotrexate</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/S-Z/Sulfasalazine" target="_blank" rel="noopener">Sulfasalazine</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Hydroxychloroquine" target="_blank" rel="noopener">Hydroxychloroquine</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Leflunomide" target="_blank" rel="noopener">Leflunomide</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -1248,7 +1251,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1PJRxlAdjrT0YT0SdJTdpkCu5Dsrf7w38/view?usp=sharing" target="_blank">Initial Evidence Synthesis (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1PJRxlAdjrT0YT0SdJTdpkCu5Dsrf7w38/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (December 2021)</a></li>
                             </ul>
                         </div>
                     </div></div><div class="tab-content" id="rec-0-moreinfo">
@@ -1283,10 +1286,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated card-updated-pending">Update in progress</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Initial%20DMARD%20therapy%20for%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Initial%20DMARD%20therapy%20for%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
                 <p class="pending-note">A living network meta-analysis addressing this question is nearing completion.</p>
             </div>
@@ -1301,7 +1304,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">DMARD Therapy</div>
                     <h2 class="modal-title">Subcutaneous/intramuscular methotrexate versus oral methotrexate for people with rheumatoid arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-1', 'recommendation')">Recommendation</button>
@@ -1366,12 +1369,12 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             </li>
                             <li>The Australian Rheumatology Association website has a number of resources designed to assist people who are planning to self-administer subcutaneous methotrexate, including:
                                 <ul>
-                                    <li><a href="https://rheumatology.org.au/Portals/2/Documents/Public/Patients/Medication_Information/MTX%20Self%20injection%202018%20v2%20Mar21_v3%20with%20QR%20code.pdf?ver=2021-10-15-102158-980" target="_blank">An information sheet on self-injection of methotrexate</a></li>
-                                    <li><a href="https://www.youtube.com/embed/Hzicuogo-QU" target="_blank">A video guide to self-injection of methotrexate</a></li>
-                                    <li><a href="https://rheumatology.org.au/Portals/2/Documents/Public/Patients/Sharps%20Disposal%20final.pdf?ver=2022-08-05-111251-420" target="_blank">Guidance on the safe disposal of medical sharps</a></li>
+                                    <li><a href="https://rheumatology.org.au/Portals/2/Documents/Public/Patients/Medication_Information/MTX%20Self%20injection%202018%20v2%20Mar21_v3%20with%20QR%20code.pdf?ver=2021-10-15-102158-980" target="_blank" rel="noopener">An information sheet on self-injection of methotrexate</a></li>
+                                    <li><a href="https://www.youtube.com/embed/Hzicuogo-QU" target="_blank" rel="noopener">A video guide to self-injection of methotrexate</a></li>
+                                    <li><a href="https://rheumatology.org.au/Portals/2/Documents/Public/Patients/Sharps%20Disposal%20final.pdf?ver=2022-08-05-111251-420" target="_blank" rel="noopener">Guidance on the safe disposal of medical sharps</a></li>
                                 </ul>
                             </li>
-                            <li>Consider prescribing supplemental folic acid (e.g. 5mg once weekly on the day after the methotrexate dose) to all patients receiving methotrexate in order to reduce the risk of adverse gastrointestinal effects and liver function test abnormalities and to improve treatment retention (see <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000951.pub2/full" target="_blank">Cochrane Review</a>)</li>
+                            <li>Consider prescribing supplemental folic acid (e.g. 5mg once weekly on the day after the methotrexate dose) to all patients receiving methotrexate in order to reduce the risk of adverse gastrointestinal effects and liver function test abnormalities and to improve treatment retention (see <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD000951.pub2/full" target="_blank" rel="noopener">Cochrane Review</a>)</li>
                         </ul>
                     </div>
                 </div><div class="tab-content" id="rec-1-data"><div class="data-content">
@@ -1383,11 +1386,11 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1_W3sBhHZ6IWYTd-dAR8dmpNxtYOVaGZu/view?usp=share_link" target="_blank">Initial Evidence Synthesis (December 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1_W3sBhHZ6IWYTd-dAR8dmpNxtYOVaGZu/view?usp=share_link" target="_blank" rel="noopener">Initial Evidence Synthesis (December 2022)</a></li>
                                 <li><span class="no-link">Update 1 (May 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1gLhcrRKeVMTSMS4LKr_NtGE15w2KfVki/view?usp=sharing" target="_blank">Update 2 (April 2024)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1gLhcrRKeVMTSMS4LKr_NtGE15w2KfVki/view?usp=sharing" target="_blank" rel="noopener">Update 2 (April 2024)</a></li>
                                 <li><span class="no-link">Update 3 (November 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1FZOKG4x8dGdyG_7JkjnWfnhtxAyGI2Sw/view?usp=sharing" target="_blank">Update 4 (February 2025)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1FZOKG4x8dGdyG_7JkjnWfnhtxAyGI2Sw/view?usp=sharing" target="_blank" rel="noopener">Update 4 (February 2025)</a></li>
                                 <li><span class="no-link">Update 5 (January 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 6 (June 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
                             </ul>
@@ -1426,10 +1429,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: June 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Subcutaneous%2Fintramuscular%20methotrexate%20versus%20oral%20methotrexate%20for%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Subcutaneous%2Fintramuscular%20methotrexate%20versus%20oral%20methotrexate%20for%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -1443,7 +1446,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">bDMARD-IR</div>
                     <h2 class="modal-title">Choice of DMARD in people with rheumatoid arthritis who have not responded to TNFi</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-2', 'recommendation')">Recommendation</button>
@@ -1462,7 +1465,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <p>For this recommendation, the panel considered evidence from a living network meta-analysis (NMA) of DMARDs in people with rheumatoid arthritis (RA) who have had an inadequate response or intolerance to a TNF inhibitor (TNFi). The NMA included 17 RCTs and 14 interventions, with a study duration ranging from 12 to 52 weeks. The NMA is maintained in living mode, and will be continuously updated as relevant new RCT data become available. The network estimates suggest that switching b/tsDMARDs (either to another TNFi or to a b/tsDMARD with an alternative mechanism of action) is superior to placebo and to continuation of the ineffective TNFi, but there is little difference in overall efficacy between the various b/tsDMARDs that are currently available in Australia.</p>
                         <p>The panel agreed that this recommendation assumes that the vast majority of people with active RA despite treatment with a TNFi will choose to try another therapy rather than persist with an ineffective therapy or abandon DMARDs, and therefore the recommendation favours switching to a different intervention. The panel was clear that all of the alternative interventions are associated with a substantial net benefit compared with placebo but, given that there is little difference in net benefit between the effective interventions, the panel favoured a conditional recommendation regarding the choice between interventions that emphasises the importance of an individualised shared decision between clinician and patient.</p>
                         <p>The panel emphasised that there are important benefits associated with all of the included b/tsDMARDs and that the absolute risk of harm is relatively low. The trade-off between potential benefit and harm may particularly favour switching in this population of people with active RA despite treatment with a TNFi, who are at risk of progressive structural damage and other consequences of poorly-controlled systemic inflammation (including vascular disease), and for whom a prior decision to introduce b/tsDMARD therapy has already been made. There are further potential benefits of attempting to achieve better control of inflammation, including less exposure to other, potentially harmful, interventions including <a href="#rec-16" onclick="openModal('rec-16'); return false;">glucocorticoids</a> and <a href="#rec-12" onclick="openModal('rec-12'); return false;">opioids</a>. The consumer panellists noted that avoidance of additional exposure to glucocorticoids is likely to be of particular importance to many people with RA, especially those who have had previous experience with glucocorticoids.</p>
-                        <p>The panel considered that in light of the similarity between interventions in terms of efficacy, an assessment of the risk profile of the different treatment options is likely to be an important determinant of the choice of intervention. The panel discussed the evidence from the <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2109927" target="_blank">ORAL Surveillance trial</a> <sup><a href="http://dx.doi.org/10.1056/NEJMoa2109927" target="_blank" rel="noopener" title="Ytterberg et al. (2022)">184</a></sup> regarding the risk of cardiovascular events, cancers, and serious infections associated with the use of tofacitinib versus TNFi (see ‘Benefits and Harms’) and considered whether to favour a switch to bDMARDs over tsDMARDs. Discussion regarding the implications of ORAL Surveillance included uncertainty about the extent to which the results of this trial can be applied to other JAKi (such as baricitinib and upadacitinib), which have different molecular interactions with the JAK signalling pathways, and other populations (including younger patients or those without risk factors for cardiovascular disease). Further, there is also uncertainty regarding the extent to which some risks may be amenable to mitigation (particularly cardiovascular risk, via modification of risk factors) or may accrue with long-term use (particularly the development of cancer). Some panellists also pointed out that existing observational data from large cohorts of people treated with JAKi have not demonstrated a significant differential risk between JAKi (e.g., <sup><a href="http://dx.doi.org/10.1136/ard-2022-222824" target="_blank" rel="noopener" title="Hoisnard et al. (2022)">185</a></sup><sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-221915" target="_blank" rel="noopener" title="Khosrow-Khavar et al. (2022)">186</a></sup>) and that data comparing JAKi with other classes of bDMARDs are lacking.</p>
+                        <p>The panel considered that in light of the similarity between interventions in terms of efficacy, an assessment of the risk profile of the different treatment options is likely to be an important determinant of the choice of intervention. The panel discussed the evidence from the <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2109927" target="_blank" rel="noopener">ORAL Surveillance trial</a> <sup><a href="http://dx.doi.org/10.1056/NEJMoa2109927" target="_blank" rel="noopener" title="Ytterberg et al. (2022)">184</a></sup> regarding the risk of cardiovascular events, cancers, and serious infections associated with the use of tofacitinib versus TNFi (see ‘Benefits and Harms’) and considered whether to favour a switch to bDMARDs over tsDMARDs. Discussion regarding the implications of ORAL Surveillance included uncertainty about the extent to which the results of this trial can be applied to other JAKi (such as baricitinib and upadacitinib), which have different molecular interactions with the JAK signalling pathways, and other populations (including younger patients or those without risk factors for cardiovascular disease). Further, there is also uncertainty regarding the extent to which some risks may be amenable to mitigation (particularly cardiovascular risk, via modification of risk factors) or may accrue with long-term use (particularly the development of cancer). Some panellists also pointed out that existing observational data from large cohorts of people treated with JAKi have not demonstrated a significant differential risk between JAKi (e.g., <sup><a href="http://dx.doi.org/10.1136/ard-2022-222824" target="_blank" rel="noopener" title="Hoisnard et al. (2022)">185</a></sup><sup><a href="http://dx.doi.org/10.1136/annrheumdis-2021-221915" target="_blank" rel="noopener" title="Khosrow-Khavar et al. (2022)">186</a></sup>) and that data comparing JAKi with other classes of bDMARDs are lacking.</p>
                         <p>The panel also noted that there may be specific risks associated with other b/tsDMARDs (particularly an increased risk of adverse COVID-19 outcomes in people treated with rituximab) that may also influence the relative balance of benefits and harms, and ultimately voted in favour of a conditional recommendation for switching to any of the available b/tsDMARDs. However, use of JAKi may not be preferred in those at a high risk of vascular disease, cancer, thromboembolic disease, or severe infection (particularly herpes zoster). The magnitude of the absolute risk associated with this choice, and its acceptability, is likely to vary between individuals.</p>
                         <p>Most importantly, the choice of treatment ought to be based on a shared decision-making process that incorporates an assessment of risks based on the individual clinical circumstances, and takes into account the individual patient’s values, preferences, prior experiences, functional status, work and other life roles, goals, and risk tolerance.</p>
                         <p>The panel also highlighted that the definition of an “inadequate response” to treatment may vary between individuals, but may broadly be interpreted as persistent disease activity (i.e., falling short of the agreed treatment target) despite an adequate trial of therapy, or the development of adverse effects that warrant discontinuation of the bDMARD. For most TNFi, an adequate duration of therapy may be 3 to 6 months, although this is also likely to vary depending on the drug and the individual clinical circumstances, including disease severity and impact.</p>
@@ -1487,7 +1490,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             <li>None of the effective interventions were found to differ from any other in any of the efficacy or safety outcomes measured in the network meta-analysis</li>
                         </ol>
                         <p>The panel considered the evidence from the NMA at length. There was general agreement that the NMA data demonstrated that in people with RA who have had an inadequate response to a TNFi, switching to a different therapy (either another TNFi or a b/tsDMARD with a different mechanism of action) was superior to continuation of the current therapy, or discontinuation of b/tsDMARD therapy altogether. The panel also agreed that there is likely to be little difference in efficacy between the various b/tsDMARD options, including TNFi, abatacept, IL-6 inhibitors, rituximab and the JAK inhibitors (JAKi). As a result, the panel considered that the balance of potential benefits and harms clearly favoured a switch in therapy but that the choice of b/tsDMARD would be determined by individual factors, including values, preferences and clinical circumstances, and also by an evaluation of potential harms.</p>
-                        <p>The panel noted that the NMA did not demonstrate any difference in safety or tolerability between the various treatment options. However, RCTs designed to evaluate efficacy are typically not powered to estimate differences in adverse events and may not have long enough follow-up periods to detect important long-term harms. The panel also discussed the results of the <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2109927" target="_blank">ORAL Surveillance trial</a> <sup><a href="http://dx.doi.org/10.1056/NEJMoa2109927" target="_blank" rel="noopener" title="Ytterberg et al. (2022)">184</a></sup>. ORAL Surveillance was an RCT designed to assess the risk of important adverse events (major adverse cardiovascular events (MACE) and cancers) in people with RA who were 50 years of age or older and had at least one cardiovascular risk factor. Participants were randomised to treatment with either the JAKi tofacitinib or a TNFi (etanercept or adalimumab). In brief, the trial did not demonstrate non-inferiority of tofacitinib 5mg bd (the approved dose in Australia) versus TNFi for MACE (cardiovascular death, non-fatal myocardial infarction or stroke) or cancers (excluding non-melanoma skin cancers). The estimated number needed to treat for harm (NNH) with tofacitinib compared with a TNFi over a 5-year period for one additional MACE was 113. The 5-year NNH for cancers was 55. The incidence of serious infections (particularly herpes zoster) was also higher in those taking tofacitinib, and venous thromboembolism was more common in those allocated to the higher dose of tofacitinib compared with a TNFi. As a result of this trial, the European Medicines Agency (EMA) has recommended that JAKi be used in people at increased risk of cardiovascular disease or cancer only if no suitable treatment alternatives are available. Similarly, the US FDA has mandated that manufacturers provide warnings about an increased risk of MACE, malignancy, thrombosis, and mortality with the JAKi and has suggested that these medications be reserved for patients who have had an inadequate response or intolerance to one or more TNFi. The panel noted that the current recommendation applies to this population of people with RA who have already failed to respond to at least one TNFi.</p>
+                        <p>The panel noted that the NMA did not demonstrate any difference in safety or tolerability between the various treatment options. However, RCTs designed to evaluate efficacy are typically not powered to estimate differences in adverse events and may not have long enough follow-up periods to detect important long-term harms. The panel also discussed the results of the <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2109927" target="_blank" rel="noopener">ORAL Surveillance trial</a> <sup><a href="http://dx.doi.org/10.1056/NEJMoa2109927" target="_blank" rel="noopener" title="Ytterberg et al. (2022)">184</a></sup>. ORAL Surveillance was an RCT designed to assess the risk of important adverse events (major adverse cardiovascular events (MACE) and cancers) in people with RA who were 50 years of age or older and had at least one cardiovascular risk factor. Participants were randomised to treatment with either the JAKi tofacitinib or a TNFi (etanercept or adalimumab). In brief, the trial did not demonstrate non-inferiority of tofacitinib 5mg bd (the approved dose in Australia) versus TNFi for MACE (cardiovascular death, non-fatal myocardial infarction or stroke) or cancers (excluding non-melanoma skin cancers). The estimated number needed to treat for harm (NNH) with tofacitinib compared with a TNFi over a 5-year period for one additional MACE was 113. The 5-year NNH for cancers was 55. The incidence of serious infections (particularly herpes zoster) was also higher in those taking tofacitinib, and venous thromboembolism was more common in those allocated to the higher dose of tofacitinib compared with a TNFi. As a result of this trial, the European Medicines Agency (EMA) has recommended that JAKi be used in people at increased risk of cardiovascular disease or cancer only if no suitable treatment alternatives are available. Similarly, the US FDA has mandated that manufacturers provide warnings about an increased risk of MACE, malignancy, thrombosis, and mortality with the JAKi and has suggested that these medications be reserved for patients who have had an inadequate response or intolerance to one or more TNFi. The panel noted that the current recommendation applies to this population of people with RA who have already failed to respond to at least one TNFi.</p>
                         <p>The panel decided to vote separately on the balance of benefits and harms for bDMARDs and tsDMARDs. There was consensus that for both bDMARDs and tsDMARDs, there was a net benefit compared with no treatment (or continuation of the ineffective treatment) but that there was uncertainty regarding the comparative net benefit between bDMARDs and tsDMARDs.</p></div></div>
                     <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Certainty of the Evidence</span><span class="etd-rating">Moderate</span></div><div class="etd-domain-text"><p>Placebo was chosen as the primary comparator. The network estimates for the comparisons between the interventions and placebo were mostly of moderate to high certainty. Some comparisons were downgraded from high to moderate certainty for imprecision. For some interventions, primarily continuation or switch in route of the failed TNFi, the certainty of evidence was lower due to both imprecision and risk of bias in the included trials.</p></div></div>
                     <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Values and Preferences</span><span class="etd-rating">Substantial variability is expected or uncertain</span></div><div class="etd-domain-text"><p>A systematic review of patient preferences for DMARD treatment in RA was identified that included 36 studies published between 1990 and 2018. The included studies generally involved participants who had already commenced DMARDs, including bDMARDs <sup><a href="http://dx.doi.org/10.3899/jrheum.181165" target="_blank" rel="noopener" title="Durand et al. (2020)">84</a></sup>. The review found that, in general, people with RA consider treatment benefits (particularly improvement in symptoms and function) to be more important than both serious and non-serious adverse events. However some studies found evidence of important risk aversion (particularly regarding serious adverse events), which suggests that there is considerable variation in preferences between individuals. Dosing and administration considerations, including route and frequency of medications, were generally found to be less important than treatment benefits but more important than AEs, although this also varied between and within studies.</p>
@@ -1533,7 +1536,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             </li>
                             <li>Assessment for modifiable risk factors for the potential adverse consequences of RA or its treatment (e.g., smoking, hypertension, dyslipidaemia, obesity, vaccine-preventable infections, cancer screening) should be part of the routine management of RA</li>
                             <li>Reduction or discontinuation of long-term glucocorticoids and opioids remains an important goal of RA management</li>
-                            <li>An interactive web-based tool for viewing the output of the network meta-analysis that forms the evidence base for this recommendation may be found <a href="https://matchit.magicevidence.org/230201dist-dmards/#!/sof/data-set/dmards" target="_blank">here</a></li>
+                            <li>An interactive web-based tool for viewing the output of the network meta-analysis that forms the evidence base for this recommendation may be found <a href="https://matchit.magicevidence.org/230201dist-dmards/#!/sof/data-set/dmards" target="_blank" rel="noopener">here</a></li>
                         </ul>
                     </div>
                 </div><div class="tab-content" id="rec-2-data"><div class="data-content">
@@ -1545,7 +1548,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1kmG-bibzWYgUTS_n08jMCWQcEu4fpkBN/view?usp=share_link" target="_blank">Initial Evidence Synthesis (November 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1kmG-bibzWYgUTS_n08jMCWQcEu4fpkBN/view?usp=share_link" target="_blank" rel="noopener">Initial Evidence Synthesis (November 2022)</a></li>
                             </ul>
                         </div>
                     </div></div><div class="tab-content" id="rec-2-moreinfo">
@@ -1582,10 +1585,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated card-updated-pending">Update in progress</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Choice%20of%20DMARD%20in%20people%20with%20rheumatoid%20arthritis%20who%20have%20not%20responded%20to%20TNFi" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Choice%20of%20DMARD%20in%20people%20with%20rheumatoid%20arthritis%20who%20have%20not%20responded%20to%20TNFi" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/11207/section/260420" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/11207/section/260420" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
                 <p class="pending-note">A living network meta-analysis addressing this question is nearing completion.</p>
             </div>
@@ -1600,7 +1603,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Rheumatoid arthritis: Dose reduction or discontinuation of conventional synthetic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-3', 'recommendation')">Recommendation</button>
@@ -1695,13 +1698,13 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1yj0DInOZoNxYd79NBTcw-6uteHV3_BN_/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1yj0DInOZoNxYd79NBTcw-6uteHV3_BN_/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2023)</a></li>
                                 <li><span class="no-link">Update 1 (July 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 2 (November 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 3 (March 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1OMb5RYz6-W_RMcqrr1v34Ks5BIH5PttP/view?usp=sharing" target="_blank">Update 4 (August 2025)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
+                                <li><a href="https://drive.google.com/file/d/1OMb5RYz6-W_RMcqrr1v34Ks5BIH5PttP/view?usp=sharing" target="_blank" rel="noopener">Update 4 (August 2025)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
                                 <li><span class="no-link">Update 5 (January 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/10OvBjnuglBjdtcuXPYdLJmRYpWYq889I/view?usp=drive_link" target="_blank">Update 6 (May 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
+                                <li><a href="https://drive.google.com/file/d/10OvBjnuglBjdtcuXPYdLJmRYpWYq889I/view?usp=drive_link" target="_blank" rel="noopener">Update 6 (May 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
                             </ul>
                         </div>
                     </div></div><div class="tab-content" id="rec-3-moreinfo">
@@ -1735,10 +1738,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: May 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Rheumatoid%20arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Rheumatoid%20arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -1752,7 +1755,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Psoriatic Arthritis: Dose reduction or discontinuation of conventional synthetic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-4', 'recommendation')">Recommendation</button>
@@ -1844,7 +1847,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1FgHpmOr9H7EguIIjqeGLnyNdfHPlJBsP/view?usp=sharing" target="_blank">Initial Evidence Synthesis (February 2024)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1FgHpmOr9H7EguIIjqeGLnyNdfHPlJBsP/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (February 2024)</a></li>
                                 <li><span class="no-link">Update 1 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 2 (February 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 3 (August 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -1886,10 +1889,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: May 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Psoriatic%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Psoriatic%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -1903,7 +1906,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Rheumatoid Arthritis: Dose reduction or discontinuation of biologic or targeted synthetic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-5', 'recommendation')">Recommendation</button>
@@ -1920,7 +1923,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     
                     <div class="related-publication">
                         <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Related Publication</h3>
-                        <a href="https://doi.org/10.1111/imj.15816" target="_blank">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
+                        <a href="https://doi.org/10.1111/imj.15816" target="_blank" rel="noopener">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
                         <div class="pub-meta">Whittle SL et al. Internal Medicine Journal. 2022;52(10):1799-1805</div>
                     </div>
 
@@ -1961,9 +1964,9 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             <li>Reduction or cessation of glucocorticoids is also an important goal and ought to be considered before an attempt at b/tsDMARD dose reduction</li>
                             <li>NPS MedicineWise have produced resources to support the implementation of this recommendation:
                                 <ul>
-                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2337_RA_DownTitration_Factsheet_v2-v3-jg-281020-ACC.PDF" target="_blank">Information for health professionals</a></li>
-                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2335_DownTitration_PatientDecAid_v3_v3_jg281020ACC.PDF" target="_blank">Patient decision aids</a></li>
-                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2336_DownTitration_Algorithm_v2-v4-jg-281020-ACC.PDF" target="_blank">Conversation starters</a></li>
+                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2337_RA_DownTitration_Factsheet_v2-v3-jg-281020-ACC.PDF" target="_blank" rel="noopener">Information for health professionals</a></li>
+                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2335_DownTitration_PatientDecAid_v3_v3_jg281020ACC.PDF" target="_blank" rel="noopener">Patient decision aids</a></li>
+                                    <li><a href="https://www.nps.org.au/assets/NPS/pdf/NPS2336_DownTitration_Algorithm_v2-v4-jg-281020-ACC.PDF" target="_blank" rel="noopener">Conversation starters</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -1977,21 +1980,21 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1gqqEj-oO8f7DNwScNkMEBG4lEPJCWxX_/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2020)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1maGY77WWrq8uQx7hek94tb2VTVV89cs7/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1yx15DLPsr--QJzlb1KDnDpzh06r371NG/view?usp=sharing" target="_blank">Update 1 (March 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1aZ4b-tP8xT-TF65zr7HGwV89EkBLubyp/view?usp=sharing" target="_blank">Update 2 (September 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1PpFNPtQfRXJbVqcPdgWWuGff4Ys9peej/view?usp=sharing" target="_blank">Update 3 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/16u9VsFrySMo-RKiKfdqlTiAv5Y05_Xim/view?usp=sharing" target="_blank">Update 4 (April 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1XrtVWF_JaNofE_a-Y0cJbipI0zyoYrwe/view?usp=share_link" target="_blank">Update 5 (August 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1fFemHFr8MCNmdKFhaM2jTqekBH216-OR/view?usp=share_link" target="_blank">Update 6 (February 2023)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1xn88CMd11ugykkQVi5PyD44AwXv7V9KG/view?usp=drive_link" target="_blank">Update 7 (August 2023)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1PDDpm7innQ9tE6keb9Yzstt4cIOkaqhK/view?usp=drive_link" target="_blank">Update 8 (January 2024)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1-OogtCg75ZkRZXl_-CFr5zMsKhyC1HQr/view?usp=sharing" target="_blank">Update 9 (August 2024)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1gqqEj-oO8f7DNwScNkMEBG4lEPJCWxX_/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2020)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1maGY77WWrq8uQx7hek94tb2VTVV89cs7/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1yx15DLPsr--QJzlb1KDnDpzh06r371NG/view?usp=sharing" target="_blank" rel="noopener">Update 1 (March 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1aZ4b-tP8xT-TF65zr7HGwV89EkBLubyp/view?usp=sharing" target="_blank" rel="noopener">Update 2 (September 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1PpFNPtQfRXJbVqcPdgWWuGff4Ys9peej/view?usp=sharing" target="_blank" rel="noopener">Update 3 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/16u9VsFrySMo-RKiKfdqlTiAv5Y05_Xim/view?usp=sharing" target="_blank" rel="noopener">Update 4 (April 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1XrtVWF_JaNofE_a-Y0cJbipI0zyoYrwe/view?usp=share_link" target="_blank" rel="noopener">Update 5 (August 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1fFemHFr8MCNmdKFhaM2jTqekBH216-OR/view?usp=share_link" target="_blank" rel="noopener">Update 6 (February 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1xn88CMd11ugykkQVi5PyD44AwXv7V9KG/view?usp=drive_link" target="_blank" rel="noopener">Update 7 (August 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1PDDpm7innQ9tE6keb9Yzstt4cIOkaqhK/view?usp=drive_link" target="_blank" rel="noopener">Update 8 (January 2024)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1-OogtCg75ZkRZXl_-CFr5zMsKhyC1HQr/view?usp=sharing" target="_blank" rel="noopener">Update 9 (August 2024)</a></li>
                                 <li><span class="no-link">Update 10 (January 2025)</span> <span class="evidence-note">(no new trials)</span></li>
                                 <li><span class="no-link">Update 11 (June 2025)</span> <span class="evidence-note">(no new trials)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1ty7IDZjFozNeHytNnkkAmjddcwsURMTL/view?usp=sharing" target="_blank">Update 12 (December 2025)</a> <span class="evidence-note">(SoFs updated with data from previously included trials)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1o3qtYdhRNF1LeS_BkT7whT0McXTD4BfL/view?usp=drive_link" target="_blank">Update 13 (April 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
+                                <li><a href="https://drive.google.com/file/d/1ty7IDZjFozNeHytNnkkAmjddcwsURMTL/view?usp=sharing" target="_blank" rel="noopener">Update 12 (December 2025)</a> <span class="evidence-note">(SoFs updated with data from previously included trials)</span></li>
+                                <li><a href="https://drive.google.com/file/d/1o3qtYdhRNF1LeS_BkT7whT0McXTD4BfL/view?usp=drive_link" target="_blank" rel="noopener">Update 13 (April 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
                             </ul>
                         </div>
 
@@ -2025,10 +2028,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: April 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Rheumatoid%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20or%20targeted%20synthetic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Rheumatoid%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20or%20targeted%20synthetic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2042,7 +2045,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Axial Spondyloarthritis: Dose reduction or discontinuation of biologic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-6', 'recommendation')">Recommendation</button>
@@ -2058,7 +2061,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     
                     <div class="related-publication">
                         <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Related Publication</h3>
-                        <a href="https://doi.org/10.1111/imj.15816" target="_blank">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
+                        <a href="https://doi.org/10.1111/imj.15816" target="_blank" rel="noopener">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
                         <div class="pub-meta">Whittle SL et al. Internal Medicine Journal. 2022;52(10):1799-1805</div>
                     </div>
 
@@ -2112,15 +2115,15 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1KMpBSXXuhmIWpKvOKn4JtrOwCNYi_qtC/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2020)</a></li>
-                                <li><a href="http://drive.google.com/file/d/1jrvx9IOgsDIv_wCqdNiR9qAN2XVjTxSI/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1-s9tzKwsZMdnGMlce9nvNNhMJmU2XWOo/view?usp=sharing" target="_blank">Update 1 (March 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1jy6eIXOwXDc5egp197weLbKUSeRS4_A-/view?usp=sharing" target="_blank">Update 2 (August 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1k-vGpD9zkyRelwQtkN4hlCqc5jf3bX-V/view?usp=sharing" target="_blank">Update 3 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1d98DcHKdUKMANhbAsyx23zCwEh4vwrzm/view?usp=sharing" target="_blank">Update 4 (May 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1vugwuyHABBE3DjumnMaN-zuPko7mC5GE/view?usp=share_link" target="_blank">Update 5 (August 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1_bL13SBzEMaiX8Of0vp7pcHF69NNYtYW/view?usp=share_link" target="_blank">Update 6 (February 2023)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1ighPKwTrwWFHMef_76P69dsff9xAYq1j/view?usp=drive_link" target="_blank">Update 7 (May 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1KMpBSXXuhmIWpKvOKn4JtrOwCNYi_qtC/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2020)</a></li>
+                                <li><a href="http://drive.google.com/file/d/1jrvx9IOgsDIv_wCqdNiR9qAN2XVjTxSI/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1-s9tzKwsZMdnGMlce9nvNNhMJmU2XWOo/view?usp=sharing" target="_blank" rel="noopener">Update 1 (March 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1jy6eIXOwXDc5egp197weLbKUSeRS4_A-/view?usp=sharing" target="_blank" rel="noopener">Update 2 (August 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1k-vGpD9zkyRelwQtkN4hlCqc5jf3bX-V/view?usp=sharing" target="_blank" rel="noopener">Update 3 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1d98DcHKdUKMANhbAsyx23zCwEh4vwrzm/view?usp=sharing" target="_blank" rel="noopener">Update 4 (May 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1vugwuyHABBE3DjumnMaN-zuPko7mC5GE/view?usp=share_link" target="_blank" rel="noopener">Update 5 (August 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1_bL13SBzEMaiX8Of0vp7pcHF69NNYtYW/view?usp=share_link" target="_blank" rel="noopener">Update 6 (February 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1ighPKwTrwWFHMef_76P69dsff9xAYq1j/view?usp=drive_link" target="_blank" rel="noopener">Update 7 (May 2023)</a></li>
                                 <li><span class="no-link">Update 8 (January 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 9 (July 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 10 (January 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -2161,10 +2164,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: May 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Axial%20Spondyloarthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Axial%20Spondyloarthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2178,7 +2181,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Psoriatic Arthritis: Dose reduction or discontinuation of biologic or targeted synthetic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-7', 'recommendation')">Recommendation</button>
@@ -2194,7 +2197,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     
                     <div class="related-publication">
                         <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Related Publication</h3>
-                        <a href="https://doi.org/10.1111/imj.15816" target="_blank">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
+                        <a href="https://doi.org/10.1111/imj.15816" target="_blank" rel="noopener">Australian recommendations on tapering of biologic and targeted synthetic disease-modifying anti-rheumatic drugs in inflammatory arthritis</a>
                         <div class="pub-meta">Whittle SL et al. Internal Medicine Journal. 2022;52(10):1799-1805</div>
                     </div>
 
@@ -2246,17 +2249,17 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/17fzCEKKHdXrJQtJi1YTDpNDDOvRNZGWZ/view?usp=sharing" target="_blank">Initial Evidence Synthesis (August 2020)</a></li>
-                                <li><a href="http://drive.google.com/file/d/1ATqWF4RgJeptiSgkm1dCiE2iFhB9bcAr/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1QCKRulRT_K4p2X0xebSswW2t4VfSW_WC/view?usp=sharing" target="_blank">Update 1 (March 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1dBJTZKZOdw-gLfzG_ue4YM6VbKfYpgXw/view?usp=sharing" target="_blank">Update 2 (September 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1H6gAxZCX0gx-655kLo_7Y0CTsH5PXdDd/view?usp=sharing" target="_blank">Update 3 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1BH00YEQnJF-QrYi_Gwe0rFJG4Dtcrz-5/view?usp=sharing" target="_blank">Update 4 (May 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1XW6vohI9wVc1lqJ7f9d-92QMNFa0McaG/view?usp=share_link" target="_blank">Update 5 (August 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1GeM8tb0CwaCLlgjeihfygRc4GB4Uk2LD/view?usp=share_link" target="_blank">Update 6 (February 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/17fzCEKKHdXrJQtJi1YTDpNDDOvRNZGWZ/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (August 2020)</a></li>
+                                <li><a href="http://drive.google.com/file/d/1ATqWF4RgJeptiSgkm1dCiE2iFhB9bcAr/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1QCKRulRT_K4p2X0xebSswW2t4VfSW_WC/view?usp=sharing" target="_blank" rel="noopener">Update 1 (March 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1dBJTZKZOdw-gLfzG_ue4YM6VbKfYpgXw/view?usp=sharing" target="_blank" rel="noopener">Update 2 (September 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1H6gAxZCX0gx-655kLo_7Y0CTsH5PXdDd/view?usp=sharing" target="_blank" rel="noopener">Update 3 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1BH00YEQnJF-QrYi_Gwe0rFJG4Dtcrz-5/view?usp=sharing" target="_blank" rel="noopener">Update 4 (May 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1XW6vohI9wVc1lqJ7f9d-92QMNFa0McaG/view?usp=share_link" target="_blank" rel="noopener">Update 5 (August 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1GeM8tb0CwaCLlgjeihfygRc4GB4Uk2LD/view?usp=share_link" target="_blank" rel="noopener">Update 6 (February 2023)</a></li>
                                 <li><span class="no-link">Update 7 (August 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 8 (January 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1Qm16GQZyChKC_BZw4uMWyqqxqioDbjXo/view?usp=sharing" target="_blank">Update 9 (July 2024)</a> <span class="evidence-note">(data from a previously included study moved)</span></li>
+                                <li><a href="https://drive.google.com/file/d/1Qm16GQZyChKC_BZw4uMWyqqxqioDbjXo/view?usp=sharing" target="_blank" rel="noopener">Update 9 (July 2024)</a> <span class="evidence-note">(data from a previously included study moved)</span></li>
                                 <li><span class="no-link">Update 10 (January 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 11 (May 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 12 (December 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -2295,10 +2298,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: April 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Psoriatic%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20or%20targeted%20synthetic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Psoriatic%20Arthritis%3A%20Dose%20reduction%20or%20discontinuation%20of%20biologic%20or%20targeted%20synthetic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2312,7 +2315,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Dose Reduction</div>
                     <h2 class="modal-title">Dose reduction or discontinuation of b/tsDMARDs versus dose reduction or discontinuation of csDMARDs in people with rheumatoid arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-8', 'recommendation')">Recommendation</button>
@@ -2416,12 +2419,12 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1nFlZgFM6kvLwqfYPHQq6fSrkTk3zyC7V/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2024)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1nFlZgFM6kvLwqfYPHQq6fSrkTk3zyC7V/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2024)</a></li>
                                 <li><span class="no-link">Update 1 (December 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 2 (April 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 3 (August 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 4 (January 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
-                                <li><a href="https://drive.google.com/file/d/1GfCsmBpl5_Y3E9w506j6YV75YTJJl78Q/view?usp=drive_link" target="_blank">Update 5 (June 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
+                                <li><a href="https://drive.google.com/file/d/1GfCsmBpl5_Y3E9w506j6YV75YTJJl78Q/view?usp=drive_link" target="_blank" rel="noopener">Update 5 (June 2026)</a> <span class="evidence-note">(new evidence, no change to recommendation)</span></li>
                             </ul>
                         </div>
                     </div></div><div class="tab-content" id="rec-8-moreinfo">
@@ -2453,10 +2456,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: June 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Dose%20reduction%20or%20discontinuation%20of%20b%2FtsDMARDs%20versus%20dose%20reduction%20or%20discontinuation%20of%20csDMARDs%20in%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Dose%20reduction%20or%20discontinuation%20of%20b%2FtsDMARDs%20versus%20dose%20reduction%20or%20discontinuation%20of%20csDMARDs%20in%20people%20with%20rheumatoid%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2470,7 +2473,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Perioperative</div>
                     <h2 class="modal-title">Perioperative adjustment of DMARDs in people with inflammatory arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-9', 'recommendation')">Recommendation</button>
@@ -2488,7 +2491,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     
                     <div class="related-publication">
                         <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Related Publication</h3>
-                        <a href="https://doi.org/10.1111/imj.16073" target="_blank">Australian recommendations on perioperative use of disease-modifying anti-rheumatic drugs in people with inflammatory arthritis undergoing elective surgery</a>
+                        <a href="https://doi.org/10.1111/imj.16073" target="_blank" rel="noopener">Australian recommendations on perioperative use of disease-modifying anti-rheumatic drugs in people with inflammatory arthritis undergoing elective surgery</a>
                         <div class="pub-meta">Buchbinder R et al. Internal Medicine Journal. 2023;53(7):1248-1255</div>
                     </div>
 
@@ -2593,10 +2596,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1pKtDba16b7pjOsZx99hKYixgjgPnvhu0/view?usp=sharing" target="_blank">Initial Evidence Synthesis (September 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1YP5VlZatyZX0aAK4dvh2RNEeXaBFNk58/view?usp=sharing" target="_blank">Update 1 (March 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/17zKwuMvXcHgXowdDsAwCr9gHd9-QQHtt/view?usp=sharing" target="_blank">Update 2 (June 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1ohk_haiTwKyJL4OD0PAMJ1ng6-Tm8sYL/view?usp=share_link" target="_blank">Update 3 (October 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1pKtDba16b7pjOsZx99hKYixgjgPnvhu0/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (September 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1YP5VlZatyZX0aAK4dvh2RNEeXaBFNk58/view?usp=sharing" target="_blank" rel="noopener">Update 1 (March 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/17zKwuMvXcHgXowdDsAwCr9gHd9-QQHtt/view?usp=sharing" target="_blank" rel="noopener">Update 2 (June 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1ohk_haiTwKyJL4OD0PAMJ1ng6-Tm8sYL/view?usp=share_link" target="_blank" rel="noopener">Update 3 (October 2022)</a></li>
                                 <li><span class="no-link">Update 4 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 5 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 6 (October 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -2633,10 +2636,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: October 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Perioperative%20adjustment%20of%20DMARDs%20in%20people%20with%20inflammatory%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Perioperative%20adjustment%20of%20DMARDs%20in%20people%20with%20inflammatory%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2650,7 +2653,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Monitoring</div>
                     <h2 class="modal-title">Laboratory safety monitoring in people with inflammatory arthritis using conventional synthetic DMARDs</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-10', 'recommendation')">Recommendation</button>
@@ -2742,9 +2745,9 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             <li>Clear communication between all members of the treating team (particularly the GP and the rheumatologist) should be established, including prompt notification of medication or dose changes, the preferred monitoring strategy, and a process for managing abnormal test results</li>
                             <li>The Australian Rheumatology Association provides patient information sheets for those commencing DMARDs, including:
                                 <ul>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Adult-Medication-Information/S-Z/Sulfasalazine" target="_blank">Sulfasalazine</a></li>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Leflunomide" target="_blank">Leflunomide</a></li>
-                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Methotrexate" target="_blank">Methotrexate</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Adult-Medication-Information/S-Z/Sulfasalazine" target="_blank" rel="noopener">Sulfasalazine</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Leflunomide" target="_blank" rel="noopener">Leflunomide</a></li>
+                                    <li><a href="https://rheumatology.org.au/For-Patients/Medication-Information/H-M/Methotrexate" target="_blank" rel="noopener">Methotrexate</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -2758,7 +2761,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1nAp2wjnHrtbr_XfuHnr6skEfODR2EQv8/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2025)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1nAp2wjnHrtbr_XfuHnr6skEfODR2EQv8/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2025)</a></li>
                                 <li><span class="no-link">Update 1 (February 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
                             </ul>
                         </div>
@@ -2793,10 +2796,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: February 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Laboratory%20safety%20monitoring%20in%20people%20with%20inflammatory%20arthritis%20using%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Laboratory%20safety%20monitoring%20in%20people%20with%20inflammatory%20arthritis%20using%20conventional%20synthetic%20DMARDs" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2810,7 +2813,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Perioperative</div>
                     <h2 class="modal-title">Perioperative adjustment of glucocorticoids in people with inflammatory arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-11', 'recommendation')">Recommendation</button>
@@ -2883,7 +2886,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1rzcI0qPydh6S-YwZrtiOQQ2QLVMUGSWx/view?usp=sharing" target="_blank">Initial Evidence Synthesis (July 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1rzcI0qPydh6S-YwZrtiOQQ2QLVMUGSWx/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (July 2023)</a></li>
                                 <li><span class="no-link">Update 1 (April 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 2 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 3 (February 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -2926,10 +2929,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: June 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Perioperative%20adjustment%20of%20glucocorticoids%20in%20people%20with%20inflammatory%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Perioperative%20adjustment%20of%20glucocorticoids%20in%20people%20with%20inflammatory%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -2943,7 +2946,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Pain Management</div>
                     <h2 class="modal-title">Opioids for pain in rheumatoid arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-12', 'recommendation')">Recommendation</button>
@@ -3016,7 +3019,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                                     <li>Establish a clear plan for discontinuation of opioids if the treatment goals are not met</li>
                                 </ul>
                             </li>
-                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank">resources about opioids for chronic non-cancer pain</a></li>
+                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank" rel="noopener">resources about opioids for chronic non-cancer pain</a></li>
                         </ul>
                     </div>
                 </div><div class="tab-content" id="rec-12-data"><div class="data-content">
@@ -3028,12 +3031,12 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1QZR534skK5hCYa0_k50tI8BMA-ab3uGn/view?usp=sharing" target="_blank">Initial Evidence Synthesis (June 2020)</a></li>
-                                <li><a href="http://drive.google.com/file/d/1c_RxnHWfH12DgSOz09c4VRLrIBNC3Yk2/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1OFMGAxdEc4moG1dKEVnEmR-Uruea9Vju/view?usp=sharing" target="_blank">Update 1 (July 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1eTnp-pNLsSFwwdqOsrbx3P_ABLw4FMGN/view?usp=sharing" target="_blank">Update 2 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1BVvbMCsxkqbvhkuvMRR9fId4GZlRBtZ-/view?usp=sharing" target="_blank">Update 3 (April 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/13xmyFxEMQ4-HkVOU3AthYU-_FeYiCj0g/view?usp=share_link" target="_blank">Update 4 (November 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1QZR534skK5hCYa0_k50tI8BMA-ab3uGn/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (June 2020)</a></li>
+                                <li><a href="http://drive.google.com/file/d/1c_RxnHWfH12DgSOz09c4VRLrIBNC3Yk2/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1OFMGAxdEc4moG1dKEVnEmR-Uruea9Vju/view?usp=sharing" target="_blank" rel="noopener">Update 1 (July 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1eTnp-pNLsSFwwdqOsrbx3P_ABLw4FMGN/view?usp=sharing" target="_blank" rel="noopener">Update 2 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1BVvbMCsxkqbvhkuvMRR9fId4GZlRBtZ-/view?usp=sharing" target="_blank" rel="noopener">Update 3 (April 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/13xmyFxEMQ4-HkVOU3AthYU-_FeYiCj0g/view?usp=share_link" target="_blank" rel="noopener">Update 4 (November 2022)</a></li>
                                 <li><span class="no-link">Update 5 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 6 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 7 (November 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3072,10 +3075,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: November 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20rheumatoid%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20rheumatoid%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3089,7 +3092,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Pain Management</div>
                     <h2 class="modal-title">Opioids for pain in axial spondyloarthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-13', 'recommendation')">Recommendation</button>
@@ -3174,7 +3177,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                                     <li>Establish a clear plan for discontinuation of opioids if the treatment goals are not met</li>
                                 </ul>
                             </li>
-                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank">resources about opioids for chronic non-cancer pain</a></li>
+                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank" rel="noopener">resources about opioids for chronic non-cancer pain</a></li>
                         </ul>
                     </div>
                 </div><div class="tab-content" id="rec-13-data"><div class="data-content">
@@ -3186,12 +3189,12 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/11wd3m9D-WdmwaoYQebzJ6vo8rr89qG8d/view?usp=sharing" target="_blank">Initial Evidence Synthesis (November 2020)</a></li>
-                                <li><a href="http://drive.google.com/file/d/1u-xGHKSpuSUaTexziPA2cq3FZ80_kCqZ/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1XnEOwIELmLxojqfxj0HVOlgpqe6u81jw/view?usp=sharing" target="_blank">Update 1 (August 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1bG9n01IUqOxG07qTRPnFc5A5pyn5eN5k/view?usp=sharing" target="_blank">Update 2 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1vQRlT-m-dtWcb8W_nrzzZ6yJpHvUlYRO/view?usp=sharing" target="_blank">Update 3 (April 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1l_zLBBSj09K2t_8qrw2GGOrLLbpWIj89/view?usp=share_link" target="_blank">Update 4 (November 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/11wd3m9D-WdmwaoYQebzJ6vo8rr89qG8d/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (November 2020)</a></li>
+                                <li><a href="http://drive.google.com/file/d/1u-xGHKSpuSUaTexziPA2cq3FZ80_kCqZ/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1XnEOwIELmLxojqfxj0HVOlgpqe6u81jw/view?usp=sharing" target="_blank" rel="noopener">Update 1 (August 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1bG9n01IUqOxG07qTRPnFc5A5pyn5eN5k/view?usp=sharing" target="_blank" rel="noopener">Update 2 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1vQRlT-m-dtWcb8W_nrzzZ6yJpHvUlYRO/view?usp=sharing" target="_blank" rel="noopener">Update 3 (April 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1l_zLBBSj09K2t_8qrw2GGOrLLbpWIj89/view?usp=share_link" target="_blank" rel="noopener">Update 4 (November 2022)</a></li>
                                 <li><span class="no-link">Update 5 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 6 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 7 (November 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3227,10 +3230,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: November 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20axial%20spondyloarthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20axial%20spondyloarthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3244,7 +3247,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Pain Management</div>
                     <h2 class="modal-title">Opioids for pain in psoriatic arthritis</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-14', 'recommendation')">Recommendation</button>
@@ -3316,7 +3319,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                                     <li>Establish a clear plan for discontinuation of opioids if the treatment goals are not met</li>
                                 </ul>
                             </li>
-                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank">resources about opioids for chronic non-cancer pain</a></li>
+                            <li>NPS MedicineWise has produced a number of <a href="https://www.nps.org.au/opioids-communication-videos" target="_blank" rel="noopener">resources about opioids for chronic non-cancer pain</a></li>
                         </ul>
                     </div>
                 </div><div class="tab-content" id="rec-14-data"><div class="data-content">
@@ -3328,10 +3331,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1u-xGHKSpuSUaTexziPA2cq3FZ80_kCqZ/view?usp=sharing" target="_blank">Initial Evidence Synthesis (November 2020)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1l8e2m4LrWeqI46sC7oM1pl-QF_dqMyq5/view?usp=sharing" target="_blank">Update 1 (August 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1u-4hW_eYgYBsfhMQkLvICoLdvwX0KlHF/view?usp=sharing" target="_blank">Update 2 (December 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1l4Uo8Uuv1V0pclvYn0O9PaT_P6NbE0jm/view?usp=sharing" target="_blank">Update 3 (April 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1u-xGHKSpuSUaTexziPA2cq3FZ80_kCqZ/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (November 2020)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1l8e2m4LrWeqI46sC7oM1pl-QF_dqMyq5/view?usp=sharing" target="_blank" rel="noopener">Update 1 (August 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1u-4hW_eYgYBsfhMQkLvICoLdvwX0KlHF/view?usp=sharing" target="_blank" rel="noopener">Update 2 (December 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1l4Uo8Uuv1V0pclvYn0O9PaT_P6NbE0jm/view?usp=sharing" target="_blank" rel="noopener">Update 3 (April 2022)</a></li>
                                 <li><span class="no-link">Update 4 (November 2022)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 5 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 6 (October 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3368,10 +3371,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: November 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20psoriatic%20arthritis" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Opioids%20for%20pain%20in%20psoriatic%20arthritis" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3385,7 +3388,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Glucocorticoids</div>
                     <h2 class="modal-title">Short-term use of glucocorticoids for treating flare in RA</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-15', 'recommendation')">Recommendation</button>
@@ -3454,9 +3457,9 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1e8V1k38hDhFp_qRQuZBKe-dUizjASuxa/view?usp=sharing" target="_blank">Initial Evidence Synthesis (August 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1wwUkH2jOCylBtGMfDGmgyjbG4QWt5x_U/view?usp=sharing" target="_blank">Update 1 (February 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1VJMII62oWEL9hXoGNbhABee4xOfOMnZR/view?usp=share_link" target="_blank">Update 2 (January 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1e8V1k38hDhFp_qRQuZBKe-dUizjASuxa/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (August 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1wwUkH2jOCylBtGMfDGmgyjbG4QWt5x_U/view?usp=sharing" target="_blank" rel="noopener">Update 1 (February 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1VJMII62oWEL9hXoGNbhABee4xOfOMnZR/view?usp=share_link" target="_blank" rel="noopener">Update 2 (January 2023)</a></li>
                                 <li><span class="no-link">Update 3 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 4 (April 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 5 (June 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3491,10 +3494,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: September 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Short-term%20use%20of%20glucocorticoids%20for%20treating%20flare%20in%20RA" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Short-term%20use%20of%20glucocorticoids%20for%20treating%20flare%20in%20RA" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3508,7 +3511,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Glucocorticoids</div>
                     <h2 class="modal-title">Long-term use of low dose glucocorticoids in RA</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-16', 'recommendation')">Recommendation</button>
@@ -3583,10 +3586,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1CtwFhLIoOt6p1yOw8I3w1FnCCb_7SBx9/view?usp=sharing" target="_blank">Initial Evidence Synthesis (August 2021)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1SS40U6759H026hgFDo9fPkH6qj1CFCxx/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1-tfv1sYykcLLmr3cOBXwa3rQ0S-1FTcg/view?usp=sharing" target="_blank">Update 1 (February 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/1LaiG9b1t62hOvte0m_-MG1_V_yG18xUR/view?usp=share_link" target="_blank">Update 2 (January 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1CtwFhLIoOt6p1yOw8I3w1FnCCb_7SBx9/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (August 2021)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1SS40U6759H026hgFDo9fPkH6qj1CFCxx/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1-tfv1sYykcLLmr3cOBXwa3rQ0S-1FTcg/view?usp=sharing" target="_blank" rel="noopener">Update 1 (February 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1LaiG9b1t62hOvte0m_-MG1_V_yG18xUR/view?usp=share_link" target="_blank" rel="noopener">Update 2 (January 2023)</a></li>
                                 <li><span class="no-link">Update 3 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 4 (April 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 5 (June 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3622,10 +3625,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: September 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Long-term%20use%20of%20low%20dose%20glucocorticoids%20in%20RA" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Long-term%20use%20of%20low%20dose%20glucocorticoids%20in%20RA" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3639,7 +3642,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Glucocorticoids</div>
                     <h2 class="modal-title">Short-term bridging glucocorticoids in addition to DMARD therapy in RA</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-17', 'recommendation')">Recommendation</button>
@@ -3785,9 +3788,9 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1Me6FnlUq3Z81rrKqwx8gmo6J4KNLu_a4/view?usp=sharing" target="_blank">Initial Evidence Synthesis (February 2022)</a></li>
-                                <li><a href="https://drive.google.com/file/d/173RzBa5qbOj3Z4F76m6u3sR1zReX8To8/view?usp=sharing" target="_blank">Initial Supplementary Figures & Tables</a></li>
-                                <li><a href="https://drive.google.com/file/d/1wAI4O_qHKz4xuP8lY1yv7U405f53mDJz/view?usp=share_link" target="_blank">Update 1 (January 2023)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1Me6FnlUq3Z81rrKqwx8gmo6J4KNLu_a4/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (February 2022)</a></li>
+                                <li><a href="https://drive.google.com/file/d/173RzBa5qbOj3Z4F76m6u3sR1zReX8To8/view?usp=sharing" target="_blank" rel="noopener">Initial Supplementary Figures & Tables</a></li>
+                                <li><a href="https://drive.google.com/file/d/1wAI4O_qHKz4xuP8lY1yv7U405f53mDJz/view?usp=share_link" target="_blank" rel="noopener">Update 1 (January 2023)</a></li>
                                 <li><span class="no-link">Update 2 (October 2023)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 3 (April 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
                                 <li><span class="no-link">Update 4 (June 2024)</span> <span class="evidence-note">(no new evidence)</span></li>
@@ -3821,10 +3824,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: September 2025</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Short-term%20bridging%20glucocorticoids%20in%20addition%20to%20DMARD%20therapy%20in%20RA" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Short-term%20bridging%20glucocorticoids%20in%20addition%20to%20DMARD%20therapy%20in%20RA" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
         </div>
@@ -3837,7 +3840,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                     <div class="modal-category">Monitoring</div>
                     <h2 class="modal-title">Retinopathy screening for adults taking hydroxychloroquine</h2>
                 </div>
-                <button class="modal-close" onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg></button>
             </div>
             <div class="modal-tabs-container"><div class="modal-tabs">
                 <button type="button" class="modal-tab active" data-tab="recommendation" onclick="switchTab('rec-18', 'recommendation')">Recommendation</button>
@@ -3982,7 +3985,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             <li>Screening for early maculopathy in people taking hydroxychloroquine should include spectral domain-optical coherence tomography (SD-OCT) of the macula and automated visual field testing
                                 <ul>
                                     <li>Other tests may be appropriate depending on findings and availability (eg fundus autofluorescence (FAF) and multifocal electroretinogram (mfERG))</li>
-                                    <li>Further details on screening tests may be found in the <a href="https://ranzco.edu/wp-content/uploads/2021/04/RANZCO-Guidelines-for-screening-for-HCQ-retinopathy-2025.pdf" target="_blank">2025 Royal Australian and New Zealand College of Ophthalmologists (RANZCO) Guidelines for Screening for Hydroxychloroquine Retinopathy</a></li>
+                                    <li>Further details on screening tests may be found in the <a href="https://ranzco.edu/wp-content/uploads/2021/04/RANZCO-Guidelines-for-screening-for-HCQ-retinopathy-2025.pdf" target="_blank" rel="noopener">2025 Royal Australian and New Zealand College of Ophthalmologists (RANZCO) Guidelines for Screening for Hydroxychloroquine Retinopathy</a></li>
                                 </ul>
                             </li>
                             <li>Clear communication between all members of the treating team (including the ophthalmologist, GP and rheumatologist) should be established, including the results of screening tests, the ongoing monitoring strategy, and a clear process for discussion of treatment plans with the patient.
@@ -4026,7 +4029,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                             <li>Evidence regarding the natural history of hydroxychloroquine retinopathy is sparse, but progression of early disease appears to be rare after drug discontinuation.</li>
                             <li>The relatively slow rate of progression if early retinal changes are detected with sensitive modern screening tools allows an opportunity to monitor progress in those for whom discontinuation of hydroxychloroquine may be associated with an increased risk of major flare in SLE. Any such decision should be made in discussion with the patient’s ophthalmologist and treating physician.</li>
                             <li>While both dose reduction and discontinuation of hydroxychloroquine have been shown to increase the risk of disease flare in people with SLE, the impact of hydroxychloroquine dose reduction on the progression of hydroxychloroquine-associated maculopathy is unknown</li>
-                            <li>The <a href="https://rheumatology.org.au/For-Patients/Adult-Medication-Information/H-M/Hydroxychloroquine#1970343-what-precautions-are-necessary" target="_blank">Australian Rheumatology Association</a> provides a patient information sheet for those commencing hydroxychloroquine</li>
+                            <li>The <a href="https://rheumatology.org.au/For-Patients/Adult-Medication-Information/H-M/Hydroxychloroquine#1970343-what-precautions-are-necessary" target="_blank" rel="noopener">Australian Rheumatology Association</a> provides a patient information sheet for those commencing hydroxychloroquine</li>
                         </ul>
                     </div></div>
 
@@ -4040,7 +4043,7 @@ A brief course of a short-acting opioid may be considered for severe pain when o
                         <div class="evidence-section">
                             <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:18px;height:18px;vertical-align:text-bottom;margin-right:6px;"><path d="M10.75 16.82A7.462 7.462 0 0115 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0018 15.06v-11a.75.75 0 00-.546-.721A9.006 9.006 0 0015 3a8.963 8.963 0 00-4.25 1.065V16.82zM9.25 4.065A8.963 8.963 0 005 3c-.85 0-1.673.118-2.454.339A.75.75 0 002 4.06v11a.75.75 0 00.954.721A7.462 7.462 0 015 15.5c1.579 0 3.042.487 4.25 1.32V4.065z"/></svg>Evidence Summaries</h3>
                             <ul class="evidence-list">
-                                <li><a href="https://drive.google.com/file/d/1gQF-n39wAUcKUnWBRN3waryH7Ql6Ta8j/view?usp=sharing" target="_blank">Initial Evidence Synthesis (October 2025)</a></li>
+                                <li><a href="https://drive.google.com/file/d/1gQF-n39wAUcKUnWBRN3waryH7Ql6Ta8j/view?usp=sharing" target="_blank" rel="noopener">Initial Evidence Synthesis (October 2025)</a></li>
                             </ul>
                             <span class="card-updated" style="display:block; margin-top:12px;">Last updated: March 2026</span>
                         </div>
@@ -4078,10 +4081,10 @@ A brief course of a short-acting opioid may be considered for severe pain when o
             <div class="modal-footer">
                 <div class="modal-footer-left">
                     <span class="card-updated">Last updated: March 2026</span>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Retinopathy%20screening%20for%20adults%20taking%20hydroxychloroquine" target="_blank" class="feedback-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevmap58hDjm9OAKdOB9gd1VSXUaRAIRn-q8XcYFgmwv2WczQ/viewform?usp=pp_url&entry.1797546299=Retinopathy%20screening%20for%20adults%20taking%20hydroxychloroquine" target="_blank" class="feedback-link" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg> Suggest feedback</a>
                 </div>
                 <div class="modal-footer-right">
-                    <a href="https://app.magicapp.org/#/guideline/LqRV3n/rec/jXv5eb" target="_blank" class="magicapp-link">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
+                    <a href="https://app.magicapp.org/#/guideline/LqRV3n/rec/jXv5eb" target="_blank" class="magicapp-link" rel="noopener">View in MAGICapp <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a>
                 </div>
             </div>
 
