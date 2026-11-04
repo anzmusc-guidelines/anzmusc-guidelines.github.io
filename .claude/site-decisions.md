@@ -83,6 +83,11 @@ by design. Verify against these before changing.
 
 ## 3. Conventions to apply in future work
 
+- **Every pull request targets `main` — never stack one PR on another's branch** *(4 Nov 2026)*
+  A PR based on another PR's branch does not get retargeted to `main` when that branch merges;
+  Sam merged such a PR (#5) and nothing went live. If two changes would conflict, finish and merge
+  the first, then branch the second from the updated `main`.
+
 - **Sitemap `lastmod` = real git commit date** *(5 Jul 2026)*
   When refreshing `sitemap.xml`, use each file's actual last-commit date (from the GitHub commits
   API or `git log -1 --format=%cs -- <file>`), not a blanket "today." Leave `changefreq` and
