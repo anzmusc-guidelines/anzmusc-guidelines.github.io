@@ -83,6 +83,11 @@ by design. Verify against these before changing.
 
 ## 3. Conventions to apply in future work
 
+- **Every pull request targets `main` — never stack one PR on another's branch** *(4 Nov 2026)*
+  A PR based on another PR's branch does not get retargeted to `main` when that branch merges;
+  Sam merged such a PR (#5) and nothing went live. If two changes would conflict, finish and merge
+  the first, then branch the second from the updated `main`.
+
 - **Sitemap `lastmod` = real git commit date** *(5 Jul 2026)*
   When refreshing `sitemap.xml`, use each file's actual last-commit date (from the GitHub commits
   API or `git log -1 --format=%cs -- <file>`), not a blanket "today." Leave `changefreq` and
@@ -103,6 +108,11 @@ by design. Verify against these before changing.
   Because the browser keeps the *missing* URL in the address bar, every internal link/asset in the
   404 must be root-anchored (`/`, `/adult/`, `/jia/`, `/anzmusc-logo-header.png`) or it will break
   on deep paths. Keep the page `noindex` and keep the GA tag (so 404 hits are tracked).
+
+- **Gateway research-survey banner removed** *(4 Nov 2026)*
+  The Monash guideline-uptake survey (MUHREC 52237) closed, so the banner and its CSS were deleted
+  from `index.html`. Don't reinstate without a new, open survey. Media page deliberately left at
+  two items (nothing newer to add); funding page ALEC period shown as 2024–2026.
 
 - **"Update in progress" placeholder for recs awaiting a living NMA update** *(4 Nov 2026)*
   Where a recommendation's last evidence date is old only because a living network meta-analysis

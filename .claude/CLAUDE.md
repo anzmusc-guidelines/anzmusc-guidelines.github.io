@@ -92,7 +92,11 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
 
 ## Open backlog (as of Nov 2026)
 
-- 17 Adult modals still use the guideline-level MAGICapp URL — need rec-specific section URLs from Sam
+- Evidence-search round(s) since Jun 2026 (Adult) / Feb 2026 (JIA) still to be recorded — waiting on
+  Vanessa's search-update summary
+- Adult rec-0 and rec-2 show an "Update in progress" badge pending living-NMA updates after the next
+  panel meeting; the Thomas 2026 Cochrane NMA (CD013562.pub2) is to be linked from rec-2 then
+- 17 Adult modals still use the guideline-level MAGICapp URL — Sam to supply rec-specific URLs
 - No `og:image` share preview (needs an image chosen by Sam)
 - Keyboard access for header dropdowns (parked — see site-decisions §4)
 - Pagefind static search (discussed as a low-risk first step before any chatbot)
