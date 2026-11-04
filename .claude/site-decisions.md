@@ -1,0 +1,142 @@
+# Living Guidelines — Site Decisions Register
+
+**Purpose.** A single, durable record of *settled decisions*, *conventions*, and *known
+non-bugs* for livingguidelines.org. Unlike the dated work-summary logs (which record "what we
+did on date X"), this document records "what is true and why" — the things that should inform or
+constrain future work.
+
+**Where this lives.** In the repository at `.claude/site-decisions.md`, referenced from
+`.claude/CLAUDE.md` so every Claude Code session on the site reads it before making changes.
+(Moved here in November 2026 from claude.ai project knowledge, so it is version-controlled
+alongside the code it describes. Files under `.claude/` are not published by GitHub Pages.)
+
+**How to use it.** Before "fixing" something that looks wrong, check the *Known non-bugs* section.
+Before changing an established pattern, check *Design & architecture decisions* and *Conventions*.
+Add new entries as decisions are made — keep each one to a decision + a one-line rationale + a date.
+
+---
+
+## 1. Known non-bugs — do NOT "fix" these
+
+Things a code review or a fresh pair of eyes will likely flag as errors, but which are correct
+by design. Verify against these before changing.
+
+- **JIA rec-7 and rec-8 share MAGICapp `section/240276`** *(confirmed 5 Jul 2026)*
+  Both intentionally deep-link to the same section — "6.2 Intra-articular therapies for juvenile
+  idiopathic arthritis" — because MAGICapp groups both recommendations (choice of intra-articular
+  glucocorticoid; use of anaesthesia for intra-articular injection) under that single section.
+  Two site recommendations sharing one MAGICapp section ID is **not** a copy-paste error. In
+  general: verify a suspected duplicate section link against MAGICapp before treating it as a bug.
+
+- **rec-10 (Exercise therapy) MAGICapp link is correct as `section/240279`** *(confirmed 5 Jul 2026)*
+  It fits the sequence (rec-9 foot orthoses = 240278). The same recommendation can also be
+  addressed as `guideline/nyxpZL/rec/E865MV` — the alphanumeric guideline code and `/rec/` path
+  are valid equivalents of the numeric `10522` / `/section/` form (just as the Adult guideline is
+  both `11207` and `LqRV3n`). The site uses the numeric `10522/section/…` form consistently for JIA.
+
+- **Adult rec-18 card date does not match its Data tab** *(known quirk)*
+  rec-18 (HCQ retinopathy screening) is dated by its development month, which is later than its
+  initial evidence synthesis. `verify_site.py` may warn about it; this is expected.
+
+- **JIA card categories are shortened forms of the modal categories** *(noted 4 Nov 2026)*
+  e.g. card "Non-pharmacological" vs modal "Non-pharmacological interventions for JIA". Intentional
+  for card space; `verify_site.py` accepts one containing the other.
+
+---
+
+## 2. Design & architecture decisions (with rationale)
+
+- **Single shared `scripts.js` across Adult and JIA pages** *(3 Jul 2026)*
+  JIA previously carried a private inline copy that had drifted from the Adult page's shared script.
+  Unified into one script (condition-tab logic made optional, since JIA has no condition tabs) so
+  fixes are made once and both pages — and every future recommendation — benefit automatically.
+
+- **Teal palette darkened for WCAG AA** *(3 Jul 2026)*
+  `--primary-teal` `#0d9488` → `#0f766e` (now 5.47:1 on white); `--primary-teal-dark` `#0f766e` →
+  `#115e59`. Chose "Approach A" — change the palette variable once per page — over per-rule
+  surgical fixes, because one clean rule is more maintainable for a self-maintained site.
+  New teal-on-white / white-on-teal combinations must stay ≥4.5:1 for text.
+
+- **Sentinel-based modal focus trap (for Safari)** *(3 Jul 2026)*
+  Safari skips `<a>` links in tab order by default, so a "last focusable element" computed from
+  links let focus escape. Fix: inject two invisible focusable `<div>` sentinels just inside the top
+  and bottom of each modal; being divs (not links), every browser includes them in tab order. This
+  is browser-agnostic and must not be reverted to a link-based computation.
+
+- **SLE described as retinopathy-screening scope, not lupus management** *(5 Jul 2026)*
+  When adding SLE to the Adult page metadata/schema (for rec-18 discoverability), it was framed
+  specifically as "hydroxychloroquine retinopathy screening for people with systemic lupus
+  erythematosus," not as general lupus management — because the guideline covers one screening
+  recommendation relevant to HCQ users, not SLE treatment. Keep this framing if reworded.
+
+- **No separate clinical disclaimer added** *(5 Jul 2026)*
+  A substantive liability disclaimer already exists at the bottom of the funding page (best
+  evidence at compilation; no liability for loss/damage from reliance). A new one was judged
+  unnecessary. Open, optional enhancement: surface a "Disclaimer" link in the guideline-page
+  footers for discoverability — not done, and not required.
+
+- **Site work happens in Claude Code against this repo, via pull requests** *(4 Nov 2026)*
+  Conventions, skills and the verification script live in `.claude/`. Changes go on a branch and
+  through a PR so Sam reviews the diff before GitHub Pages publishes `main`.
+
+---
+
+## 3. Conventions to apply in future work
+
+- **Sitemap `lastmod` = real git commit date** *(5 Jul 2026)*
+  When refreshing `sitemap.xml`, use each file's actual last-commit date (from the GitHub commits
+  API or `git log -1 --format=%cs -- <file>`), not a blanket "today." Leave `changefreq` and
+  `priority` untouched unless there's a reason.
+
+- **Google Analytics** *(5 Jul 2026)*
+  Measurement ID `G-XQKQVSHVS5`. The standard gtag block goes immediately before `</head>`. All
+  pages carry it (checked by `verify_site.py`). Any new page must include the same block.
+
+- **404 page uses root-anchored paths** *(5 Jul 2026)*
+  `404.html` lives at the repo root (GitHub Pages serves one root-level 404 for all missing paths).
+  Because the browser keeps the *missing* URL in the address bar, every internal link/asset in the
+  404 must be root-anchored (`/`, `/adult/`, `/jia/`, `/anzmusc-logo-header.png`) or it will break
+  on deep paths. Keep the page `noindex` and keep the GA tag (so 404 hits are tracked).
+
+*(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
+reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
+reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
+repeated here; the skill files remain the source of truth for those.)*
+
+---
+
+## 4. Deliberately deferred / parked (not oversights)
+
+- **Keyboard-accessible header dropdowns (review Step 3d)** *(parked 3 Jul 2026)*
+  The header "Guidelines / About / Resources" dropdowns open on hover only, so a keyboard user
+  can't open them. Parked — not stranded — because every page in those dropdowns is *also* linked in
+  the keyboard-accessible footer. It's a convenience gap, not a lockout. Fix, if revisited: a small
+  CSS `:focus-within` rule on the header (duplicated across all pages).
+
+---
+
+## 5. Known cosmetic issues (tracked, not yet decided/done)
+
+Recorded so they aren't mistaken for decisions or missed. *(All three re-confirmed still open 4 Nov 2026.)*
+
+- **Footer copyright reads "© 2025" site-wide** — stale on all pages including the 404. Trivial
+  batch bump to 2026 when convenient.
+- **No `og:image` social-share preview on any page** — sharing to LinkedIn/X/Teams shows no image
+  card. Needs a chosen image.
+- **17 of 19 Adult MAGICapp links are guideline-level** (`LqRV3n`), not rec-specific. Blocked on
+  gathering the rec-specific section URLs. `verify_site.py` lists them as warnings.
+  *(JIA links are all confirmed correct — see §1.)*
+
+---
+
+## 6. Adding to this document
+
+Keep it lean. For each new entry: state the decision, give a one-line rationale, and date it. When
+an item in §5 (known issues) is resolved, either move it into §2/§3 as a decision or delete it. This
+document is only useful if it stays trustworthy and current — prune settled/obsolete entries rather
+than letting it grow indefinitely.
+
+---
+
+*Started 5 July 2026, consolidating decisions from the 3 July and 5 July work sessions.
+Moved into the repository 4 November 2026.*
