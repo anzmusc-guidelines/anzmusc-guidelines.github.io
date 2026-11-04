@@ -40,6 +40,15 @@ Confirm:
 - The search month/year (e.g. "March 2026")
 - The outcome — see the four outcome types below
 
+> **"Update in progress" placeholder:** Some recommendations (currently Adult `rec-0` and `rec-2`,
+> which are awaiting living network meta-analysis updates) show an `Update in progress` badge
+> (`<span class="card-updated card-updated-pending">`) on the card and modal footer instead of a date,
+> plus a `<span class="pending-note">…</span>` in the modal footer. When that update is published,
+> **remove the placeholder**: change both spans back to `<span class="card-updated">Updated Mon YYYY</span>`
+> / `<span class="card-updated">Last updated: Month YYYY</span>` and delete the `pending-note` span.
+> `verify_site.py` warns while a placeholder is in place and errors if only one of card/modal carries it.
+> See `.claude/site-decisions.md` §3.
+
 > **New recommendations:** When a newly published recommendation receives its first quarterly evidence update, its Data tab will contain only the "Initial Evidence Synthesis" entry (no updates yet). The first update should be labelled "Update 1". There will be no existing Living Updates block — create one only if required by the outcome type (see Step 2).
 
 ---

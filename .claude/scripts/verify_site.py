@@ -17,6 +17,8 @@ Guideline pages (adult/index.html, jia/index.html):
   E  recommendation ids form a contiguous sequence (rec-0.. / jia-rec-1..)
   E  card category ~ modal category (one contains the other); card title ~ modal title
   E  card "Updated Mon YYYY" == modal footer "Last updated: Month YYYY"
+     (or BOTH read "Update in progress" via .card-updated-pending - the placeholder used
+      while a living NMA update is being finalised; see site-decisions.md)
   E  switchTab() calls and tab-content ids inside each modal use that modal's id
   E  every rec id has a slug in the page's slug map, and every slug points at a real rec
   E  hero-badge recommendation count == number of cards
@@ -152,7 +154,16 @@ def check_guideline(rel_path, prefix, slug_var, first_index):
         # dates
         c_date_el = card.select_one(".card-updated")
         c_date = None
-        if c_date_el:
+        c_pending = bool(card.select_one(".card-updated-pending"))
+        m_pending = bool(mod.select_one(".modal-footer .card-updated-pending"))
+        if c_pending or m_pending:
+            if not (c_pending and m_pending):
+                err(f"{label}: {rid} 'Update in progress' placeholder must be on BOTH the card and the modal footer")
+            if c_pending and text(c_date_el) != "Update in progress":
+                err(f"{label}: {rid} pending card badge text should be 'Update in progress': '{text(c_date_el)}'")
+            if c_pending and m_pending:
+                warn(f"{label}: {rid} shows 'Update in progress' instead of a date (placeholder - clear it when the update is published)")
+        elif c_date_el:
             mm = re.search(r"Updated\s+([A-Z][a-z]{2})\s+(\d{4})", text(c_date_el))
             if mm and mm.group(1) in ABBR:
                 c_date = f"{ABBR[mm.group(1)]} {mm.group(2)}"
@@ -166,7 +177,7 @@ def check_guideline(rel_path, prefix, slug_var, first_index):
             mm = re.search(r"Last updated:\s*([A-Z][a-z]+)\s+(\d{4})", text(span))
             if mm:
                 m_date = f"{mm.group(1)} {mm.group(2)}"
-        if m_date is None:
+        if m_date is None and not m_pending:
             err(f"{label}: {rid} modal footer has no 'Last updated: Month YYYY'")
         elif c_date and m_date != c_date:
             err(f"{label}: {rid} date mismatch - card '{c_date}' vs modal footer '{m_date}'")
