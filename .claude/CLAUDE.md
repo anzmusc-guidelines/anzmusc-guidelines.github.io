@@ -93,7 +93,7 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
 ## Open backlog (as of Nov 2026)
 
 - 17 Adult modals still use the guideline-level MAGICapp URL — need rec-specific section URLs from Sam
-- Footer "© 2025" → 2026 site-wide; no `og:image` share preview
+- No `og:image` share preview (needs an image chosen by Sam)
 - Keyboard access for header dropdowns (parked — see site-decisions §4)
 - Pagefind static search (discussed as a low-risk first step before any chatbot)
 - 10 of 50 panellist headshots still outstanding (Vanessa collecting)

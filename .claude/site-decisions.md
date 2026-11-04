@@ -92,6 +92,12 @@ by design. Verify against these before changing.
   Measurement ID `G-XQKQVSHVS5`. The standard gtag block goes immediately before `</head>`. All
   pages carry it (checked by `verify_site.py`). Any new page must include the same block.
 
+- **Favicon and per-page SEO tags** *(4 Nov 2026)*
+  Every page links `/favicon.ico`, `/favicon-32x32.png` and `/apple-touch-icon.png` (root-anchored,
+  generated from the ANZMUSC emblem) and carries a `<meta name="description">` plus
+  `<link rel="canonical">`. New pages must include all of these. External links that open in a new
+  tab carry `rel="noopener"`.
+
 - **404 page uses root-anchored paths** *(5 Jul 2026)*
   `404.html` lives at the repo root (GitHub Pages serves one root-level 404 for all missing paths).
   Because the browser keeps the *missing* URL in the address bar, every internal link/asset in the
@@ -127,10 +133,8 @@ repeated here; the skill files remain the source of truth for those.)*
 
 ## 5. Known cosmetic issues (tracked, not yet decided/done)
 
-Recorded so they aren't mistaken for decisions or missed. *(All three re-confirmed still open 4 Nov 2026.)*
+Recorded so they aren't mistaken for decisions or missed. *(Re-confirmed still open 4 Nov 2026; the © footer item was resolved the same day.)*
 
-- **Footer copyright reads "© 2025" site-wide** — stale on all pages including the 404. Trivial
-  batch bump to 2026 when convenient.
 - **No `og:image` social-share preview on any page** — sharing to LinkedIn/X/Teams shows no image
   card. Needs a chosen image.
 - **17 of 19 Adult MAGICapp links are guideline-level** (`LqRV3n`), not rec-specific. Blocked on
