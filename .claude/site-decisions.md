@@ -98,6 +98,16 @@ by design. Verify against these before changing.
   404 must be root-anchored (`/`, `/adult/`, `/jia/`, `/anzmusc-logo-header.png`) or it will break
   on deep paths. Keep the page `noindex` and keep the GA tag (so 404 hits are tracked).
 
+- **"Update in progress" placeholder for recs awaiting a living NMA update** *(4 Nov 2026)*
+  Where a recommendation's last evidence date is old only because a living network meta-analysis
+  is being finalised for it (Adult rec-0 initial DMARD therapy, rec-2 DMARD after TNFi), the card
+  and modal footer show an `Update in progress` badge (`.card-updated.card-updated-pending`) instead
+  of a date, plus a one-line `.pending-note` in the modal footer. Rationale: a 2021/2022 date on a
+  living guideline reads as neglect when the work is actually under way. Both card and modal must
+  carry the badge (verify_site.py errors if only one does, and warns while it is in place). To
+  clear it, follow the `quarterly-evidence-update` skill: restore `Updated Mon YYYY` /
+  `Last updated: Month YYYY` and delete the `.pending-note`.
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
