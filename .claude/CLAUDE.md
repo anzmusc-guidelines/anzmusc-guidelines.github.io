@@ -14,10 +14,12 @@ Evidence Tables doc). Explain technical choices in plain language.
 
 1. Read `.claude/site-decisions.md` — settled decisions, **known non-bugs you must not "fix"**,
    and parked items.
-2. For the two recurring jobs, load the skill first:
+2. For recurring jobs, load the skill first:
    - adding a recommendation → `new-recommendation`
    - recording a quarterly evidence search → `quarterly-evidence-update`
    - adding/replacing a panellist photo → `panellist-headshot`
+   - panel members, COI links, publications, media, abbreviations, text pages,
+     sharing recommendation links → `site-page-updates`
 3. Make sure you're on current `main` (`git fetch origin main`) before branching.
 
 ## How changes get published
@@ -55,6 +57,9 @@ Evidence Tables doc). Explain technical choices in plain language.
 | `404.html` | Root 404 — all links root-anchored |
 | `sitemap.xml`, `robots.txt` | SEO; sitemap `lastmod` = real commit date |
 | `.claude/` | Claude's notes, skills and checks — **not published** by GitHub Pages |
+| `.claude/data/adult-references.csv`, `jia-references.csv` | Master reference lists (ref number → DOI/PubMed) used for citation superscripts |
+| `.claude/scripts/verify_site.py` | Whole-site integrity check — run before every commit |
+| `.claude/scripts/rec_links.py` | Generates the direct-link list (numeric + slug) for every recommendation |
 
 Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`) so
 `/adult/#hcq-retinopathy` deep-links to `rec-18`. Every rec needs a slug.
@@ -77,10 +82,10 @@ Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`)
 ## Things that live outside this repo
 
 Ask Sam for these when a task needs them — don't guess:
-- Recommendation content (MAGICapp; Google Docs) and panel lists
-- `Adult_guideline_reference_urls.xlsx` (reference numbers → DOI/PubMed) — shared as `.xlsx`;
-  read links with `openpyxl` via `cell.hyperlink.target`
-- `recommendation-links.csv` (numeric and slug URL for every rec)
+Most live in Sam's Google Drive folder "Guideline Website Working Documents":
+- Recommendation content (MAGICapp; Google Docs; `Adult Recommendations Text original build.xlsx`,
+  `JIA_Guideline_Content_UPDATED.xlsx`) and panel lists (`Guideline Panellists.xlsx`, JIA docs)
+- Quarterly search-update sheets (e.g. `IA LGL Search Updates for website August 2026.xlsx`)
 - Adult Evidence Tables Google Doc `1o9ncE6gWrJWJylOAXFOqd1nxLZzEz1jZFkjGs8ysMfw` — Claude
   can't edit Google Docs; give Sam/Vanessa paste-ready text
 - The feedback Google Forms (adding a rec to the dropdown is a manual step for Sam/Vanessa)

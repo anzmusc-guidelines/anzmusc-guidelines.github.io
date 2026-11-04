@@ -38,6 +38,9 @@ progressive JPEG, quality 85, and it will look sharp on any screen at ~10–20 K
 
 ## Step 0.1: Collect the raw image and the person's details
 
+When Vanessa requests photos from panellists, ask for: a professional headshot (shoulders
+and up), at least 400×400 px, square or portrait, face roughly centred, JPG or PNG.
+
 Confirm before starting:
 - The raw headshot image file (any format, any size — it will be processed).
 - The person's **display name exactly as it should appear**, including title
@@ -144,6 +147,16 @@ Match the existing markup exactly. The image tag pattern is:
   screen reader announces and is important for accessibility — never leave it blank.
 - `loading="lazy"` defers loading until the image is scrolled near, which keeps the page
   fast. Every headshot img should have it.
+
+For an existing panellist, replace the initials inside the avatar `<div>` with the `<img>` —
+and **keep the avatar's classes**. Chair/facilitator avatars have an extra `chair` class:
+
+```html
+<!-- before -->
+<div class="panellist-avatar chair">RB</div>
+<!-- after -->
+<div class="panellist-avatar chair"><img src="images/headshots/Rachelle-Buchbinder_headshot.jpg" alt="Prof Rachelle Buchbinder" loading="lazy"></div>
+```
 
 Insert the full panellist card in the correct position within the existing grid, following
 the surrounding entries as the template (avatar + name + role/affiliation). If the panel

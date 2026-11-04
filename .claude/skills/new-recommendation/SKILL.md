@@ -77,7 +77,7 @@ These may be provided in a separate document (Google Doc or uploaded file). If r
 
 ## Step 0.2: Reference management
 
-Academic references are managed in a spreadsheet (`Adult_guideline_reference_urls.xlsx` for Adult IA; a separate file for JIA). Each row has:
+Academic references are kept in the repo as plain CSV files: `.claude/data/adult-references.csv` (Adult IA) and `.claude/data/jia-references.csv` (JIA). They replaced the old `Adult_guideline_reference_urls.xlsx` / `jia_guideline_reference_urls_complete.xlsx` in Nov 2026 — the CSVs are now the master copy, and links are stored as plain URLs (no hidden hyperlinks to extract). Read them with Python's `csv` module. Adult columns are below; the JIA file has `Reference #, First author surname, Year, PubMed link, Journal/DOI link, Reference text` (its Year column is mostly empty — match JIA citations on surname plus the reference text). Each Adult row has:
 
 | Column | Content |
 |---|---|
@@ -92,9 +92,9 @@ Academic references are managed in a spreadsheet (`Adult_guideline_reference_url
 
 1. **Accept `.ris` files** — parse using Python's `re` module to extract: first author (`AU` field, take surname before comma), year (`PY`), DOI (`DO`), PubMed URL (from `UR` fields matching `pubmed.ncbi.nlm.nih.gov` or `www.ncbi.nlm.nih.gov/pubmed`), and institutional author (`A3` field as fallback when no `AU`).
 
-2. **Cross-reference against existing spreadsheet** — match on (first author surname, year) to identify which references are genuinely new vs already listed.
+2. **Cross-reference against the existing CSV** — match on (first author surname, year) to identify which references are genuinely new vs already listed.
 
-3. **Add new references** — append to the spreadsheet starting from the next sequential number. Add hyperlinks to both PubMed and DOI cells. Tag the Recommendation column.
+3. **Add new references** — append rows to the CSV starting from the next sequential number, with the PubMed and DOI URLs as plain text. Tag the Recommendation column. Commit the CSV change in the same PR as the recommendation.
 
 4. **Handle citations in recommendation text** — the source text may use several citation formats, sometimes mixed within the same document:
 
@@ -102,7 +102,7 @@ Academic references are managed in a spreadsheet (`Adult_guideline_reference_url
    - `[Author Year]` — e.g. `[Melles 2014]`
    - `[Author Year; Author Year]` — semicolon-separated, e.g. `[Marmor 2014; Browning 2025]`
    - `[Author Year, Author Year, Author Year]` — comma-separated, e.g. `[Alarcon 2007, Fessler 2005, Sciascia 2016]`
-   - `[Author; Author; Author]` — short-form without years, e.g. `[Wolfe; Marmor; Daftarian]`. For these, map each surname to its most commonly cited year in the same document, or to the only matching entry in the spreadsheet.
+   - `[Author; Author; Author]` — short-form without years, e.g. `[Wolfe; Marmor; Daftarian]`. For these, map each surname to its most commonly cited year in the same document, or to the only matching entry in the CSV.
 
    **Parenthetical citations:**
    - `(Author Year, Author Year)` — e.g. `(Alarcon 2007, Fessler 2005)`. Only replace if ALL parts match known references; otherwise leave unchanged (it may be a statistical expression like `(HR 1.56, 95% CI 1.31–1.86)`).
@@ -113,7 +113,7 @@ Academic references are managed in a spreadsheet (`Adult_guideline_reference_url
    **Numbered citations:**
    - `[number]` — match directly to the Reference # column.
 
-   Match all formats against (First author surname, Publication year) in the spreadsheet. Flag ambiguities (e.g. two papers by the same first author in the same year) for Sam to resolve. Note that some references may come from earlier recommendations (not tagged to the current rec) — check the full spreadsheet, not just the new references.
+   Match all formats against (First author surname, Publication year) in the CSV. Flag ambiguities (e.g. two papers by the same first author in the same year) for Sam to resolve. Note that some references may come from earlier recommendations (not tagged to the current rec) — check the full CSV, not just the new references.
 
 5. **Convert to superscript hyperlinks** in the HTML:
 ```html
@@ -136,8 +136,7 @@ Ask Sam for whatever is not in the repo:
 
 1. **The completed checklist** (or answers in chat)
 2. **The recommendation content document** (Google Doc ID, or uploaded file with all text for rec/remark/rationale/ETD/practical info)
-3. **The reference spreadsheet** (`Adult_guideline_reference_urls.xlsx`) — shared as an `.xlsx` upload, not via Drive, so hyperlinks survive. Read links with `openpyxl` via `cell.hyperlink.target`, not `cell.value`.
-4. **`recommendation-links.csv`** if it needs updating (it lives outside the repo — see Step 14)
+3. **Any new references** for this recommendation (ideally a `.ris` export) — existing references are already in `.claude/data/`.
 
 ---
 
@@ -312,13 +311,13 @@ For new recommendations, the card and modal "Updated" date = the **month of reco
 
 After building the card and modal with all content, convert all academic citations in the text to superscript hyperlinks:
 
-1. **Load the reference spreadsheet** using `openpyxl`. Extract hyperlinks via `cell.hyperlink.target`. Build a lookup dict mapping `"Author Year"` strings to `(ref_number, url)` tuples.
+1. **Load the reference CSV** (`.claude/data/adult-references.csv` or `jia-references.csv`) with Python's `csv` module. Build a lookup dict mapping `"Author Year"` strings to `(ref_number, url)` tuples.
 
 2. **Find all citations** in the HTML text — see Step 0.2 for the full list of citation formats (bracketed, parenthetical, narrative, short-form, numbered).
 
 3. **Process in order:** bracketed `[...]` first, then parenthetical `(...)`, then narrative. This avoids double-processing.
 
-4. **For short-form citations** (author surname without year, e.g. `[Wolfe; Daftarian]`): map each surname to its most commonly cited year in the document, or to the only matching entry in the spreadsheet. Build a separate short-form lookup dict.
+4. **For short-form citations** (author surname without year, e.g. `[Wolfe; Daftarian]`): map each surname to its most commonly cited year in the document, or to the only matching entry in the CSV. Build a separate short-form lookup dict.
 
 5. **Replace with superscript HTML:**
 ```html
@@ -371,7 +370,6 @@ If any **ERROR** is reported, **stop and fix before committing**, and tell Sam w
 - [ ] Deep-link mapping added in script block
 - [ ] Panellists page: new members added, all members' rec lists updated
 - [ ] Abbreviations page: new abbreviations added in alphabetical order
-- [ ] `recommendation-links.csv` updated
 - [ ] Evidence Tables Google Doc entry provided
 - [ ] Google Form dropdown update flagged as manual to-do
 - [ ] Recommendation count updated: hero badge on guideline page, gateway page pathway card
@@ -445,14 +443,13 @@ The recommendation card's "Suggest feedback" link uses a pre-filled Google Form 
 
 ## Step 14: Recommendation links
 
-`recommendation-links.csv` is kept **outside** this repository (it is not published). Ask Sam for the current copy, add the new row, and return the updated file. Columns:
+No list to update by hand. The direct links (numeric and slug) are generated from the site:
 
-```
-Guideline,Rec #,Title,Numeric URL,Slug URL
-Adult IA,18,Retinopathy screening for adults taking hydroxychloroquine,https://livingguidelines.org/adult/#rec-18,https://livingguidelines.org/adult/#hcq-retinopathy
+```bash
+python3 .claude/scripts/rec_links.py --markdown
 ```
 
-The slug URL uses the same slug as the deep-link mapping (Step 10d).
+Once the new rec's modal and slug (Step 10d) are in place, it appears automatically. Include its two links in the PR description so Sam can share them.
 
 ## Step 15: Evidence Tables Google Doc
 
@@ -478,7 +475,7 @@ Update the recommendation count in **three places**:
 
 1. Re-run `python3 .claude/scripts/verify_site.py` — must report no errors.
 2. Commit on the branch and open a pull request against `main`. **Never push to `main` directly** — GitHub Pages publishes it straight to livingguidelines.org.
-3. In the PR description, list: pages changed; anything you deviated from the source text or skill on (and why); manual to-dos for Sam/Vanessa (Google Form dropdown, Evidence Tables doc, recommendation-links.csv, COI links, headshots).
+3. In the PR description, list: pages changed; anything you deviated from the source text or skill on (and why); manual to-dos for Sam/Vanessa (Google Form dropdown, Evidence Tables doc, COI links, headshots).
 
 ---
 
