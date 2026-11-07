@@ -1,0 +1,55 @@
+/* Site-wide search. Lives in the dark top strip of the header on every page (left side; partner
+   links stay on the right). Loads after each page's own <style> so it can use the page's colour
+   variables, with fallbacks for safety. */
+.header-top-content { align-items: center; flex-wrap: wrap; }
+.site-search { position: relative; flex: 0 1 300px; min-width: 200px; margin-right: auto; }
+.site-search-input {
+    width: 100%; box-sizing: border-box; padding: 6px 32px 6px 32px; font: inherit; font-size: 13px; line-height: 1.4;
+    color: #fff; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 100px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.site-search-input::placeholder { color: rgba(255, 255, 255, 0.72); }
+.site-search-input::-webkit-search-cancel-button, .site-search-input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; display: none; }
+.site-search-input:focus { outline: none; background: #fff; color: var(--text-dark, #1f2937); border-color: #fff; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25); }
+.site-search-input:focus::placeholder { color: var(--text-light, #6b7280); }
+.site-search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: rgba(255, 255, 255, 0.8); pointer-events: none; transition: color 0.2s; }
+.site-search:focus-within .site-search-icon { color: var(--text-light, #6b7280); }
+.site-search-clear {
+    position: absolute; right: 7px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; border: none; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25); color: #fff; cursor: pointer; display: none; align-items: center; justify-content: center; padding: 0;
+}
+.site-search:focus-within .site-search-clear { background: var(--border-light, #e5e7eb); color: var(--text-medium, #4b5563); }
+.site-search-clear svg { width: 11px; height: 11px; }
+.site-search.has-query .site-search-clear { display: flex; }
+
+/* Results panel */
+.site-search-panel {
+    position: absolute; top: calc(100% + 8px); left: 0; width: 600px; max-width: calc(100vw - 32px); max-height: min(72vh, 680px);
+    overflow-y: auto; background: #fff; border: 1px solid var(--border-light, #e5e7eb); border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.22); z-index: 3000; display: none; text-align: left;
+}
+.site-search.open .site-search-panel { display: block; }
+.site-search-status { padding: 14px 18px; font-size: 13px; color: var(--text-light, #6b7280); }
+.site-search-list { list-style: none; margin: 0; padding: 6px; }
+.site-search-result { display: block; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: inherit; cursor: pointer; }
+.site-search-result:hover, .site-search-result[aria-selected="true"] { background: var(--bg-light, #f8fafc); }
+.site-search-result[aria-selected="true"] { outline: 2px solid var(--primary-teal, #0f766e); outline-offset: -2px; }
+.site-search-head { display: flex; align-items: baseline; gap: 10px; }
+.site-search-badge { flex-shrink: 0; font-size: 10px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; padding: 2px 8px; border-radius: 100px; background: #e5e7eb; color: #374151; }
+.site-search-badge.adult { background: rgba(15, 118, 110, 0.12); color: #0f766e; }
+.site-search-badge.jia { background: rgba(124, 58, 237, 0.12); color: #6d28d9; }
+.site-search-title { font-size: 14px; font-weight: 600; color: var(--text-dark, #1f2937); line-height: 1.35; }
+.site-search-snippet { margin: 4px 0 0 0; font-size: 13px; font-weight: 400; color: var(--text-medium, #4b5563); line-height: 1.5; }
+.site-search-snippet mark { background: rgba(250, 204, 21, 0.45); color: inherit; padding: 0 1px; border-radius: 2px; }
+.site-search-where { margin-top: 3px; font-size: 11px; font-weight: 400; color: var(--text-light, #6b7280); }
+.site-search-foot { padding: 8px 18px 10px; font-size: 11px; color: var(--text-light, #6b7280); border-top: 1px solid var(--border-light, #e5e7eb); }
+.site-search-foot kbd { font: inherit; padding: 0 4px; border: 1px solid var(--border-light, #e5e7eb); border-radius: 4px; background: var(--bg-light, #f8fafc); }
+
+/* Phone: the search takes a full-width row above the partner links */
+@media (max-width: 768px) {
+    .header-top-content { gap: 10px 20px; }
+    .site-search { flex: 1 1 100%; min-width: 0; margin-right: 0; order: -1; }
+    .site-search-input { font-size: 16px; padding-top: 8px; padding-bottom: 8px; } /* 16px stops iOS zooming on focus */
+    .site-search-panel { right: 0; width: auto; max-width: none; }
+    .site-search-foot { display: none; }
+}
