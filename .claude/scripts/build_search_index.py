@@ -219,19 +219,11 @@ def abbreviations():
     return out, syn
 
 
-# Abbreviations used in the guideline text that are NOT (yet) on abbreviations.html.
-# Search aid only - flagged to Sam as a content gap in the Nov 2026 search PR.
+# Extra search synonyms beyond what abbreviations.html provides (single-word expansions there are
+# already mapped both ways automatically). Keep this to spelled-out phrases readers might type.
 EXTRA_SYNONYMS = {
-    "mtx": ["methotrexate"], "methotrexate": ["mtx"],
-    "tnfi": ["tnf inhibitor", "tumour necrosis factor inhibitor"],
-    "jaki": ["jak inhibitor", "janus kinase inhibitor"],
-    "nma": ["network meta-analysis"],
-    "psa": ["psoriatic arthritis"], "axspa": ["axial spondyloarthritis"],
-    "ia": ["inflammatory arthritis"],
-    "gc": ["glucocorticoid"], "glucocorticoid": ["gc"],
-    "ssz": ["sulfasalazine"], "sulfasalazine": ["ssz"],
-    "lef": ["leflunomide"], "leflunomide": ["lef"],
-    "hcq": ["hydroxychloroquine"], "hydroxychloroquine": ["hcq"],
+    "tnfi": ["tumour necrosis factor inhibitor"],
+    "jaki": ["janus kinase inhibitor"],
 }
 
 
