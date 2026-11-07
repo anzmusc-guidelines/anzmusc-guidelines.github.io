@@ -1,0 +1,52 @@
+/* Shared header behaviour for every page.
+   Desktop (769px and up): unchanged look; dropdowns open on hover AND on click/Enter (keyboard access).
+   Phone (768px and down): compact logo row, partner links hidden (they are in the footer), and the
+   menu collapses behind a "Menu" button with tap-to-expand sections.
+   Loaded after each page's own <style> and after search.css. */
+
+/* --- Menu button (phone only) --- */
+.menu-toggle {
+    display: none; align-items: center; gap: 6px; padding: 8px 10px; border: 1px solid var(--border-light, #e5e7eb);
+    border-radius: 8px; background: var(--white, #fff); color: var(--text-dark, #1f2937); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.menu-toggle svg { width: 20px; height: 20px; }
+.menu-toggle .menu-toggle-close { display: none; }
+header.menu-open .menu-toggle .menu-toggle-open { display: none; }
+header.menu-open .menu-toggle .menu-toggle-close { display: block; }
+
+/* --- Dropdowns also open on click / keyboard, at every width --- */
+.nav-item.open .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-item.open .nav-link svg { transform: rotate(180deg); }
+.nav-link:focus-visible { outline: 2px solid var(--primary-teal, #0f766e); outline-offset: 2px; }
+
+@media (max-width: 768px) {
+    /* "body header" prefixes beat each page's own single-class rules, which load after this file */
+    /* top strip: search only */
+    body header .header-top { padding: 8px 0; }
+    body header .header-top-content > a { display: none; }
+    body header .site-search { margin: 0; }
+
+    /* compact logo row: logo | title | menu button */
+    body header .header-main { padding: 8px 16px; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    body header .logo { flex: 1 1 0; min-width: 0; gap: 10px; align-items: center; }
+    body header .logo-image { height: 30px; width: auto; flex-shrink: 0; }
+    body header .logo-title { font-size: 15px; line-height: 1.2; }
+    body header .logo-subtitle { font-size: 11px; line-height: 1.3; margin-top: 2px; }
+    body header .menu-toggle { display: inline-flex; flex-shrink: 0; }
+
+    /* collapsed menu: full-width accordion under the logo row */
+    body header nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; margin: 0; padding: 4px 0 8px; border-top: 1px solid var(--border-light, #e5e7eb); }
+    body header.menu-open nav { display: flex; }
+    body header nav .nav-item { position: static; }
+    body header nav .nav-link { padding: 12px 8px; font-size: 16px; justify-content: space-between; border-radius: 0; }
+    body header nav > .nav-link { border-top: 1px solid var(--border-light, #e5e7eb); }  /* Contact */
+    body header nav .dropdown {
+        position: static; display: none; min-width: 0; margin: 0 0 6px; padding: 2px 0 6px 18px; box-shadow: none; border: none; border-left: 2px solid var(--border-light, #e5e7eb);
+        opacity: 1; visibility: visible; transform: none; transition: none; border-radius: 0;
+    }
+    body header nav .nav-item.open .dropdown { display: block; }
+    body header nav .dropdown a { padding: 10px 10px; font-size: 15px; }
+    /* hover must not open menus on touch devices */
+    body header nav .nav-item:hover .dropdown { display: none; }
+    body header nav .nav-item.open:hover .dropdown { display: block; }
+}

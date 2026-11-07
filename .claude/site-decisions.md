@@ -108,6 +108,16 @@ by design. Verify against these before changing.
   `images/og-share.png` (1200×630, logo centred on white) is the `og:image` / `twitter:image` on
   every page except the 404. Sam chose the plain logo; a designed card can replace the file later
   without touching any page. Every indexable page carries the full Open Graph + Twitter block.
+- **Phone header: compact logo row + "Menu" button; shared `header.css` / `header.js`** *(7 Nov 2026)*
+  Before: on a phone the header (search strip, three wrapped partner links, 50 px logo, two-line
+  title, wrapped menu) was ~440 px tall — over half the screen — and inconsistent between pages
+  (only the gateway hid its nav). Now, at ≤768 px: partner links hidden (they are in the footer),
+  30 px logo, 15 px title, and the nav collapses behind a Menu button with tap-to-expand sections.
+  Header ≈ 126–154 px. Desktop is unchanged, except dropdown headings now also toggle on
+  click/Enter (keyboard access). Rules are prefixed `body header …` so they beat each page's own
+  inline styles, which load later. Header markup (menu button, `nav#site-nav`) is duplicated on
+  every page like the rest of the header.
+
 - **Site-wide search is a generated static index searched in the browser** *(7 Nov 2026)*
   Chosen over Pagefind because the site has no build step. `build_search_index.py` extracts every
   recommendation (per tab, weighted: title > category/tags > recommendation > rationale/ETD/practical
@@ -157,13 +167,8 @@ repeated here; the skill files remain the source of truth for those.)*
 
 ## 4. Deliberately deferred / parked (not oversights)
 
-- **Keyboard-accessible header dropdowns (review Step 3d)** *(parked 3 Jul 2026)*
-  The header "Guidelines / About / Resources" dropdowns open on hover only, so a keyboard user
-  can't open them. Parked — not stranded — because every page in those dropdowns is *also* linked in
-  the keyboard-accessible footer. It's a convenience gap, not a lockout. Fix, if revisited: a small
-  CSS `:focus-within` rule on the header (duplicated across all pages).
-
----
+- *(Keyboard-accessible header dropdowns were parked here from 3 Jul 2026; resolved 7 Nov 2026 by
+  `header.js`, which makes each dropdown heading a click/Enter toggle at every width. See §2.)*
 
 ## 5. Known cosmetic issues (tracked, not yet decided/done)
 
