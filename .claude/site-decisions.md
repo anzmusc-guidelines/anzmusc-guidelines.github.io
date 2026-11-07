@@ -104,6 +104,10 @@ by design. Verify against these before changing.
   Measurement ID `G-XQKQVSHVS5`. The standard gtag block goes immediately before `</head>`. All
   pages carry it (checked by `verify_site.py`). Any new page must include the same block.
 
+- **Social-share image is the ANZMUSC logo** *(7 Nov 2026)*
+  `images/og-share.png` (1200×630, logo centred on white) is the `og:image` / `twitter:image` on
+  every page except the 404. Sam chose the plain logo; a designed card can replace the file later
+  without touching any page. Every indexable page carries the full Open Graph + Twitter block.
 - **Site-wide search is a generated static index searched in the browser** *(7 Nov 2026)*
   Chosen over Pagefind because the site has no build step. `build_search_index.py` extracts every
   recommendation (per tab, weighted: title > category/tags > recommendation > rationale/ETD/practical
@@ -164,8 +168,6 @@ repeated here; the skill files remain the source of truth for those.)*
 
 Recorded so they aren't mistaken for decisions or missed. *(The © footer and MAGICapp-link items were resolved 4 and 7 Nov 2026.)*
 
-- **No `og:image` social-share preview on any page** — sharing to LinkedIn/X/Teams shows no image
-  card. Needs a chosen image.
 
 ---
 
