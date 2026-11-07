@@ -22,6 +22,8 @@
     <meta name="twitter:image" content="https://livingguidelines.org/images/og-share.png">
     <link rel="stylesheet" href="/search.css">
     <script src="/search.js" defer></script>
+    <link rel="stylesheet" href="/header.css">
+    <script src="/header.js" defer></script>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -143,7 +145,12 @@
                     <div class="logo-subtitle">Evidence-Based Rheumatology Recommendations</div>
                 </div>
             </a>
-            <nav>
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+                <svg class="menu-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" clip-rule="evenodd"/></svg>
+                <svg class="menu-toggle-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/></svg>
+                Menu
+            </button>
+            <nav id="site-nav" aria-label="Main menu">
                 <div class="nav-item">
                     <a href="#" class="nav-link">Guidelines <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></a>
                     <div class="dropdown">

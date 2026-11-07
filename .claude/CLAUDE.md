@@ -59,6 +59,7 @@ Evidence Tables doc). Explain technical choices in plain language.
 | `.claude/` | Claude's notes, skills and checks — **not published** by GitHub Pages |
 | `.claude/data/adult-references.csv`, `jia-references.csv` | Master reference lists (ref number → DOI/PubMed) used for citation superscripts |
 | `.claude/data/adult-magicapp-urls.csv`, `jia-magicapp-urls.csv` | Master list of every rec's "View in MAGICapp" URL — `verify_site.py` enforces it; never ask Sam to re-collect |
+| `header.css`, `header.js` | Shared phone header (compact logo row, Menu button, accordion) and click/keyboard dropdowns, on every page |
 | `search.js`, `search.css`, `search-index.json` | Site-wide search in every page header. The index is **generated** — never hand-edit |
 | `.claude/scripts/build_search_index.py` | Rebuilds `search-index.json` from the pages — **run after any content change**, then commit the JSON |
 | `.claude/scripts/verify_site.py` | Whole-site integrity check — run before every commit |
@@ -83,6 +84,8 @@ Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`)
 - **Site search:** after editing any recommendation, panellist, publication, abbreviation or text page,
   run `python3 .claude/scripts/build_search_index.py` and commit `search-index.json` (the verifier
   errors if it is stale). Header markup for the box is duplicated on every page, like the nav.
+- **Header on every page** = top strip (search + partner links) → logo → Menu button → `nav#site-nav`.
+  A new page copies the whole header and loads `/search.css`, `/search.js`, `/header.css`, `/header.js`.
 - Spelling: Australian English. "Macular" (adjective), not "macula", e.g. "macular abnormalities".
   Monitoring wording: "6-monthly or less frequently".
 
@@ -103,5 +106,4 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
   Vanessa's search-update summary
 - Adult rec-0 and rec-2 show an "Update in progress" badge pending living-NMA updates after the next
   panel meeting; the Thomas 2026 Cochrane NMA (CD013562.pub2) is to be linked from rec-2 then
-- Keyboard access for header dropdowns (parked — see site-decisions §4)
 - 10 of 50 panellist headshots still outstanding (Vanessa collecting)
