@@ -117,8 +117,9 @@ by design. Verify against these before changing.
   (`scripts.js` opens the tab). Search terms are logged to GA as `search` events (Sam approved).
   The per-page card filter on the guideline pages is kept; it does a different job. Decisions by
   Sam: box on every page; about pages included; GA logging on.
-  *Content gap flagged:* MTX, TNFi, JAKi, NMA, PsA, axSpA, IA, GC, SSZ, LEF are used in the text
-  but missing from abbreviations.html; `EXTRA_SYNONYMS` in the builder covers them for search.
+  Abbreviations on `abbreviations.html` become search synonyms automatically (MTX, TNFi, JAKi,
+  NMA, PsA, axSpA, IA were added to the page for this on 7 Nov 2026); `EXTRA_SYNONYMS` in the
+  builder holds only spelled-out phrases the page does not give.
 
 - **Favicon and per-page SEO tags** *(4 Nov 2026)*
   Every page links `/favicon.ico`, `/favicon-32x32.png` and `/apple-touch-icon.png` (root-anchored,
