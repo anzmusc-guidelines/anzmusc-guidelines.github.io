@@ -98,7 +98,6 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
   Vanessa's search-update summary
 - Adult rec-0 and rec-2 show an "Update in progress" badge pending living-NMA updates after the next
   panel meeting; the Thomas 2026 Cochrane NMA (CD013562.pub2) is to be linked from rec-2 then
-- No `og:image` share preview (needs an image chosen by Sam)
 - Keyboard access for header dropdowns (parked — see site-decisions §4)
 - Pagefind static search (discussed as a low-risk first step before any chatbot)
 - 10 of 50 panellist headshots still outstanding (Vanessa collecting)
