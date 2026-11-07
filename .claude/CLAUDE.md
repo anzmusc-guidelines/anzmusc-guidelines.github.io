@@ -58,6 +58,7 @@ Evidence Tables doc). Explain technical choices in plain language.
 | `sitemap.xml`, `robots.txt` | SEO; sitemap `lastmod` = real commit date |
 | `.claude/` | Claude's notes, skills and checks — **not published** by GitHub Pages |
 | `.claude/data/adult-references.csv`, `jia-references.csv` | Master reference lists (ref number → DOI/PubMed) used for citation superscripts |
+| `.claude/data/adult-magicapp-urls.csv`, `jia-magicapp-urls.csv` | Master list of every rec's "View in MAGICapp" URL — `verify_site.py` enforces it; never ask Sam to re-collect |
 | `.claude/scripts/verify_site.py` | Whole-site integrity check — run before every commit |
 | `.claude/scripts/rec_links.py` | Generates the direct-link list (numeric + slug) for every recommendation |
 
@@ -72,7 +73,8 @@ Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`)
 - **What's New** changes only when a rec is new or its content/facts actually change — not for
   routine "no new evidence" rounds.
 - **Adult page is the reference standard**; make JIA consistent with it, not the reverse.
-- **MAGICapp links** must deep-link to the specific recommendation (`/section/` or `/rec/`).
+- **MAGICapp links** must deep-link to the specific recommendation (`/section/` or `/rec/`) and match
+  `.claude/data/<adult|jia>-magicapp-urls.csv`.
 - **Reference superscripts:** prefer DOI over PubMed links; `rel="noopener"`.
 - **Accessibility:** text contrast ≥ 4.5:1; don't revert the sentinel-based modal focus trap.
 - **Analytics:** every page carries GA `G-XQKQVSHVS5` immediately before `</head>`.
@@ -96,7 +98,6 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
   Vanessa's search-update summary
 - Adult rec-0 and rec-2 show an "Update in progress" badge pending living-NMA updates after the next
   panel meeting; the Thomas 2026 Cochrane NMA (CD013562.pub2) is to be linked from rec-2 then
-- 17 Adult modals still use the guideline-level MAGICapp URL — Sam to supply rec-specific URLs
 - No `og:image` share preview (needs an image chosen by Sam)
 - Keyboard access for header dropdowns (parked — see site-decisions §4)
 - Pagefind static search (discussed as a low-risk first step before any chatbot)

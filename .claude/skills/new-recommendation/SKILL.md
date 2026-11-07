@@ -267,10 +267,15 @@ Example of the failure mode (seen in rec-3 Benefits and Harms):
 
 The "View in MAGICapp" link in the modal footer **must point to the specific recommendation**, not to the guideline as a whole.
 
-- ✅ Correct: `https://app.magicapp.org/#/guideline/{guideline-id}/section/{section-id}` (e.g. `.../guideline/11207/section/260420`)
+- ✅ Correct: `https://app.magicapp.org/#/guideline/LqRV3n/rec/{rec-id}` (Adult, e.g. `.../guideline/LqRV3n/rec/Lk6321`) or `https://app.magicapp.org/#/guideline/10522/section/{section-id}` (JIA)
 - ❌ Wrong: `https://app.magicapp.org/#/guideline/{guideline-id}` with no `/section/` path — this opens the guideline at whatever recommendation MAGICapp lands on by default, taking the user to the wrong content.
 
 **To obtain the rec-specific URL:** open the recommendation in MAGICapp in a browser and copy the full URL from the address bar. The portion after `/section/` is the section ID.
+
+**Master list (REQUIRED):** every modal's MAGICapp URL is recorded in `.claude/data/adult-magicapp-urls.csv` /
+`.claude/data/jia-magicapp-urls.csv` (columns `rec_id,slug,title,magicapp_url`). Add the new recommendation's row
+there in the same commit; `verify_site.py` errors if a modal's link is missing from, or differs from, the CSV. Sam
+supplies the URL — Claude cannot reach MAGICapp from the cloud session.
 
 **URL format notes:**
 - The Adult IA guideline can be addressed by either a numeric ID (e.g. `11207`) or a short alphanumeric code (e.g. `LqRV3n`) — both have been seen in the wild. Use whichever appears in the URL when you copy it from MAGICapp.

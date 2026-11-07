@@ -83,6 +83,13 @@ by design. Verify against these before changing.
 
 ## 3. Conventions to apply in future work
 
+- **MAGICapp URLs live in a master list** *(7 Nov 2026)*
+  `.claude/data/adult-magicapp-urls.csv` and `jia-magicapp-urls.csv` hold the "View in MAGICapp"
+  URL for every recommendation (supplied by Sam, 7 Nov 2026; Adult uses the `LqRV3n/rec/…` form,
+  JIA the `10522/section/…` form). `verify_site.py` errors if a modal's link differs from the CSV.
+  When a URL changes or a rec is added, update the CSV and the page together. Sam should never
+  have to re-collect these.
+
 - **Every pull request targets `main` — never stack one PR on another's branch** *(4 Nov 2026)*
   A PR based on another PR's branch does not get retargeted to `main` when that branch merges;
   Sam merged such a PR (#5) and nothing went live. If two changes would conflict, finish and merge
@@ -143,13 +150,10 @@ repeated here; the skill files remain the source of truth for those.)*
 
 ## 5. Known cosmetic issues (tracked, not yet decided/done)
 
-Recorded so they aren't mistaken for decisions or missed. *(Re-confirmed still open 4 Nov 2026; the © footer item was resolved the same day.)*
+Recorded so they aren't mistaken for decisions or missed. *(The © footer and MAGICapp-link items were resolved 4 and 7 Nov 2026.)*
 
 - **No `og:image` social-share preview on any page** — sharing to LinkedIn/X/Teams shows no image
   card. Needs a chosen image.
-- **17 of 19 Adult MAGICapp links are guideline-level** (`LqRV3n`), not rec-specific. Blocked on
-  gathering the rec-specific section URLs. `verify_site.py` lists them as warnings.
-  *(JIA links are all confirmed correct — see §1.)*
 
 ---
 
