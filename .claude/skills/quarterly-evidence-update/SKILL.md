@@ -32,6 +32,8 @@ Every evidence search update touches **up to five locations**, all of which must
 
 ---
 
+> **Search index:** any change to modal text (Living Updates, Data tab entries) changes the site-search index. Run `python3 .claude/scripts/build_search_index.py` before committing and include `search-index.json` in the commit.
+
 ## Step 1: Identify the recommendation and search outcome
 
 Confirm:

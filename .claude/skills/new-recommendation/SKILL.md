@@ -272,6 +272,8 @@ The "View in MAGICapp" link in the modal footer **must point to the specific rec
 
 **To obtain the rec-specific URL:** open the recommendation in MAGICapp in a browser and copy the full URL from the address bar. The portion after `/section/` is the section ID.
 
+**Search index (REQUIRED):** after the recommendation is built, run `python3 .claude/scripts/build_search_index.py` and commit the regenerated `search-index.json`, or `verify_site.py` will error.
+
 **Master list (REQUIRED):** every modal's MAGICapp URL is recorded in `.claude/data/adult-magicapp-urls.csv` /
 `.claude/data/jia-magicapp-urls.csv` (columns `rec_id,slug,title,magicapp_url`). Add the new recommendation's row
 there in the same commit; `verify_site.py` errors if a modal's link is missing from, or differs from, the CSV. Sam

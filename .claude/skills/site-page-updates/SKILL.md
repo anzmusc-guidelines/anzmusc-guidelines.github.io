@@ -145,6 +145,10 @@ Both `#rec-N` / `#jia-rec-N` and slug forms (`#hcq-retinopathy`) work. Older for
 
 ---
 
+## Search index
+
+Panellists, publications, media, abbreviations and the text pages are all searchable from the header box. After editing any of them run `python3 .claude/scripts/build_search_index.py` and commit `search-index.json` with the change (`verify_site.py` errors if it is stale). New abbreviations automatically become search synonyms.
+
 ## Before opening the PR
 
 - `verify_site.py` passes (it checks the analytics tag on every page — any new page needs the

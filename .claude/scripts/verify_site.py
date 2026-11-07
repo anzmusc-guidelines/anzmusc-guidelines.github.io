@@ -29,6 +29,8 @@ Guideline pages (adult/index.html, jia/index.html):
   W  MAGICapp link is guideline-level rather than rec-specific
 
 Site-wide:
+  E  search-index.json matches a fresh build (run .claude/scripts/build_search_index.py)
+  E  every page has the header search box and loads /search.css and /search.js
   E  every headshot <img> on panellists.html resolves to a real .jpg file
   E  every top-level HTML page carries the Google Analytics tag
   W  headshot files over 40 KB (see the panellist-headshot skill)
@@ -274,6 +276,27 @@ def check_headshots():
 
 def check_analytics():
     pages = sorted(ROOT.glob("*.html")) + sorted(ROOT.glob("adult/*.html")) + sorted(ROOT.glob("jia/*.html"))
+
+    # ---- site search: index freshness + every page wired up ---------------------
+    try:
+        sys.path.insert(0, str(ROOT / ".claude" / "scripts"))
+        import build_search_index as bsi
+        import json as _json
+        fresh = bsi.build()
+        idx_path = ROOT / "search-index.json"
+        if not idx_path.exists():
+            err("search-index.json missing - run python3 .claude/scripts/build_search_index.py")
+        else:
+            current = _json.loads(idx_path.read_text(encoding="utf-8"))
+            current.pop("hash", None)
+            if current != fresh:
+                err("search-index.json is stale - run python3 .claude/scripts/build_search_index.py and commit it")
+    except Exception as e:  # noqa: BLE001
+        err(f"could not check search index: {e}")
+    for p in pages:
+        t = p.read_text(encoding="utf-8")
+        if 'class="site-search"' not in t or '/search.js' not in t or '/search.css' not in t:
+            err(f"{p.relative_to(ROOT)}: header search box / search.css / search.js missing")
     for p in pages:
         if GA_ID not in p.read_text(encoding="utf-8"):
             err(f"{p.relative_to(ROOT)}: Google Analytics tag {GA_ID} missing")

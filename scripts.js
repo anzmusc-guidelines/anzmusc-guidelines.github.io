@@ -244,25 +244,31 @@ function checkHashAndOpenModal() {
     const hash = window.location.hash;
     if (!hash || hash.length <= 1) return;
 
-    const hashValue = hash.substring(1); // Remove the #
+    let hashValue = hash.substring(1); // Remove the #
+    // Optional "/tab" suffix (e.g. #csdmard-reduction-ra/practical) opens that tab - used by site search
+    let tabId = null;
+    const slash = hashValue.indexOf('/');
+    if (slash > 0) { tabId = hashValue.substring(slash + 1); hashValue = hashValue.substring(0, slash); }
+    const openWithTab = (id) => { openModal(id); if (tabId) switchTab(id, tabId); };
 
     // Numeric formats. Check jia-rec- before rec- because "jia-rec-1" also
     // technically starts after the prefix test; explicit ordering keeps it clear.
     if (hashValue.startsWith('jia-rec-') || hashValue.startsWith('rec-')) {
-        openModal(hashValue);
+        openWithTab(hashValue);
         return;
     }
 
     // Slug maps: use whichever the page provides.
     const slugMap = window.adultSlugMap || window.jiaSlugMap;
     if (slugMap && slugMap[hashValue]) {
-        openModal(slugMap[hashValue]);
+        openWithTab(slugMap[hashValue]);
         return;
     }
 }
 
 // Check on page load
 document.addEventListener('DOMContentLoaded', checkHashAndOpenModal);
+window.checkHashAndOpenModal = checkHashAndOpenModal;
 
 // Also check if hash changes while on page
 window.addEventListener('hashchange', checkHashAndOpenModal);

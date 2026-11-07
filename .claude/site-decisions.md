@@ -104,6 +104,18 @@ by design. Verify against these before changing.
   Measurement ID `G-XQKQVSHVS5`. The standard gtag block goes immediately before `</head>`. All
   pages carry it (checked by `verify_site.py`). Any new page must include the same block.
 
+- **Site-wide search is a generated static index searched in the browser** *(7 Nov 2026)*
+  Chosen over Pagefind because the site has no build step. `build_search_index.py` extracts every
+  recommendation (per tab, weighted: title > category/tags > recommendation > rationale/ETD/practical
+  > data/more-info), the about pages (per heading), each panellist, publication, media item and
+  abbreviation into `search-index.json` (~600 KB, gzipped by GitHub Pages). `search.js` does AND
+  matching with light stemming and abbreviation synonyms, ranks, and deep-links to `#slug/tab`
+  (`scripts.js` opens the tab). Search terms are logged to GA as `search` events (Sam approved).
+  The per-page card filter on the guideline pages is kept; it does a different job. Decisions by
+  Sam: box on every page; about pages included; GA logging on.
+  *Content gap flagged:* MTX, TNFi, JAKi, NMA, PsA, axSpA, IA, GC, SSZ, LEF are used in the text
+  but missing from abbreviations.html; `EXTRA_SYNONYMS` in the builder covers them for search.
+
 - **Favicon and per-page SEO tags** *(4 Nov 2026)*
   Every page links `/favicon.ico`, `/favicon-32x32.png` and `/apple-touch-icon.png` (root-anchored,
   generated from the ANZMUSC emblem) and carries a `<meta name="description">` plus
