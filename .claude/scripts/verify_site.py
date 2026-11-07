@@ -25,7 +25,8 @@ Guideline pages (adult/index.html, jia/index.html):
   W  latest "Update N (Month YYYY)" in the Data tab != card date
      (expected for brand-new recs dated by panel month, e.g. rec-18 - see site-decisions.md)
   W  Data-tab update numbers not sequential (Update 1, 2, 3 ...)
-  W  MAGICapp link is guideline-level rather than rec-specific (known backlog item)
+  E  modal MAGICapp link == the master list .claude/data/<adult|jia>-magicapp-urls.csv
+  W  MAGICapp link is guideline-level rather than rec-specific
 
 Site-wide:
   E  every headshot <img> on panellists.html resolves to a real .jpg file
@@ -34,6 +35,7 @@ Site-wide:
 
 Requires: beautifulsoup4  (pip install beautifulsoup4)
 """
+import csv
 import os
 import re
 import sys
@@ -71,6 +73,11 @@ def norm(s):
 
 def check_guideline(rel_path, prefix, slug_var, first_index):
     path = ROOT / rel_path
+    magic_csv = ROOT / ".claude" / "data" / f"{Path(rel_path).parts[0]}-magicapp-urls.csv"  # adult-… / jia-…
+    magic_master = {}
+    if magic_csv.exists():
+        with open(magic_csv, newline="", encoding="utf-8") as f:
+            magic_master = {row["rec_id"]: row["magicapp_url"].strip() for row in csv.DictReader(f)}
     if not path.exists():
         err(f"{rel_path}: file missing")
         return
@@ -208,12 +215,20 @@ def check_guideline(rel_path, prefix, slug_var, first_index):
             if call != rid:
                 err(f"{label}: modal-{rid} has switchTab('{call}', ...) - wrong rec id")
 
-        # MAGICapp deep link
+        # MAGICapp deep link - must match the master list in .claude/data/<prefix>-magicapp-urls.csv
         link = mod.select_one("a.magicapp-link")
         if link is None:
             warn(f"{label}: {rid} has no 'View in MAGICapp' link")
-        elif not re.search(r"/(section|rec)/", link.get("href", "")):
-            warn(f"{label}: {rid} MAGICapp link is guideline-level, not rec-specific")
+        else:
+            href = link.get("href", "")
+            if not re.search(r"/(section|rec)/", href):
+                warn(f"{label}: {rid} MAGICapp link is guideline-level, not rec-specific")
+            if magic_master:
+                if rid not in magic_master:
+                    err(f"{label}: {rid} missing from {magic_csv.name} - add its MAGICapp URL there")
+                elif magic_master[rid] != href:
+                    err(f"{label}: {rid} MAGICapp link '{href}' differs from {magic_csv.name} "
+                        f"('{magic_master[rid]}') - the CSV is the master list")
 
     # ---- slug map ----------------------------------------------------------
     sm = re.search(rf"window\.{slug_var}\s*=\s*\{{(.*?)\}};", html, re.DOTALL)

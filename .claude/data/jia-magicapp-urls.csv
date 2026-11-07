@@ -1,0 +1,11 @@
+rec_id,slug,title,magicapp_url
+jia-rec-1,mtx-jia,Methotrexate for juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240269
+jia-rec-2,sc-oral-mtx-jia,Subcutaneous methotrexate versus oral methotrexate for juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240270
+jia-rec-3,btsdmard-uveitis,Biologic and targeted synthetic disease modifying anti-rheumatic drugs for JIA-associated uveitis with inadequate response to methotrexate,https://app.magicapp.org/#/guideline/10522/section/240271
+jia-rec-4,csdmard-reduction-jia,Conventional synthetic DMARD (csDMARD) dose reduction or discontinuation for juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240273
+jia-rec-5,btsdmard-reduction-jia,Biologic or targeted synthetic DMARD (b/tsDMARD) dose reduction or discontinuation for juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/241614
+jia-rec-6,gc-induction-jia,Short-term adjunctive induction glucocorticoids for non-systemic juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240275
+jia-rec-7,iagc-preparation,Choice of intra-articular glucocorticoid,https://app.magicapp.org/#/guideline/10522/section/240276
+jia-rec-8,iagc-anaesthesia,Use of anaesthesia for intra-articular injection,https://app.magicapp.org/#/guideline/10522/section/240276
+jia-rec-9,foot-orthoses-jia,Foot orthoses in children and young people with juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240278
+jia-rec-10,exercise-jia,Exercise therapy in children and young people with juvenile idiopathic arthritis,https://app.magicapp.org/#/guideline/10522/section/240279

@@ -1,0 +1,20 @@
+rec_id,slug,title,magicapp_url
+rec-0,initial-dmard-ra,Initial DMARD therapy for people with rheumatoid arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/LpR8MN
+rec-1,sc-oral-mtx-ra,Subcutaneous/intramuscular methotrexate versus oral methotrexate for people with rheumatoid arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/jlRe0x
+rec-2,dmard-after-tnfi,Choice of DMARD in people with rheumatoid arthritis who have not responded to TNFi,https://app.magicapp.org/#/guideline/LqRV3n/rec/Lk6321
+rec-3,csdmard-reduction-ra,Rheumatoid arthritis: Dose reduction or discontinuation of conventional synthetic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/jboYWY
+rec-4,csdmard-reduction-psa,Psoriatic Arthritis: Dose reduction or discontinuation of conventional synthetic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/Ea0p2A
+rec-5,btsdmard-reduction-ra,Rheumatoid Arthritis: Dose reduction or discontinuation of biologic or targeted synthetic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/jMX49E
+rec-6,bdmard-reduction-axspa,Axial Spondyloarthritis: Dose reduction or discontinuation of biologic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/EKBakn
+rec-7,btsdmard-reduction-psa,Psoriatic Arthritis: Dose reduction or discontinuation of biologic or targeted synthetic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/nY2bZE
+rec-8,btsdmard-vs-csdmard-reduction,Dose reduction or discontinuation of b/tsDMARDs versus dose reduction or discontinuation of csDMARDs in people with rheumatoid arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/nYPYA8
+rec-9,perioperative-dmard,Perioperative adjustment of DMARDs in people with inflammatory arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/jOpO2m
+rec-10,lab-monitoring,Laboratory safety monitoring in people with inflammatory arthritis using conventional synthetic DMARDs,https://app.magicapp.org/#/guideline/LqRV3n/rec/EaKNKd
+rec-11,perioperative-gc,Perioperative adjustment of glucocorticoids in people with inflammatory arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/L6mO6v
+rec-12,opioids-ra,Opioids for pain in rheumatoid arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/L4mydn
+rec-13,opioids-axspa,Opioids for pain in axial spondyloarthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/LAY43L
+rec-14,opioids-psa,Opioids for pain in psoriatic arthritis,https://app.magicapp.org/#/guideline/LqRV3n/rec/Lpw28j
+rec-15,gc-flare-ra,Short-term use of glucocorticoids for treating flare in RA,https://app.magicapp.org/#/guideline/LqRV3n/rec/jxQRoA
+rec-16,gc-longterm-ra,Long-term use of low dose glucocorticoids in RA,https://app.magicapp.org/#/guideline/LqRV3n/rec/jWQ63b
+rec-17,gc-bridging-ra,Short-term bridging glucocorticoids in addition to DMARD therapy in RA,https://app.magicapp.org/#/guideline/LqRV3n/rec/EKeNq9
+rec-18,hcq-retinopathy,Retinopathy screening for adults taking hydroxychloroquine,https://app.magicapp.org/#/guideline/LqRV3n/rec/jXv5eb
