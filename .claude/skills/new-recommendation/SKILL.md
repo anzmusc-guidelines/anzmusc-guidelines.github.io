@@ -293,6 +293,15 @@ Many existing recommendations on the site currently have only the guideline-leve
 
 New cards go at the **end** of their thematic section within the recommendations grid, or in a new section if the category is new. Do not insert mid-section.
 
+**Exception — the Adult RA "choice of DMARD" set.** The first cards on the Adult page follow the
+treatment pathway, not id order: `rec-0` (initial DMARD therapy, DMARD-naive) → *[future rec:
+choice of DMARD after inadequate response to methotrexate/csDMARDs]* → `rec-2` (choice of DMARD
+after inadequate response to TNFi) → `rec-1` (subcutaneous vs oral methotrexate). When the
+methotrexate-IR recommendation is built, place its card **between `rec-0` and `rec-2`** (card order
+only — it still gets the next free id and its modal goes after the last modal as usual). Card order
+in the grid is independent of id order; `verify_site.py` checks that ids are complete, not that
+cards are sorted.
+
 For Adult IA: cards are grouped by condition tabs (RA, PsA, axSpA, and any new conditions) via `data-conditions`. A card with `data-conditions="ra psa axspa"` appears under all three tabs.
 
 For JIA: no condition tabs — all cards are in a single grid.

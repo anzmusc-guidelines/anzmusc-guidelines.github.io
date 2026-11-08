@@ -158,6 +158,14 @@ by design. Verify against these before changing.
   clear it, follow the `quarterly-evidence-update` skill: restore `Updated Mon YYYY` /
   `Last updated: Month YYYY` and delete the `.pending-note`.
 
+- **Adult card order follows the treatment pathway, not id order** *(8 Nov 2026)*
+  The first row of the Adult grid is `rec-0` (initial DMARD therapy) → `rec-2` (choice of DMARD after
+  TNFi) → `rec-1` (subcutaneous vs oral methotrexate), so the "choice of DMARD" recommendations sit
+  together: DMARD-naive, then (future rec) methotrexate/csDMARD inadequate responders, then
+  bDMARD inadequate responders. Only the card markup was moved; ids, slugs, modals, MAGICapp URLs
+  and deep links are unchanged, so nothing linking to `#rec-1`/`#rec-2` breaks. Card order in the
+  grid is independent of id order (ids are never renumbered — too many things link to them).
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
