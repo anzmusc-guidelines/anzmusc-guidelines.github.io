@@ -104,6 +104,16 @@ by design. Verify against these before changing.
   Measurement ID `G-XQKQVSHVS5`. The standard gtag block goes immediately before `</head>`. All
   pages carry it (checked by `verify_site.py`). Any new page must include the same block.
 
+- **Per-recommendation analytics events** *(8 Nov 2026)*
+  Opening a modal doesn't change the page, so GA4's default page views couldn't say which
+  recommendation was read. `scripts.js` now sends `view_recommendation` (once per opening, from
+  `openModal`) and `view_recommendation_tab` (from `switchTab`, only when the tab actually changes),
+  each with `recommendation_id`, `recommendation_slug`, `recommendation_title`, `guideline`.
+  Chosen over "virtual page views" so real page-view counts stay honest. The parameters only show
+  in GA4 once registered as event-scoped custom dimensions (Sam's one-off job, see the
+  `analytics-report` skill). Reports are pulled with `.claude/scripts/ga4_report.py` using a
+  read-only service account whose key lives in Sam's Claude cloud environment, never in the repo.
+
 - **Social-share image is the ANZMUSC logo** *(7 Nov 2026)*
   `images/og-share.png` (1200×630, logo centred on white) is the `og:image` / `twitter:image` on
   every page except the 404. Sam chose the plain logo; a designed card can replace the file later
