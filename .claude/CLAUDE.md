@@ -20,6 +20,7 @@ Evidence Tables doc). Explain technical choices in plain language.
    - adding/replacing a panellist photo → `panellist-headshot`
    - panel members, COI links, publications, media, abbreviations, text pages,
      sharing recommendation links → `site-page-updates`
+   - website traffic / Google Analytics questions or reports → `analytics-report`
 3. Make sure you're on current `main` (`git fetch origin main`) before branching.
 
 ## How changes get published
@@ -64,6 +65,7 @@ Evidence Tables doc). Explain technical choices in plain language.
 | `.claude/scripts/build_search_index.py` | Rebuilds `search-index.json` from the pages — **run after any content change**, then commit the JSON |
 | `.claude/scripts/verify_site.py` | Whole-site integrity check — run before every commit |
 | `.claude/scripts/rec_links.py` | Generates the direct-link list (numeric + slug) for every recommendation |
+| `.claude/scripts/ga4_report.py` | Pulls GA4 reports via the Data API (credentials from the cloud environment, see `analytics-report` skill) into a Markdown digest |
 
 Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`) so
 `/adult/#hcq-retinopathy` deep-links to `rec-18`. Every rec needs a slug.
@@ -80,7 +82,9 @@ Each guideline page has a slug map (`window.adultSlugMap` / `window.jiaSlugMap`)
   `.claude/data/<adult|jia>-magicapp-urls.csv`.
 - **Reference superscripts:** prefer DOI over PubMed links; `rel="noopener"`.
 - **Accessibility:** text contrast ≥ 4.5:1; don't revert the sentinel-based modal focus trap.
-- **Analytics:** every page carries GA `G-XQKQVSHVS5` immediately before `</head>`.
+- **Analytics:** every page carries GA `G-XQKQVSHVS5` immediately before `</head>`. `scripts.js`
+  sends `view_recommendation` / `view_recommendation_tab` events (with slug, title, guideline) when
+  a modal opens or a tab is chosen; keep `trackRecommendation()` intact when editing the modal code.
 - **Site search:** after editing any recommendation, panellist, publication, abbreviation or text page,
   run `python3 .claude/scripts/build_search_index.py` and commit `search-index.json` (the verifier
   errors if it is stale). Header markup for the box is duplicated on every page, like the nav.
@@ -107,3 +111,6 @@ Most live in Sam's Google Drive folder "Guideline Website Working Documents":
 - Adult rec-0 and rec-2 show an "Update in progress" badge pending living-NMA updates after the next
   panel meeting; the Thomas 2026 Cochrane NMA (CD013562.pub2) is to be linked from rec-2 then
 - 10 of 50 panellist headshots still outstanding (Vanessa collecting)
+- Google Analytics API access: Sam to create the read-only service account, register the six
+  custom dimensions and store the key in the cloud environment (steps in `analytics-report` skill);
+  the first per-recommendation digest can follow a month or so after that

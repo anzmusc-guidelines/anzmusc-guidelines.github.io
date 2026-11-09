@@ -149,6 +149,9 @@ function openModal(modalId) {
 
     const modal = document.getElementById('modal-' + modalId);
     if (modal) {
+        // Was this modal already open? (Re-opening the same rec, e.g. via a hash
+        // change to one of its tabs, should not count as a second view.)
+        const wasActive = modal.classList.contains('active');
         lastFocusedTrigger = document.activeElement;
 
         modal.classList.add('active');
@@ -168,11 +171,13 @@ function openModal(modalId) {
         const modalBody = modal.querySelector('.modal-body');
         if (modalBody) modalBody.scrollTop = 0;
 
-        switchTab(modalId, 'recommendation');
+        activateTab(modalId, 'recommendation');
 
         // Move focus to the close button (a safe, always-present first stop).
         const closeBtn = modal.querySelector('.modal-close');
         if (closeBtn) closeBtn.focus();
+
+        if (!wasActive) trackRecommendation('view_recommendation', modalId);
     }
 }
 
@@ -186,13 +191,52 @@ function closeModal() {
     lastFocusedTrigger = null;
 }
 
-function switchTab(modalId, tabId) {
+// Show one tab of a modal. Returns true if the tab actually changed.
+function activateTab(modalId, tabId) {
     const modal = document.getElementById('modal-' + modalId);
-    if (!modal) return;
+    if (!modal) return false;
+    const current = modal.querySelector('.modal-tab.active');
+    const changed = !current || current.dataset.tab !== tabId;
     modal.querySelectorAll('.modal-tab').forEach(tab => tab.classList.toggle('active', tab.dataset.tab === tabId));
     modal.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
     const tabContent = document.getElementById(modalId + '-' + tabId);
     if (tabContent) tabContent.classList.add('active');
+    return changed;
+}
+
+// Called from the tab buttons (onclick="switchTab('rec-0', 'etd')") and by
+// deep links with a /tab suffix. Records which tab of which rec was read.
+function switchTab(modalId, tabId) {
+    if (activateTab(modalId, tabId)) trackRecommendation('view_recommendation_tab', modalId, tabId);
+}
+
+// ============================================================
+// Google Analytics: per-recommendation events
+// GA4 only records page views by default, and opening a recommendation
+// doesn't change the page, so the Analytics reports can't otherwise tell
+// WHICH recommendation was read. These two custom events fill that gap:
+//   view_recommendation      - a rec's modal was opened (click, deep link or site search)
+//   view_recommendation_tab  - a tab other than the one shown on opening was chosen
+// Each carries recommendation_id (rec-18), recommendation_slug (hcq-retinopathy),
+// recommendation_title (card title), guideline (adult/jia) and, for tabs, tab.
+// To see the parameters in GA4 reports or the Data API they must be registered
+// once as event-scoped custom dimensions (Admin -> Custom definitions) -
+// see .claude/skills/analytics-report. Does nothing if gtag isn't loaded.
+// ============================================================
+function trackRecommendation(eventName, modalId, tabId) {
+    if (typeof window.gtag !== 'function') return;
+    const modal = document.getElementById('modal-' + modalId);
+    const title = modal?.querySelector('.modal-title')?.textContent.replace(/\s+/g, ' ').trim() || '';
+    const slugMap = window.adultSlugMap || window.jiaSlugMap || {};
+    const slug = Object.keys(slugMap).find(k => slugMap[k] === modalId) || '';
+    const params = {
+        recommendation_id: modalId,
+        recommendation_slug: slug,
+        recommendation_title: title.slice(0, 100), // GA4 caps parameter values at 100 chars
+        guideline: window.adultSlugMap ? 'adult' : (window.jiaSlugMap ? 'jia' : '')
+    };
+    if (tabId) params.tab = tabId;
+    window.gtag('event', eventName, params);
 }
 
 document.querySelectorAll('.modal-overlay').forEach(modal => {
