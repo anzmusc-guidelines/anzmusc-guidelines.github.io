@@ -401,6 +401,7 @@ After the card and modal are complete, the following page-level updates are need
 ## Step 10: Gateway page updates
 
 **What's New section** (`index.html` — the gateway page):
+- If the whole section is absent (it is removed when every entry has aged out), paste it back from `references/whats-new-markup.md` at the HTML comment
 - Add a "New Recommendation" entry with the teal "New" badge
 - Use the recommendation title and the development month/year
 - The entry should link to the recommendation on the guideline page (not open a modal directly from the gateway)
@@ -414,7 +415,7 @@ After the card and modal are complete, the following page-level updates are need
 
 The guideline page itself (e.g. `adult/index.html`) also has a What's New panel at the top. Update it with the new recommendation title and date. This is separate from the gateway page What's New.
 
-The panel is removed from the hero when it has nothing current to show (entries age out after ~6 months — see `.claude/site-decisions.md`), so it may be absent: if so, re-add the `.whats-new-section` block at the HTML comment inside `.hero-content` (the CSS is still in the page; take the markup from git history, e.g. the version that listed rec-18).
+The panel is removed from the hero when it has nothing current to show (entries age out after ~6 months — see `.claude/site-decisions.md`), so it may be absent: if so, re-add the `.whats-new-section` block at the HTML comment inside `.hero-content` (the CSS is still in the page; ready-to-paste markup for both the gateway section and this panel is in `references/whats-new-markup.md`).
 
 ## Step 10c: About section text
 
