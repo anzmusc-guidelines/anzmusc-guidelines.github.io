@@ -176,6 +176,16 @@ by design. Verify against these before changing.
   and deep links are unchanged, so nothing linking to `#rec-1`/`#rec-2` breaks. Card order in the
   grid is independent of id order (ids are never renumbered — too many things link to them).
 
+- **What's New entries are removed once a recommendation is about 6 months old** *(15 Nov 2026)*
+  A "New recommendation" entry stays on the gateway `index.html` What's New list and in the
+  guideline-page hero panel for roughly six months, then is removed (first applied to Adult rec-18,
+  HCQ retinopathy, new March 2026). When the Adult hero panel has nothing to show, the whole
+  `.whats-new-section` block is removed from the hero rather than left as an empty heading; its
+  CSS stays in the page and an HTML comment marks where to re-add it. The gateway section is likewise
+  removed when it would be completely empty (done the same day for JIA jia-rec-5, new October 2025);
+  its CSS stays and a comment marks the spot. Rationale: "new" stops being true, and a dated entry
+  makes a living guideline look stale.
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
