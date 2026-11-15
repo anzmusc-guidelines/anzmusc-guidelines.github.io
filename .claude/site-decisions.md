@@ -181,8 +181,9 @@ by design. Verify against these before changing.
   guideline-page hero panel for roughly six months, then is removed (first applied to Adult rec-18,
   HCQ retinopathy, new March 2026). When the Adult hero panel has nothing to show, the whole
   `.whats-new-section` block is removed from the hero rather than left as an empty heading; its
-  CSS stays in the page and an HTML comment marks where to re-add it. The gateway section is only
-  removed if it would be completely empty. Rationale: "new" stops being true, and a dated entry
+  CSS stays in the page and an HTML comment marks where to re-add it. The gateway section is likewise
+  removed when it would be completely empty (done the same day for JIA jia-rec-5, new October 2025);
+  its CSS stays and a comment marks the spot. Rationale: "new" stops being true, and a dated entry
   makes a living guideline look stale.
 
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
