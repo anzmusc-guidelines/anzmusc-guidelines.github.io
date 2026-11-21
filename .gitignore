@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# Downloaded/rendered article PDFs for Sam (copyright; never publish or commit)
+.claude/drafts/pdfs/
+.claude/drafts/*.zip
