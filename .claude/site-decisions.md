@@ -186,6 +186,19 @@ by design. Verify against these before changing.
   its CSS stays and a comment marks the spot. Rationale: "new" stops being true, and a dated entry
   makes a living guideline look stale.
 
+- **EtD ratings are colour-coded from their wording** *(22 Nov 2026)*
+  Sam found the EtD tab hard to scan without MAGICapp's colours. Each `.etd-rating` pill, plus a
+  4 px stripe on the left of its `.etd-domain` box, is coloured by `ETD_RATING_LEVELS` at the end of
+  `scripts.js` (matched on the pill's text, case-insensitive), so new recs need no extra markup.
+  Sam approved this mapping in preference to MAGICapp's own: green = substantial net benefits / High /
+  no substantial variability / no important issues; amber = small net benefit or little difference /
+  Moderate / substantial variability expected or uncertain / important issues or potential issues not
+  investigated; orange = Low; red = important harms / Very low / important negative issues / likely
+  increases inequity / likely difficult to implement. A rating whose wording is not in the table
+  stays neutral grey - add it to the table (and tell Sam which colour was chosen). The certainty
+  colours match the badges on `how-to-use.html`. The rating is written "Very low" (lower-case l)
+  everywhere; "Very Low Disease Activity" in adult rec text is a clinical term and is left as is.
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
