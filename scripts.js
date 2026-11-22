@@ -358,3 +358,56 @@ window.addEventListener('hashchange', checkHashAndOpenModal);
         });
     });
 })();
+
+// ---------------------------------------------------------------------------
+// Evidence-to-Decision rating colours
+// Each EtD domain shows the panel's judgement in a pill (e.g. "Important harms").
+// This gives the pill - and the left edge of its box - a colour, so the EtD
+// tab can be scanned quickly, as in MAGICapp. The wording of the rating is what
+// decides the colour, so a new recommendation picks it up automatically.
+// A rating that is not listed here simply stays neutral grey.
+//   good    = green  (favourable / no important issues)
+//   caution = amber  (uncertain, or issues possible / not investigated)
+//   concern = orange (low certainty)
+//   serious = red    (important harms or important negative issues)
+// ---------------------------------------------------------------------------
+(function () {
+    var ETD_RATING_LEVELS = {
+        // Benefits and Harms
+        'substantial net benefits of the recommended alternative': 'good',
+        'small net benefit, or little difference between alternatives': 'caution',
+        'important harms': 'serious',
+        // Certainty of the Evidence
+        'high': 'good',
+        'moderate': 'caution',
+        'low': 'concern',
+        'very low': 'serious',
+        // Values and Preferences
+        'no substantial variability expected': 'good',
+        'substantial variability is expected or uncertain': 'caution',
+        // Resources, Equity, Acceptability, Feasibility
+        'no important issues with the recommended alternative': 'good',
+        'important issues, or potential issues not investigated': 'caution',
+        'important negative issues': 'serious',
+        'intervention likely increases inequity': 'serious',
+        'intervention is likely difficult to implement': 'serious'
+    };
+
+    function colourEtdRatings() {
+        var pills = document.querySelectorAll('.etd-rating');
+        for (var i = 0; i < pills.length; i++) {
+            var wording = pills[i].textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+            var level = ETD_RATING_LEVELS[wording];
+            if (!level) continue;
+            pills[i].classList.add('etd-rating--' + level);
+            var box = pills[i].closest('.etd-domain');
+            if (box) box.classList.add('etd-domain--' + level);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', colourEtdRatings);
+    } else {
+        colourEtdRatings();
+    }
+})();
