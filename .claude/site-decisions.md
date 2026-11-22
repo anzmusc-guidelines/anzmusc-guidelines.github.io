@@ -199,6 +199,16 @@ by design. Verify against these before changing.
   colours match the badges on `how-to-use.html`. The rating is written "Very low" (lower-case l)
   everywhere; "Very Low Disease Activity" in adult rec text is a clinical term and is left as is.
 
+- **Panel Members page is split into "Current" and "Previous" panel members** *(22 Nov 2026)*
+  A team member pointed out that one undivided list implied an ongoing relationship with everyone on
+  it. `panellists.html` now has two `.panel-group` blocks, each with its own `.panellists-grid`:
+  `#current-panel-members` and `#previous-panel-members` (`.previous-panel`). Previous members keep
+  their full card (recommendations contributed to, declaration link) because that record must stay
+  public; no reason for the move is given on the page. **Sam decides who is "previous"** - default
+  is current, including people who have not sat on a panel recently but remain available. The
+  filters work across both groups and hide a group's heading when it has no matches. Search results
+  label these people "Previous panel member". `coi.html` is not split.
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not

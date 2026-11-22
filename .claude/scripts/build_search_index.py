@@ -162,7 +162,9 @@ def panellists():
                                         node_text(c.select_one(".panellist-institution"))]))
         bio = node_text(c.select_one(".panellist-bio"))
         recs = node_text(c.select_one(".panellist-recs"))
-        secs = [{"label": "Panel member", "w": 3, "text": text}]
+        # Cards under "Previous panel members" are labelled as such in search results
+        label = "Previous panel member" if c.find_parent(class_="previous-panel") else "Panel member"
+        secs = [{"label": label, "w": 3, "text": text}]
         if bio:
             secs.append({"label": "Biography", "w": 1, "text": bio})
         if recs:

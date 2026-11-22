@@ -106,6 +106,13 @@
         .panellists-section { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
         .panellists-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
         
+        .panel-group + .panel-group { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border-light); }
+        .panel-group.hidden { display: none; }
+        .panel-group.hidden + .panel-group { margin-top: 0; padding-top: 0; border-top: 0; }
+        .panel-group-heading { font-family: 'Source Serif 4', Georgia, serif; font-size: 26px; font-weight: 600; color: var(--primary-blue); margin-bottom: 20px; }
+        .panel-group-intro { font-size: 16px; color: var(--text-medium); max-width: 760px; margin: -12px 0 20px; }
+        .no-panellists { font-size: 16px; color: var(--text-medium); padding: 24px 0; }
+
         .panellist-card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 24px; display: flex; gap: 16px; transition: all 0.2s; }
         .panellist-card:hover { box-shadow: var(--shadow-md); }
         .panellist-card.hidden { display: none; }
@@ -267,6 +274,8 @@
     </section>
     
     <section class="panellists-section">
+        <div class="panel-group" id="current-panel-members">
+        <h2 class="panel-group-heading">Current panel members</h2>
         <div class="panellists-grid">
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="both">
                 <div class="panellist-avatar chair"><img src="images/headshots/Rachelle-Buchbinder_headshot.jpg" alt="Prof Rachelle Buchbinder" loading="lazy"></div>
@@ -280,6 +289,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/14lOSZplLFyC__zn_NOFFssOHo7uJ8Hn4/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="both">
                 <div class="panellist-avatar chair"><img src="images/headshots/Samuel-Whittle_headshot.jpg" alt="Dr Samuel Whittle" loading="lazy"></div>
                 <div class="panellist-info">
@@ -292,6 +302,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1Ekp3PAIUKkPd0Ud21HWznQdO24gMOuHM96wE_UvBvEM/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatrician" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Neil-Archer_headshot.jpg" alt="Dr Neil Archer" loading="lazy"></div>
                 <div class="panellist-info">
@@ -304,6 +315,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1CS6Jo1Wmm6DytKjzPbHyqGP0XoyhcqpF/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="pharmacist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Simon-Bell_headshot.jpg" alt="Prof Simon Bell" loading="lazy"></div>
                 <div class="panellist-info">
@@ -316,6 +328,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1-vX2BHDGz2bqNlVRvw3PmqKBh_uu_DuGUw8Zz1YKiYk/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="adult">
                 <div class="panellist-avatar">DB</div>
                 <div class="panellist-info">
@@ -328,6 +341,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1bFQmuU9LNppYRfeKQbHP-GtXUZ2RWFx_WVdDkNe9PIY/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Rachel-Black_headshot.jpg" alt="A/Prof Rachel Black" loading="lazy"></div>
                 <div class="panellist-info">
@@ -340,6 +354,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1KlJF_yXaO-LpCqcKcHXkVVxLmKzB-cFf2q3x1b6d0Uw/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="pharmacist" data-guideline="jia">
                 <div class="panellist-avatar">CB</div>
                 <div class="panellist-info">
@@ -352,18 +367,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1idquIeDr4HidoqD8514Vzom4FLEsGk5i/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
-            <div class="panellist-card" data-profession="methodologist" data-guideline="both">
-                <div class="panellist-avatar chair"><img src="images/headshots/Sue-Brennan_headshot.jpg" alt="Dr Sue Brennan" loading="lazy"></div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">Dr Sue Brennan<span class="role-badge facilitator">Facilitator</span></h3>
-                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span><span class="guideline-badge jia">JIA</span></div>
-                    <p class="panellist-profession">Methodologist</p>
-                    <p class="panellist-institution">Monash University</p>
-                    <p class="panellist-bio">Sue Brennan leads the Melbourne GRADE centre, is an elected member of the GRADE Guidance Group, and co-lead on research to inform the development of GRADE guidance for overviews. In her role at Cochrane Australia, she leads systematic reviews and methodological review of guidelines commissioned by government, methodological research, and provides consultancy and training on the use of GRADE.</p>
-                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> TNFi-IR, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop DMARDs, RA opioids, axSpA opioids, PsA opioids<br><span class="rec-label jia">JIA:</span> MTX for JIA, Uveitis, Induction GCs</div>
-                    
-                </div>
-            </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Priscilla-CampbellStokes_headshot.jpg" alt="Dr Priscilla Campbell-Stokes" loading="lazy"></div>
                 <div class="panellist-info">
@@ -376,6 +380,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1rQT_CI0cIZ4sviKj7XZIQLO5VHLgghpA/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Helen-Cooley_headshot.jpg" alt="Dr Helen Cooley" loading="lazy"></div>
                 <div class="panellist-info">
@@ -388,6 +393,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/14jILYaQee6dHLaWXEXYYlWQSmUW8u8l4/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="pharmacist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Amanda-Cross_headshot.jpg" alt="Dr Amanda Cross" loading="lazy"></div>
                 <div class="panellist-info">
@@ -400,30 +406,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1zk7fUq8kO2lp8OjPt9Hp5VK3nq61_bEkVJuh-q74qY4/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
-            <div class="panellist-card" data-profession="ophthalmologist" data-guideline="adult">
-                 <div class="panellist-avatar"><img src="images/headshots/Elisa-Cornish_headshot.jpg" alt="A/Prof Elisa Cornish" loading="lazy"></div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">Dr Elisa Cornish</h3>
-                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
-                    <p class="panellist-profession">Ophthalmologist</p>
-                    <p class="panellist-institution">University of Sydney</p>
-                     <p class="panellist-bio">Elisa completed her BMedSci(Hons1), post graduate MBBS, GradDipMed(OphthalSci) and PhD at The University of Sydney. Her PhD was laboratory-based on The Development of the Primate Retina. She completed her FRANZCO training with clinical Fellowships at Sydney Eye Hospital: the Professorial (Uveitis/Inherited retinal disease (IRD)/Glaucoma/Neuro-ophthalmology) (2018) and Medical Retina (2019) Fellowships. She is currently a Staff Specialist at Sydney Eye & a Visiting Medical Officer at Westmead Hospital, and an Associate Professor of the Faculty of Medicine, The University of Sydney. She specialises in managing patients with uveitis in conjunction with the rheumatologist, reporting on electrophysiology on patients with suspected IRD or having hydroxychloroquine maculopathy screening and is involved within the University of Sydney’s Research team, managing patients participating in clinical trials in field of medical retina, uveitis and IRD.</p>
-                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> HCQ retinopathy screening</div>
-                    
-                </div>
-            </div>
-            <div class="panellist-card" data-profession="podiatrist" data-guideline="jia">
-                <div class="panellist-avatar"><img src="images/headshots/Angela-Evans_headshot.jpg" alt="Dr Angela Evans" loading="lazy"></div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">Dr Angela Evans</h3>
-                    <div class="guideline-badges"><span class="guideline-badge jia">JIA</span></div>
-                    <p class="panellist-profession">Podiatrist</p>
-                    <p class="panellist-institution">La Trobe University</p>
-                    <p class="panellist-bio">Dr Angela Evans is a clinician in Adelaide, senior lecturer at La Trobe University, and a volunteer and ambassador with Walk for Life – the sustainable club foot project in Bangladesh. Dr Evans has many journal publications, book chapters, and authored the podiatry textbook ‘Paediatrics’.</p>
-                    <div class="panellist-recs"><span class="rec-label jia">JIA:</span> Foot orthoses</div>
-                    
-                </div>
-            </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Christopher-Fong_headshot.jpg" alt="Dr Christopher Fong" loading="lazy"></div>
                 <div class="panellist-info">
@@ -436,6 +419,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1_ktG3nPoJtqSVhNEY0gv8inf5HtTv_cc1VZNYvnaw5I/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Cass-Gannon_headshot.jpg" alt="Cass Gannon" loading="lazy"></div>
                 <div class="panellist-info">
@@ -448,6 +432,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1FXpFKYVwq2dQxFXWu9MfNZGPRyOkJ7OS/edit?usp=drive_link" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="evidence-team" data-guideline="both">
                 <div class="panellist-avatar"><img src="images/headshots/Vanessa-Glennon_headshot.jpg" alt="Dr Vanessa Glennon" loading="lazy"></div>
                 <div class="panellist-info">
@@ -460,6 +445,7 @@
                     
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Fiona-Goldblatt_headshot.jpg" alt="Dr Fiona Goldblatt" loading="lazy"></div>
                 <div class="panellist-info">
@@ -471,6 +457,7 @@
                     
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar">MH</div>
                 <div class="panellist-info">
@@ -483,6 +470,7 @@
                     
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Rebecca-Hazel_headshot.jpg" alt="Rebecca Hazel" loading="lazy"></div>
                 <div class="panellist-info">
@@ -495,6 +483,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/16JkJlHedH_yrJq_gR7KD4sBRKg5j9mHn/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar">VH</div>
                 <div class="panellist-info">
@@ -507,6 +496,7 @@
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/17coxvH786fRF2cBWOK2R8Y4KzTgSgK-8/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Catherine-Hill_headshot.jpg" alt="Prof Catherine Hill" loading="lazy"></div>
                 <div class="panellist-info">
@@ -520,6 +510,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/16aXhv-FpFzqHuzYs2FWRxVmy_NHyNPwYUDWA565GAEs/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="immunologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Pravin-Hissaria_headshot.jpg" alt="Prof Pravin Hissaria" loading="lazy"></div>
                 <div class="panellist-info">
@@ -532,6 +523,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1z2T57Wng7zxU64aE6T-gmcHisr-fcJ96p8qsS5v1uYg/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Ben-Horgan_headshot.jpg" alt="Mr Ben Horgan" loading="lazy"></div>
                 <div class="panellist-info">
@@ -544,6 +536,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/14Pb9mBInr0KD5IuNJ-FluAyYMQL__0sMDao6uAkZ9ZY/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="evidence-team" data-guideline="both">
                 <div class="panellist-avatar"><img src="images/headshots/Renea-Johnston_headshot.jpg" alt="Dr Renea Johnston" loading="lazy"></div>
                 <div class="panellist-info">
@@ -556,6 +549,7 @@ She has held major national and international leadership roles, including Presid
                     
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Helen-Keen_headshot.jpg" alt="A/Prof Helen Keen" loading="lazy"></div>
                 <div class="panellist-info">
@@ -568,6 +562,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1i__KCjms3UBRrh-4f38ZwpPZ9sFN-z00JeappgIRDpc/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Lyn-March_headshot.jpg" alt="Prof Lyn March" loading="lazy"></div>
                 <div class="panellist-info">
@@ -580,6 +575,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1vQUUllh1Rmqd7vipxR100bz2h9Ca0WRQljrmZ2KpJy0/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Suzie-May_headshot.jpg" alt="Ms Suzie Edward May" loading="lazy"></div>
                 <div class="panellist-info">
@@ -592,6 +588,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/11cva07AFi4hFRwEOEHq6FfQJWdYGmcLJr-PJ2rdKzG8/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar">JM</div>
                 <div class="panellist-info">
@@ -604,6 +601,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/17w6-Tbe5WlYsNOgi6wkJsMuixK6kHB9q/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Annie-McPherson_headshot.jpg" alt="Ms Annie McPherson" loading="lazy"></div>
                 <div class="panellist-info">
@@ -616,6 +614,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1a3eMjIlvMD-nQCVufc73B1hbW-FNc5-o3gv6-hfxJ54/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Jane-Munro_headshot.jpg" alt="Prof Jane Munro" loading="lazy"></div>
                 <div class="panellist-info">
@@ -628,6 +627,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1q8pF-VrCJRQ1bOIRsgVl9NfbqF3PVFKi/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Grainne-Murray_headshot.jpg" alt="Dr Gráinne Murray" loading="lazy"></div>
                 <div class="panellist-info">
@@ -640,6 +640,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1AgNaaKsfS56ANYb-R7sOU5Yqmf2WuWiQ/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="gp" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Navid-Nazarian_headshot.jpg" alt="Dr Navid Nazarian" loading="lazy"></div>
                 <div class="panellist-info">
@@ -652,6 +653,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1ES4BqAsLma_MxPaWK-HTkitLtsCin75hGtcmrLjfNgM/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Sean-ONeill_headshot.jpg" alt="A/Prof Sean O'Neill" loading="lazy"></div>
                 <div class="panellist-info">
@@ -664,18 +666,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1ONLyRMoB4f5IXYyUP5E3g4RKTnHkYMJFj5XJR4BhLpY/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
-            <div class="panellist-card" data-profession="consumer" data-guideline="jia">
-                <div class="panellist-avatar">CP</div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">Chelsea Paech</h3>
-                    <div class="guideline-badges"><span class="guideline-badge jia">JIA</span></div>
-                    <p class="panellist-profession">Consumer Representative</p>
-                    <p class="panellist-institution"></p>
-                    <p class="panellist-bio">tba</p>
-                    <div class="panellist-recs"><span class="rec-label jia">JIA:</span> Foot orthoses</div>
-                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1y-QVfOxqfVuzc5aYccQqonpHqiFTq9WG/edit?usp=drive_link" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
-                </div>
-            </div>
+
             <div class="panellist-card" data-profession="physiotherapist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Ishani-Perera_headshot.jpg" alt="Ishani Perera" loading="lazy"></div>
                 <div class="panellist-info">
@@ -688,6 +679,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1I98mnh3e5lNI9-5tbmcEfBOToJdVkK6B/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="physiotherapist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/David-Pho_headshot.jpg" alt="David Pho" loading="lazy"></div>
                 <div class="panellist-info">
@@ -700,6 +692,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1KxO1aahlex-FUe0xBfyG6HDXPGflUtm-/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Jess-Pisaniello_headshot.jpg" alt="Dr Jess Pisaniello" loading="lazy"></div>
                 <div class="panellist-info">
@@ -712,6 +705,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1eyE0-6dOrjvy0q1acxf23olTzrBaAJLd-9LTeeCPtqY/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Bill-Renton_headshot.jpg" alt="Dr William Renton" loading="lazy"></div>
                 <div class="panellist-info">
@@ -724,18 +718,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1T4oOpCf2G1K0OeokHgL6uCeedXgtGOll/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
-            <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
-                <div class="panellist-avatar"><img src="images/headshots/Philip-Robinson_headshot.jpg" alt="A/Prof Philip Robinson" loading="lazy"></div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">A/Prof Philip Robinson</h3>
-                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
-                    <p class="panellist-profession">Rheumatologist</p>
-                    <p class="panellist-institution">Metro North Hospital and Health Service</p>
-                    <p class="panellist-bio">The late Phil Robinson was an outstanding and much-loved clinician researcher and valued member of the Australian rheumatology community. </p>
-                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> RA opioids</div>
-                    
-                </div>
-            </div>
+
             <div class="panellist-card" data-profession="rheumatology-nurse" data-guideline="jia">
                 <div class="panellist-avatar">TR</div>
                 <div class="panellist-info">
@@ -748,6 +731,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1EOU96HIUrdRz7gMAOaVKmG6Y8-ItW327/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="pharmacist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Mouna-Sawan_headshot.jpg" alt="Dr Mouna Sawan" loading="lazy"></div>
                 <div class="panellist-info">
@@ -760,6 +744,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1jLOteUVVVIYGEcufYjHeS_RQYczfUWHTAZZwjYUe3zc/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="ophthalmologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Phillipa-Sharwood_headshot.jpg" alt="Dr Phillipa Sharwood" loading="lazy"></div>
                 <div class="panellist-info">
@@ -772,6 +757,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1BbevvPLoQl64Ab3rNcaQYeNTzEVV40Bs/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="consumer" data-guideline="jia">
                 <div class="panellist-avatar">ES</div>
                 <div class="panellist-info">
@@ -784,18 +770,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1GvIh_hs44BRNtlpO8Vzbvm09UuOZ8AIu/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
-            <div class="panellist-card" data-profession="orthopaedic-surgeon" data-guideline="adult">
-                <div class="panellist-avatar">AS</div>
-                <div class="panellist-info">
-                    <h3 class="panellist-name">A/Prof Peter Smitham</h3>
-                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
-                    <p class="panellist-profession">Orthopaedic Surgeon</p>
-                    <p class="panellist-institution">University of Adelaide</p>
-                    <p class="panellist-bio">A/Prof Peter Smitham is an orthopaedic surgeon with extensive experience in orthopaedic trauma, hip, knee and lower limb care. He currently serves as an Associate Professor at the University of Adelaide and as a Consultant at the Royal Adelaide Hospital, combining clinical practice with cutting edge research and medical education.</p>
-                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> Periop DMARDs</div>
-                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1CD-iu5TLQRfb_edJ_QsH41pbqVBB0rqPf3yqBDFgW-U/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
-                </div>
-            </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Jo-Tan_headshot.jpg" alt="Dr Jo Tan" loading="lazy"></div>
                 <div class="panellist-info">
@@ -808,6 +783,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1ijma9-7NUvMixf9JuymwBJPBzC3RdYrO/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="paediatric-rheumatologist" data-guideline="jia">
                 <div class="panellist-avatar">GT</div>
                 <div class="panellist-info">
@@ -820,6 +796,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/15PmnKaBNN3muueD0e2YUXZIcz-UOiQFy/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="gp" data-guideline="both">
                 <div class="panellist-avatar"><img src="images/headshots/Lyndal-Trevena_headshot.jpg" alt="Prof Lyndal Trevena" loading="lazy"></div>
                 <div class="panellist-info">
@@ -832,6 +809,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1HqrW6Wz3_O7OfO4J_rEgZDZDq2LYVWsn/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="podiatrist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Glen-Whittaker_headshot.jpg" alt="Dr Glen Whittaker" loading="lazy"></div>
                 <div class="panellist-info">
@@ -844,6 +822,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/19lhq3qwJXvkYCvDrOLfkiYrXvS52vfbhvlLvEOz6lqM/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatology-nurse" data-guideline="jia">
                 <div class="panellist-avatar"><img src="images/headshots/Sarah-Wilson_headshot.jpg" alt="Sarah Wilson" loading="lazy"></div>
                 <div class="panellist-info">
@@ -856,6 +835,7 @@ She has held major national and international leadership roles, including Presid
                     <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1Ua96PElcbAMC0Q1vVfGYpLfaUhK6oLPD/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
                 </div>
             </div>
+
             <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
                 <div class="panellist-avatar"><img src="images/headshots/Anita-Wluka_headshot.jpg" alt="Prof Anita Wluka" loading="lazy"></div>
                 <div class="panellist-info">
@@ -869,7 +849,94 @@ She has held major national and international leadership roles, including Presid
                 </div>
             </div>
         </div>
-        </section>
+        </div>
+
+        <div class="panel-group previous-panel" id="previous-panel-members">
+        <h2 class="panel-group-heading">Previous panel members</h2>
+        <p class="panel-group-intro">We gratefully acknowledge the following people, who contributed to the development of earlier recommendations.</p>
+        <div class="panellists-grid">
+            <div class="panellist-card" data-profession="methodologist" data-guideline="both">
+                <div class="panellist-avatar chair"><img src="images/headshots/Sue-Brennan_headshot.jpg" alt="Dr Sue Brennan" loading="lazy"></div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Sue Brennan<span class="role-badge facilitator">Facilitator</span></h3>
+                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span><span class="guideline-badge jia">JIA</span></div>
+                    <p class="panellist-profession">Methodologist</p>
+                    <p class="panellist-institution">Monash University</p>
+                    <p class="panellist-bio">Sue Brennan leads the Melbourne GRADE centre, is an elected member of the GRADE Guidance Group, and co-lead on research to inform the development of GRADE guidance for overviews. In her role at Cochrane Australia, she leads systematic reviews and methodological review of guidelines commissioned by government, methodological research, and provides consultancy and training on the use of GRADE.</p>
+                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> TNFi-IR, axSpA bDMARD tapering, PsA b/tsDMARD tapering, Periop DMARDs, RA opioids, axSpA opioids, PsA opioids<br><span class="rec-label jia">JIA:</span> MTX for JIA, Uveitis, Induction GCs</div>
+                    
+                </div>
+            </div>
+
+            <div class="panellist-card" data-profession="ophthalmologist" data-guideline="adult">
+                 <div class="panellist-avatar"><img src="images/headshots/Elisa-Cornish_headshot.jpg" alt="A/Prof Elisa Cornish" loading="lazy"></div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Elisa Cornish</h3>
+                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
+                    <p class="panellist-profession">Ophthalmologist</p>
+                    <p class="panellist-institution">University of Sydney</p>
+                     <p class="panellist-bio">Elisa completed her BMedSci(Hons1), post graduate MBBS, GradDipMed(OphthalSci) and PhD at The University of Sydney. Her PhD was laboratory-based on The Development of the Primate Retina. She completed her FRANZCO training with clinical Fellowships at Sydney Eye Hospital: the Professorial (Uveitis/Inherited retinal disease (IRD)/Glaucoma/Neuro-ophthalmology) (2018) and Medical Retina (2019) Fellowships. She is currently a Staff Specialist at Sydney Eye & a Visiting Medical Officer at Westmead Hospital, and an Associate Professor of the Faculty of Medicine, The University of Sydney. She specialises in managing patients with uveitis in conjunction with the rheumatologist, reporting on electrophysiology on patients with suspected IRD or having hydroxychloroquine maculopathy screening and is involved within the University of Sydney’s Research team, managing patients participating in clinical trials in field of medical retina, uveitis and IRD.</p>
+                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> HCQ retinopathy screening</div>
+                    
+                </div>
+            </div>
+
+            <div class="panellist-card" data-profession="podiatrist" data-guideline="jia">
+                <div class="panellist-avatar"><img src="images/headshots/Angela-Evans_headshot.jpg" alt="Dr Angela Evans" loading="lazy"></div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Dr Angela Evans</h3>
+                    <div class="guideline-badges"><span class="guideline-badge jia">JIA</span></div>
+                    <p class="panellist-profession">Podiatrist</p>
+                    <p class="panellist-institution">La Trobe University</p>
+                    <p class="panellist-bio">Dr Angela Evans is a clinician in Adelaide, senior lecturer at La Trobe University, and a volunteer and ambassador with Walk for Life – the sustainable club foot project in Bangladesh. Dr Evans has many journal publications, book chapters, and authored the podiatry textbook ‘Paediatrics’.</p>
+                    <div class="panellist-recs"><span class="rec-label jia">JIA:</span> Foot orthoses</div>
+                    
+                </div>
+            </div>
+
+            <div class="panellist-card" data-profession="consumer" data-guideline="jia">
+                <div class="panellist-avatar">CP</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">Chelsea Paech</h3>
+                    <div class="guideline-badges"><span class="guideline-badge jia">JIA</span></div>
+                    <p class="panellist-profession">Consumer Representative</p>
+                    <p class="panellist-institution"></p>
+                    <p class="panellist-bio">tba</p>
+                    <div class="panellist-recs"><span class="rec-label jia">JIA:</span> Foot orthoses</div>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1y-QVfOxqfVuzc5aYccQqonpHqiFTq9WG/edit?usp=drive_link" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+
+            <div class="panellist-card" data-profession="rheumatologist" data-guideline="adult">
+                <div class="panellist-avatar"><img src="images/headshots/Philip-Robinson_headshot.jpg" alt="A/Prof Philip Robinson" loading="lazy"></div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Philip Robinson</h3>
+                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
+                    <p class="panellist-profession">Rheumatologist</p>
+                    <p class="panellist-institution">Metro North Hospital and Health Service</p>
+                    <p class="panellist-bio">The late Phil Robinson was an outstanding and much-loved clinician researcher and valued member of the Australian rheumatology community. </p>
+                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> RA opioids</div>
+                    
+                </div>
+            </div>
+
+            <div class="panellist-card" data-profession="orthopaedic-surgeon" data-guideline="adult">
+                <div class="panellist-avatar">AS</div>
+                <div class="panellist-info">
+                    <h3 class="panellist-name">A/Prof Peter Smitham</h3>
+                    <div class="guideline-badges"><span class="guideline-badge adult">Adult IA</span></div>
+                    <p class="panellist-profession">Orthopaedic Surgeon</p>
+                    <p class="panellist-institution">University of Adelaide</p>
+                    <p class="panellist-bio">A/Prof Peter Smitham is an orthopaedic surgeon with extensive experience in orthopaedic trauma, hip, knee and lower limb care. He currently serves as an Associate Professor at the University of Adelaide and as a Consultant at the Royal Adelaide Hospital, combining clinical practice with cutting edge research and medical education.</p>
+                    <div class="panellist-recs"><span class="rec-label adult">Adult IA:</span> Periop DMARDs</div>
+                    <p class="panellist-declaration"><a href="https://docs.google.com/spreadsheets/d/1CD-iu5TLQRfb_edJ_QsH41pbqVBB0rqPf3yqBDFgW-U/edit?usp=sharing" target="_blank" rel="noopener">View Declaration of Interests <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd"/></svg></a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <p class="no-panellists" hidden>No panel members match these filters.</p>
+    </section>
 
     <footer>
         <div class="footer-container">
@@ -927,6 +994,15 @@ She has held major national and international leadership roles, including Presid
                     card.classList.add('hidden');
                 }
             });
+
+            // Hide a group's heading when none of its members match the filters
+            let anyVisible = false;
+            document.querySelectorAll('.panel-group').forEach(group => {
+                const visible = group.querySelector('.panellist-card:not(.hidden)') !== null;
+                group.classList.toggle('hidden', !visible);
+                anyVisible = anyVisible || visible;
+            });
+            document.querySelector('.no-panellists').hidden = anyVisible;
         }
         
         guidelineFilters.forEach(btn => {
