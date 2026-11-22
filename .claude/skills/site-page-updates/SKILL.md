@@ -66,6 +66,10 @@ template:
   `immunologist`, `ophthalmologist`, `orthopaedic-surgeon`, `pharmacist`, `physiotherapist`,
   `podiatrist`, `consumer`, `methodologist`, `evidence-team`. A genuinely new profession also
   needs a new filter button — ask Sam first.
+- The page has two groups: **Current panel members** (`#current-panel-members`) and **Previous
+  panel members** (`#previous-panel-members`). New people go in the current grid, alphabetical by
+  surname. To make someone "previous" (only when Sam says so), move their whole card, unchanged,
+  into the previous grid - keep their recommendations and declaration link, and give no reason.
 - Avatar: initials until a photo arrives (then use `panellist-headshot`). Chair/facilitator
   avatars carry the extra `chair` class, and their name gets a role badge:
   `<h3 class="panellist-name">Prof Name<span class="role-badge chair">Chair</span></h3>`.
