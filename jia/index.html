@@ -439,7 +439,23 @@
         }
     }
 
-    </style>
+    
+    /* Panel-update presentation: status note under the recommendation box, "Updated" tags on
+       changed sections, and the Recommendation History list in More Info (see .claude/site-decisions.md) */
+    .living-updates-status { margin-top: 0; margin-bottom: 28px; padding-top: 0; border-top: none; }
+    .history-link { margin-left: 8px; font-size: 13px; font-weight: 600; color: var(--jia-purple-dark); white-space: nowrap; }
+    .section-updated { display: inline-block; margin-left: 8px; padding: 2px 9px; border-radius: 100px; background: rgba(124,58,237,0.10); color: var(--jia-purple-dark); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; vertical-align: middle; white-space: nowrap; }
+    .section-updated-line { margin-bottom: 12px; }
+    .section-updated-line .section-updated { margin-left: 0; }
+    .rec-history-list { border-left: 3px solid var(--jia-purple); padding-left: 18px; }
+    .rec-history-entry { padding: 12px 0; border-bottom: 1px solid var(--border-light); }
+    .rec-history-entry:first-child { padding-top: 0; }
+    .rec-history-entry:last-child { border-bottom: none; padding-bottom: 0; }
+    .rec-history-date { font-size: 13px; font-weight: 600; color: var(--jia-purple-dark); margin-bottom: 4px; }
+    .rec-history-current { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 100px; background: #e6f4ea; color: #1e5c2e; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; vertical-align: middle; }
+    .rec-history-text { font-size: 14px; color: var(--text-medium); line-height: 1.6; }
+    .rec-history-text a { color: var(--jia-purple-dark); font-weight: 600; }
+</style>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQKQVSHVS5"></script>
     <script>
@@ -608,7 +624,7 @@
                     </div>
                     <div class="card-footer">
                         <span class="card-link">View details <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg></span>
-                        <span class="card-updated">Updated Feb 2026</span>
+                        <span class="card-updated">Updated Aug 2026</span>
                     </div>
                 </div>
 
@@ -1083,18 +1099,33 @@
                 <div class="tab-content active" id="jia-rec-3-recommendation">
                     <span class="strength-badge conditional-for">⊕ Conditional Recommendation For</span>
                     <div class="recommendation-box"><p>In children and young people with JIA-associated uveitis who have not responded to methotrexate, b/tsDMARDs should be considered. Adalimumab is recommended over other b/tsDMARDs. Etanercept is not recommended.</p></div>
+
+                    <div class="living-updates living-updates-status">
+                        <div class="living-updates-header">
+                            <svg class="living-updates-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0v2.43l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z" clip-rule="evenodd"/></svg>
+                            <span class="living-updates-title">Living Guideline Update</span>
+                        </div>
+                        <div class="living-updates-content">
+                            <div class="update-entry">
+                                <span class="update-date">November 2026</span>
+                                <span class="update-text">The panel met on 23 November 2026 to consider one new randomised trial comparing baricitinib with adalimumab<sup><a href="https://doi.org/10.1002/acr.25644" target="_blank" title="Ramanan et al. (2026)" rel="noopener">181</a></sup>. The recommendation and all Evidence to Decision ratings are unchanged. The Rationale, Practical Info and four Evidence to Decision domains (Benefits and Harms, Certainty of the Evidence, Resources, Feasibility) have been updated. <span class="update-badge no-change">Recommendation unchanged</span> <a href="#" class="history-link" onclick="switchTab('jia-rec-3', 'moreinfo'); return false;">Recommendation history</a></span>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="content-section">
-                        <h3>Rationale</h3>
+                        <h3>Rationale <span class="section-updated">Updated Nov 2026</span></h3>
                         <p>The panel considered evidence from RCTs that included patients with JIA-associated uveitis that has not adequately responded to methotrexate, treated with b/tsDMARDs.</p>
-<p>Conclusions were limited by low participant numbers, relatively short follow up periods, heterogeneity with regard to outcome measures and a limited selection of bDMARDs assessed. The panel spent some time discussing outcome measures. Ocular damage (new structural ocular comorbidities or change in visual acuity) was highlighted as perhaps the most important long term outcome but one that is very difficult to assess in a randomised controlled trial environment. Two outcomes assessing ocular damage were deemed as being of very low certainty while the other included outcome measures were assessed as low certainty.</p>
-<p>The panel agreed that not all bDMARDs and tsDMARDs are equal. All of the data considered by the panel were from patients treated with TNF inhibitors. The etanercept trial, albeit limited to 12 participants, did not show any apparent beneficial treatment effect while the two adalimumab trials suggested a positive treatment response. These findings are supported by observational studies and there are also physiological reasons to explain this discrepancy.</p>
-<p>While medications with other mechanisms of action (such as interleukin-6 inhibitors) are also used for the treatment of refractory JIA associated uveitis, the panel did not feel confident in extrapolating the findings from this review to non-TNF bDMARDs or tsDMARDs.</p>
-<p>The panel was of the view that the benefits of adalimumab treatment ought to be weighed against the burden of an injectable immunosuppressant medication, and that the decision to use it ought to consider the individual circumstances, preferences and values. A continuous, open and informed shared decision-making process should underpin any such decision. The panel recognised the significant cost of adalimumab but considered it likely to be a cost-effective option given the risk of permanent ocular damage and lack of more cost-effective, evidence-based alternative treatments. The panel highlighted the importance of equitable access to high quality care including such treatments.</p>
+<p>Conclusions were limited by low participant numbers, relatively short follow up periods, heterogeneity with regard to outcome measures and a limited selection of b/tsDMARDs assessed. The panel spent some time discussing outcome measures. Ocular damage (new structural ocular comorbidities or change in visual acuity) was highlighted as perhaps the most important long term outcome but one that is very difficult to assess in a randomised controlled trial environment. The certainty of evidence regarding ocular damage outcomes in the evidence summary was either low or very low.</p>
+<p>The panel noted that it is likely that not all bDMARDs and tsDMARDs are equal. All of the trials that compare b/tsDMARDs to placebo use a TNF inhibitor (either adalimumab or etanercept) as the active intervention. The etanercept trial, albeit limited to 12 participants, did not show any apparent beneficial treatment effect while the two adalimumab trials suggested a positive treatment response. A likely difference in efficacy between etanercept (a decoy receptor) and the monoclonal anti-TNF drugs (including adalimumab) is in accordance with observational data and has a sound mechanistic rationale. For this reason the panel was comfortable in recommending adalimumab over etanercept.</p>
+<p>The one head-to-head trial compared adalimumab to the JAK inhibitor baricitinib. While this was also a small trial, a Bayesian analysis found a low probability that baricitinib would have an efficacy of a similar magnitude to adalimumab in those with JIA-associated uveitis that has not responded to methotrexate. The panel noted, however, that a third of baricitinib-treated patients (including those who had also not responded to bDMARDs) were classified as responders at 24 weeks. The panel considered that despite the findings of this small trial, it is plausible that there may still be a place for a trial of baricitinib in some cases, such as those who are unable or unwilling to use parenteral therapies, or in whom there has been inadequate response to, or intolerance of, adalimumab. There are currently no randomised data regarding treatment of JIA-associated uveitis in those who have not responded to bDMARDs (including adalimumab), and this remains an important research question.</p>
+<p>There are, as yet, no RCTs that have investigated other b/tsDMARDs in this population.</p>
+<p>The panel was of the view that the benefits of adalimumab treatment ought to be weighed against the burden of an injectable immunosuppressant medication, and that the decision to use it ought to consider the individual circumstances, preferences and values. A continuous, open and informed shared decision-making process should underpin any such decision. The panel recognised the significant cost of adalimumab but considered it likely to be a cost-effective option given the risk of permanent ocular damage in those with recurrent uveitis despite methotrexate. Since the original panel meeting, PBS reimbursement for adalimumab has become available for vision-threatening non-infectious uveitis.</p>
                     </div>
                 </div>
                 <div class="tab-content" id="jia-rec-3-etd">
-                    <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Benefits and Harms</span><span class="etd-rating">Small net benefit, or little difference between alternatives</span></div><div class="etd-domain-text"><p>Based on data from three randomised controlled trials (RCTs) in children and young people with JIA-associated uveitis who have not adequately responded to methotrexate, the use of b/tsDMARDs <sup><a href="https://doi.org/10.1136/annrheumdis-2017-212089" target="_blank" title="Quartier et al." rel="noopener">1</a></sup><sup><a href="https://doi.org/10.1056/NEJMoa1614160" target="_blank" title="Ramanan et al." rel="noopener">2</a></sup><sup><a href="https://doi.org/10.1002/art.20904" target="_blank" title="Smith et al." rel="noopener">3</a></sup>:</p>
+                    <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Benefits and Harms <span class="section-updated">Updated Nov 2026</span></span><span class="etd-rating">Small net benefit, or little difference between alternatives</span></div><div class="etd-domain-text"><p><strong>Comparison 1: b/tsDMARDs versus placebo</strong></p>
+<p>Based on data from three randomised controlled trials (RCTs) in children and young people with JIA-associated uveitis who have not adequately responded to methotrexate, the use of b/tsDMARDs <sup><a href="https://doi.org/10.1136/annrheumdis-2017-212089" target="_blank" title="Quartier et al." rel="noopener">1</a></sup><sup><a href="https://doi.org/10.1056/NEJMoa1614160" target="_blank" title="Ramanan et al." rel="noopener">2</a></sup><sup><a href="https://doi.org/10.1002/art.20904" target="_blank" title="Smith et al." rel="noopener">3</a></sup>:</p>
 <ul>
 <li>may increase the likelihood of achieving treatment response</li>
 <li>may decrease the likelihood of a uveitis flare or treatment failure</li>
@@ -1107,18 +1138,44 @@
 <p>While the participant numbers in the included trials is limited (n=133), the overall results are consistent with observational trials. Etanercept and adalimumab are both tumour necrosis factor (TNF) inhibitors but achieve this through different mechanisms and therefore have slightly different properties from one another <sup><a href="https://doi.org/10.1016/j.ophtha.2016.08.025" target="_blank" title="Cordero-Coma et al." rel="noopener">32</a></sup><sup><a href="https://doi.org/10.1002/ibd.20225" target="_blank" title="Nesbitt et al." rel="noopener">33</a></sup><sup><a href="https://doi.org/10.1186/s12348-020-00202-6" target="_blank" title="Nicolela et al. (2020)" rel="noopener">34</a></sup><sup><a href="https://doi.org/10.1016/j.semarthrit.2005.01.009" target="_blank" title="Wallis et al." rel="noopener">35</a></sup>. TNF inhibitors, also known as anti-TNF medications, can broadly be described as either monoclonal antibodies (adalimumab, infliximab, golimumab, certolizumab) or fusion proteins (etanercept). In keeping with the findings from this review, data from JIA-associated uveitis registries and case series suggest that anti-TNF monoclonal antibodies have superior treatment effect on uveitis when compared to fusion proteins <sup><a href="https://doi.org/10.1136/ard.2006.058248" target="_blank" title="Tynjala et al." rel="noopener">29</a></sup><sup><a href="https://doi.org/10.1136/annrheumdis-annrheumdis-2014-206747" target="_blank" title="Klotsche et al." rel="noopener">14</a></sup><sup><a href="https://doi.org/10.1002/art.22918" target="_blank" title="Lim et al." rel="noopener">16</a></sup>. Similar findings have been noted among adults with uveitis <sup><a href="https://doi.org/10.1016/j.semarthrit.2011.05.005" target="_blank" title="Wendling et al." rel="noopener">30</a></sup>. For these reasons, etanercept is not generally recommended for the treatment of JIA-associated uveitis <sup><a href="https://doi.org/10.1002/acr.23610" target="_blank" title="Angeles-Han et al." rel="noopener">5</a></sup><sup><a href="https://doi.org/10.1002/art.40885" target="_blank" title="Angeles-Han et al. (2019)" rel="noopener">6</a></sup><sup><a href="https://doi.org/10.1136/annrheumdis-2018-213131" target="_blank" title="Constantin et al." rel="noopener">9</a></sup><sup><a href="https://doi.org/10.1111/ceo.13856" target="_blank" title="Smith et al." rel="noopener">25</a></sup>.</p>
 <p>Cohort studies looking specifically at anti-TNF monoclonal antibodies suggest that a significant number of patients with JIA-associated uveitis will respond favourably <sup><a href="https://doi.org/10.1136/bjo.2006.103721" target="_blank" title="Biester et al." rel="noopener">7</a></sup><sup><a href="https://doi.org/10.2147/OPTH.S23646" target="_blank" title="Kotaniemi et al." rel="noopener">15</a></sup><sup><a href="https://doi.org/10.1093/rheumatology/kem356" target="_blank" title="Tynjala et al." rel="noopener">28</a></sup><sup><a href="https://doi.org/10.3899/jrheum.120583" target="_blank" title="Zannin et al." rel="noopener">31</a></sup> and their use is supported in contemporary guidelines <sup><a href="https://doi.org/10.1002/acr.23610" target="_blank" title="Angeles-Han et al." rel="noopener">5</a></sup><sup><a href="https://doi.org/10.1002/art.40885" target="_blank" title="Angeles-Han et al. (2019)" rel="noopener">6</a></sup><sup><a href="https://doi.org/10.1136/annrheumdis-2018-213131" target="_blank" title="Constantin et al." rel="noopener">9</a></sup><sup><a href="https://doi.org/10.1111/ceo.13856" target="_blank" title="Smith et al." rel="noopener">25</a></sup>.</p>
 <p>RCTs are typically not powered to estimate differences in adverse events and may not have long enough follow-up periods to detect important long-term harms. The included trials were not able to detect a significant difference in the rate of ocular damage (measured by new structural ocular comorbidities or change in visual acuity) or serious adverse events. All three trials had pre-defined safety measures which ensured that participants were eligible to receive the investigational drug in the event of a uveitis flare. Therefore, patients were unlikely to be exposed to prolonged periods of active inflammation and subsequent damage. Observational trials are perhaps better at assessing for these long term complications of disease and support a positive treatment effect for bDMARDs <sup><a href="https://doi.org/10.1186/s12969-018-0266-5" target="_blank" title="Cann et al." rel="noopener">8</a></sup><sup><a href="https://doi.org/10.1007/s10792-021-02043-1" target="_blank" title="Del et al." rel="noopener">36</a></sup>.</p>
-<p>The side-effect profile of etanercept and adalimumab is well established through trials in other paediatric populations and post-marketing surveillance studies <sup><a href="https://doi.org/10.1002/acr2.11091" target="_blank" title="Klein et al." rel="noopener">13</a></sup>. The number of serious adverse events among the RCTs included in this review were low and they did not reveal any new concerning safety signals.</p></div></div>
-<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Certainty of the Evidence</span><span class="etd-rating">Low</span></div><div class="etd-domain-text"><p>There was low certainty evidence for likelihood of achieving treatment response, likelihood of a uveitis flare / treatment failure, likelihood of weaning topical steroid drops to two or less per day, number of eyes with improvement in AC cell count and number of serious adverse events. There was very low certainty evidence for the development of new structural ocular comorbidities and visual acuity. This uncertainty was largely due to indirectness (inclusion of only two types of bDMARDs, inclusion of patients with mild disease, short follow up period) and imprecision (low number of trial participants).</p>
-<p>It must be noted that the available RCTs are limited to only two bDMARDs (2 adalimumab RCTs, 1 etanercept RCT). Contemporary guidelines make reference to other bDMARDs for the treatment of JIA associated uveitis including other TNF inhibitors (infliximab, golimumab, certolizumab), interleukin-6 inhibitors (tocilizumab), T-cell costimulatory signal inhibitors (abatacept) and B-cell inhibitors (rituximab) <sup><a href="https://doi.org/10.1002/acr.23610" target="_blank" title="Angeles-Han et al." rel="noopener">5</a></sup><sup><a href="https://doi.org/10.1002/art.40885" target="_blank" title="Angeles-Han et al. (2019)" rel="noopener">6</a></sup><sup><a href="https://doi.org/10.1136/annrheumdis-2018-213131" target="_blank" title="Constantin et al." rel="noopener">9</a></sup>. Given this review was limited to only two medications, we are unsure whether these findings can be extrapolated to other bDMARDs or to tsDMARDs.</p>
-<p>There are two ongoing trials (1 baricitinib, 1 adalimumab) with anticipated completion dates in 2022 and 2024 <sup><a href="https://doi.org/10.1186/s13063-020-04796-z" target="_blank" title="Acharya et al." rel="noopener">4</a></sup><sup><a href="https://doi.org/10.1186/s13063-021-05651-5" target="_blank" title="Ramanan et al." rel="noopener">20</a></sup>. The results of these trials may impact the findings from this review.</p>
-<p>The panel generally agreed with the plain language summaries although concerns were raised about the certainty of evidence. It was noted that some participants in one study (n=31) had very mild disease at baseline <sup><a href="https://doi.org/10.1136/annrheumdis-2017-212089" target="_blank" title="Quartier et al." rel="noopener">1</a></sup>. The major concern was that this could limit the applicability of this finding and potentially underestimate the treatment effect (particularly with regard to the number of affected eyes with AC cell count improvement given that this was the only trial included for this outcome).</p>
-<p>It was also noted that the timeframe for follow up was relatively short and that RCTs are generally poorly set up to detect ocular damage (including new structural ocular comorbidities or change in visual acuity). While these are very important outcomes, it was determined that the certainty of evidence for these outcomes should be downgraded to very low.</p></div></div>
+<p>The side-effect profile of etanercept and adalimumab is well established through trials in other paediatric populations and post-marketing surveillance studies <sup><a href="https://doi.org/10.1002/acr2.11091" target="_blank" title="Klein et al." rel="noopener">13</a></sup>. The number of serious adverse events among the RCTs included in this review were low and they did not reveal any new concerning safety signals.</p>
+<p><strong>Comparison 2: Head-to-head comparison of b/tsDMARDs</strong></p>
+<p>Based on one RCT in children and young people with JIA-associated uveitis who have not adequately responded to methotrexate, that compared adalimumab with baricitinib <sup><a href="https://doi.org/10.1002/acr.25644" target="_blank" title="Ramanan et al. (2026)" rel="noopener">181</a></sup>:</p>
+<ul>
+<li>Baricitinib may result in fewer people experiencing a treatment response compared to adalimumab.</li>
+<li>Compared with adalimumab, baricitinib may have little to no effect on:
+    <ul>
+    <li>the number of eyes with improvement in anterior chamber cell count</li>
+    <li>the number of people developing new structural ocular comorbidities</li>
+    <li>the number of serious adverse events</li>
+    </ul>
+</li>
+</ul>
+<p>The trial did not measure:</p>
+<ul>
+<li>the number of flares of uveitis</li>
+<li>the number who reduced topical steroid treatment</li>
+<li>visual acuity</li>
+<li>patient global assessment of disease activity or function</li>
+</ul></div></div>
+<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Certainty of the Evidence <span class="section-updated">Updated Nov 2026</span></span><span class="etd-rating">Low</span></div><div class="etd-domain-text"><p><strong>Comparison 1: b/tsDMARDs versus placebo</strong></p>
+<p>There was low certainty evidence for likelihood of achieving treatment response, likelihood of a uveitis flare / treatment failure, likelihood of weaning topical steroid drops to two or less per day, number of eyes with improvement in AC cell count and number of serious adverse events. There was very low certainty evidence for the development of new structural ocular comorbidities and visual acuity. This uncertainty was largely due to indirectness (inclusion of only two types of bDMARDs, inclusion of patients with mild disease, short follow up period) and imprecision (low number of trial participants). It was noted that some participants in one study (n=31) had very mild disease at baseline <sup><a href="https://doi.org/10.1136/annrheumdis-2017-212089" target="_blank" title="Quartier et al." rel="noopener">1</a></sup>. The major concern was that this could limit the applicability of this finding and potentially underestimate the treatment effect (particularly with regard to the number of affected eyes with AC cell count improvement given that this was the only trial included for this outcome).</p>
+<p>It was also noted that the timeframe for follow up was relatively short and that RCTs are generally poorly set up to detect ocular damage (including new structural ocular comorbidities or change in visual acuity). While these are very important outcomes, it was determined that the certainty of evidence for these outcomes should be downgraded to very low.</p>
+<p><strong>Comparison 2: Head-to-head comparison of b/tsDMARDs</strong></p>
+<p>There was low certainty evidence for:</p>
+<ul>
+<li>the number with treatment response</li>
+<li>the number of affected eyes with anterior chamber cell count improvement</li>
+<li>the number of new structural ocular comorbidities</li>
+<li>serious adverse events</li>
+</ul>
+<p>This uncertainty was due to risk of bias (potential for performance and detection bias) and imprecision (data from one study with a low number of trial participants and events).</p></div></div>
 <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Values and Preferences</span><span class="etd-rating">No substantial variability expected</span></div><div class="etd-domain-text"><p>A recent qualitative thematic analysis on patients with JIA-associated uveitis provides some insight into perspectives on the disease impact. Patients highlighted impacts of treatment (emotional response to treatment, medication side-effects, need for painful injections) and impacts of the disease (difficulties with seeing, risk of blindness, need for surgery) as significantly affecting their quality of life and emotional well-being <sup><a href="https://doi.org/10.1186/s12969-017-0189-6" target="_blank" title="Sen et al." rel="noopener">23</a></sup>.</p>
 <p>The panel agreed that the impacts of the disease and its treatment are both important to consider, however it is likely that most consumers would place a very high value on preservation of vision.</p></div></div>
-<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Resources</span><span class="etd-rating">No important issues with the recommended alternative</span></div><div class="etd-domain-text"><p>b/tsDMARDs are a major cost to the Australian health care system. At the time of publication, the Pharmaceutical Benefits Scheme (PBS) listed price (including the approved ex-manufacturer price and all relevant dispensing fees and mark-ups) of adalimumab is $11,511.50 AUD per patient per year.</p>
+<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Resources <span class="section-updated">Updated Nov 2026</span></span><span class="etd-rating">No important issues with the recommended alternative</span></div><div class="etd-domain-text"><p>The panel noted that b/tsDMARDs are a major cost to the Australian healthcare system. Since the time of the original recommendation, adalimumab has become available on the PBS for the treatment of vision-threatening non-infectious uveitis.</p>
 <p>An analysis on cost effectiveness of one of the RCTs included in this review concluded that adalimumab is not cost effective when compared with methotrexate alone in the United Kingdom setting despite showing clinical efficacy <sup><a href="https://doi.org/10.1056/NEJMoa1614160" target="_blank" title="Ramanan et al." rel="noopener">2</a></sup><sup><a href="https://doi.org/10.1016/j.ophtha.2018.09.043" target="_blank" title="Hughes et al." rel="noopener">12</a></sup>. It must be noted that this analysis only considered short term health care expenditure and did not consider the longer term medical, societal or economic effects of treatment. The trial design, where participants were censored on flaring and able to access the investigational medication at that point, probably limited the ability to detect meaningful short term differences in visual acuity and structural ocular complications.</p>
 <p>The costs to society of the sequelae of under-treated uveitis must not be underestimated. Observational studies of patients with non-infectious uveitis (particularly JIA-associated uveitis) in the era of bDMARDs shows improved outcomes when compared to historical comparison groups. Rates of visual impairment and other ocular complications appear to be considerably lower <sup><a href="https://doi.org/10.1186/s12969-018-0266-5" target="_blank" title="Cann et al." rel="noopener">8</a></sup>.</p>
-<p>While the high treatment cost was considered by the panel, it was still felt that the findings of this review support the use of b/tsDMARDs given the implications of not using them. The permanent nature of ocular damage was highlighted. It was additionally noted that generic forms of these medications (‘biosimilars’ in the case of bDMARDs) are expected to be available in the near future and are likely to decrease the cost. Given that bDMARDs and tsDMARDs are often currently funded through industry funded compassionate access programs, there is no direct cost to the healthcare system at present. Regardless, a majority of the panel agreed that the cost of bDMARDs/tsDMARDs favours a recommendation for their use.</p></div></div>
+<p>While the high treatment cost was considered by the panel, it was still felt that the potential risks of permanent ocular damage warranted consideration of high-cost therapies in cases where the evidence supported their use. The panel also noted that the cost of b/tsDMARDs has fallen over time, but recognised that these remain high-cost therapies at the societal level.</p></div></div>
 <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Equity</span><span class="etd-rating">Important issues, or potential issues not investigated</span></div><div class="etd-domain-text"><p>Many factors influence individual patients&#x27; health opportunities and outcomes. Such factors (based on the PROGRESS-Plus characteristics <sup><a href="https://doi.org/10.1016/j.jclinepi.2013.08.005" target="_blank" title="O'Neill et al." rel="noopener">18</a></sup>) might include poor health literacy; residence in rural, remote or relatively under-serviced locations; primary language other than English; low educational attainment; the presence of disability; or adverse socioeconomic or social circumstances.</p>
 <p>Financial constraints, the absence of specialists to supervise the use of drugs in clinical practice and drug unavailability have all been identified as major barriers to the use of b/tsDMARDs in Australasia <sup><a href="https://doi.org/10.1186/s12969-021-00498-1" target="_blank" title="Tangcheewinsirikul et al." rel="noopener">26</a></sup>.</p>
 <p>The provision of tertiary paediatric rheumatology care in Australia is relatively constrained to major cities <sup><a href="https://doi.org/10.1111/1756-185X.12802" target="_blank" title="Cox et al." rel="noopener">10</a></sup>. Given the complexity and expense of b/tsDMARDs, it is unlikely that they are accessible without input from a metropolitan treating unit. Patients with low health literacy and self advocacy may also have limited access to these therapies.</p>
@@ -1126,17 +1183,18 @@
 <div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Acceptability</span><span class="etd-rating">No important issues with the recommended alternative</span></div><div class="etd-domain-text"><p>bDMARDs are given parenterally (by either subcutaneous or intravenous injection), while tsDMARDs are generally orally administered. Both add to the overall treatment burden experienced by patients with JIA-associated uveitis.</p>
 <p>Injections are consistently highlighted as a drawback by children and young people with JIA on biologic medications however many patients are able to rationalise this treatment if it leads to improved disease control or reduction in overall treatment related side-effects <sup><a href="https://doi.org/10.1186/s12969-016-0083-7" target="_blank" title="Livermore et al." rel="noopener">17</a></sup>. These concerns may also be partially offset by concerns about possible complications of untreated disease and implications for schooling and other activities <sup><a href="https://doi.org/10.1186/s12969-017-0189-6" target="_blank" title="Sen et al." rel="noopener">23</a></sup>.</p>
 <p>There is little evidence regarding the acceptability of b/tsDMARDs for the treatment of JIA-associated uveitis to clinicians, policymakers or other stakeholders, although the panel felt that use of these treatments in a shared decision-making framework would likely be acceptable to all stakeholders. The panel additionally noted that some modern formulations of subcutaneous bDMARDs without irritant preservatives (such as citrate) may partially alleviate concerns about painful injections. Most panellists agreed that b/tsDMARD are acceptable to all stakeholders.</p></div></div>
-<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Feasibility</span><span class="etd-rating">Important issues, or potential issues not investigated</span></div><div class="etd-domain-text"><p>At the time of the original panel meeting, there were no biologic or targeted synthetic DMARDs listed on the PBS for the treatment of JIA-associated uveitis. Access at that time was primarily via compassionate access programs. Subsequently, PBS access to adalimumab has been broadened to include patients with vision-threatening non-infectious uveitis.</p>
+<div class="etd-domain"><div class="etd-domain-header"><span class="etd-domain-title">Feasibility <span class="section-updated">Updated Nov 2026</span></span><span class="etd-rating">Important issues, or potential issues not investigated</span></div><div class="etd-domain-text"><p>At the time of the original panel meeting, there were no biologic or targeted synthetic DMARDs listed on the PBS for the treatment of JIA-associated uveitis. Access at that time was primarily via compassionate access programs. Subsequently, PBS access to adalimumab has been broadened to include patients with vision-threatening non-infectious uveitis.</p>
 <p>The majority of panel members felt that it is probably feasible to recommend this intervention.</p></div></div>
                 </div>
                 <div class="tab-content" id="jia-rec-3-practical">
                     <div class="content-section">
+                        <p class="section-updated-line"><span class="section-updated">Updated Nov 2026</span></p>
                         <ul>
 <li>When considering b/tsDMARD for children and young people with JIA-associated uveitis who have not responded to methotrexate:
     <ul>
     <li>Adalimumab is recommended over other b/tsDMARDs</li>
     <li>Anti-TNF fusion proteins (etanercept) should not be used</li>
-    <li>Other anti-TNF monoclonal antibodies (including infliximab), non-TNF inhibitor bDMARDs and tsDMARDs can be considered although randomised evidence supporting efficacy or safety is lacking</li>
+    <li>Other anti-TNF monoclonal antibodies (including infliximab), non-TNF inhibitor bDMARDs and tsDMARDs can be considered, although RCT evidence to demonstrate similar efficacy to adalimumab is lacking</li>
     </ul>
 </li>
 <li>Any decision regarding the use of b/tsDMARDs should be made within a shared decision-making framework following a clear discussion of potential benefits and harms, tailored to the individual's circumstances (including comorbidities and concomitant medications).</li>
@@ -1166,13 +1224,40 @@
                             <li><span class="no-link">Update 11 (March 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                             <li><span class="no-link">Update 12 (July 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
                             <li><span class="no-link">Update 13 (October 2025)</span> <span class="evidence-note">(no new evidence)</span></li>
-                            <li><span class="no-link">Update 14 (February 2026)</span> <span class="evidence-note">(update in progress)</span></li>
+                            <li><span class="no-link">Update 14 (February 2026)</span> <span class="evidence-note">(no new evidence)</span></li>
+                            <li><a href="https://drive.google.com/file/d/1p7hPcGqTc03TyQ6algPGu6Pge5lRjHlh/view?usp=sharing" target="_blank" rel="noopener">Update 15 (August 2026)</a></li>
                         </ul>
                     </div>
                 </div></div>
                 <div class="tab-content" id="jia-rec-3-moreinfo">
+                    <div class="panel-info rec-history">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd"/></svg> Recommendation History</h3>
+                        <div class="rec-history-list">
+                            <div class="rec-history-entry">
+                                <div class="rec-history-date">November 2026 <span class="rec-history-current">Current version</span></div>
+                                <div class="rec-history-text">Panel review of new evidence (panel meeting 23 November 2026; evidence search to August 2026). One new randomised trial comparing baricitinib with adalimumab was considered<sup><a href="https://doi.org/10.1002/acr.25644" target="_blank" title="Ramanan et al. (2026)" rel="noopener">181</a></sup>. The recommendation and all Evidence to Decision ratings are unchanged. The Rationale, Practical Info, and the Benefits and Harms, Certainty of the Evidence, Resources and Feasibility domains were updated.</div>
+                            </div>
+                            <div class="rec-history-entry">
+                                <div class="rec-history-date">October 2021</div>
+                                <div class="rec-history-text">Original recommendation (panel meeting 14 October 2021). <a href="/jia/archive/btsdmard-uveitis-2021-10.html">View the October 2021 version</a>, which was current until November 2026.</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="panel-info">
-                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> Panel Members</h3>
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> Panel Members &ndash; evidence update meeting, 23 November 2026</h3>
+                        <div class="panel-members"><span class="panel-member chair">Dr Samuel Whittle (Chair and Facilitator)</span>
+<span class="panel-member">Dr Priscilla Campbell-Stokes</span>
+<span class="panel-member">Rebecca Hazel</span>
+<span class="panel-member">Prof Jane Munro</span>
+<span class="panel-member">Dr William Renton</span>
+<span class="panel-member">Dr Phillipa Sharwood</span>
+<span class="panel-member">Dr Joachim Tan</span>
+<span class="panel-member">Dr Georgina Tiller</span>
+<span class="panel-member">Dr Renea Johnston (Evidence team)</span>
+<span class="panel-member">Dr Vanessa Glennon (Evidence team)</span></div>
+                    </div>
+                    <div class="panel-info">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"/></svg> Panel Members &ndash; original recommendation, 14 October 2021</h3>
                         <div class="panel-members"><span class="panel-member chair">Prof Rachelle Buchbinder (Chair)</span>
 <span class="panel-member chair">Dr Sue Brennan (Facilitator)</span>
 <span class="panel-member">David Pho</span>
@@ -1193,15 +1278,15 @@
                     <div class="info-item">
                         <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75z" clip-rule="evenodd"/></svg></div>
                         <div class="info-content">
-                            <div class="info-label">Panel Meeting Date</div>
-                            <div class="info-value">14 October 2021</div>
+                            <div class="info-label">Panel Meeting Dates</div>
+                            <div class="info-value">14 October 2021 (original recommendation)<br>23 November 2026 (evidence update)</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="modal-footer-left">
-                    <span class="card-updated">Last updated: February 2026</span>
+                    <span class="card-updated">Last updated: August 2026</span>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfarxWPaubepAaUzvm3HLxMgM57JlzKRtej-eWcRt7vw4wBAg/viewform?usp=pp_url&entry.1797546299=Choice%20of%20first-line%20advanced%20therapy%20for%20chronic%20anterior%20uveitis%20in%20children%20with%20JIA" target="_blank" class="feedback-link" rel="noopener">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
                             <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/>

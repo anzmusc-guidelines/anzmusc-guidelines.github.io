@@ -68,6 +68,15 @@ For **no new evidence** and **new evidence, no change**: add a Living Updates en
 
 For **factual** or **text-amended** outcomes: always add a Living Updates entry.
 
+### Fifth outcome: the panel met and reworded the supporting text
+
+If a panel meeting has re-deliberated a recommendation (whether or not the recommendation text or
+ratings changed) and Sam supplies new wording for the rationale, EtD domains or practical info, this is
+**not** a Living Updates note. Follow "Panel re-deliberation: revise in place, archive the old version"
+in `.claude/site-decisions.md` §3: run `.claude/scripts/archive_recommendation.py` **before the first
+edit**, then revise in place, add the status note, "Updated" tags, Recommendation History entry and the
+meeting's panel members, and add a What's New "Updated" entry. `jia-rec-3` is the worked example.
+
 ---
 
 ## Step 3: Update the card footer
@@ -239,7 +248,7 @@ If no `whats-new-item` exists yet for this recommendation, add one following the
 
 ## Core principles to never violate
 
-1. **Never modify original panel rationale language.** The Living Updates system exists precisely to preserve the historical accuracy of what the panel said at the time. New context goes in Living Updates blocks — not edits to existing rationale text.
+1. **Never modify original panel rationale language** (except to install new wording from a panel re-deliberation, after archiving - see the fifth outcome above). The Living Updates system exists precisely to preserve the historical accuracy of what the panel said at the time. New context goes in Living Updates blocks — not edits to existing rationale text.
 
 2. **Card date, modal footer date, and Data tab must always be consistent.** After any update, verify all three show the same month/year (card uses abbreviated month, modal uses full month name).
 

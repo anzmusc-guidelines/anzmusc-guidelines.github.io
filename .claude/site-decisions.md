@@ -209,6 +209,35 @@ by design. Verify against these before changing.
   filters work across both groups and hide a group's heading when it has no matches. Search results
   label these people "Previous panel member". `coi.html` is not split.
 
+- **Panel re-deliberation: revise in place, archive the old version** *(27 Nov 2026)*
+  First used for JIA `jia-rec-3` (uveitis) after the 23 Nov 2026 panel meeting on the JUVE-BRIGHT trial
+  (recommendation and all EtD ratings unchanged; rationale, three EtD domains and practical info reworded).
+  Sam's aim: a reader sees one succinct, current account and can trust it is up to date, while the record
+  of how the decision evolved stays available without piling up on the page. So there are two kinds of event:
+  1. *Editorial / factual note, no panel decision* - inline or block Living Updates note; original text
+     untouched (unchanged practice, e.g. Adult rec-0 and the bridging-glucocorticoid rec, Jan 2026).
+  2. *Panel re-deliberation* - (a) freeze the outgoing version first with
+     `.claude/scripts/archive_recommendation.py` -> `<guideline>/archive/<slug>-<YYYY-MM>.html`;
+     (b) replace the text in place with the panel's new wording, verbatim; (c) add a
+     `.living-updates.living-updates-status` note directly under the recommendation box (one entry, the
+     latest panel review only - replace it at the next review, do not stack); (d) put a
+     `.section-updated` "Updated Mon YYYY" tag on each section whose wording changed (Rationale `h3`,
+     `.etd-domain-title`, top of Practical Info) and remove the previous round's tags; (e) add one entry
+     at the top of "Recommendation History" in More Info (`.rec-history`), linking the archived version;
+     (f) list the update meeting's attendees as a second "Panel Members" group and add the meeting date.
+  Routine "no new evidence" searches never create history entries - they stay in the Data tab list.
+  The archive must hold the text as it stood before ANY of the round's wording edits: for `jia-rec-3`
+  some pre-meeting edits had already reached `main` on 21 Nov 2026, so the snapshot text was taken from
+  the commit before them (`--content-ref ff4ce65`) with the page styling from `main`.
+  Archives are public for transparency (Sam's decision) but `noindex`, out of the sitemap and out of site
+  search, so nobody lands on superseded guidance by accident. MAGICapp is deliberately **not** relied on
+  as the archive. Archive pages are never edited; `verify_site.py` compares each with its SHA-256 in
+  `.claude/data/archive-manifest.csv`.
+  Dates: card / footer / Data tab still follow the evidence-search month (Aug 2026 here); the status
+  note, tags and history entry carry the panel-meeting month (Nov 2026).
+  The CSS for these pieces is in `jia/index.html` only so far - copy it (teal variables) the first time
+  an Adult recommendation needs it.
+
 *(Established conventions already documented in the skill files — clinical-content fidelity/verbatim
 reproduction, the "Updated" dating convention, What's New vs Living Updates usage, Adult page as the
 reference standard, DOI-preferred reference hyperlinks, rec-specific MAGICapp deep-links — are not
