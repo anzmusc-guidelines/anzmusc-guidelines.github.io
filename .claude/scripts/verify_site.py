@@ -34,6 +34,11 @@ Site-wide:
   E  every page has the Menu button, nav#site-nav, /header.css and /header.js
   E  every headshot <img> on panellists.html resolves to a real .jpg file
   E  every top-level HTML page carries the Google Analytics tag
+
+Archived (superseded) recommendation versions (<guideline>/archive/*.html):
+  E  every row of .claude/data/archive-manifest.csv has its page, unaltered (SHA-256 matches)
+  E  every archive page is in the manifest, is "noindex", carries the GA tag and site header
+  E  every /adult/archive/ or /jia/archive/ link on a guideline page points at a real archive page
   W  headshot files over 40 KB (see the panellist-headshot skill)
 
 Requires: beautifulsoup4  (pip install beautifulsoup4)
@@ -306,6 +311,43 @@ def check_analytics():
     print(f"  analytics: {len(pages)} pages checked")
 
 
+def check_archives():
+    """Superseded recommendation versions are frozen: see archive_recommendation.py."""
+    import hashlib
+    manifest = ROOT / ".claude" / "data" / "archive-manifest.csv"
+    rows = list(csv.DictReader(manifest.open(encoding="utf-8"))) if manifest.exists() else []
+    listed = set()
+    for r in rows:
+        listed.add(r["path"])
+        f = ROOT / r["path"]
+        if not f.exists():
+            err(f"{r['path']}: archived version listed in archive-manifest.csv is missing")
+            continue
+        if hashlib.sha256(f.read_bytes()).hexdigest() != r["sha256"]:
+            err(f"{r['path']}: archived version has been altered (SHA-256 differs from archive-manifest.csv) "
+                "- archive pages must never be edited")
+        t = f.read_text(encoding="utf-8")
+        if 'name="robots" content="noindex' not in t:
+            err(f"{r['path']}: archive page must be noindex")
+        if GA_ID not in t:
+            err(f"{r['path']}: Google Analytics tag {GA_ID} missing")
+        if 'class="site-search"' not in t or 'id="site-nav"' not in t:
+            err(f"{r['path']}: site header missing")
+    for g in ("adult", "jia"):
+        for f in sorted((ROOT / g / "archive").glob("*.html")):
+            rel = f.relative_to(ROOT).as_posix()
+            if rel not in listed:
+                err(f"{rel}: archive page is not in archive-manifest.csv (create archives with archive_recommendation.py)")
+        page = (ROOT / g / "index.html").read_text(encoding="utf-8")
+        for href in sorted(set(re.findall(r'href="/((?:adult|jia)/archive/[^"#]+)"', page))):
+            if not (ROOT / href).exists():
+                err(f"{g}/index.html: link to archived version '/{href}' points at a page that does not exist")
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    if "/archive/" in sm:
+        err("sitemap.xml lists an archive page - archived versions stay out of the sitemap")
+    print(f"  archive: {len(rows)} archived recommendation version(s) checked")
+
+
 def main():
     os.chdir(ROOT)
     print("Checking livingguidelines.org ...")
@@ -313,6 +355,7 @@ def main():
     check_guideline("jia/index.html", "jia-rec", "jiaSlugMap", 1)
     check_headshots()
     check_analytics()
+    check_archives()
 
     if warnings:
         print(f"\nWARNINGS ({len(warnings)}) - review, may be known/expected:")

@@ -40,7 +40,11 @@ Evidence Tables doc). Explain technical choices in plain language.
   formatting, reference hyperlinking, verification, consistency across pages.
 - **Clinical text is reproduced verbatim** from the panel/MAGICapp source — never summarise,
   reorder or rephrase. Preserve source bullets as `<ul>/<li>` and source hyperlinks as `<a>`.
-- **Never edit original panel rationale.** Later context goes in Living Updates blocks.
+- **Never edit original panel rationale on your own initiative.** Editorial or factual context added
+  without a panel decision goes in Living Updates blocks beside the untouched text. The one exception is
+  a **panel re-deliberation**: when the panel itself revises the rationale / EtD / practical info, the
+  text is revised in place - but only after the old version has been frozen with
+  `archive_recommendation.py` (see `site-decisions.md` §3 and the `quarterly-evidence-update` skill).
 - If something looks wrong in clinical content, or you deviate from a skill, **don't silently
   change it** — list it in the PR description under "Notes for Sam".
 - Flag known quirks rather than quietly accepting or "fixing" them.
@@ -64,6 +68,8 @@ Evidence Tables doc). Explain technical choices in plain language.
 | `search.js`, `search.css`, `search-index.json` | Site-wide search in every page header. The index is **generated** — never hand-edit |
 | `.claude/scripts/build_search_index.py` | Rebuilds `search-index.json` from the pages — **run after any content change**, then commit the JSON |
 | `.claude/scripts/verify_site.py` | Whole-site integrity check — run before every commit |
+| `<adult|jia>/archive/*.html` | Frozen, superseded versions of recommendations (public, `noindex`, not in sitemap or search). **Never edit** - `verify_site.py` checks each against `.claude/data/archive-manifest.csv` |
+| `.claude/scripts/archive_recommendation.py` | Freezes a recommendation's current version as an archive page before a panel-driven rewrite |
 | `.claude/scripts/rec_links.py` | Generates the direct-link list (numeric + slug) for every recommendation |
 | `.claude/scripts/ga4_report.py` | Pulls GA4 reports via the Data API (credentials from the cloud environment, see `analytics-report` skill) into a Markdown digest |
 
